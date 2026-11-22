@@ -2,10 +2,10 @@
 
 - Result: **PASS**
 - Canonical atoms unchanged: **324**
-- Approved compounds unchanged: **107**
-- Existing indexed senses unchanged: **560**
-- Noncanonical plain-English mappings: **431**
-- Plain labels ranking their intended target first: **431/431**
+- Approved compounds unchanged: **115**
+- Existing indexed senses unchanged: **574**
+- Noncanonical plain-English mappings: **439**
+- Plain labels ranking their intended target first: **439/439**
 - Bare ambiguous “send” auto-resolved: **no**
 
 ## Phrase probes

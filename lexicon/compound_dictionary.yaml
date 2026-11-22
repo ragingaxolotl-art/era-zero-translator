@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 107
+  entry_count: 115
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1435,6 +1435,94 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: 3122dedcff0f85ad293e258040307a6365b55fa8c93434d3d5756100352f7c25
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:69f57af236cf82c134e3c51a
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:a4f16f95fedfe546c18e7115
+    definition_version: 1.0.0
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The actor is the nested release's holder; the target is shared by its held object
+    and the nested fall's mover.
+  - Ending the hold causes this fall. Mere temporal order or two different objects
+    is insufficient.
+  - Both nested events remain under the outer negation, time, uncertainty, ability,
+    aspect and runtime interpretation; neither is asserted separately.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_release_causing_a_fall
+    sound_code: 79
+    added_definition: One linked event in which a holder releases a distinct material
+      object from a physical holding engagement and that release causes the same object
+      to undergo downward physical displacement under gravity. Release and falling
+      are phases of this one event, not two unrelated occurrences. The outer actor
+      is the former holder; the outer target is both the formerly held object and
+      the falling mover. Intention, negligence, landing, damage, a recipient and ownership
+      transfer are unspecified. Release onto a support that prevents any fall, continued
+      controlled lowering, a drop in price and abandoning a topic do not establish
+      this meaning.
+    excludes:
+    - Releasing an object that stays supported without falling
+    - A release and an unrelated fall, or different objects in the two events
+    - Controlled lowering, dropping a topic, deleting data or reducing a price
+  compound_id: CMP:31da7c021f7da53eed929076
+  content_digest: 31da7c021f7da53eed9290760193c51e970973c23f517c08e920b9373f69761b
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: physical release causing a fall
+  english_glosses:
+  - physical release causing a fall
+  invariant_definition: One linked event in which a holder releases a distinct material
+    object from a physical holding engagement and that release causes the same object
+    to undergo downward physical displacement under gravity. Release and falling are
+    phases of this one event, not two unrelated occurrences. The outer actor is the
+    former holder; the outer target is both the formerly held object and the falling
+    mover. Intention, negligence, landing, damage, a recipient and ownership transfer
+    are unspecified. Release onto a support that prevents any fall, continued controlled
+    lowering, a drop in price and abandoning a topic do not establish this meaning.
+  boundaries:
+    includes: One linked event in which a holder releases a distinct material object
+      from a physical holding engagement and that release causes the same object to
+      undergo downward physical displacement under gravity. Release and falling are
+      phases of this one event, not two unrelated occurrences. The outer actor is
+      the former holder; the outer target is both the formerly held object and the
+      falling mover. Intention, negligence, landing, damage, a recipient and ownership
+      transfer are unspecified. Release onto a support that prevents any fall, continued
+      controlled lowering, a drop in price and abandoning a topic do not establish
+      this meaning.
+    excludes: Releasing an object that stays supported without falling; A release
+      and an unrelated fall, or different objects in the two events; Controlled lowering,
+      dropping a topic, deleting data or reducing a price
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 79 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora dropped the box.
+    technical: The actor is the nested release's holder; the target is shared by its
+      held object and the nested fall's mover. Ending the hold causes this fall. Mere
+      temporal order or two different objects is insufficient. Both nested events
+      remain under the outer negation, time, uncertainty, ability, aspect and runtime
+      interpretation; neither is asserted separately.
+    future_compound: Reuse this linked event before adding an impact, resulting damage
+      or a destination.
+    counterexample: Nora released the box onto a shelf and it stayed still.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 31da7c021f7da53eed9290760193c51e970973c23f517c08e920b9373f69761b
+- architecture_version: '1.0'
   compound_id: CMP:33c135410b0deef525b6770d
   content_digest: 33c135410b0deef525b6770d4a8f40c3032cecd94d385aa905fb0d30dd7440f6
   definition_version: 1.0.0
@@ -2639,6 +2727,94 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - kind: compound_ref
+    compound_id: CMP:834a56d90e31b430990720ff
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:3d95154b4812da0cefd7fc45
+    definition_version: 1.0.0
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The outer actor is the holder in the nested pre-phase; the outer target is that
+    same held material object.
+  - The holding relation is the occurrence that ceases. It is not an independent current-state
+    assertion outside the release event or its surrounding scopes.
+  - No nested component has an independent runtime state or speech-time assertion.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: ending_of_a_physical_holding_engagement
+    sound_code: 77
+    added_definition: A holder's previously maintained physical holding engagement
+      with the same distinct material object ends. The nested holding relation describes
+      the pre-phase; the nested cessation is the ending of that exact engagement.
+      The former holder and held object remain the two participants of this release.
+      Neither continued holding at the endpoint nor movement, falling, transfer, destruction,
+      permanent freedom, intention or a change of ownership is asserted. Ending a
+      hold while another support keeps the object still is included. Releasing software,
+      information or a claim, and granting permission without ending a physical hold,
+      are different meanings.
+    excludes:
+    - An object moves while the same hold continues
+    - Another holder takes custody without ending this physical engagement
+    - Publishing software, disclosing data, legal release or permission alone
+  compound_id: CMP:69f57af236cf82c134e3c51a
+  content_digest: 69f57af236cf82c134e3c51a59e21c44bda8c59b668ca3bf376ad5ba985b144a
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: ending of a physical holding engagement
+  english_glosses:
+  - ending of a physical holding engagement
+  invariant_definition: A holder's previously maintained physical holding engagement
+    with the same distinct material object ends. The nested holding relation describes
+    the pre-phase; the nested cessation is the ending of that exact engagement. The
+    former holder and held object remain the two participants of this release. Neither
+    continued holding at the endpoint nor movement, falling, transfer, destruction,
+    permanent freedom, intention or a change of ownership is asserted. Ending a hold
+    while another support keeps the object still is included. Releasing software,
+    information or a claim, and granting permission without ending a physical hold,
+    are different meanings.
+  boundaries:
+    includes: A holder's previously maintained physical holding engagement with the
+      same distinct material object ends. The nested holding relation describes the
+      pre-phase; the nested cessation is the ending of that exact engagement. The
+      former holder and held object remain the two participants of this release. Neither
+      continued holding at the endpoint nor movement, falling, transfer, destruction,
+      permanent freedom, intention or a change of ownership is asserted. Ending a
+      hold while another support keeps the object still is included. Releasing software,
+      information or a claim, and granting permission without ending a physical hold,
+      are different meanings.
+    excludes: An object moves while the same hold continues; Another holder takes
+      custody without ending this physical engagement; Publishing software, disclosing
+      data, legal release or permission alone
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 77 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora released the rope.
+    technical: The outer actor is the holder in the nested pre-phase; the outer target
+      is that same held material object. The holding relation is the occurrence that
+      ceases. It is not an independent current-state assertion outside the release
+      event or its surrounding scopes. No nested component has an independent runtime
+      state or speech-time assertion.
+    future_compound: Combine this exact release with falling of the same object to
+      define physical dropping.
+    counterexample: Nora loosened the grip but continued holding the rope.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 69f57af236cf82c134e3c51a59e21c44bda8c59b668ca3bf376ad5ba985b144a
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q1
     kind: root
     root_id: STR:010
@@ -3471,6 +3647,76 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - kind: compound_ref
+    compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+    definition_version: 1.0.0
+    node_id: h
+  edges: []
+  lexical_constraints:
+  - The container and content criterion are inherited unchanged from the exact capacity
+    foundation.
+  - Absence concerns relevant contents, not the existence, activation or runtime status
+    of the container.
+  - Grammatical not empty negates absence; it does not assert full capacity.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: absence_of_relevant_physical_contents
+    sound_code: 81
+    added_definition: The same material container has none of the relevant physical
+      contents under its fixed contextual capacity criterion. Its own body and contents
+      of irrelevant kinds, such as air in an otherwise empty bottle, are not counted.
+      No vacuum, damage, cleaning, previous emptying, usability or runtime state is
+      asserted. A partly filled container is not empty even though it is not full.
+      Figurative emptiness, a data container and emotional feeling are separate meanings.
+    excludes:
+    - Partly filled but not full
+    - Vacuum or absence of the container's own material body inferred from emptiness
+    - An empty promise, emotional emptiness or an empty software collection
+  compound_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  content_digest: 7e3cdc51fe00e1c61e5e9f12de89e3a7d1bc5fb875e2a959efc3096c686980c9
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: absence of relevant physical contents
+  english_glosses:
+  - absence of relevant physical contents
+  invariant_definition: The same material container has none of the relevant physical
+    contents under its fixed contextual capacity criterion. Its own body and contents
+    of irrelevant kinds, such as air in an otherwise empty bottle, are not counted.
+    No vacuum, damage, cleaning, previous emptying, usability or runtime state is
+    asserted. A partly filled container is not empty even though it is not full. Figurative
+    emptiness, a data container and emotional feeling are separate meanings.
+  boundaries:
+    includes: The same material container has none of the relevant physical contents
+      under its fixed contextual capacity criterion. Its own body and contents of
+      irrelevant kinds, such as air in an otherwise empty bottle, are not counted.
+      No vacuum, damage, cleaning, previous emptying, usability or runtime state is
+      asserted. A partly filled container is not empty even though it is not full.
+      Figurative emptiness, a data container and emotional feeling are separate meanings.
+    excludes: Partly filled but not full; Vacuum or absence of the container's own
+      material body inferred from emptiness; An empty promise, emotional emptiness
+      or an empty software collection
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 81 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: The bottle is empty.
+    technical: The container and content criterion are inherited unchanged from the
+      exact capacity foundation. Absence concerns relevant contents, not the existence,
+      activation or runtime status of the container. Grammatical not empty negates
+      absence; it does not assert full capacity.
+    future_compound: The property can describe a subject, object or a maintained state.
+    counterexample: The bottle contains a little water but is not full.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 7e3cdc51fe00e1c61e5e9f12de89e3a7d1bc5fb875e2a959efc3096c686980c9
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q1
     kind: compound_ref
     compound_id: CMP:6ae4a680528e1cd7fd1ac0df
@@ -3582,6 +3828,83 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 82dc9c681fbaf7944cb7b85bb5e778cef79c024f60dc09378c088402d2abe486
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: root
+    root_id: MAT:010
+    node_id: q1
+  - kind: root
+    root_id: MAT:211
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - MAT:010 identifies the held object; MAT:211 relates the holder to that same distinct
+    object.
+  - The constraint and physical influence are one engagement, not unrelated simultaneous
+    conditions.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: maintained_physical_holding_engagement
+    sound_code: 76
+    added_definition: A material holder maintains an actual physical engagement with
+      a distinct material object that constrains that object's position or motion
+      through gripping, restraint or load-bearing support. The object is the bounded
+      material target, and the holder supplies the active physical influence. The
+      object need not be stationary, wholly supported, owned or under the holder's
+      practical custody. Intention and exclusive control are unspecified. Touch or
+      influence that does not maintain such a holding constraint is insufficient.
+    excludes:
+    - Touch without a maintained holding constraint
+    - Practical custody, ownership or permission without actual physical engagement
+    - Remembering, reserving, delaying or retaining information
+  compound_id: CMP:834a56d90e31b430990720ff
+  content_digest: 834a56d90e31b430990720ff9b59d903ba5c47ae7153e571598db66887b2a0fb
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: maintained physical holding engagement
+  english_glosses:
+  - maintained physical holding engagement
+  invariant_definition: A material holder maintains an actual physical engagement
+    with a distinct material object that constrains that object's position or motion
+    through gripping, restraint or load-bearing support. The object is the bounded
+    material target, and the holder supplies the active physical influence. The object
+    need not be stationary, wholly supported, owned or under the holder's practical
+    custody. Intention and exclusive control are unspecified. Touch or influence that
+    does not maintain such a holding constraint is insufficient.
+  boundaries:
+    includes: A material holder maintains an actual physical engagement with a distinct
+      material object that constrains that object's position or motion through gripping,
+      restraint or load-bearing support. The object is the bounded material target,
+      and the holder supplies the active physical influence. The object need not be
+      stationary, wholly supported, owned or under the holder's practical custody.
+      Intention and exclusive control are unspecified. Touch or influence that does
+      not maintain such a holding constraint is insufficient.
+    excludes: Touch without a maintained holding constraint; Practical custody, ownership
+      or permission without actual physical engagement; Remembering, reserving, delaying
+      or retaining information
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 76 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: A clamp physically holds the board.
+    technical: MAT:010 identifies the held object; MAT:211 relates the holder to that
+      same distinct object. The constraint and physical influence are one engagement,
+      not unrelated simultaneous conditions.
+    future_compound: A release can end this same holding engagement without implying
+      movement or transfer.
+    counterexample: Nora owns a box stored elsewhere.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 834a56d90e31b430990720ff9b59d903ba5c47ae7153e571598db66887b2a0fb
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -3833,6 +4156,85 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 8f05a5e16a897935492726faf2e747c5fa22f3b3cc01e1b30fb853521782ec7b
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: root
+    root_id: MAT:201
+    node_id: q1
+  - kind: root
+    root_id: MAT:211
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The actor supplying work capacity is the source of the same pulling influence;
+    the target is distinct from that actor.
+  - Direction describes the transmitted force, not a guaranteed change in target position.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: application_of_physical_pulling_force
+    sound_code: 75
+    added_definition: An actor exercises available physical work capacity by transmitting
+      a pulling force to a distinct material target through a grip or tension-bearing
+      physical connection. The force draws toward the actor-side of that connection,
+      rather than pressing the target away. The target need not move. The same actor
+      supplies the capacity and the influence in this episode; intention, strength,
+      duration and eventual displacement are unspecified. This contact-transmitted
+      sense does not include attraction by gravity or a field alone, obtaining software
+      changes, influence on a decision or a figurative withdrawal.
+    excludes:
+    - Pushing away, even when the target ultimately moves toward the actor
+    - Movement without a transmitted pulling force
+    - Gravity or field attraction alone; software, persuasive or figurative pulling
+  compound_id: CMP:906075e53ffeb8edae29ed9c
+  content_digest: 906075e53ffeb8edae29ed9ceb1d35a58d9b8bf2215c53ad169dd1be6cbed898
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: application of physical pulling force
+  english_glosses:
+  - application of physical pulling force
+  invariant_definition: An actor exercises available physical work capacity by transmitting
+    a pulling force to a distinct material target through a grip or tension-bearing
+    physical connection. The force draws toward the actor-side of that connection,
+    rather than pressing the target away. The target need not move. The same actor
+    supplies the capacity and the influence in this episode; intention, strength,
+    duration and eventual displacement are unspecified. This contact-transmitted sense
+    does not include attraction by gravity or a field alone, obtaining software changes,
+    influence on a decision or a figurative withdrawal.
+  boundaries:
+    includes: An actor exercises available physical work capacity by transmitting
+      a pulling force to a distinct material target through a grip or tension-bearing
+      physical connection. The force draws toward the actor-side of that connection,
+      rather than pressing the target away. The target need not move. The same actor
+      supplies the capacity and the influence in this episode; intention, strength,
+      duration and eventual displacement are unspecified. This contact-transmitted
+      sense does not include attraction by gravity or a field alone, obtaining software
+      changes, influence on a decision or a figurative withdrawal.
+    excludes: Pushing away, even when the target ultimately moves toward the actor;
+      Movement without a transmitted pulling force; Gravity or field attraction alone;
+      software, persuasive or figurative pulling
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 75 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora pulled the rope.
+    technical: The actor supplying work capacity is the source of the same pulling
+      influence; the target is distinct from that actor. Direction describes the transmitted
+      force, not a guaranteed change in target position.
+    future_compound: Reuse this force meaning before adding a guaranteed displacement
+      or a destination.
+    counterexample: Nora pushed a cart away; the cart later rolled back.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 906075e53ffeb8edae29ed9ceb1d35a58d9b8bf2215c53ad169dd1be6cbed898
 - architecture_version: '1.0'
   compound_id: CMP:919b714e6201a462756224a2
   content_digest: 919b714e6201a462756224a27932d620baaef25ac165ab07a89cc4cbee40be3d
@@ -4322,6 +4724,88 @@ entries:
     canonical_format: EZC-JSON-1
     content_digest: a3244e0195aa8c228dd0af8cec947b7ed958d7d9c6cd68f6180db5fd71b52fcb
 - architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: root
+    root_id: MAT:010
+    node_id: q1
+  - kind: root
+    root_id: MOV:120
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The material target of MAT:010 is the mover of MOV:120 in the same displacement
+    episode.
+  - Downward direction is relative to local gravity; no arrival or contact with a
+    surface is supplied by the movement root.
+  - The root's movement phase, grammatical aspect, tense and runtime ending are separate.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: downward_physical_displacement_under_gravity
+    sound_code: 78
+    added_definition: 'A distinct material object completes a downward change of position
+      in the local gravitational frame, with gravity driving the descent and without
+      a supporting agent conducting a controlled lowering. The material object is
+      exactly the mover. This bounds the described displacement episode, not a destination
+      or the whole later fall: landing, injury, damage, free fall without resistance,
+      an external agent, deliberate action and a prior release are not asserted. An
+      ongoing aspect views the event internally without asserting its endpoint. Changes
+      in a price, rank, mood or software state are excluded.'
+    excludes:
+    - A supported load deliberately conducted down by its carrier
+    - Merely being low, or moving upward or horizontally
+    - A price, rank, mood or software state decreasing
+  compound_id: CMP:a4f16f95fedfe546c18e7115
+  content_digest: a4f16f95fedfe546c18e7115f9c680176ee489eab1e45ae2a6d1b9c32d180cf5
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: downward physical displacement under gravity
+  english_glosses:
+  - downward physical displacement under gravity
+  invariant_definition: 'A distinct material object completes a downward change of
+    position in the local gravitational frame, with gravity driving the descent and
+    without a supporting agent conducting a controlled lowering. The material object
+    is exactly the mover. This bounds the described displacement episode, not a destination
+    or the whole later fall: landing, injury, damage, free fall without resistance,
+    an external agent, deliberate action and a prior release are not asserted. An
+    ongoing aspect views the event internally without asserting its endpoint. Changes
+    in a price, rank, mood or software state are excluded.'
+  boundaries:
+    includes: 'A distinct material object completes a downward change of position
+      in the local gravitational frame, with gravity driving the descent and without
+      a supporting agent conducting a controlled lowering. The material object is
+      exactly the mover. This bounds the described displacement episode, not a destination
+      or the whole later fall: landing, injury, damage, free fall without resistance,
+      an external agent, deliberate action and a prior release are not asserted. An
+      ongoing aspect views the event internally without asserting its endpoint. Changes
+      in a price, rank, mood or software state are excluded.'
+    excludes: A supported load deliberately conducted down by its carrier; Merely
+      being low, or moving upward or horizontally; A price, rank, mood or software
+      state decreasing
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 78 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: The box fell.
+    technical: The material target of MAT:010 is the mover of MOV:120 in the same
+      displacement episode. Downward direction is relative to local gravity; no arrival
+      or contact with a surface is supplied by the movement root. The root's movement
+      phase, grammatical aspect, tense and runtime ending are separate.
+    future_compound: A drop links a prior release to this same object's gravity-driven
+      displacement.
+    counterexample: Nora steadily lowered a supported box.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: a4f16f95fedfe546c18e7115f9c680176ee489eab1e45ae2a6d1b9c32d180cf5
+- architecture_version: '1.0'
   compound_id: CMP:a7fc0ca38a6f95a40cdb87b1
   content_digest: a7fc0ca38a6f95a40cdb87b1966435f90b824e57edd04c7cdc8e76beedcdacfb
   definition_version: 1.0.0
@@ -4509,6 +4993,93 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: ac9df67396f3632d36b5d07870f7cc6387c055ab118ba4b9c13e64ad65140486
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: root
+    root_id: MAT:000
+    node_id: q1
+  - kind: root
+    root_id: MAT:010
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - MAT:000 is the container's own material substrate, and MAT:010 is that same body
+    considered as a distinct object.
+  - One positive capacity criterion and one relevant content kind govern every specialization
+    in this episode.
+  - Content capacity is not a STR constituent slot and does not recast contents as
+    parts of the container's own body.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: contextual_physical_content_capacity
+    sound_code: 80
+    added_definition: A materially bounded container object, with its own enduring
+      physical body, has a contextually fixed positive usable capacity for a relevant
+      kind of physical content. Both material roots describe that same container;
+      its body is distinct from what counts as contents. The capacity criterion and
+      content kind are contextual parameters, not a numerical amount supplied by this
+      meaning. Current contents, structural integrity, a sealed enclosure and suitability
+      for every kind of content are unspecified. The criterion is physical holding
+      capacity, not memory, information, emotional experience, a promise or a person's
+      feeling of satiety.
+    excludes:
+    - A numerical capacity inferred without being supplied
+    - A data store, proposition or feeling treated as a physical container
+    - Changing the content kind or capacity criterion midway through a comparison
+  compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  content_digest: ace0fc4ddd0c53a2a33e8fee956961a4aebfd9f5b249666d8f1f2a2b43d78885
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: contextual physical content capacity
+  english_glosses:
+  - contextual physical content capacity
+  invariant_definition: A materially bounded container object, with its own enduring
+    physical body, has a contextually fixed positive usable capacity for a relevant
+    kind of physical content. Both material roots describe that same container; its
+    body is distinct from what counts as contents. The capacity criterion and content
+    kind are contextual parameters, not a numerical amount supplied by this meaning.
+    Current contents, structural integrity, a sealed enclosure and suitability for
+    every kind of content are unspecified. The criterion is physical holding capacity,
+    not memory, information, emotional experience, a promise or a person's feeling
+    of satiety.
+  boundaries:
+    includes: A materially bounded container object, with its own enduring physical
+      body, has a contextually fixed positive usable capacity for a relevant kind
+      of physical content. Both material roots describe that same container; its body
+      is distinct from what counts as contents. The capacity criterion and content
+      kind are contextual parameters, not a numerical amount supplied by this meaning.
+      Current contents, structural integrity, a sealed enclosure and suitability for
+      every kind of content are unspecified. The criterion is physical holding capacity,
+      not memory, information, emotional experience, a promise or a person's feeling
+      of satiety.
+    excludes: A numerical capacity inferred without being supplied; A data store,
+      proposition or feeling treated as a physical container; Changing the content
+      kind or capacity criterion midway through a comparison
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 80 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: A bottle has room for its relevant contents.
+    technical: MAT:000 is the container's own material substrate, and MAT:010 is that
+      same body considered as a distinct object. One positive capacity criterion and
+      one relevant content kind govern every specialization in this episode. Content
+      capacity is not a STR constituent slot and does not recast contents as parts
+      of the container's own body.
+    future_compound: Empty and full specialize the same contextual capacity without
+      becoming negations of each other.
+    counterexample: A promise lacks substance.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: ace0fc4ddd0c53a2a33e8fee956961a4aebfd9f5b249666d8f1f2a2b43d78885
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
@@ -5729,6 +6300,81 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: cc6d19387b62013464e0e8503d05ac8e8a26d06e009bbe56cf4118b27b20fb51
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:ace0fc4ddd0c53a2a33e8fee
+    definition_version: 1.0.0
+    node_id: h
+  edges: []
+  lexical_constraints:
+  - The container, content kind and positive capacity criterion are inherited unchanged
+    from the exact capacity foundation.
+  - Fullness is a relation between relevant contents and contextual capacity, not
+    runtime activation.
+  - Grammatical not full permits both partial contents and emptiness; it does not
+    select empty.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: relevant_physical_contents_at_capacity
+    sound_code: 82
+    added_definition: The same material container's relevant physical contents meet
+      or exceed its fixed contextual usable-capacity threshold, so there is no remaining
+      allowance for more of that content under that criterion. This need not mean
+      that every microscopic space is occupied, that the container is sealed, or that
+      overflowing, damage or a particular filling process occurred. A nonempty container
+      below the threshold is not full. Bodily satiety, intensity, completeness of
+      information and software capacity are separate meanings.
+    excludes:
+    - Any positive amount mistaken for full capacity
+    - An empty container assigned runtime state 1
+    - Feeling satisfied after eating, complete information or a full software queue
+  compound_id: CMP:d03beca450a29869aa6fd980
+  content_digest: d03beca450a29869aa6fd98054f0c587c98ea9f8efc57d34a0f7f7da212e3da0
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: relevant physical contents at capacity
+  english_glosses:
+  - relevant physical contents at capacity
+  invariant_definition: The same material container's relevant physical contents meet
+    or exceed its fixed contextual usable-capacity threshold, so there is no remaining
+    allowance for more of that content under that criterion. This need not mean that
+    every microscopic space is occupied, that the container is sealed, or that overflowing,
+    damage or a particular filling process occurred. A nonempty container below the
+    threshold is not full. Bodily satiety, intensity, completeness of information
+    and software capacity are separate meanings.
+  boundaries:
+    includes: The same material container's relevant physical contents meet or exceed
+      its fixed contextual usable-capacity threshold, so there is no remaining allowance
+      for more of that content under that criterion. This need not mean that every
+      microscopic space is occupied, that the container is sealed, or that overflowing,
+      damage or a particular filling process occurred. A nonempty container below
+      the threshold is not full. Bodily satiety, intensity, completeness of information
+      and software capacity are separate meanings.
+    excludes: Any positive amount mistaken for full capacity; An empty container assigned
+      runtime state 1; Feeling satisfied after eating, complete information or a full
+      software queue
+  collision_audit: reviews/physical_vocabulary_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 82 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_vocabulary_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_vocabulary_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: The bottle is full.
+    technical: The container, content kind and positive capacity criterion are inherited
+      unchanged from the exact capacity foundation. Fullness is a relation between
+      relevant contents and contextual capacity, not runtime activation. Grammatical
+      not full permits both partial contents and emptiness; it does not select empty.
+    future_compound: Full and empty remain distinct under negation, time and state-maintenance
+      constructions.
+    counterexample: The bottle contains a little water below its capacity.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: d03beca450a29869aa6fd98054f0c587c98ea9f8efc57d34a0f7f7da212e3da0
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

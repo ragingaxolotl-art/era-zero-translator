@@ -3,18 +3,41 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 560
-  lemma_count: 539
+  sense_count: 574
+  lemma_count: 553
   canonical_atom_senses: 324
-  canonical_compound_senses: 107
+  canonical_compound_senses: 115
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: '07857b7faebd53159404141633ce7a28d7b1e065cd1e76ef700ffab6dfa091e3'
+  compound_dictionary_fingerprint: 591962fb3cab25f19e67b8b7d47ae58bd80e02a30092e9a545f4230c6ef7d450
   semantic_ir_started: false
   translator_started: false
 senses:
+- lemma: absence of relevant physical contents
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  definition: The same material container has none of the relevant physical contents
+    under its fixed contextual capacity criterion. Its own body and contents of irrelevant
+    kinds, such as air in an otherwise empty bottle, are not counted. No vacuum, damage,
+    cleaning, previous emptying, usability or runtime state is asserted. A partly
+    filled container is not empty even though it is not full. Figurative emptiness,
+    a data container and emotional feeling are separate meanings.
+  sense_id: ENS:6b644037bd83d985b23623c1
+  display_form: absence of relevant physical contents
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Partly filled but not full; Vacuum or absence of the container's own material
+    body inferred from emptiness; An empty promise, emotional emptiness or an empty
+    software collection
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:0b60d4fb0ad6f69c4b7fd764
   lemma: active artifact generation
   display_form: active artifact generation
@@ -996,6 +1019,31 @@ senses:
   - all component restrictions are intended
   excluded_readings:
   - The gate moved in a gust while Mira watched.
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: application of physical pulling force
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:906075e53ffeb8edae29ed9c
+  definition: An actor exercises available physical work capacity by transmitting
+    a pulling force to a distinct material target through a grip or tension-bearing
+    physical connection. The force draws toward the actor-side of that connection,
+    rather than pressing the target away. The target need not move. The same actor
+    supplies the capacity and the influence in this episode; intention, strength,
+    duration and eventual displacement are unspecified. This contact-transmitted sense
+    does not include attraction by gravity or a field alone, obtaining software changes,
+    influence on a decision or a figurative withdrawal.
+  sense_id: ENS:912de1e933506ba3d7f4dbb6
+  display_form: application of physical pulling force
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Pushing away, even when the target ultimately moves toward the actor; Movement
+    without a transmitted pulling force; Gravity or field attraction alone; software,
+    persuasive or figurative pulling
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -2601,6 +2649,31 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: contextual physical content capacity
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+  definition: A materially bounded container object, with its own enduring physical
+    body, has a contextually fixed positive usable capacity for a relevant kind of
+    physical content. Both material roots describe that same container; its body is
+    distinct from what counts as contents. The capacity criterion and content kind
+    are contextual parameters, not a numerical amount supplied by this meaning. Current
+    contents, structural integrity, a sealed enclosure and suitability for every kind
+    of content are unspecified. The criterion is physical holding capacity, not memory,
+    information, emotional experience, a promise or a person's feeling of satiety.
+  sense_id: ENS:997726e13c940bd2b657c5be
+  display_form: contextual physical content capacity
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A numerical capacity inferred without being supplied; A data store, proposition
+    or feeling treated as a physical container; Changing the content kind or capacity
+    criterion midway through a comparison
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: continuation of a specified state
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -3459,6 +3532,109 @@ senses:
   confidence: authoritative
   controlled_input_allowed: true
   provenance: lexicon/atoms.yaml
+- lemma: downward physical displacement under gravity
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:a4f16f95fedfe546c18e7115
+  definition: 'A distinct material object completes a downward change of position
+    in the local gravitational frame, with gravity driving the descent and without
+    a supporting agent conducting a controlled lowering. The material object is exactly
+    the mover. This bounds the described displacement episode, not a destination or
+    the whole later fall: landing, injury, damage, free fall without resistance, an
+    external agent, deliberate action and a prior release are not asserted. An ongoing
+    aspect views the event internally without asserting its endpoint. Changes in a
+    price, rank, mood or software state are excluded.'
+  sense_id: ENS:c579b6e891371f9e9937f062
+  display_form: downward physical displacement under gravity
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A supported load deliberately conducted down by its carrier; Merely being low,
+    or moving upward or horizontally; A price, rank, mood or software state decreasing
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: drop
+  part_of_speech: verb
+  sense_key: physical_release_causing_a_fall
+  route: compound
+  target_id: CMP:31da7c021f7da53eed929076
+  definition: One linked event in which a holder releases a distinct material object
+    from a physical holding engagement and that release causes the same object to
+    undergo downward physical displacement under gravity. Release and falling are
+    phases of this one event, not two unrelated occurrences. The outer actor is the
+    former holder; the outer target is both the formerly held object and the falling
+    mover. Intention, negligence, landing, damage, a recipient and ownership transfer
+    are unspecified. Release onto a support that prevents any fall, continued controlled
+    lowering, a drop in price and abandoning a topic do not establish this meaning.
+  sense_id: ENS:b9c6513b003f1c9dc029b8f6
+  display_form: drop
+  surface_forms:
+  - drop
+  - drops
+  - dropped
+  - dropping
+  selection_cues:
+  - Nora dropped the box.
+  excluded_readings:
+  - Releasing an object that stays supported without falling
+  - A release and an unrelated fall, or different objects in the two events
+  - Controlled lowering, dropping a topic, deleting data or reducing a price
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
+- lemma: empty
+  part_of_speech: adjective
+  sense_key: absence_of_relevant_physical_contents
+  route: compound
+  target_id: CMP:7e3cdc51fe00e1c61e5e9f12
+  definition: The same material container has none of the relevant physical contents
+    under its fixed contextual capacity criterion. Its own body and contents of irrelevant
+    kinds, such as air in an otherwise empty bottle, are not counted. No vacuum, damage,
+    cleaning, previous emptying, usability or runtime state is asserted. A partly
+    filled container is not empty even though it is not full. Figurative emptiness,
+    a data container and emotional feeling are separate meanings.
+  sense_id: ENS:a12afb4375f19875b4f35c24
+  display_form: empty
+  surface_forms:
+  - empty
+  selection_cues:
+  - The bottle is empty.
+  excluded_readings:
+  - Partly filled but not full
+  - Vacuum or absence of the container's own material body inferred from emptiness
+  - An empty promise, emotional emptiness or an empty software collection
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
+- lemma: ending of a physical holding engagement
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:69f57af236cf82c134e3c51a
+  definition: A holder's previously maintained physical holding engagement with the
+    same distinct material object ends. The nested holding relation describes the
+    pre-phase; the nested cessation is the ending of that exact engagement. The former
+    holder and held object remain the two participants of this release. Neither continued
+    holding at the endpoint nor movement, falling, transfer, destruction, permanent
+    freedom, intention or a change of ownership is asserted. Ending a hold while another
+    support keeps the object still is included. Releasing software, information or
+    a claim, and granting permission without ending a physical hold, are different
+    meanings.
+  sense_id: ENS:d727fc984655e0bafe2296dd
+  display_form: ending of a physical holding engagement
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - An object moves while the same hold continues; Another holder takes custody without
+    ending this physical engagement; Publishing software, disclosing data, legal release
+    or permission alone
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:e9709ecd895fc934809b0d44
   lemma: enduring attentional capacity
   display_form: enduring attentional capacity
@@ -3885,6 +4061,35 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: fall
+  part_of_speech: verb
+  sense_key: downward_physical_displacement_under_gravity
+  route: compound
+  target_id: CMP:a4f16f95fedfe546c18e7115
+  definition: 'A distinct material object completes a downward change of position
+    in the local gravitational frame, with gravity driving the descent and without
+    a supporting agent conducting a controlled lowering. The material object is exactly
+    the mover. This bounds the described displacement episode, not a destination or
+    the whole later fall: landing, injury, damage, free fall without resistance, an
+    external agent, deliberate action and a prior release are not asserted. An ongoing
+    aspect views the event internally without asserting its endpoint. Changes in a
+    price, rank, mood or software state are excluded.'
+  sense_id: ENS:30bc66df9c30bd1cbe72f60c
+  display_form: fall
+  surface_forms:
+  - fall
+  - falls
+  - fell
+  - falling
+  selection_cues:
+  - The box fell.
+  excluded_readings:
+  - A supported load deliberately conducted down by its carrier
+  - Merely being low, or moving upward or horizontally
+  - A price, rank, mood or software state decreasing
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
 - lemma: fault that impairs an intended function
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -4156,6 +4361,31 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: full
+  part_of_speech: adjective
+  sense_key: relevant_physical_contents_at_capacity
+  route: compound
+  target_id: CMP:d03beca450a29869aa6fd980
+  definition: The same material container's relevant physical contents meet or exceed
+    its fixed contextual usable-capacity threshold, so there is no remaining allowance
+    for more of that content under that criterion. This need not mean that every microscopic
+    space is occupied, that the container is sealed, or that overflowing, damage or
+    a particular filling process occurred. A nonempty container below the threshold
+    is not full. Bodily satiety, intensity, completeness of information and software
+    capacity are separate meanings.
+  sense_id: ENS:a679c6a0b9c38fcbf5732b3c
+  display_form: full
+  surface_forms:
+  - full
+  selection_cues:
+  - The bottle is full.
+  excluded_readings:
+  - Any positive amount mistaken for full capacity
+  - An empty container assigned runtime state 1
+  - Feeling satisfied after eating, complete information or a full software queue
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
 - lemma: functionally broken object or process
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -5313,6 +5543,30 @@ senses:
   - all component restrictions are intended
   excluded_readings:
   - simple passive artifacts and natural energetic systems
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: maintained physical holding engagement
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:834a56d90e31b430990720ff
+  definition: A material holder maintains an actual physical engagement with a distinct
+    material object that constrains that object's position or motion through gripping,
+    restraint or load-bearing support. The object is the bounded material target,
+    and the holder supplies the active physical influence. The object need not be
+    stationary, wholly supported, owned or under the holder's practical custody. Intention
+    and exclusive control are unspecified. Touch or influence that does not maintain
+    such a holding constraint is insufficient.
+  sense_id: ENS:7a5d0790e1942387b807e97a
+  display_form: maintained physical holding engagement
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Touch without a maintained holding constraint; Practical custody, ownership or
+    permission without actual physical engagement; Remembering, reserving, delaying
+    or retaining information
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -8314,6 +8568,31 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: physical release causing a fall
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:31da7c021f7da53eed929076
+  definition: One linked event in which a holder releases a distinct material object
+    from a physical holding engagement and that release causes the same object to
+    undergo downward physical displacement under gravity. Release and falling are
+    phases of this one event, not two unrelated occurrences. The outer actor is the
+    former holder; the outer target is both the formerly held object and the falling
+    mover. Intention, negligence, landing, damage, a recipient and ownership transfer
+    are unspecified. Release onto a support that prevents any fall, continued controlled
+    lowering, a drop in price and abandoning a topic do not establish this meaning.
+  sense_id: ENS:28bb177afcbc078c535f9cff
+  display_form: physical release causing a fall
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Releasing an object that stays supported without falling; A release and an unrelated
+    fall, or different objects in the two events; Controlled lowering, dropping a
+    topic, deleting data or reducing a price
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:f9bd25cc5eb7e47f678a30ae
   lemma: physical repair
   display_form: physical repair
@@ -8822,6 +9101,35 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: pull
+  part_of_speech: verb
+  sense_key: application_of_physical_pulling_force
+  route: compound
+  target_id: CMP:906075e53ffeb8edae29ed9c
+  definition: An actor exercises available physical work capacity by transmitting
+    a pulling force to a distinct material target through a grip or tension-bearing
+    physical connection. The force draws toward the actor-side of that connection,
+    rather than pressing the target away. The target need not move. The same actor
+    supplies the capacity and the influence in this episode; intention, strength,
+    duration and eventual displacement are unspecified. This contact-transmitted sense
+    does not include attraction by gravity or a field alone, obtaining software changes,
+    influence on a decision or a figurative withdrawal.
+  sense_id: ENS:25c72b2161fc9b6aa588d90d
+  display_form: pull
+  surface_forms:
+  - pull
+  - pulls
+  - pulled
+  - pulling
+  selection_cues:
+  - Nora pulled the rope.
+  excluded_readings:
+  - Pushing away, even when the target ultimately moves toward the actor
+  - Movement without a transmitted pulling force
+  - Gravity or field attraction alone; software, persuasive or figurative pulling
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
 - lemma: push
   part_of_speech: verb
   sense_key: application_of_directed_physical_pressure
@@ -8936,6 +9244,60 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: release
+  part_of_speech: verb
+  sense_key: ending_of_a_physical_holding_engagement
+  route: compound
+  target_id: CMP:69f57af236cf82c134e3c51a
+  definition: A holder's previously maintained physical holding engagement with the
+    same distinct material object ends. The nested holding relation describes the
+    pre-phase; the nested cessation is the ending of that exact engagement. The former
+    holder and held object remain the two participants of this release. Neither continued
+    holding at the endpoint nor movement, falling, transfer, destruction, permanent
+    freedom, intention or a change of ownership is asserted. Ending a hold while another
+    support keeps the object still is included. Releasing software, information or
+    a claim, and granting permission without ending a physical hold, are different
+    meanings.
+  sense_id: ENS:5ee7027c8fccf1c03d5800c4
+  display_form: release
+  surface_forms:
+  - release
+  - releases
+  - released
+  - releasing
+  selection_cues:
+  - Nora released the rope.
+  excluded_readings:
+  - An object moves while the same hold continues
+  - Another holder takes custody without ending this physical engagement
+  - Publishing software, disclosing data, legal release or permission alone
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_vocabulary_batch_2026_11_22.json
+- lemma: relevant physical contents at capacity
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:d03beca450a29869aa6fd980
+  definition: The same material container's relevant physical contents meet or exceed
+    its fixed contextual usable-capacity threshold, so there is no remaining allowance
+    for more of that content under that criterion. This need not mean that every microscopic
+    space is occupied, that the container is sealed, or that overflowing, damage or
+    a particular filling process occurred. A nonempty container below the threshold
+    is not full. Bodily satiety, intensity, completeness of information and software
+    capacity are separate meanings.
+  sense_id: ENS:3ea174b7f35c0e6e4539f374
+  display_form: relevant physical contents at capacity
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Any positive amount mistaken for full capacity; An empty container assigned runtime
+    state 1; Feeling satisfied after eating, complete information or a full software
+    queue
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: remain valid
   part_of_speech: verb
   sense_key: continued_satisfaction_of_the_same_criterion
@@ -10167,6 +10529,13 @@ senses:
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
 lemma_index:
+  absence of relevant physical contents:
+    sense_ids:
+    - ENS:6b644037bd83d985b23623c1
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   active artifact generation:
     sense_ids:
     - ENS:0b60d4fb0ad6f69c4b7fd764
@@ -10548,6 +10917,13 @@ lemma_index:
   application of directed physical pressure:
     sense_ids:
     - ENS:e13272b3ea00a3393a943b08
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  application of physical pulling force:
+    sense_ids:
+    - ENS:912de1e933506ba3d7f4dbb6
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -11145,6 +11521,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  contextual physical content capacity:
+    sense_ids:
+    - ENS:997726e13c940bd2b657c5be
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   continuation of a specified state:
     sense_ids:
     - ENS:6320ec56cd502aec8fdf6bee
@@ -11488,6 +11871,34 @@ lemma_index:
     direct_target_count: 1
     routes:
     - atom
+  downward physical displacement under gravity:
+    sense_ids:
+    - ENS:c579b6e891371f9e9937f062
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  drop:
+    sense_ids:
+    - ENS:b9c6513b003f1c9dc029b8f6
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  empty:
+    sense_ids:
+    - ENS:a12afb4375f19875b4f35c24
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  ending of a physical holding engagement:
+    sense_ids:
+    - ENS:d727fc984655e0bafe2296dd
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   enduring attentional capacity:
     sense_ids:
     - ENS:e9709ecd895fc934809b0d44
@@ -11650,6 +12061,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  fall:
+    sense_ids:
+    - ENS:30bc66df9c30bd1cbe72f60c
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   fault that impairs an intended function:
     sense_ids:
     - ENS:949acd48498840f3ec4c7510
@@ -11750,6 +12168,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - gap
+  full:
+    sense_ids:
+    - ENS:a679c6a0b9c38fcbf5732b3c
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   functionally broken object or process:
     sense_ids:
     - ENS:8860ac1540798db59b1fe0d8
@@ -12175,6 +12600,13 @@ lemma_index:
   machine:
     sense_ids:
     - ENS:5aabc680ae2a662166b4f678
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  maintained physical holding engagement:
+    sense_ids:
+    - ENS:7a5d0790e1942387b807e97a
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -13296,6 +13728,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  physical release causing a fall:
+    sense_ids:
+    - ENS:28bb177afcbc078c535f9cff
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   physical repair:
     sense_ids:
     - ENS:f9bd25cc5eb7e47f678a30ae
@@ -13492,6 +13931,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  pull:
+    sense_ids:
+    - ENS:25c72b2161fc9b6aa588d90d
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   push:
     sense_ids:
     - ENS:a0cf37148a0d7a3f4686b092
@@ -13524,6 +13970,20 @@ lemma_index:
   recur:
     sense_ids:
     - ENS:11f92112f316aceca0a0d70b
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  release:
+    sense_ids:
+    - ENS:5ee7027c8fccf1c03d5800c4
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  relevant physical contents at capacity:
+    sense_ids:
+    - ENS:3ea174b7f35c0e6e4539f374
     requires_disambiguation: false
     direct_target_count: 1
     routes:

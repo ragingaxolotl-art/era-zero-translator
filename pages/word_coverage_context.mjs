@@ -1,12 +1,13 @@
-import {properties,isMaterialTarget} from './story_qualities.mjs';
+import {properties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-vocabulary-1';
 // Some compounds have multiword English names. Their component words alone can
 // suggest unrelated predicates (for example "used" inside "open for use").
-import {storyWords} from './story_words.mjs?v=state-adjectives-1';
+import {storyWords} from './story_words.mjs?v=physical-vocabulary-1';
 import {mentionsOpeningPassage} from './passage_nouns.mjs';
 const phraseHeads=new Map(storyWords.filter(w=>w.word.includes(' ')).map(w=>[w.id,w.word]));
 const ids=new Map(storyWords.map(w=>[w.word,w.id]));
 const opening=ids.get('open');
-const physicalVerbs=new Set(['push','displace','lift','lower'].map(w=>ids.get(w)));
+const physicalVerbs=new Set(Object.keys(physicalActionLabels).map(w=>ids.get(w)));
+const contentProperties=new Set(['empty','full'].map(w=>ids.get(w)));
 function hasState(words,maintained){
   const verb=maintained?/^(?:keep|keeps|kept|keeping|maintains?|maintained|maintaining)$/:/^(?:stays?|stayed|staying|remains?|remained|remaining)$/;
   return words.some((w,i)=>{
@@ -34,12 +35,14 @@ export function contextsForWords(input,senses){
   const allowedPhrases=new Set([...forms].filter(([,values])=>[...values].some(f=>padded.includes(' '+f+' '))).map(([id])=>id));
   const physical=mentionsOpeningPassage(words);
   const hasPhysicalObject=words.some(w=>isMaterialTarget(w));
+  const hasContainer=words.some(w=>isPhysicalContainer(w));
   const continuing=hasState(words,false),maintaining=hasState(words,true);
   return sense=>{
     if(!sense.target_id||input===sense.lemma.toLowerCase())return true;
     if(sense.target_id===opening&&!physical)return false;
     if(sense.target_id===ids.get('stay')&&!continuing || sense.target_id===ids.get('keep')&&!maintaining)return false;
     if(physicalVerbs.has(sense.target_id)&&!hasPhysicalObject)return false;
+    if(contentProperties.has(sense.target_id)&&!hasContainer)return false;
     return !forms.has(sense.target_id)||allowedPhrases.has(sense.target_id);
   };
 }

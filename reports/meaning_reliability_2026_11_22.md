@@ -23,6 +23,8 @@ A clean-checkout run of **all 252 implementation checks passed** at source revis
 
 The reproducible checks are [sentence scopes](../tests/sentence_scope_reliability_test.mjs), [love inverse](../tests/love_semantic_inverse_test.mjs), and [browser flow](../tools/check_sentence_flow.mjs). Browser evidence is retained in `reliability_2026_11_22/` beside this report. Broader release regression results are recorded there separately.
 
+The deployment follow-up passed **all 259 checks** from a clean checkout at `25a01b13863c7193820d9c3e191e766f770feae1`. It fixes a stale song-control test fixture and includes every deployment sentence test in the broad runner. Both published sites passed the browser/export checks after their successful deployments. The [complete regression](reliability_2026_11_22/deployment-complete-regression.json), [live standalone](reliability_2026_11_22/live-standalone.json) and [live Lore](reliability_2026_11_22/live-lore.json) results retain this evidence.
+
 ## Remaining boundaries
 
 This repair adds no new canonical words. Missing verbs, adjectives and sentence constructions still need the [ordered vocabulary and grammar work](../docs/full-translator-next-steps.md). Bound personal compounds do not yet support the ability enclosure; they are rejected rather than assigned an incorrect modality. Other specialized preview paths retain their own draft status and should be included as readiness checks expand.

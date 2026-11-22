@@ -3,6 +3,6 @@
 Status: **APPROVED — CANONICAL CORE RELEASE**  
 Version: **1.0.0**
 
-This approval covers 560 English sense records across 539 normalized lemmas. It preserves all 324 atomic meanings and all 107 approved compound graphs unchanged. Exact canonical labels are deterministic controlled inputs; polysemous and unsupported everyday readings require disambiguation, grammar, semantic IR, or a gap result.
+This approval covers 574 English sense records across 553 normalized lemmas. It preserves all 324 atomic meanings and all 115 approved compound graphs unchanged. Exact canonical labels are deterministic controlled inputs; polysemous and unsupported everyday readings require disambiguation, grammar, semantic IR, or a gap result.
 
 Next authorized gate: **Gate 4D — coverage and ambiguity report**. General-English translation remains unauthorized.

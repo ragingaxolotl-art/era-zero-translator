@@ -1162,6 +1162,57 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: d943934e41bbbaaaaba6b0454717b52771b2ecb2b35376d29158977f8eee0c68
+    - sense_id: ENS:997726e13c940bd2b657c5be
+      lemma: contextual physical content capacity
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+      definition: A materially bounded container object, with its own enduring physical
+        body, has a contextually fixed positive usable capacity for a relevant kind of
+        physical content. Both material roots describe that same container; its body is
+        distinct from what counts as contents. The capacity criterion and content kind
+        are contextual parameters, not a numerical amount supplied by this meaning. Current
+        contents, structural integrity, a sealed enclosure and suitability for every kind
+        of content are unspecified. The criterion is physical holding capacity, not memory,
+        information, emotional experience, a promise or a person's feeling of satiety.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 0.085
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 2
+      canonical_label: contextual physical content capacity
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: compound
+            target_id: CMP:ace0fc4ddd0c53a2a33e8fee
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:0d85316c94b6d1eac10a331c
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 0d85316c94b6d1eac10a331cfd8e75213a0669b304b7ef6305c2548b64b6ba3b
     - sense_id: ENS:17debe254c0cf35f28cdaa21
       lemma: active systemic material change
       sense_key: canonical_atom_label
@@ -1248,49 +1299,6 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: 4e663167274d99b6c36dfbdc9449684a01a33d92c328859cd1980772568a8108
-    - sense_id: ENS:21c4bbd3d3af50b3f1edbfac
-      lemma: potential focal material change
-      sense_key: canonical_atom_label
-      route: atom
-      target_id: MAT:102
-      definition: A possible physical-state change localized within the focal material
-        bearer that is not active or completed.
-      selection_cues: *10
-      score: 0.065
-      confidence: low
-      match_type: token_overlap
-      evidence:
-        lexical_overlap: 1
-        selection_cue_overlap: 0
-        definition_overlap: 1
-      canonical_label: potential focal material change
-      required_roles: []
-      semantic_ir_options:
-      - runtime_state: 1
-        semantic_ir:
-          ir_version: '1.0'
-          root_clause: n001
-          speech_act: assertion
-          nodes:
-          - node_id: n001
-            kind: clause
-            clause_type: predication
-          - node_id: n002
-            kind: lexical_occurrence
-            target_type: atom
-            target_id: MAT:102
-            runtime_state:
-              code: 1
-          edges:
-          - edge_id: e001
-            type: centers
-            from: n002
-            to: n001
-          discourse_constraints: {}
-          utterance_id: UTT:cef672f52022ac67541711fb
-          serialization:
-            canonical_format: EZIR-JSON-1
-            content_digest: cef672f52022ac67541711fb831e888e561e8cecb44047e661cf727531ad5dcb
     decision:
       auto_resolution_allowed: false
       requires_clarification: true

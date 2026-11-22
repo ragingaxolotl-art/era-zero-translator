@@ -1,0 +1,82 @@
+[
+  {
+    "word": "pull", "title": "application of physical pulling force", "code": 75,
+    "parts": ["MAT:201", "MAT:211"],
+    "definition": "An actor exercises available physical work capacity by transmitting a pulling force to a distinct material target through a grip or tension-bearing physical connection. The force draws toward the actor-side of that connection, rather than pressing the target away. The target need not move. The same actor supplies the capacity and the influence in this episode; intention, strength, duration and eventual displacement are unspecified. This contact-transmitted sense does not include attraction by gravity or a field alone, obtaining software changes, influence on a decision or a figurative withdrawal.",
+    "constraints": ["The actor supplying work capacity is the source of the same pulling influence; the target is distinct from that actor.", "Direction describes the transmitted force, not a guaranteed change in target position."],
+    "excludes": ["Pushing away, even when the target ultimately moves toward the actor", "Movement without a transmitted pulling force", "Gravity or field attraction alone; software, persuasive or figurative pulling"],
+    "example": "Nora pulled the rope.", "near": "Nora pushed a cart away; the cart later rolled back.",
+    "reuse": "Reuse this force meaning before adding a guaranteed displacement or a destination.",
+    "forms": ["pull", "pulls", "pulled", "pulling"], "pos": "verb", "everyday": "Applies pulling force; movement is not guaranteed"
+  },
+  {
+    "word": "physical holding foundation", "title": "maintained physical holding engagement", "code": 76,
+    "parts": ["MAT:010", "MAT:211"],
+    "definition": "A material holder maintains an actual physical engagement with a distinct material object that constrains that object's position or motion through gripping, restraint or load-bearing support. The object is the bounded material target, and the holder supplies the active physical influence. The object need not be stationary, wholly supported, owned or under the holder's practical custody. Intention and exclusive control are unspecified. Touch or influence that does not maintain such a holding constraint is insufficient.",
+    "constraints": ["MAT:010 identifies the held object; MAT:211 relates the holder to that same distinct object.", "The constraint and physical influence are one engagement, not unrelated simultaneous conditions."],
+    "excludes": ["Touch without a maintained holding constraint", "Practical custody, ownership or permission without actual physical engagement", "Remembering, reserving, delaying or retaining information"],
+    "example": "A clamp physically holds the board.", "near": "Nora owns a box stored elsewhere.",
+    "reuse": "A release can end this same holding engagement without implying movement or transfer.",
+    "forms": [], "pos": "noun_phrase", "everyday": "Maintains a grip, restraint or load-bearing hold"
+  },
+  {
+    "word": "release", "title": "ending of a physical holding engagement", "code": 77,
+    "parts": ["maintained physical holding engagement", "cessation of an occurrence"],
+    "definition": "A holder's previously maintained physical holding engagement with the same distinct material object ends. The nested holding relation describes the pre-phase; the nested cessation is the ending of that exact engagement. The former holder and held object remain the two participants of this release. Neither continued holding at the endpoint nor movement, falling, transfer, destruction, permanent freedom, intention or a change of ownership is asserted. Ending a hold while another support keeps the object still is included. Releasing software, information or a claim, and granting permission without ending a physical hold, are different meanings.",
+    "constraints": ["The outer actor is the holder in the nested pre-phase; the outer target is that same held material object.", "The holding relation is the occurrence that ceases. It is not an independent current-state assertion outside the release event or its surrounding scopes.", "No nested component has an independent runtime state or speech-time assertion."],
+    "excludes": ["An object moves while the same hold continues", "Another holder takes custody without ending this physical engagement", "Publishing software, disclosing data, legal release or permission alone"],
+    "example": "Nora released the rope.", "near": "Nora loosened the grip but continued holding the rope.",
+    "reuse": "Combine this exact release with falling of the same object to define physical dropping.",
+    "forms": ["release", "releases", "released", "releasing"], "pos": "verb", "everyday": "Ends a physical hold; motion is unspecified"
+  },
+  {
+    "word": "fall", "title": "downward physical displacement under gravity", "code": 78,
+    "parts": ["MAT:010", "MOV:120"],
+    "definition": "A distinct material object completes a downward change of position in the local gravitational frame, with gravity driving the descent and without a supporting agent conducting a controlled lowering. The material object is exactly the mover. This bounds the described displacement episode, not a destination or the whole later fall: landing, injury, damage, free fall without resistance, an external agent, deliberate action and a prior release are not asserted. An ongoing aspect views the event internally without asserting its endpoint. Changes in a price, rank, mood or software state are excluded.",
+    "constraints": ["The material target of MAT:010 is the mover of MOV:120 in the same displacement episode.", "Downward direction is relative to local gravity; no arrival or contact with a surface is supplied by the movement root.", "The root's movement phase, grammatical aspect, tense and runtime ending are separate."],
+    "excludes": ["A supported load deliberately conducted down by its carrier", "Merely being low, or moving upward or horizontally", "A price, rank, mood or software state decreasing"],
+    "example": "The box fell.", "near": "Nora steadily lowered a supported box.",
+    "reuse": "A drop links a prior release to this same object's gravity-driven displacement.",
+    "forms": ["fall", "falls", "fell", "falling"], "pos": "verb", "everyday": "Moves downward under gravity; landing is unspecified"
+  },
+  {
+    "word": "drop", "title": "physical release causing a fall", "code": 79,
+    "parts": ["ending of a physical holding engagement", "downward physical displacement under gravity"],
+    "definition": "One linked event in which a holder releases a distinct material object from a physical holding engagement and that release causes the same object to undergo downward physical displacement under gravity. Release and falling are phases of this one event, not two unrelated occurrences. The outer actor is the former holder; the outer target is both the formerly held object and the falling mover. Intention, negligence, landing, damage, a recipient and ownership transfer are unspecified. Release onto a support that prevents any fall, continued controlled lowering, a drop in price and abandoning a topic do not establish this meaning.",
+    "constraints": ["The actor is the nested release's holder; the target is shared by its held object and the nested fall's mover.", "Ending the hold causes this fall. Mere temporal order or two different objects is insufficient.", "Both nested events remain under the outer negation, time, uncertainty, ability, aspect and runtime interpretation; neither is asserted separately."],
+    "excludes": ["Releasing an object that stays supported without falling", "A release and an unrelated fall, or different objects in the two events", "Controlled lowering, dropping a topic, deleting data or reducing a price"],
+    "example": "Nora dropped the box.", "near": "Nora released the box onto a shelf and it stayed still.",
+    "reuse": "Reuse this linked event before adding an impact, resulting damage or a destination.",
+    "forms": ["drop", "drops", "dropped", "dropping"], "pos": "verb", "everyday": "Releases the target and thereby makes it fall"
+  },
+  {
+    "word": "physical content capacity foundation", "title": "contextual physical content capacity", "code": 80,
+    "parts": ["MAT:000", "MAT:010"],
+    "definition": "A materially bounded container object, with its own enduring physical body, has a contextually fixed positive usable capacity for a relevant kind of physical content. Both material roots describe that same container; its body is distinct from what counts as contents. The capacity criterion and content kind are contextual parameters, not a numerical amount supplied by this meaning. Current contents, structural integrity, a sealed enclosure and suitability for every kind of content are unspecified. The criterion is physical holding capacity, not memory, information, emotional experience, a promise or a person's feeling of satiety.",
+    "constraints": ["MAT:000 is the container's own material substrate, and MAT:010 is that same body considered as a distinct object.", "One positive capacity criterion and one relevant content kind govern every specialization in this episode.", "Content capacity is not a STR constituent slot and does not recast contents as parts of the container's own body."],
+    "excludes": ["A numerical capacity inferred without being supplied", "A data store, proposition or feeling treated as a physical container", "Changing the content kind or capacity criterion midway through a comparison"],
+    "example": "A bottle has room for its relevant contents.", "near": "A promise lacks substance.",
+    "reuse": "Empty and full specialize the same contextual capacity without becoming negations of each other.",
+    "forms": [], "pos": "noun_phrase", "everyday": "Has a contextual physical capacity for contents"
+  },
+  {
+    "word": "empty", "title": "absence of relevant physical contents", "code": 81,
+    "parts": ["contextual physical content capacity"],
+    "definition": "The same material container has none of the relevant physical contents under its fixed contextual capacity criterion. Its own body and contents of irrelevant kinds, such as air in an otherwise empty bottle, are not counted. No vacuum, damage, cleaning, previous emptying, usability or runtime state is asserted. A partly filled container is not empty even though it is not full. Figurative emptiness, a data container and emotional feeling are separate meanings.",
+    "constraints": ["The container and content criterion are inherited unchanged from the exact capacity foundation.", "Absence concerns relevant contents, not the existence, activation or runtime status of the container.", "Grammatical not empty negates absence; it does not assert full capacity."],
+    "excludes": ["Partly filled but not full", "Vacuum or absence of the container's own material body inferred from emptiness", "An empty promise, emotional emptiness or an empty software collection"],
+    "example": "The bottle is empty.", "near": "The bottle contains a little water but is not full.",
+    "reuse": "The property can describe a subject, object or a maintained state.",
+    "forms": ["empty"], "pos": "adjective", "everyday": "Contains none of the relevant physical contents"
+  },
+  {
+    "word": "full", "title": "relevant physical contents at capacity", "code": 82,
+    "parts": ["contextual physical content capacity"],
+    "definition": "The same material container's relevant physical contents meet or exceed its fixed contextual usable-capacity threshold, so there is no remaining allowance for more of that content under that criterion. This need not mean that every microscopic space is occupied, that the container is sealed, or that overflowing, damage or a particular filling process occurred. A nonempty container below the threshold is not full. Bodily satiety, intensity, completeness of information and software capacity are separate meanings.",
+    "constraints": ["The container, content kind and positive capacity criterion are inherited unchanged from the exact capacity foundation.", "Fullness is a relation between relevant contents and contextual capacity, not runtime activation.", "Grammatical not full permits both partial contents and emptiness; it does not select empty."],
+    "excludes": ["Any positive amount mistaken for full capacity", "An empty container assigned runtime state 1", "Feeling satisfied after eating, complete information or a full software queue"],
+    "example": "The bottle is full.", "near": "The bottle contains a little water below its capacity.",
+    "reuse": "Full and empty remain distinct under negation, time and state-maintenance constructions.",
+    "forms": ["full"], "pos": "adjective", "everyday": "Relevant physical contents reach the contextual capacity"
+  }
+]
