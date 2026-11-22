@@ -1,73 +1,73 @@
-import {sentenceReadiness} from './sentence_readiness.mjs?v=physical-holding-1';
-import {storedStoryAdjectives} from './story_saved_adjectives.mjs';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=contextual-width-1';
+import {storedStoryAdjectives} from './story_saved_adjectives.mjs?v=contextual-width-1';
 import {everydayMeaning,routeName} from './everyday.mjs';
-import {storyReading} from './story_readings.mjs?v=physical-holding-1';
-import {showStoryControls} from './story_controls.mjs?v=physical-holding-1';
+import {storyReading} from './story_readings.mjs?v=contextual-width-1';
+import {showStoryControls} from './story_controls.mjs?v=contextual-width-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
-import {dictionaryClausePlan,recognizedClausePredicate} from './dictionary_clauses.mjs?v=physical-holding-1';
-import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=physical-holding-1';
-import {compactChordMidi} from './compact_chords.mjs?v=state-adjectives-1';
-import {mountSongEditor} from './song_editor.mjs?v=physical-holding-1';
-import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=physical-holding-1';
-import {informationPassagePlan} from './information_passage.mjs';
-import {faultCorrectionPlan} from './fault_correction.mjs?v=physical-holding-1';
-import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs?v=physical-holding-1';
-import {conversationTargets} from './conversation_targets.mjs?v=physical-holding-1';
+import {dictionaryClausePlan,recognizedClausePredicate} from './dictionary_clauses.mjs?v=contextual-width-1';
+import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=contextual-width-1';
+import {compactChordMidi} from './compact_chords.mjs?v=contextual-width-1';
+import {mountSongEditor} from './song_editor.mjs?v=contextual-width-1';
+import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=contextual-width-1';
+import {informationPassagePlan} from './information_passage.mjs?v=contextual-width-1';
+import {faultCorrectionPlan} from './fault_correction.mjs?v=contextual-width-1';
+import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs?v=contextual-width-1';
+import {conversationTargets} from './conversation_targets.mjs?v=contextual-width-1';
 import {takeLocalExample,queueLocalExample} from './local_compound_examples.mjs';
-import {localWordPronounPlan} from './local_compound_pronouns.mjs?v=physical-holding-1';
-import {loadLocalCompounds} from './local_compounds.mjs';
-import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs?v=physical-holding-1';
-import {mountLocalEnglishControls} from './local_english_controls.mjs?v=physical-holding-1';
-import {createLocalCompoundPlayer} from './local_compound_player.mjs';
-import {desiredAvailabilityPlan,desiredAvailabilityPronounPlan,composeDesiredAvailability} from './desired_availability.mjs';
-import {midiFromDesiredAvailability} from './desired_availability_music.mjs';
-import {availabilityPlan,availabilityPronounPlan,composeAvailabilitySentence} from './availability_sentences.mjs';
-import {midiFromCustodyOpportunity} from './custody_opportunity_music.mjs';
-import {composeObjectDesiredOwnership} from './object_desired_ownership.mjs?v=physical-holding-1';
-import {desiredOwnershipPlan,desiredOwnershipPronounPlan,composeDesiredOwnership} from './desired_ownership.mjs';
-import {midiFromDesiredOwnership} from './desired_ownership_music.mjs';
-import {ownershipPlan,ownershipPronounPlan,composeOwnershipSentence} from './ownership_sentences.mjs';
-import {midiFromOwnership} from './ownership_music.mjs';
-import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs?v=physical-holding-1';
-import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs';
-import {midiFromDesiredDrinking} from './desired_drinking_music.mjs';
-import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs';
-import {midiFromDrinking} from './drinking_music.mjs';
-import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs?v=physical-holding-1';
-import {painPreferencePlan,composePainPreference} from './pain_preference.mjs';
-import {midiFromPainPreference} from './pain_preference_music.mjs';
-import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs';
-import {midiFromPainComparison} from './pain_comparison_music.mjs';
-import {painStimulusPlan,painStimulusPronounPlan,composePainStimulusSentence} from './pain_stimulus_sentences.mjs';
-import {midiFromPainStimulus} from './pain_stimulus_music.mjs';
-import {painMeaningPlan,painPronounPlan,composePainMeaning} from './pain_meaning.mjs';
-import {midiFromPain} from './pain_music.mjs';
-import {cognitiveConjunctionPlan,cognitiveClauseChoicePlan,composeCognitiveConjunction} from './cognitive_conjunction.mjs';
-import {midiFromCognitiveConjunction} from './cognitive_conjunction_music.mjs?v=physical-holding-1';
-import {curiosityInterpretationPlan,curiosityPronounPlan,composeCuriosity} from './curiosity.mjs';
-import {midiFromCuriosity} from './curiosity_music.mjs';
-import {routeLearningInterpretationPlan,routeLearningPronounPlan,composeRouteLearning} from './route_learning.mjs';
-import {midiFromRouteLearning} from './route_learning_music.mjs';
-import {parseCameToUnderstand,composeCameToUnderstand} from './understanding_acquisition.mjs';
-import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs';
-import {understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent} from './understanding_content.mjs';
-import {midiFromUnderstanding} from './understanding_music.mjs';
+import {localWordPronounPlan} from './local_compound_pronouns.mjs?v=contextual-width-1';
+import {loadLocalCompounds} from './local_compounds.mjs?v=contextual-width-1';
+import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs?v=contextual-width-1';
+import {mountLocalEnglishControls} from './local_english_controls.mjs?v=contextual-width-1';
+import {createLocalCompoundPlayer} from './local_compound_player.mjs?v=contextual-width-1';
+import {desiredAvailabilityPlan,desiredAvailabilityPronounPlan,composeDesiredAvailability} from './desired_availability.mjs?v=contextual-width-1';
+import {midiFromDesiredAvailability} from './desired_availability_music.mjs?v=contextual-width-1';
+import {availabilityPlan,availabilityPronounPlan,composeAvailabilitySentence} from './availability_sentences.mjs?v=contextual-width-1';
+import {midiFromCustodyOpportunity} from './custody_opportunity_music.mjs?v=contextual-width-1';
+import {composeObjectDesiredOwnership} from './object_desired_ownership.mjs?v=contextual-width-1';
+import {desiredOwnershipPlan,desiredOwnershipPronounPlan,composeDesiredOwnership} from './desired_ownership.mjs?v=contextual-width-1';
+import {midiFromDesiredOwnership} from './desired_ownership_music.mjs?v=contextual-width-1';
+import {ownershipPlan,ownershipPronounPlan,composeOwnershipSentence} from './ownership_sentences.mjs?v=contextual-width-1';
+import {midiFromOwnership} from './ownership_music.mjs?v=contextual-width-1';
+import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs?v=contextual-width-1';
+import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs?v=contextual-width-1';
+import {midiFromDesiredDrinking} from './desired_drinking_music.mjs?v=contextual-width-1';
+import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs?v=contextual-width-1';
+import {midiFromDrinking} from './drinking_music.mjs?v=contextual-width-1';
+import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs?v=contextual-width-1';
+import {painPreferencePlan,composePainPreference} from './pain_preference.mjs?v=contextual-width-1';
+import {midiFromPainPreference} from './pain_preference_music.mjs?v=contextual-width-1';
+import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs?v=contextual-width-1';
+import {midiFromPainComparison} from './pain_comparison_music.mjs?v=contextual-width-1';
+import {painStimulusPlan,painStimulusPronounPlan,composePainStimulusSentence} from './pain_stimulus_sentences.mjs?v=contextual-width-1';
+import {midiFromPainStimulus} from './pain_stimulus_music.mjs?v=contextual-width-1';
+import {painMeaningPlan,painPronounPlan,composePainMeaning} from './pain_meaning.mjs?v=contextual-width-1';
+import {midiFromPain} from './pain_music.mjs?v=contextual-width-1';
+import {cognitiveConjunctionPlan,cognitiveClauseChoicePlan,composeCognitiveConjunction} from './cognitive_conjunction.mjs?v=contextual-width-1';
+import {midiFromCognitiveConjunction} from './cognitive_conjunction_music.mjs?v=contextual-width-1';
+import {curiosityInterpretationPlan,curiosityPronounPlan,composeCuriosity} from './curiosity.mjs?v=contextual-width-1';
+import {midiFromCuriosity} from './curiosity_music.mjs?v=contextual-width-1';
+import {routeLearningInterpretationPlan,routeLearningPronounPlan,composeRouteLearning} from './route_learning.mjs?v=contextual-width-1';
+import {midiFromRouteLearning} from './route_learning_music.mjs?v=contextual-width-1';
+import {parseCameToUnderstand,composeCameToUnderstand} from './understanding_acquisition.mjs?v=contextual-width-1';
+import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs?v=contextual-width-1';
+import {understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent} from './understanding_content.mjs?v=contextual-width-1';
+import {midiFromUnderstanding} from './understanding_music.mjs?v=contextual-width-1';
 import {entryModalChoices} from './entry_modality.mjs';
-import {parseLearnedWhether,composeLearnedWhether,learnedWhetherPronounPlan} from './learned_whether.mjs';
-import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs';
-import {createAcquisitionBundle,verifyAcquisitionBundle} from './acquisition_bundle.mjs';
-import {notesFromMidi} from './performance_codec.mjs';
-import {quantifiedActivityPlan,parseQuantifiedPropertySentence,composeQuantifiedPropertySentence} from './quantified_sentences.mjs';
-import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs';
-import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs';
-import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs';
-import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=1.15.0';
-import{analyzeEnglish}from'./english.mjs?v=physical-holding-1';
+import {parseLearnedWhether,composeLearnedWhether,learnedWhetherPronounPlan} from './learned_whether.mjs?v=contextual-width-1';
+import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs?v=contextual-width-1';
+import {createAcquisitionBundle,verifyAcquisitionBundle} from './acquisition_bundle.mjs?v=contextual-width-1';
+import {notesFromMidi} from './performance_codec.mjs?v=contextual-width-1';
+import {quantifiedActivityPlan,parseQuantifiedPropertySentence,composeQuantifiedPropertySentence} from './quantified_sentences.mjs?v=contextual-width-1';
+import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs?v=contextual-width-1';
+import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs?v=contextual-width-1';
+import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs?v=contextual-width-1';
+import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=contextual-width-1';
+import{analyzeEnglish}from'./english.mjs?v=contextual-width-1';
 import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.15.0';
-import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=1.15.0';
+import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=contextual-width-1';
 import{recognitionForTarget}from'./recognition.mjs?v=1.15.0';
-import{midiFromPerformance,verifyPerformanceMidi}from'./performance_codec.mjs?v=1.15.0';
-import{wavFromPerformance,verifyPerformancePcm}from'./performance_audio.mjs?v=1.15.0';
+import{midiFromPerformance,verifyPerformanceMidi}from'./performance_codec.mjs?v=contextual-width-1';
+import{wavFromPerformance,verifyPerformancePcm}from'./performance_audio.mjs?v=contextual-width-1';
 import{createProposal,emptyQueue,loadQueue,saveQueue,addProposal,reviewProposal,approvedLocalSenses,validateQueue}from'./concept_intake.mjs?v=1.15.0';
 import{VOICE_PROFILES,voiceProfile,scheduleVoiceTone}from'./voices.mjs?v=1.15.0';
 
@@ -113,7 +113,7 @@ $('analyzeButton').addEventListener('click',analyze);
 $('sourceInput').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter')analyze()});
 
 async function sentenceTemplate(target){return state.data.compound_plans?.[target]?.expanded.nodes.some(node=>node.kind==='slot')?{authority:state.data}:{...(await resolutionDocument(target)).variants['assertion:1'],authority:state.data}}
-async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(await showWholePassage(input))return;if(desiredDrinkingPlan(input)||desiredDrinkingPronounPlan(input)){showDrinkingPreview(input,{desired:true});return}if(desiredAvailabilityPlan(input)||desiredAvailabilityPronounPlan(input)){showAvailabilityPreview(input,{desired:true});return;}if(availabilityPlan(input)||availabilityPronounPlan(input)){showAvailabilityPreview(input);return;}if(desiredOwnershipPlan(input)||desiredOwnershipPronounPlan(input)){showOwnershipPreview(input,{desired:true});return;}if(ownershipPlan(input)||ownershipPronounPlan(input)){showOwnershipPreview(input);return;}if(drinkingPlan(input)||drinkingPronounPlan(input)){showDrinkingPreview(input);return}if(painPreferencePlan(input)){showPainPreferencePreview(input);return}if(painComparisonPlan(input)||painComparisonPronounPlan(input)){showPainComparisonPreview(input);return}if(painStimulusPlan(input)||painStimulusPronounPlan(input)){showPainStimulusPreview(input);return}if(painMeaningPlan(input)||painPronounPlan(input)){showPainPreview(input);return}if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}if(curiosityInterpretationPlan(input)||curiosityPronounPlan(input)){showCuriosityPreview(input);return}if(routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)){showRouteLearningPreview(input);return}if(parseCameToUnderstand(input)){showUnderstandingPreview(input);return}if(understandingInterpretationPlan(input)||understandingPronounPlan(input)){showUnderstandingPreview(input);return}if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}const activity=quantifiedActivityPlan(input);if(activity){showQuantifiedPreview(input,activity);return;}if(!parseNamedSentence(input)&&parseQuantifiedPropertySentence(input)){showQuantifiedPreview(input);return}if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='entry_modality'){showEntryModality(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='physical_entry'){showPhysicalEntry(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='luminance_comparison'){showBrightnessComparison(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));if($('sourceInput').value.trim()!==input||state.mode!=='general')return;state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}if(await showSavedSentence(input))return;if($('sourceInput').value.trim()!==input||state.mode!=='general')return;const help=helpCareReading(input);if(help){showHelpReading(input,help);return;}if(await showDictionaryClause(input))return;const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)||needsWholeReading(input,result)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;if(!result.decision.reasons.includes('incomplete_sentence_construction'))result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}await showAnalysis(result);if(state.analysis!==result)return;if(result.decision.auto_resolution_allowed&&!result.term_coverage.some(item=>state.wordSelections.has(item.token_index)&&state.wordSelections.get(item.token_index)!==item.recommended_sense_id)){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){if($('sourceInput').value.trim()===input)showError(error)}finally{$('analyzeButton').disabled=false}}
+async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(await showWholePassage(input))return;if(desiredDrinkingPlan(input)||desiredDrinkingPronounPlan(input)){showDrinkingPreview(input,{desired:true});return}if(desiredAvailabilityPlan(input)||desiredAvailabilityPronounPlan(input)){showAvailabilityPreview(input,{desired:true});return;}if(availabilityPlan(input)||availabilityPronounPlan(input)){showAvailabilityPreview(input);return;}if(desiredOwnershipPlan(input)||desiredOwnershipPronounPlan(input)){showOwnershipPreview(input,{desired:true});return;}if(ownershipPlan(input)||ownershipPronounPlan(input)){showOwnershipPreview(input);return;}if(drinkingPlan(input)||drinkingPronounPlan(input)){showDrinkingPreview(input);return}if(painPreferencePlan(input)){showPainPreferencePreview(input);return}if(painComparisonPlan(input)||painComparisonPronounPlan(input)){showPainComparisonPreview(input);return}if(painStimulusPlan(input)||painStimulusPronounPlan(input)){showPainStimulusPreview(input);return}if(painMeaningPlan(input)||painPronounPlan(input)){showPainPreview(input);return}if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}if(curiosityInterpretationPlan(input)||curiosityPronounPlan(input)){showCuriosityPreview(input);return}if(routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)){showRouteLearningPreview(input);return}if(parseCameToUnderstand(input)){showUnderstandingPreview(input);return}if(understandingInterpretationPlan(input)||understandingPronounPlan(input)){showUnderstandingPreview(input);return}if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}const activity=quantifiedActivityPlan(input);if(activity){showQuantifiedPreview(input,activity);return;}if(!parseNamedSentence(input)&&parseQuantifiedPropertySentence(input)){showQuantifiedPreview(input);return}if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='entry_modality'){showEntryModality(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='physical_entry'){showPhysicalEntry(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='luminance_comparison'){showBrightnessComparison(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard','width_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));if($('sourceInput').value.trim()!==input||state.mode!=='general')return;state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}if(await showSavedSentence(input))return;if($('sourceInput').value.trim()!==input||state.mode!=='general')return;const help=helpCareReading(input);if(help){showHelpReading(input,help);return;}if(await showDictionaryClause(input))return;const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)||needsWholeReading(input,result)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;if(!result.decision.reasons.includes('incomplete_sentence_construction'))result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}await showAnalysis(result);if(state.analysis!==result)return;if(result.decision.auto_resolution_allowed&&!result.term_coverage.some(item=>state.wordSelections.has(item.token_index)&&state.wordSelections.get(item.token_index)!==item.recommended_sense_id)){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){if($('sourceInput').value.trim()===input)showError(error)}finally{$('analyzeButton').disabled=false}}
 function showPronounReferents(input,plan){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
@@ -131,13 +131,13 @@ function showPronounReferents(input,plan){
   let view,destination,interpretation,threshold,scale,standardMode;
   if(parsed.requiredViewpoint)view=select(card,`${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
   if(parsed.requiredDestination){destination=select(card,`meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';card.append(note)}
-  const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
-  const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
+  const property=['mass_standard','thermal_standard','luminance_standard','texture_standard','width_standard'].includes(parsed.requiredInterpretation);
+  const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture',width_standard:'physical_width'})[parsed.requiredInterpretation];
   if(property){
-    const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
+    const width=dimension==='physical_width',texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=width?'physical width':texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
     const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this sentence; no shared numerical cutoff is inferred.`;card.append(note);
-    if(!parsed.nominalProperty||mass)standardMode=select(card,`standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
-    if(!texture){
+    if(!parsed.nominalProperty||mass)standardMode=select(card,`standard type`,width?[['contextual','Physical width along the contextual axis and section']]:texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+    if(!texture&&!width){
     const label=document.createElement('label');label.textContent=`${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);card.append(label);
     scale=select(card,`${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
     if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
@@ -171,13 +171,13 @@ function showClauseInterpretations(input,plan){
     let view,destination,interpretation,threshold,scale,standardMode;
     if(parsed.requiredViewpoint)view=select(section,`Clause ${index+1} ${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
     if(parsed.requiredDestination){destination=select(section,`Clause ${index+1} meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';section.append(note)}
-    const property=['mass_standard','thermal_standard','luminance_standard','texture_standard'].includes(parsed.requiredInterpretation);
-    const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture'})[parsed.requiredInterpretation];
+    const property=['mass_standard','thermal_standard','luminance_standard','texture_standard','width_standard'].includes(parsed.requiredInterpretation);
+    const dimension=({mass_standard:'mass',thermal_standard:'thermodynamic_temperature',luminance_standard:'luminance',texture_standard:'surface_texture',width_standard:'physical_width'})[parsed.requiredInterpretation];
     if(property){
-      const texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
+      const width=dimension==='physical_width',texture=dimension==='surface_texture',mass=dimension==='mass',luminance=dimension==='luminance',propertyLabel=width?'physical width':texture?'surface texture':luminance?'luminance':mass?'mass':'temperature';
       const note=document.createElement('p');note.textContent=`For “${parsed.adjective}”, select the physical ${propertyLabel} meaning. Contextual standards stay local to this clause; no shared numerical cutoff is inferred.`;section.append(note);
-      if(!parsed.nominalProperty||mass)standardMode=select(section,`Clause ${index+1} standard type`,texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
-      if(!texture){
+      if(!parsed.nominalProperty||mass)standardMode=select(section,`Clause ${index+1} standard type`,width?[['contextual','Physical width along the contextual axis and section']]:texture?[['contextual','Physical texture at the contextual surface region and scale']]:[['numeric','Numerical threshold'],['contextual','Contextual standard; no number']]);
+      if(!texture&&!width){
       const label=document.createElement('label');label.textContent=`Clause ${index+1} ${propertyLabel} threshold`;threshold=document.createElement('input');threshold.type='text';threshold.inputMode='decimal';threshold.maxLength=1000;threshold.placeholder='Enter your numerical threshold';label.append(threshold);section.append(label);
       scale=select(section,`Clause ${index+1} ${luminance?'luminance unit':mass?'mass unit':'temperature scale'}`,luminance?[['candela_per_square_meter','Candelas per square metre (cd/m²)']]:mass?[['kilogram','Kilograms'],['gram','Grams']]:[['celsius','Degrees Celsius'],['kelvin','Kelvins']]);
       if(standardMode)standardMode.addEventListener('change',()=>{threshold.disabled=scale.disabled=standardMode.value==='contextual'});
@@ -342,7 +342,7 @@ function showBrightnessComparison(input){
   card.append(description,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showAdjectiveStandard(input){
-  const parsed=parseNamedSentence(input),textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard',property=textureStandard?'surface texture':luminanceStandard?'surface luminance':massStandard?'mass':'temperature';
+  const parsed=parseNamedSentence(input),widthStandard=parsed.requiredInterpretation==='width_standard',textureStandard=parsed.requiredInterpretation==='texture_standard',massStandard=parsed.requiredInterpretation==='mass_standard',luminanceStandard=parsed.requiredInterpretation==='luminance_standard',property=widthStandard?'physical width':textureStandard?'surface texture':luminanceStandard?'surface luminance':massStandard?'mass':'temperature';
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   $('output').classList.add('hidden');$('phraseCoverage').classList.add('hidden');$('resolutionPanel').classList.add('hidden');$('results').classList.remove('hidden');$('candidateList').innerHTML='';
   $('decisionSummary').textContent=`What ${property} standard do you mean by “${parsed.adjective}”?`;
@@ -357,7 +357,7 @@ function showAdjectiveStandard(input){
   button.addEventListener('click',async()=>{
     if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
     button.disabled=true;status.textContent='';
-    const chosen={dimension:textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',threshold:threshold.value.trim(),scale:scale.value};
+    const chosen={dimension:widthStandard?'physical_width':textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature',threshold:threshold.value.trim(),scale:scale.value};
     try{
       const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation,standard:chosen});
       if($('sourceInput').value.trim()!==input||state.mode==='controlled'){toast('The input changed. Analyze it again.');return}
@@ -366,14 +366,14 @@ function showAdjectiveStandard(input){
       await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});
     }catch(error){status.textContent=error.message}finally{button.disabled=false}
   });
-  if(textureStandard){description.textContent='Use physical surface texture at the contextually selected surface region and scale. This does not assert tactile experience, damage, hardness or figurative difficulty. Rough and smooth can use different contextual standards.';card.append(description,status);}else card.append(description,label,scaleLabel,status,button);
+  if(widthStandard){description.textContent='Use the object’s physical width along a contextually selected axis and section. This does not state opening clearance, passability or figurative breadth. Wide and narrow can use different local standards.';card.append(description,status);}else if(textureStandard){description.textContent='Use physical surface texture at the contextually selected surface region and scale. This does not assert tactile experience, damage, hardness or figurative difficulty. Rough and smooth can use different contextual standards.';card.append(description,status);}else card.append(description,label,scaleLabel,status,button);
   if(!parsed.nominalProperty||massStandard){
-    const contextual=document.createElement('button');contextual.textContent=`Use the contextual ${property} standard (no number)`;
+    const contextual=document.createElement('button');contextual.textContent=widthStandard?'Use physical width':`Use the contextual ${property} standard (no number)`;
     contextual.addEventListener('click',async()=>{
       const current=()=>$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&card.isConnected!==false;
       if(!current())return;contextual.disabled=true;status.textContent='';
       try{
-        const standard={kind:'contextual',dimension:textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature'};
+        const standard={kind:'contextual',dimension:widthStandard?'physical_width':textureStandard?'surface_texture':luminanceStandard?'luminance':massStandard?'mass':'thermodynamic_temperature'};
         const composed=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation,standard});
         if(!current())return;
         state.resolution=composed;$('results').classList.add('hidden');

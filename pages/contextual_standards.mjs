@@ -7,7 +7,9 @@ export const CONTEXTUAL_NORMS=Object.freeze({
  bright:{dimension:'luminance',relation:'greater_than',code:4},
  dim:{dimension:'luminance',relation:'less_than',code:5},
  rough:{dimension:'surface_texture',relation:'greater_than',code:6},
- smooth:{dimension:'surface_texture',relation:'less_than',code:7}
+ smooth:{dimension:'surface_texture',relation:'less_than',code:7},
+ wide:{dimension:'physical_width',relation:'greater_than',code:8},
+ narrow:{dimension:'physical_width',relation:'less_than',code:9}
 });
 export function validContextualComparison(node,ir){
  const norm=CONTEXTUAL_NORMS[node.norm];
