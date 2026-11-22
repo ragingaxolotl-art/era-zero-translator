@@ -104,8 +104,13 @@ for(const [text,forbidden] of [['Nora pulled the update.','pull'],['Nora dropped
   ['The price fell.','fall'],['The promise is empty.','empty'],['I am full.','full']]){
   assert(!analyzeEnglish(text,authority).term_coverage.some(term=>term.matches?.some(match=>match.target_id===word(forbidden))),text);
 }
-// No verb use of the adjectives, no unsupported phrasal or perfect/passive meaning loss.
-for(const text of ['Nora emptied the box.','Nora filled the bottle.','Nora pulled off the plan.',
+// Later action senses must never reinterpret the original state adjectives as verbs.
+for(const [text,action,state] of [['Nora emptied the box.','empty container','empty'],['Nora filled the bottle.','fill','full']]){
+  const plan=storyReading(text,authority);assert(plan?.events,text);
+  assert.equal(plan.events[0].predicate,word(action));assert.notEqual(plan.events[0].predicate,word(state));
+}
+// Unsupported phrasal, perfect/passive and content details cannot disappear.
+for(const text of ['Nora pulled off the plan.',
   'The box was dropped.','Nora has fallen.','The bottle is full of water.']){
   assert(!storyReading(text,authority)?.events,text);
 }
