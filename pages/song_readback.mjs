@@ -1,9 +1,10 @@
 import {savedQualityLabel} from './story_saved_adjectives.mjs?v=container-actions-1';
 import {expandChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=container-actions-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-modifiers-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs?v=container-actions-1';
 import {storyWords} from './story_words.mjs?v=container-actions-1';
+import {contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
 
 const labels=new Map([...storyWords.map(r=>[r.id,r.word]),...Object.entries(feltProperties).map(([word,id])=>[id,word])]);
 function identity(value){
@@ -14,7 +15,7 @@ function identity(value){
 export async function readSongLine(bytes,atoms,records,chords,adjectives){
   const melody=chords?expandChordMidi(bytes,atoms):bytes;
   const m=await decodeSupportedMeaningWithDrafts(melody,atoms,records,{allowDraft:true,adjectives});
-  const label=id=>typeof id==='object'?savedQualityLabel(id,adjectives,i=>identity(m.entities[i].identity)):labels.get(id)||atoms.find(a=>a.canonical_id===id)?.title||id;
+  const label=id=>contextualPropertyLabel(id)||(typeof id==='object'?savedQualityLabel(id,adjectives,i=>identity(m.entities[i].identity)):labels.get(id)||atoms.find(a=>a.canonical_id===id)?.title||id);
   const words=[];
   if(m.events){
     for(const [i,e] of m.events.entries()){

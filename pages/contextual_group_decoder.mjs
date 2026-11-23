@@ -1,5 +1,5 @@
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
-import {readContextualStandard} from './contextual_standard_decoder.mjs?v=contextual-groups-1';
+import {readContextualStandard} from './contextual_standard_decoder.mjs?v=contextual-modifiers-1';
 
 // The renderer already gives unordered groups explicit frames and separators.
 // Ordered groups use a one-beat boundary between complete clauses. Reuse those

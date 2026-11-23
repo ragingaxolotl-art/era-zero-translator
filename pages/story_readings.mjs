@@ -9,6 +9,7 @@ import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysica
 import {storyWords} from './story_words.mjs?v=container-actions-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
 import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=container-actions-1';
+import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -186,7 +187,7 @@ function destinationComplement(tokens,parseObject,parseNoun){
 function stateComplement(tokens, parseObject, propertyAt) {
   for (let i=1; i<tokens.length; i++) {
     const quality = propertyAt(tokens,i);
-    if (!quality || i + quality.length !== tokens.length) continue;
+    if (!quality || contextualPropertyNorm(quality.root) || i + quality.length !== tokens.length) continue;
     const parsed = parseObject(tokens.slice(0,i));
     const word = folded(parsed.verb).split(' ').at(-1);
     const keeps = ['keep','keeps','kept','keeping'].includes(word);
@@ -204,12 +205,13 @@ function propertyAt(tokens,offset,adjectives) {
   for(const entry of choices){
     const parts=entry.parts;
     if(parts.every((word,i)=>word===folded(tokens[offset+i]||''))){
-      return {word:entry.label,root:properties.get(entry.label)||entry.id,length:parts.length};
+      return {word:entry.label,root:properties.get(entry.label)||contextualProperty(entry.label)||entry.id,length:parts.length};
     }
   }
   if(first==='available' && folded(tokens[offset+1]||'')==='for' && folded(tokens[offset+2]||'')==='use')
     return {word:'available for use',root:id('available for use'),length:3};
-  return properties.has(first)?{word:first,root:properties.get(first),length:1}:null;
+  const root=properties.get(first)||contextualProperty(first);
+  return root?{word:first,root,length:1}:null;
 }
 function describeChoice(row) {
   return row.word === 'return' ? 'went back to an earlier place' : 'happened again';
@@ -434,6 +436,14 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     entities.push({reference,referenceKind:np.referenceKind,domain:np.domain,label:np.guessedName?np.reference:np.text,head:np.head,plural:!!np.plural||reference==='we',category,owner});return entities.length-1;
   }
   function passageSense(entity,word,key,root){
+    if(contextualPropertyNorm(root)){
+      if(answers[key]==='physical')return root;
+      if(answers[key]==='other')return null;
+      question={key,prompt:'What does “'+word+'” mean for '+entities[entity].label+'?',options:[
+        {value:'physical',label:contextualPropertyLabel(root)},
+        {value:'other',label:'Another meaning'}]};
+      return null;
+    }
     if(root===id('empty')||root===id('full')){
       if(isPhysicalContainer(entities[entity].head||'')||answers[key]==='physical')return root;
       if(answers[key]==='other')return null;
