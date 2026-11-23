@@ -107,7 +107,7 @@ analysis_cases:
           anchor_midi: 60
           transposition_semantically_significant: false
           primary_contour: level
-          contour_relative_semitones: &13
+          contour_relative_semitones: &5
           - 0
           - 0
           secondary_contours: []
@@ -118,7 +118,7 @@ analysis_cases:
             base_midi: 60
             family_qualified_transliteration: gi·kak
             formal_carrier: gi-ki-ma-ki
-            family_opening_relative_semitones: &14
+            family_opening_relative_semitones: &6
             - 0
             - 2
             - 7
@@ -126,7 +126,7 @@ analysis_cases:
             - 60
             - 62
             - 67
-            address_relative_semitones: &15
+            address_relative_semitones: &7
             - 0
             - 2
             - 2
@@ -347,7 +347,7 @@ analysis_cases:
           anchor_midi: 60
           transposition_semantically_significant: false
           primary_contour: rising
-          contour_relative_semitones: &17
+          contour_relative_semitones: &9
           - 0
           - 2
           secondary_contours: []
@@ -358,7 +358,7 @@ analysis_cases:
             base_midi: 60
             family_qualified_transliteration: gi·kok
             formal_carrier: gi-ki-ki-ki
-            family_opening_relative_semitones: &18
+            family_opening_relative_semitones: &10
             - 0
             - 2
             - 7
@@ -366,7 +366,7 @@ analysis_cases:
             - 60
             - 62
             - 67
-            address_relative_semitones: &19
+            address_relative_semitones: &11
             - 0
             - 2
             - 4
@@ -616,7 +616,7 @@ analysis_cases:
       route: semantic_ir
       definition: Transition between context-selected states without enough domain
         information to choose an atom.
-      selection_cues: &4
+      selection_cues:
       - domain is unspecified
       score: 1.0
       confidence: high
@@ -631,7 +631,7 @@ analysis_cases:
       route: atom
       target_id: STR:101
       definition: Actively reconfigure one structure internally.
-      selection_cues: &6
+      selection_cues:
       - part-position arrangement changes
       score: 1.0
       confidence: high
@@ -674,7 +674,7 @@ analysis_cases:
       route: atom
       target_id: MIN:101
       definition: Actively revise the cognizer's self-model.
-      selection_cues: &7
+      selection_cues:
       - self-understanding changes
       score: 1.0
       confidence: high
@@ -717,7 +717,7 @@ analysis_cases:
       route: atom
       target_id: DAT:101
       definition: Actively transform represented information within one bearer.
-      selection_cues: &3
+      selection_cues:
       - information content changes
       score: 1.0
       confidence: high
@@ -760,7 +760,7 @@ analysis_cases:
       route: atom
       target_id: MAT:101
       definition: Undergo an active inward physical-state change.
-      selection_cues: &5
+      selection_cues:
       - material bearer and physical state
       score: 1.0
       confidence: high
@@ -804,7 +804,7 @@ analysis_cases:
       target_id: MAT:121
       definition: An ongoing physical-state change distributed across materially interacting
         parts of a shared system.
-      selection_cues: &8
+      selection_cues:
       - exact canonical label
       - family domain MAT
       - universal slot active systemic process
@@ -850,7 +850,7 @@ analysis_cases:
       target_id: MAT:110
       definition: Completion of a physical-state change localized in a distinct material
         target.
-      selection_cues: &9
+      selection_cues:
       - exact canonical label
       - family domain MAT
       - universal slot completed outward process
@@ -896,7 +896,7 @@ analysis_cases:
       target_id: MAT:102
       definition: A possible physical-state change localized within the focal material
         bearer that is not active or completed.
-      selection_cues: &10
+      selection_cues:
       - exact canonical label
       - family domain MAT
       - universal slot pending inward process
@@ -986,7 +986,8 @@ analysis_cases:
       route: atom
       target_id: DAT:101
       definition: Actively transform represented information within one bearer.
-      selection_cues: *3
+      selection_cues:
+      - information content changes
       score: 0.88
       confidence: medium
       match_type: contained_lemma
@@ -1028,7 +1029,8 @@ analysis_cases:
       route: semantic_ir
       definition: Transition between context-selected states without enough domain
         information to choose an atom.
-      selection_cues: *4
+      selection_cues:
+      - domain is unspecified
       score: 0.74
       confidence: medium
       match_type: contained_lemma
@@ -1042,7 +1044,8 @@ analysis_cases:
       route: atom
       target_id: MAT:101
       definition: Undergo an active inward physical-state change.
-      selection_cues: *5
+      selection_cues:
+      - material bearer and physical state
       score: 0.74
       confidence: medium
       match_type: contained_lemma
@@ -1084,7 +1087,8 @@ analysis_cases:
       route: atom
       target_id: STR:101
       definition: Actively reconfigure one structure internally.
-      selection_cues: *6
+      selection_cues:
+      - part-position arrangement changes
       score: 0.72
       confidence: medium
       match_type: contained_lemma
@@ -1126,7 +1130,8 @@ analysis_cases:
       route: atom
       target_id: MIN:101
       definition: Actively revise the cognizer's self-model.
-      selection_cues: *7
+      selection_cues:
+      - self-understanding changes
       score: 0.72
       confidence: medium
       match_type: contained_lemma
@@ -1162,19 +1167,134 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: d943934e41bbbaaaaba6b0454717b52771b2ecb2b35376d29158977f8eee0c68
+    - sense_id: ENS:33478bfbd0cbac49c447c846
+      lemma: caused commitment of information to retention
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:58cfa479709294b9809be1b7
+      definition: An actor brings about a completed commitment of one distinct target
+        information item's relevant content to a retained record in a contextual store.
+        The exact information-retention commitment dependency supplies the capture
+        point, fixed content-equivalence criterion and completed retained-record result.
+        ORI:211 grounds that commitment in the actor's causally productive contribution,
+        rather than mere observation, correlation or background presence. The operation
+        may establish a record or refresh an existing commitment, including unchanged
+        content; it does not require a distinct copy or a change to the target's relevant
+        content. The actor may be a person, program or other operative source, without
+        a claim of intention or consciousness. No named store, physical medium, permanent
+        or power-loss-safe retention, subsequent access, new version, additional transfer
+        or rescue meaning is supplied. Ongoing aspect does not assert that the saving
+        operation has completed.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 0.105
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 3
+      canonical_label: caused commitment of information to retention
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: compound
+            target_id: CMP:58cfa479709294b9809be1b7
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:b4233b7dc18b5789f88faff4
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: b4233b7dc18b5789f88faff4c7acc5b34b574132a13089cda3777e3817709d3b
+    - sense_id: ENS:66e381b02d2ceb832bb4d9ea
+      lemma: completed commitment of information to retention
+      sense_key: canonical_compound_label
+      route: compound
+      target_id: CMP:505546d39d163ed4150830f3
+      definition: A bounded information-retention operation completes a commitment
+        of the relevant content of one target information item to a retained record
+        in a contextual store. The record satisfies DAT:000 within that store at completion.
+        Its committed content matches the target content at the operation's capture
+        point under one fixed contextual content-equivalence criterion. ORI:110 actualizes
+        this operation's completed retention commitment, not necessarily the target's
+        or record's first existence. The record may be newly established or an existing
+        record whose commitment is refreshed, including a successful unchanged-content
+        save. No new copy, changed content, distinct source and destination contexts,
+        physical medium, power-loss guarantee, indefinite retention, named version,
+        later accessibility or truth of the information is implied. The target and
+        retained record may be the same information object or distinct objects; this
+        meaning does not decide their token identity. No external actor is supplied.
+        Ongoing aspect views the operation internally without asserting a completed
+        commitment.
+      selection_cues:
+      - exact approved compound label
+      - all component restrictions are intended
+      score: 0.085
+      confidence: low
+      match_type: token_overlap
+      evidence:
+        lexical_overlap: 1
+        selection_cue_overlap: 0
+        definition_overlap: 2
+      canonical_label: completed commitment of information to retention
+      required_roles: []
+      semantic_ir_options:
+      - runtime_state: 1
+        semantic_ir:
+          ir_version: '1.0'
+          root_clause: n001
+          speech_act: assertion
+          nodes:
+          - node_id: n001
+            kind: clause
+            clause_type: predication
+          - node_id: n002
+            kind: lexical_occurrence
+            target_type: compound
+            target_id: CMP:505546d39d163ed4150830f3
+            runtime_state:
+              code: 1
+          edges:
+          - edge_id: e001
+            type: centers
+            from: n002
+            to: n001
+          discourse_constraints: {}
+          utterance_id: UTT:82d7759fb51561c161192efc
+          serialization:
+            canonical_format: EZIR-JSON-1
+            content_digest: 82d7759fb51561c161192efc3daedf2948cd61b94380de3e17e47d6c46dbda9d
     - sense_id: ENS:997726e13c940bd2b657c5be
       lemma: contextual physical content capacity
       sense_key: canonical_compound_label
       route: compound
       target_id: CMP:ace0fc4ddd0c53a2a33e8fee
       definition: A materially bounded container object, with its own enduring physical
-        body, has a contextually fixed positive usable capacity for a relevant kind of
-        physical content. Both material roots describe that same container; its body is
-        distinct from what counts as contents. The capacity criterion and content kind
-        are contextual parameters, not a numerical amount supplied by this meaning. Current
-        contents, structural integrity, a sealed enclosure and suitability for every kind
-        of content are unspecified. The criterion is physical holding capacity, not memory,
-        information, emotional experience, a promise or a person's feeling of satiety.
+        body, has a contextually fixed positive usable capacity for a relevant kind
+        of physical content. Both material roots describe that same container; its
+        body is distinct from what counts as contents. The capacity criterion and
+        content kind are contextual parameters, not a numerical amount supplied by
+        this meaning. Current contents, structural integrity, a sealed enclosure and
+        suitability for every kind of content are unspecified. The criterion is physical
+        holding capacity, not memory, information, emotional experience, a promise
+        or a person's feeling of satiety.
       selection_cues:
       - exact approved compound label
       - all component restrictions are intended
@@ -1213,105 +1333,6 @@ analysis_cases:
           serialization:
             canonical_format: EZIR-JSON-1
             content_digest: 0d85316c94b6d1eac10a331cfd8e75213a0669b304b7ef6305c2548b64b6ba3b
-    - sense_id: ENS:aaee9383d68d688a402e6bf9
-      lemma: generation of a distinct stored information copy
-      sense_key: canonical_compound_label
-      route: compound
-      target_id: CMP:9ea919967152aa85bc1c7169
-      definition: An actor completes an operation that generates a distinct retained
-        information object reproducing the relevant content of one source information
-        object under a fixed contextual content-equivalence criterion. DAT:000 describes
-        the generated information object; CRE:110 describes that same object's generation
-        by the actor. The source object is the outer target, not the newly generated
-        result. The source and result are distinct tokens even when their relevant
-        content is equal. This operation does not itself remove or modify the source's
-        relevant content. The result is maintained in a contextual store; its location,
-        name, ownership, encoding and physical medium are unspecified. This meaning
-        does not guarantee every bit, file attribute or metadata field is identical
-        unless the contextual criterion includes them. Ongoing aspect views the copying
-        internally without asserting a completed result.
-      selection_cues:
-      - exact approved compound label
-      - all component restrictions are intended
-      score: 0.076
-      confidence: low
-      match_type: token_overlap
-      evidence:
-        lexical_overlap: 1
-        selection_cue_overlap: 0
-        definition_overlap: 2
-      canonical_label: generation of a distinct stored information copy
-      required_roles: []
-      semantic_ir_options:
-      - runtime_state: 1
-        semantic_ir:
-          ir_version: '1.0'
-          root_clause: n001
-          speech_act: assertion
-          nodes:
-          - node_id: n001
-            kind: clause
-            clause_type: predication
-          - node_id: n002
-            kind: lexical_occurrence
-            target_type: compound
-            target_id: CMP:9ea919967152aa85bc1c7169
-            runtime_state:
-              code: 1
-          edges:
-          - edge_id: e001
-            type: centers
-            from: n002
-            to: n001
-          discourse_constraints: {}
-          utterance_id: UTT:cc43a37ce63c776b50e156cd
-          serialization:
-            canonical_format: EZIR-JSON-1
-            content_digest: cc43a37ce63c776b50e156cd2d8af6d9f2e1e609586a64c15be156faf003cad5
-    - sense_id: ENS:17debe254c0cf35f28cdaa21
-      lemma: active systemic material change
-      sense_key: canonical_atom_label
-      route: atom
-      target_id: MAT:121
-      definition: An ongoing physical-state change distributed across materially interacting
-        parts of a shared system.
-      selection_cues: *8
-      score: 0.065
-      confidence: low
-      match_type: token_overlap
-      evidence:
-        lexical_overlap: 1
-        selection_cue_overlap: 0
-        definition_overlap: 1
-      canonical_label: active systemic material change
-      required_roles: []
-      semantic_ir_options:
-      - runtime_state: 1
-        semantic_ir:
-          ir_version: '1.0'
-          root_clause: n001
-          speech_act: assertion
-          nodes:
-          - node_id: n001
-            kind: clause
-            clause_type: predication
-          - node_id: n002
-            kind: lexical_occurrence
-            target_type: atom
-            target_id: MAT:121
-            runtime_state:
-              code: 1
-          edges:
-          - edge_id: e001
-            type: centers
-            from: n002
-            to: n001
-          discourse_constraints: {}
-          utterance_id: UTT:f326ac79b26924c6716a58e9
-          serialization:
-            canonical_format: EZIR-JSON-1
-            content_digest: f326ac79b26924c6716a58e994a45c4bb5c0fec7c0ada9a79206e236b2c313e8
-
     decision:
       auto_resolution_allowed: false
       requires_clarification: true
@@ -1512,7 +1533,7 @@ analysis_cases:
         selection_cue_overlap: 0
         definition_overlap: 1
       canonical_label: directed data link
-      required_roles: &11
+      required_roles: &3
       - source
       - target
       semantic_ir_options: []
@@ -1845,7 +1866,7 @@ analysis_cases:
     clarification:
     - field: roles
       question: Supply canonical controlled labels for every required role.
-      required_roles: *11
+      required_roles: *3
 - case_id: unknown
   input: flurple the moon [1]
   expected:
@@ -1880,7 +1901,7 @@ resolution_cases:
     route: atom
     target_id: MOV:101
     controlled_input: ASSERT "active source departure" [1].
-    semantic_ir: &12
+    semantic_ir: &4
       ir_version: '1.0'
       root_clause: n001
       speech_act: assertion
@@ -1910,13 +1931,13 @@ resolution_cases:
       formal_id: EZF:1bd53aa1422c748757242eb9
       formal_digest: 1bd53aa1422c748757242eb94dbaa12cd1c2ff4e0b4fe245562962c0c2a268f0
       semantic_digest: ece93a3460b79ba681c694b56dcd8559dc5fdc890c6b31cdae659c9829bdf920
-      semantic_ir: *12
+      semantic_ir: *4
       performance:
         profile: reference-midi-v1
         anchor_midi: 60
         transposition_semantically_significant: false
         primary_contour: level
-        contour_relative_semitones: *13
+        contour_relative_semitones: *5
         secondary_contours: []
         lexical_events:
         - occurrence_id: n002
@@ -1925,12 +1946,12 @@ resolution_cases:
           base_midi: 60
           family_qualified_transliteration: gi·kak
           formal_carrier: gi-ki-ma-ki
-          family_opening_relative_semitones: *14
+          family_opening_relative_semitones: *6
           family_opening_absolute_midi:
           - 60
           - 62
           - 67
-          address_relative_semitones: *15
+          address_relative_semitones: *7
           address_absolute_midi:
           - 60
           - 62
@@ -1968,7 +1989,7 @@ resolution_cases:
     route: atom
     target_id: MOV:111
     controlled_input: QUESTION "active target approach" [1].
-    semantic_ir: &16
+    semantic_ir: &8
       ir_version: '1.0'
       root_clause: n001
       speech_act: question
@@ -1998,13 +2019,13 @@ resolution_cases:
       formal_id: EZF:1000b737b2fbe8eea6bde096
       formal_digest: 1000b737b2fbe8eea6bde096bac1ba1def93e838311c2bd9fafdeb146d2da0eb
       semantic_digest: 4beea5a71802d3a957d38c85af2ef60e2189fe7777f981822669df30eb53dd00
-      semantic_ir: *16
+      semantic_ir: *8
       performance:
         profile: reference-midi-v1
         anchor_midi: 60
         transposition_semantically_significant: false
         primary_contour: rising
-        contour_relative_semitones: *17
+        contour_relative_semitones: *9
         secondary_contours: []
         lexical_events:
         - occurrence_id: n002
@@ -2013,12 +2034,12 @@ resolution_cases:
           base_midi: 60
           family_qualified_transliteration: gi·kok
           formal_carrier: gi-ki-ki-ki
-          family_opening_relative_semitones: *18
+          family_opening_relative_semitones: *10
           family_opening_absolute_midi:
           - 60
           - 62
           - 67
-          address_relative_semitones: *19
+          address_relative_semitones: *11
           address_absolute_midi:
           - 60
           - 62

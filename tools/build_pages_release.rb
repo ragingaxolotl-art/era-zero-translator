@@ -11,7 +11,7 @@ require_relative "lib/era_zero_renderer"
 require_relative "lib/era_zero_presentation"
 require_relative "lib/era_zero_browser_compounds"
 
-release_date = "2026-11-22"
+release_date = "2026-11-23"
 root = EraZeroValidation::ROOT
 pages = File.join(root, "pages")
 data_dir = File.join(pages, "data")
@@ -20,8 +20,8 @@ FileUtils.mkdir_p(resolution_dir)
 
 index_html = File.read(File.join(root, "app/public/index.html"))
   .gsub('href="/"', 'href="./"')
-  .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.33.0"')
-  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.33.0"></script>')
+  .gsub('href="/styles.css?v=1.15.0"', 'href="./styles.css?v=1.34.0"')
+  .gsub('<script src="/app.js?v=1.15.0" defer></script>', '<script type="module" src="./app.js?v=1.34.0"></script>')
   .sub('    <nav class="app-tabs"', "    <p><a href=\"./compound-builder.html\">Build and save your own compounds →</a></p>\n    <nav class=\"app-tabs\"")
   .gsub('Canonical engine ready', 'Loading canonical browser engine')
   .sub('Use an ordinary sentence. The translator infers intent and state, asks only when your wording has more than one real meaning, and produces canonical Era Zero notation.', 'Write a sentence, choose the intended meaning, and play it as Era Zero music. You can build a missing verb or adjective from words you already have.')

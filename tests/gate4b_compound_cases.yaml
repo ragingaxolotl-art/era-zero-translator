@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 122
+  approved_entries: 124
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -124,11 +124,17 @@ accepted:
 - case_id: material_fissure
   compound_id: CMP:50520ef35adf0102649dc6cf
   expected: valid_approved_entry
+- case_id: completed_commitment_of_information_to_retention
+  compound_id: CMP:505546d39d163ed4150830f3
+  expected: valid_approved_entry
 - case_id: completed_carrying-mediated_custody_delivery
   compound_id: CMP:5200738177777915abb3f42e
   expected: valid_approved_entry
 - case_id: formal_ontological_dependence
   compound_id: CMP:578fd06e1dec6f91d2b35add
+  expected: valid_approved_entry
+- case_id: caused_commitment_of_information_to_retention
+  compound_id: CMP:58cfa479709294b9809be1b7
   expected: valid_approved_entry
 - case_id: expression_asking_for_an_outcome
   compound_id: CMP:59400f445c53fdb3333c7943

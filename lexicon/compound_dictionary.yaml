@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 122
+  entry_count: 124
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -2471,6 +2471,132 @@ entries:
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
+  - kind: root
+    root_id: DAT:000
+    node_id: q1
+  - kind: root
+    root_id: ORI:110
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The outer target is the information item whose relevant content is committed,
+    not a mandatory new result token. The DAT:000 object is the retained record within
+    one fixed contextual store.
+  - The target's content at the capture point and the committed record satisfy one
+    fixed contextual equivalence criterion. No exact byte, metadata, encoding or cryptographic
+    identity follows unless that criterion includes it.
+  - ORI:110 actualizes the completed commitment for this bounded operation. The target
+    or record need not newly exist, and the target's content may already have been
+    retained before the operation.
+  - The operation may establish, refresh or affirm a matching retained record; passive
+    pre-existing retention without this completed operation is not a commitment event.
+    Later changes, deletion, failure and retrieval remain unspecified.
+  - Time, negation, modality, aspect and runtime scope the entire operation, including
+    the commitment and content relation. The contextual store and criterion must not
+    change to manufacture success.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: completed_commitment_of_information_to_retention
+    sound_code: 90
+    added_definition: A bounded information-retention operation completes a commitment
+      of the relevant content of one target information item to a retained record
+      in a contextual store. The record satisfies DAT:000 within that store at completion.
+      Its committed content matches the target content at the operation's capture
+      point under one fixed contextual content-equivalence criterion. ORI:110 actualizes
+      this operation's completed retention commitment, not necessarily the target's
+      or record's first existence. The record may be newly established or an existing
+      record whose commitment is refreshed, including a successful unchanged-content
+      save. No new copy, changed content, distinct source and destination contexts,
+      physical medium, power-loss guarantee, indefinite retention, named version,
+      later accessibility or truth of the information is implied. The target and retained
+      record may be the same information object or distinct objects; this meaning
+      does not decide their token identity. No external actor is supplied. Ongoing
+      aspect views the operation internally without asserting a completed commitment.
+    excludes:
+    - A target merely remains stored with no completed retention operation
+    - A transient display, send, or in-memory calculation without a retained record
+      result
+    - An attempted or ongoing write reported as already committed
+    - A distinct new copy, changed content, different storage context, permanent preservation,
+      physical rescue or thrift inferred without being stated
+  compound_id: CMP:505546d39d163ed4150830f3
+  content_digest: 505546d39d163ed4150830f391a7888746ad5d988125d2094a24dbc0b678963d
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-23'
+  display_title: completed commitment of information to retention
+  english_glosses:
+  - completed commitment of information to retention
+  invariant_definition: A bounded information-retention operation completes a commitment
+    of the relevant content of one target information item to a retained record in
+    a contextual store. The record satisfies DAT:000 within that store at completion.
+    Its committed content matches the target content at the operation's capture point
+    under one fixed contextual content-equivalence criterion. ORI:110 actualizes this
+    operation's completed retention commitment, not necessarily the target's or record's
+    first existence. The record may be newly established or an existing record whose
+    commitment is refreshed, including a successful unchanged-content save. No new
+    copy, changed content, distinct source and destination contexts, physical medium,
+    power-loss guarantee, indefinite retention, named version, later accessibility
+    or truth of the information is implied. The target and retained record may be
+    the same information object or distinct objects; this meaning does not decide
+    their token identity. No external actor is supplied. Ongoing aspect views the
+    operation internally without asserting a completed commitment.
+  boundaries:
+    includes: A bounded information-retention operation completes a commitment of
+      the relevant content of one target information item to a retained record in
+      a contextual store. The record satisfies DAT:000 within that store at completion.
+      Its committed content matches the target content at the operation's capture
+      point under one fixed contextual content-equivalence criterion. ORI:110 actualizes
+      this operation's completed retention commitment, not necessarily the target's
+      or record's first existence. The record may be newly established or an existing
+      record whose commitment is refreshed, including a successful unchanged-content
+      save. No new copy, changed content, distinct source and destination contexts,
+      physical medium, power-loss guarantee, indefinite retention, named version,
+      later accessibility or truth of the information is implied. The target and retained
+      record may be the same information object or distinct objects; this meaning
+      does not decide their token identity. No external actor is supplied. Ongoing
+      aspect views the operation internally without asserting a completed commitment.
+    excludes: A target merely remains stored with no completed retention operation;
+      A transient display, send, or in-memory calculation without a retained record
+      result; An attempted or ongoing write reported as already committed; A distinct
+      new copy, changed content, different storage context, permanent preservation,
+      physical rescue or thrift inferred without being stated
+  collision_audit: reviews/information_storage_2026_11_23.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 90 preserve this distinction.
+  confidence: high
+  approval_record: migrations/information_storage_2026_11_23.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/information_storage_2026_11_23.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: The information-retention operation completes its commitment of the
+      file.
+    technical: The outer target is the information item whose relevant content is
+      committed, not a mandatory new result token. The DAT:000 object is the retained
+      record within one fixed contextual store. The target's content at the capture
+      point and the committed record satisfy one fixed contextual equivalence criterion.
+      No exact byte, metadata, encoding or cryptographic identity follows unless that
+      criterion includes it. ORI:110 actualizes the completed commitment for this
+      bounded operation. The target or record need not newly exist, and the target's
+      content may already have been retained before the operation. The operation may
+      establish, refresh or affirm a matching retained record; passive pre-existing
+      retention without this completed operation is not a commitment event. Later
+      changes, deletion, failure and retrieval remain unspecified. Time, negation,
+      modality, aspect and runtime scope the entire operation, including the commitment
+      and content relation. The contextual store and criterion must not change to
+      manufacture success.
+    future_compound: Reuse this exact commitment before specifying its actor, storage
+      destination, named version, restoration or stronger durability criterion.
+    counterexample: The file was displayed, but no retained record was committed.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 505546d39d163ed4150830f391a7888746ad5d988125d2094a24dbc0b678963d
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
   - node_id: q-arrival
     kind: compound_ref
     compound_id: CMP:74d98d19808f74d0b8196951
@@ -2618,6 +2744,117 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 578fd06e1dec6f91d2b35addea49cab1370912015a72ce2fed948395804930f7
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:505546d39d163ed4150830f3
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: ORI:211
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The outer actor is the operative source of the retention commitment and is distinct
+    from its outer target information item. The actor need not be the store or be
+    conscious.
+  - The outer target is exactly the target of the nested commitment. Its retained
+    record, capture point, store and equivalence criterion are the same throughout
+    this one operation.
+  - The ORI:211 head makes the completed commitment causally dependent on the actor's
+    productive contribution. The retained record itself may already have existed.
+  - A cause/target reversal changes the message. All nested commitments remain inside
+    the event's ordered time, negation, modality, aspect and runtime scopes.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_commitment_of_information_to_retention
+    sound_code: 91
+    added_definition: An actor brings about a completed commitment of one distinct
+      target information item's relevant content to a retained record in a contextual
+      store. The exact information-retention commitment dependency supplies the capture
+      point, fixed content-equivalence criterion and completed retained-record result.
+      ORI:211 grounds that commitment in the actor's causally productive contribution,
+      rather than mere observation, correlation or background presence. The operation
+      may establish a record or refresh an existing commitment, including unchanged
+      content; it does not require a distinct copy or a change to the target's relevant
+      content. The actor may be a person, program or other operative source, without
+      a claim of intention or consciousness. No named store, physical medium, permanent
+      or power-loss-safe retention, subsequent access, new version, additional transfer
+      or rescue meaning is supplied. Ongoing aspect does not assert that the saving
+      operation has completed.
+    excludes:
+    - Copying requires a distinct result; saving does not
+    - Keeping an already stored item without performing a retention commitment
+    - Sending or showing information without committing a retained record
+    - Rescuing a person or object, economizing money/time, physical warehousing, or
+      asserting permanent retention
+  compound_id: CMP:58cfa479709294b9809be1b7
+  content_digest: 58cfa479709294b9809be1b7ca4914c8e67fa0434b908bbb2afaeff8b365cf61
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-23'
+  display_title: caused commitment of information to retention
+  english_glosses:
+  - caused commitment of information to retention
+  invariant_definition: An actor brings about a completed commitment of one distinct
+    target information item's relevant content to a retained record in a contextual
+    store. The exact information-retention commitment dependency supplies the capture
+    point, fixed content-equivalence criterion and completed retained-record result.
+    ORI:211 grounds that commitment in the actor's causally productive contribution,
+    rather than mere observation, correlation or background presence. The operation
+    may establish a record or refresh an existing commitment, including unchanged
+    content; it does not require a distinct copy or a change to the target's relevant
+    content. The actor may be a person, program or other operative source, without
+    a claim of intention or consciousness. No named store, physical medium, permanent
+    or power-loss-safe retention, subsequent access, new version, additional transfer
+    or rescue meaning is supplied. Ongoing aspect does not assert that the saving
+    operation has completed.
+  boundaries:
+    includes: An actor brings about a completed commitment of one distinct target
+      information item's relevant content to a retained record in a contextual store.
+      The exact information-retention commitment dependency supplies the capture point,
+      fixed content-equivalence criterion and completed retained-record result. ORI:211
+      grounds that commitment in the actor's causally productive contribution, rather
+      than mere observation, correlation or background presence. The operation may
+      establish a record or refresh an existing commitment, including unchanged content;
+      it does not require a distinct copy or a change to the target's relevant content.
+      The actor may be a person, program or other operative source, without a claim
+      of intention or consciousness. No named store, physical medium, permanent or
+      power-loss-safe retention, subsequent access, new version, additional transfer
+      or rescue meaning is supplied. Ongoing aspect does not assert that the saving
+      operation has completed.
+    excludes: Copying requires a distinct result; saving does not; Keeping an already
+      stored item without performing a retention commitment; Sending or showing information
+      without committing a retained record; Rescuing a person or object, economizing
+      money/time, physical warehousing, or asserting permanent retention
+  collision_audit: reviews/information_storage_2026_11_23.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 91 preserve this distinction.
+  confidence: high
+  approval_record: migrations/information_storage_2026_11_23.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/information_storage_2026_11_23.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora saved the file.
+    technical: The outer actor is the operative source of the retention commitment
+      and is distinct from its outer target information item. The actor need not be
+      the store or be conscious. The outer target is exactly the target of the nested
+      commitment. Its retained record, capture point, store and equivalence criterion
+      are the same throughout this one operation. The ORI:211 head makes the completed
+      commitment causally dependent on the actor's productive contribution. The retained
+      record itself may already have existed. A cause/target reversal changes the
+      message. All nested commitments remain inside the event's ordered time, negation,
+      modality, aspect and runtime scopes.
+    future_compound: Reuse this exact saving operation before specifying a destination,
+      named saved version, restore source or guaranteed retention duration.
+    counterexample: Nora displayed the file but never committed a retained record.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 58cfa479709294b9809be1b7ca4914c8e67fa0434b908bbb2afaeff8b365cf61
 - architecture_version: '1.0'
   semantic_head: h
   nodes:

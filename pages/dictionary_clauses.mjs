@@ -1,10 +1,10 @@
 // English predicates come from the installed dictionary. A frame specifies which
 // participant a predicate can take in this construction, independently of its spelling.
 import {matchingChoice} from './dictionary_word_choices.mjs';
-import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=physical-closing-1';
+import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=information-storage-1';
 import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {ERASURE,isStoredInformationTarget,erasureSense} from './information_operations.mjs?v=information-operations-1';
+import {ERASURE,isStoredInformationTarget,erasureSense} from './information_operations.mjs?v=information-storage-1';
 
 const frames = new Map();
 function frame(ids,subject,object,prepositions={}) {

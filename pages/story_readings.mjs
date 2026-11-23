@@ -1,16 +1,16 @@
-import {validStorySlots} from './story_saved_adjectives.mjs?v=container-actions-1';
+import {validStorySlots} from './story_saved_adjectives.mjs?v=information-storage-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=physical-closing-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=physical-closing-1';
+import {knownValueReading} from './known_value.mjs?v=information-storage-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=information-storage-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-closing-1';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=physical-closing-1';
-import {storyWords} from './story_words.mjs?v=physical-closing-1';
-import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
-import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=physical-closing-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=information-storage-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=information-storage-1';
+import {storyWords} from './story_words.mjs?v=information-storage-1';
+import {ERASURE,isStoredInformationTarget,erasurePropertyNeedsPhase} from './information_operations.mjs?v=information-storage-1';
+import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=information-storage-1';
 import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
-import {closingAction,isPhysicalClosure,closingPropertyNeedsPhase} from './physical_closing.mjs?v=physical-closing-1';
+import {closingAction,isPhysicalClosure,closingPropertyNeedsPhase} from './physical_closing.mjs?v=information-storage-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -37,6 +37,8 @@ const shapes = [
   ['drop','drops','dropped',['actor','target'],null,'dropping'],
   ['delete','deletes','deleted',['actor','target'],ERASURE,'deleting'],
   ['copy','copies','copied',['actor','target'],null,'copying'],
+  ['save','saves','saved',['actor','target'],null,'saving'],
+  ['store','stores','stored',['actor','target'],'save','storing'],
   ['recall','recalls','recalled',['experiencer','target'],null,'recalling'],
   ['remember','remembers','remembered',['experiencer','target'],'recall','remembering'],
   ['resume','resumes','resumed',['bearer'],null,'resuming'],
@@ -233,7 +235,7 @@ function predicate(verb, subject, object, authority, runtime, preferences,comman
     return [{root:r.root,word:r.sense.lemma,roles:r.participants.map(p=>p.role),scopes:r.scopes,sense:r.sense,specific:false}];
   }
   const tail = object ? folded(syntax.tail).slice(0,-' the gate'.length) : folded(syntax.tail);
-  if(syntax.being && !object && properties.has(tail) && !Object.hasOwn(feltProperties,tail) && !['available','curious','resumed'].includes(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))}];
+  if(syntax.being && !object && properties.has(tail) && !Object.hasOwn(feltProperties,tail) && !['available','curious','resumed'].includes(tail))return [{root:properties.get(tail),word:tail,roles:['bearer'],scopes:syntax.scopes,specific:words.has(tail)||passageQualities.has(properties.get(tail))||tail==='stored'}];
   const readings = [];
   if(object && syntax.allowPast && tail==='found' && !preferences.some(p=>p.forms?.includes('found'))){
     return [{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[...syntax.scopes,'time_before_speech'],specific:true}];
@@ -441,6 +443,14 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     entities.push({reference,referenceKind:np.referenceKind,domain:np.domain,label:np.guessedName?np.reference:np.text,head:np.head,plural:!!np.plural||reference==='we',category,owner});return entities.length-1;
   }
   function passageSense(entity,word,key,root){
+    if(root==='DAT:000'){
+      if(isStoredInformationTarget(entities[entity].head)||answers[key]==='stored')return root;
+      if(answers[key]==='other')return null;
+      question={key,prompt:'Does “'+word+'” mean that '+entities[entity].label+' is retained as information?',options:[
+        {value:'stored',label:'An information item retained in a contextual store'},
+        {value:'other',label:'Another meaning'}]};
+      return null;
+    }
     if(contextualPropertyNorm(root)){
       if(answers[key]==='physical')return root;
       if(answers[key]==='other')return null;
@@ -614,17 +624,21 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         if(answers[key]!=='physical')return null;
       }
     }
-    const informationVerb=reading.root===ERASURE?'delete':reading.root===id('copy')?'copy':null;
+    const informationVerb=reading.root===ERASURE?'delete':reading.root===id('copy')?'copy':reading.root===id('save')?'save':null;
     if(informationVerb){
       const target=args.find(a=>a.role==='target');
       for(const [i,option] of [target,...target.alternatives||[]].entries()){
+        if(informationVerb==='delete'&&option.properties.some(p=>erasurePropertyNeedsPhase(p,adjectives)))return {unsupported:true,
+          reason:'This description needs to distinguish the information before and after it is removed. Please say when it was stored in a separate clause.'};
+        if(informationVerb==='save'&&option.entity===args.find(a=>a.role==='actor').entity)return null;
         const entity=entities[option.entity];
         if(isStoredInformationTarget(entity.head))continue;
         const key='information'+index+(i?'Alternative'+(i-1):'');
         if(!answers[key])return {question:{key,prompt:informationVerb==='delete'
           ?'Does “delete” mean removing '+entity.label+' from a store or collection of information?'
-          :'Does “copy” mean creating a distinct stored copy of '+entity.label+' while retaining the source?',options:[
-          {value:'stored',label:informationVerb==='delete'?'Remove the stored information item':'Create a stored copy'},{value:'other',label:'Another meaning'}]}};
+          :informationVerb==='copy'?'Does “copy” mean creating a distinct stored copy of '+entity.label+' while retaining the source?'
+          :'Does “'+reading.word+'” mean committing the information in '+entity.label+' to a retained record?',options:[
+          {value:'stored',label:informationVerb==='delete'?'Remove the stored information item':informationVerb==='copy'?'Create a stored copy':'Commit the information to a retained record'},{value:'other',label:'Another meaning'}]}};
         if(answers[key]!=='stored')return null;
       }
     }

@@ -1,8 +1,8 @@
-import {storyReading} from './story_readings.mjs?v=contextual-states-1';
-import {scoreStory} from './story_music.mjs?v=contextual-states-1';
+import {storyReading} from './story_readings.mjs?v=information-storage-1';
+import {scoreStory} from './story_music.mjs?v=information-storage-1';
 import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
 import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {sentenceReadiness} from './sentence_readiness.mjs?v=contextual-states-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=information-storage-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};

@@ -1,4 +1,4 @@
-import {storyWords} from './story_words.mjs?v=physical-closing-1';
+import {storyWords} from './story_words.mjs?v=information-storage-1';
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
 import {isPassageHead} from './passage_nouns.mjs';
 
@@ -10,7 +10,7 @@ export const properties = new Map(Object.entries({
   passable:id('passable'), open:id('passable'), blocked:id('blocked'), impassable:id('blocked'),
   closed:id('closed'),shut:id('closed'),available:id('available for use'),'available for use':id('available for use'),
   curious:id('curious'),inquisitive:id('curious'),resumed:id('resume'),empty:id('empty'),full:id('full'),
-  valid:id('valid'), wrong:id('wrong'), mistaken:id('wrong'), awake:'LIF:001', asleep:'LIF:002', well:'REP:001', lost:'MOV:212'
+  valid:id('valid'), wrong:id('wrong'), mistaken:id('wrong'), awake:'LIF:001', asleep:'LIF:002', well:'REP:001', lost:'MOV:212', stored:'DAT:000'
 }));
 
 export const isPhysicalContainer=head=>/^(?:box(?:es)?|crates?|bottles?|cups?|bowls?|buckets?|baskets?|bags?|jars?|cans?|tanks?|containers?|barrels?)$/.test(head);

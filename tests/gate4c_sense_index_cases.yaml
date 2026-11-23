@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 599
-  lemma_count: 576
+  sense_count: 603
+  lemma_count: 580
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1097,12 +1097,18 @@ exact_compound_labels:
 - input: material fissure
   expected_route: compound
   expected_target: CMP:50520ef35adf0102649dc6cf
+- input: completed commitment of information to retention
+  expected_route: compound
+  expected_target: CMP:505546d39d163ed4150830f3
 - input: completed carrying-mediated custody delivery
   expected_route: compound
   expected_target: CMP:5200738177777915abb3f42e
 - input: formal ontological dependence
   expected_route: compound
   expected_target: CMP:578fd06e1dec6f91d2b35add
+- input: caused commitment of information to retention
+  expected_route: compound
+  expected_target: CMP:58cfa479709294b9809be1b7
 - input: expression asking for an outcome
   expected_route: compound
   expected_target: CMP:59400f445c53fdb3333c7943

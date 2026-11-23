@@ -19,7 +19,7 @@
     {"domain":"computer","phrase":"I found the file.","target":"MIN:110","expected_terms":{"found":"canonical","file":"canonical"}},
     {"domain":"computer","phrase":"Open the folder.","expected_terms":{"open":"unresolved_semantic"},"must_not_auto":true},
     {"domain":"computer","phrase":"Close the folder.","expected_terms":{"close":"canonical"}},
-    {"domain":"computer","phrase":"Save the file.","expected_terms":{"save":"unresolved_semantic"},"must_not_auto":true},
+    {"domain":"computer","phrase":"Save the file.","expected_terms":{"save":"canonical"},"must_not_auto":true},
     {"domain":"computer","phrase":"Delete the file.","route":"semantic_ir","expected_terms":{"delete":"structural"},"must_not_auto":true},
     {"domain":"computer","phrase":"Copy the file.","expected_terms":{"copy":"canonical"},"must_not_auto":true},
     {"domain":"computer","phrase":"Move the file.","expected_terms":{"move":"canonical"},"must_not_auto":true},

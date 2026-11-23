@@ -1,4 +1,4 @@
-import {storyWords} from './story_words.mjs?v=physical-closing-1';
+import {storyWords} from './story_words.mjs?v=information-storage-1';
 const id=word=>storyWords.find(entry=>entry.word===word)?.id;
 const actions=new Map([[id('close'),'transition'],[id('caused closing'),'caused']]);
 const changingStates=new Set([id('closed'),id('passable'),id('blocked')]);

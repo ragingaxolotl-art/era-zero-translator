@@ -355,5 +355,48 @@
     ],
     "pos": "verb",
     "everyday": "Brings about the closure's change into its shut configuration"
+  },
+  {
+    "word": "retention commitment",
+    "title": "completed commitment of information to retention",
+    "code": 90,
+    "parts": [
+      "DAT:000",
+      "ORI:110"
+    ],
+    "definition": "A bounded information-retention operation completes a commitment of the relevant content of one target information item to a retained record in a contextual store. The record satisfies DAT:000 within that store at completion. Its committed content matches the target content at the operation's capture point under one fixed contextual content-equivalence criterion. ORI:110 actualizes this operation's completed retention commitment, not necessarily the target's or record's first existence. The record may be newly established or an existing record whose commitment is refreshed, including a successful unchanged-content save. No new copy, changed content, distinct source and destination contexts, physical medium, power-loss guarantee, indefinite retention, named version, later accessibility or truth of the information is implied. The target and retained record may be the same information object or distinct objects; this meaning does not decide their token identity. No external actor is supplied. Ongoing aspect views the operation internally without asserting a completed commitment.",
+    "example": "The information-retention operation completes its commitment of the file.",
+    "near": "The file was displayed, but no retained record was committed.",
+    "reuse": "Reuse this exact commitment before specifying its actor, storage destination, named version, restoration or stronger durability criterion.",
+    "forms": [
+  
+    ],
+    "pos": "noun_phrase",
+    "everyday": "Completes a commitment of the item’s content to a retained record"
+  },
+  {
+    "word": "save",
+    "title": "caused commitment of information to retention",
+    "code": 91,
+    "parts": [
+      "completed commitment of information to retention",
+      "ORI:211"
+    ],
+    "definition": "An actor brings about a completed commitment of one distinct target information item's relevant content to a retained record in a contextual store. The exact information-retention commitment dependency supplies the capture point, fixed content-equivalence criterion and completed retained-record result. ORI:211 grounds that commitment in the actor's causally productive contribution, rather than mere observation, correlation or background presence. The operation may establish a record or refresh an existing commitment, including unchanged content; it does not require a distinct copy or a change to the target's relevant content. The actor may be a person, program or other operative source, without a claim of intention or consciousness. No named store, physical medium, permanent or power-loss-safe retention, subsequent access, new version, additional transfer or rescue meaning is supplied. Ongoing aspect does not assert that the saving operation has completed.",
+    "example": "Nora saved the file.",
+    "near": "Nora displayed the file but never committed a retained record.",
+    "reuse": "Reuse this exact saving operation before specifying a destination, named saved version, restore source or guaranteed retention duration.",
+    "forms": [
+      "save",
+      "saves",
+      "saved",
+      "saving",
+      "store",
+      "stores",
+      "stored",
+      "storing"
+    ],
+    "pos": "verb",
+    "everyday": "Commits the item’s content to a retained information record"
   }
 ]
