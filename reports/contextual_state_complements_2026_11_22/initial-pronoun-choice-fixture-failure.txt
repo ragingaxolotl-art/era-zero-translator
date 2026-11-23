@@ -1,0 +1,17 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Nora kept the box cold. It stayed heavy. {"key":"subject1","prompt":"What does “It” refer to?","options":[{"value":"0","label":"Nora (reference 1)"},{"value":"1","label":"the box (reference 2)"}],"allowName":true}
+    at interpret (file:///Volumes/Cyber%20Pet%20Workspace/Codex%20Projects/DBA%20placement%202026-11-22/tests/contextual_state_complements_test.mjs:22:3)
+    at hear (file:///Volumes/Cyber%20Pet%20Workspace/Codex%20Projects/DBA%20placement%202026-11-22/tests/contextual_state_complements_test.mjs:28:13)
+    at file:///Volumes/Cyber%20Pet%20Workspace/Codex%20Projects/DBA%20placement%202026-11-22/tests/contextual_state_complements_test.mjs:71:21 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.3

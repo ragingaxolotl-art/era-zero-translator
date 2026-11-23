@@ -21,3 +21,5 @@ The first browser helper incorrectly waited for another meaning question while t
 This is supported story grammar, not a universal modifier parser for every sentence profile. Degree, measurements, comparative adjectives, contextual keep/stay complements and passive/perfect constructions remain open. Unspecified before/after phases for changing full/empty descriptions remain explicit failures with guidance. Physical-dimension choices do not establish figurative meanings. No numeric threshold or equal standard across different occurrences is inferred.
 
 These checks independently decode actual MIDI exports without the original English or source meaning. They do not establish general recorded-audio recovery, physical iOS/Safari behavior or unrestricted English translation. The broader completion plan remains open.
+
+Subsequent implementation: the [contextual state-complement extension](contextual_state_complements_2026_11_22.md) now supports keep/stay/remain with these same ten norms. The boundaries above describe this earlier modifier release; degree, measurement, comparisons and broader sentence profiles remain open.

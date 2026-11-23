@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /physical temperature/. Input:
+
+'Action 1 · The event or condition “Keeps the bearer in the specified state · cold (temperature, relative to the local standard)” holds. cause = Nora, bearer = the box. Runtime [1] · active, valid or executing.'
+
+    at file:///Volumes/Cyber%20Pet%20Workspace/Codex%20Projects/DBA%20placement%202026-11-22/tests/contextual_state_complements_test.mjs:64:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Action 1 · The event or condition “Keeps the bearer in the specified state · cold (temperature, relative to the local standard)” holds. cause = Nora, bearer = the box. Runtime [1] · active, valid or executing.',
+  expected: /physical temperature/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.22.3
