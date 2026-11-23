@@ -76,7 +76,7 @@ try{
   const details=page.locator('#candidateList details.meaning-explanation'),toggle=details.locator('summary');
   assert.equal(await details.evaluate(node=>node.open),false);
   await toggle.focus();await page.keyboard.press('Enter');assert.equal(await details.evaluate(node=>node.open),true);
-  const explanation=await details.innerText();assert.match(explanation,/cause=Nora/);assert.match(explanation,/physical width/);
+  const explanation=await details.innerText();assert.match(explanation,/cause\s*=\s*Nora/);assert.match(explanation,/physical width/);
   await page.keyboard.press('Space');assert.equal(await details.evaluate(node=>node.open),false);
   assert(await add().isVisible());assert(await page.getByRole('button',{name:'Play whole passage',exact:true}).isVisible());
   report.details.push({width,keyboardOpenClose:true,meaningRetained:true,actionsOutsideDetails:true});

@@ -1,0 +1,58 @@
+[
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tests/physical_closing_test.mjs"
+    ],
+    "exit_code": 0,
+    "output": "PASS 131 independent closing message pairs, 12 unchanged closed-state sounds, state/transition/cause distinctions, tense choices, roles, scopes and rejection boundaries.\n"
+  },
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tests/state_adjective_sentences_test.mjs"
+    ],
+    "exit_code": 0,
+    "output": "PASS 44 whole-sentence melody and compact-chord readings, including nested saved adjectives.\n"
+  },
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tests/contextual_modifiers_test.mjs"
+    ],
+    "exit_code": 0,
+    "output": "PASS 105 independent contextual-modifier message pairs; ten existing norms, three roles/runtime states, identity, private homonyms, boundaries and seven malformed-score rejections.\n"
+  },
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tests/physical_placement_test.mjs"
+    ],
+    "exit_code": 0,
+    "output": "PASS 69 independently decoded placement messages, three roles and adjective attachments, all runtimes, tense ambiguity, scope, clauses, literal choices and damaged-score rejection.\n"
+  },
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tests/container_actions_test.mjs"
+    ],
+    "exit_code": 0,
+    "output": "PASS 84 independent container-action message pairs, 12 unchanged adjective sounds, nested adjective phase boundaries, separate before-clause meaning, scope/role/runtime contrasts and malformed-score rejection.\n"
+  },
+  {
+    "command": [
+      "/Users/timetravellog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "tools/validate_pages_release.mjs"
+    ],
+    "exit_code": 1,
+    "output": "GitHub Pages audit: FAIL\nChecks passed: 12937; failed: 1; canonical variants: 6225\nFAIL: browser resolution scope\n"
+  },
+  {
+    "command": [
+      "ruby",
+      "tests/physical_closing_pins_test.rb"
+    ],
+    "exit_code": 0,
+    "output": "PASS 715 earlier meanings preserved; closing transition and cause reuse their exact prior dependencies under unique conventions.\n"
+  }
+]
