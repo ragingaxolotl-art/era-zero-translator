@@ -646,6 +646,28 @@ export const storyWords = [
       "CMP:9a954f78879ed70ce262bdc5",
       "ORI:211"
     ]
+  },
+  {
+    "word": "retention commitment",
+    "code": 90,
+    "example": "The information-retention operation completes its commitment of the file.",
+    "near": "The file was displayed, but no retained record was committed.",
+    "id": "CMP:505546d39d163ed4150830f3",
+    "parts": [
+      "DAT:000",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "save",
+    "code": 91,
+    "example": "Nora saved the file.",
+    "near": "Nora displayed the file but never committed a retained record.",
+    "id": "CMP:58cfa479709294b9809be1b7",
+    "parts": [
+      "CMP:505546d39d163ed4150830f3",
+      "ORI:211"
+    ]
   }
 ];
 export const storyDependencies = [

@@ -1,9 +1,9 @@
-import {savedQualityLabel} from './story_saved_adjectives.mjs?v=container-actions-1';
+import {savedQualityLabel} from './story_saved_adjectives.mjs?v=information-storage-1';
 import {expandChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=contextual-states-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=information-storage-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
-import {feltProperties} from './story_qualities.mjs?v=physical-closing-1';
-import {storyWords} from './story_words.mjs?v=physical-closing-1';
+import {feltProperties} from './story_qualities.mjs?v=information-storage-1';
+import {storyWords} from './story_words.mjs?v=information-storage-1';
 import {contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
 
 const labels=new Map([...storyWords.map(r=>[r.id,r.word]),...Object.entries(feltProperties).map(([word,id])=>[id,word])]);

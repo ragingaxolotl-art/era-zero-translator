@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 599
-  lemma_count: 576
+  sense_count: 603
+  lemma_count: 580
   canonical_atom_senses: 324
-  canonical_compound_senses: 122
+  canonical_compound_senses: 124
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 8876d17617f72022e2394d3da084b3fcaa0d7aaac885258bcafbf5264ac3476c
+  compound_dictionary_fingerprint: f04b4aa64601aaad7712ae31321a0dfb8ae6cb7264bbb2d0c4dc6ea3476440dd
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1526,6 +1526,36 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: caused commitment of information to retention
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:58cfa479709294b9809be1b7
+  definition: An actor brings about a completed commitment of one distinct target
+    information item's relevant content to a retained record in a contextual store.
+    The exact information-retention commitment dependency supplies the capture point,
+    fixed content-equivalence criterion and completed retained-record result. ORI:211
+    grounds that commitment in the actor's causally productive contribution, rather
+    than mere observation, correlation or background presence. The operation may establish
+    a record or refresh an existing commitment, including unchanged content; it does
+    not require a distinct copy or a change to the target's relevant content. The
+    actor may be a person, program or other operative source, without a claim of intention
+    or consciousness. No named store, physical medium, permanent or power-loss-safe
+    retention, subsequent access, new version, additional transfer or rescue meaning
+    is supplied. Ongoing aspect does not assert that the saving operation has completed.
+  sense_id: ENS:33478bfbd0cbac49c447c846
+  display_form: caused commitment of information to retention
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Copying requires a distinct result; saving does not; Keeping an already stored
+    item without performing a retention commitment; Sending or showing information
+    without committing a retained record; Rescuing a person or object, economizing
+    money/time, physical warehousing, or asserting permanent retention
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: caused displacement in a physical frame
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -1992,6 +2022,39 @@ senses:
     specified supporting conveyance and arrival; Carrying arrival and an unrelated
     later handover; A different carrier, object or recipient across the nested events;
     Ownership, permission or willing acceptance inferred from delivery
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
+- lemma: completed commitment of information to retention
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:505546d39d163ed4150830f3
+  definition: A bounded information-retention operation completes a commitment of
+    the relevant content of one target information item to a retained record in a
+    contextual store. The record satisfies DAT:000 within that store at completion.
+    Its committed content matches the target content at the operation's capture point
+    under one fixed contextual content-equivalence criterion. ORI:110 actualizes this
+    operation's completed retention commitment, not necessarily the target's or record's
+    first existence. The record may be newly established or an existing record whose
+    commitment is refreshed, including a successful unchanged-content save. No new
+    copy, changed content, distinct source and destination contexts, physical medium,
+    power-loss guarantee, indefinite retention, named version, later accessibility
+    or truth of the information is implied. The target and retained record may be
+    the same information object or distinct objects; this meaning does not decide
+    their token identity. No external actor is supplied. Ongoing aspect views the
+    operation internally without asserting a completed commitment.
+  sense_id: ENS:66e381b02d2ceb832bb4d9ea
+  display_form: completed commitment of information to retention
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - A target merely remains stored with no completed retention operation; A transient
+    display, send, or in-memory calculation without a retained record result; An attempted
+    or ongoing write reported as already committed; A distinct new copy, changed content,
+    different storage context, permanent preservation, physical rescue or thrift inferred
+    without being stated
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
@@ -10475,6 +10538,45 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: save
+  part_of_speech: verb
+  sense_key: caused_commitment_of_information_to_retention
+  route: compound
+  target_id: CMP:58cfa479709294b9809be1b7
+  definition: An actor brings about a completed commitment of one distinct target
+    information item's relevant content to a retained record in a contextual store.
+    The exact information-retention commitment dependency supplies the capture point,
+    fixed content-equivalence criterion and completed retained-record result. ORI:211
+    grounds that commitment in the actor's causally productive contribution, rather
+    than mere observation, correlation or background presence. The operation may establish
+    a record or refresh an existing commitment, including unchanged content; it does
+    not require a distinct copy or a change to the target's relevant content. The
+    actor may be a person, program or other operative source, without a claim of intention
+    or consciousness. No named store, physical medium, permanent or power-loss-safe
+    retention, subsequent access, new version, additional transfer or rescue meaning
+    is supplied. Ongoing aspect does not assert that the saving operation has completed.
+  sense_id: ENS:aa66bdfba590e41a8853dc3f
+  display_form: save
+  surface_forms:
+  - save
+  - saves
+  - saved
+  - saving
+  - store
+  - stores
+  - stored
+  - storing
+  selection_cues:
+  - Nora saved the file.
+  excluded_readings:
+  - Copying requires a distinct result; saving does not
+  - Keeping an already stored item without performing a retention commitment
+  - Sending or showing information without committing a retained record
+  - Rescuing a person or object, economizing money/time, physical warehousing, or
+    asserting permanent retention
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/information_storage_batch_2026_11_23.json
 - lemma: see
   part_of_speech: verb
   sense_key: visual_perception_of_a_target
@@ -10806,6 +10908,28 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: Gate 4C reviewed routing
+- lemma: stored
+  part_of_speech: adjective
+  sense_key: persistent_information_retention_state
+  target_id: DAT:000
+  route: atom
+  definition: A persistent bounded information object maintained within one reference
+    entity, independently of whether that information object is presently manifest.
+  display_form: stored
+  surface_forms:
+  - stored
+  selection_cues:
+  - The file is stored.
+  - Nora keeps the record stored.
+  excluded_readings:
+  - Physically warehoused objects
+  - A claim that a saving operation occurred
+  - Permanent, power-loss-safe or accessible retention
+  - Mental recollection or awareness
+  sense_id: ENS:b0f93969e513d2626f7301f7
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/information_storage_batch_2026_11_23.json
 - sense_id: ENS:b9aa8857b1255d4780ddc0d8
   lemma: structural repair
   display_form: structural repair
@@ -11893,6 +12017,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  caused commitment of information to retention:
+    sense_ids:
+    - ENS:33478bfbd0cbac49c447c846
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   caused displacement in a physical frame:
     sense_ids:
     - ENS:f2370b294b1156013bc3eb03
@@ -12014,6 +12145,13 @@ lemma_index:
   completed carrying-mediated custody delivery:
     sense_ids:
     - ENS:bf35dc775e55b60c346217fe
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  completed commitment of information to retention:
+    sense_ids:
+    - ENS:66e381b02d2ceb832bb4d9ea
     requires_disambiguation: false
     direct_target_count: 1
     routes:
@@ -15065,6 +15203,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  save:
+    sense_ids:
+    - ENS:aa66bdfba590e41a8853dc3f
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   see:
     sense_ids:
     - ENS:7409319a93bc8cfd2cddc172
@@ -15179,6 +15324,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  stored:
+    sense_ids:
+    - ENS:b0f93969e513d2626f7301f7
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - atom
   structural repair:
     sense_ids:
     - ENS:b9aa8857b1255d4780ddc0d8

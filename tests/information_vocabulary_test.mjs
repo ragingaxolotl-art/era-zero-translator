@@ -71,7 +71,7 @@ for(const text of ['Nora copied Mira.','Nora copied the file or the child.','Nor
   const plan=storyReading(text,authority);assert(plan?.question,text);
   assert.equal(storyReading(text,authority,{answers:{[plan.question.key]:'other'}}),null,text);
 }
-for(const text of ['Nora copied the file to the folder.','Nora copied only the file.','Nora saved the file.',
+for(const text of ['Nora copied the file to the folder.','Nora copied only the file.','Nora saved only the file.',
   'Nora remembered to copy the file.','Nora recalled that Mira left.','The file was copied.']){
   assert(!storyReading(text,authority,{answers:{retrieval0:'retrieval'}})?.events,text);
 }

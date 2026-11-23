@@ -3,6 +3,9 @@
 export const ERASURE='erase_stored_object';
 export const isStoredInformationTarget=head=>/^(?:programs?|files?|records?|messages?|documents?|backups?|logs?|entries|entry)$/.test(head||'');
 export const erasureLabel='remove the item from the contextual store';
+export function erasurePropertyNeedsPhase(property,adjectives){
+  return property==='DAT:000'||!!(property&&typeof property==='object'&&adjectives?.byId.get(property.local_id)?.atomicTargets?.includes('DAT:000'));
+}
 
 export async function scoreErasure(music){
   const {wrap,lexical}=music;

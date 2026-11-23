@@ -40,11 +40,11 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  const {decodePainMidi}=await import('./pain_music.mjs?v=partial-word-flow-1');
  const {decodeCuriosityMidi}=await import('./curiosity_music.mjs?v=partial-word-flow-1');
  const {decodeRouteLearningMidi}=await import('./route_learning_music.mjs?v=partial-word-flow-1');
- const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=physical-closing-1');
- const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=physical-closing-1');
+ const {decodeDictionaryClauseMidi}=await import('./dictionary_clause_music.mjs?v=information-storage-1');
+ const {decodeFaultCorrectionMidi}=await import('./fault_correction.mjs?v=information-storage-1');
  const {decodeInformationPassageMidi}=await import('./information_passage.mjs?v=partial-word-flow-1');
- const {decodeKnownValueMidi}=await import('./known_value.mjs?v=physical-closing-1');
- const {decodeStoryMidi}=await import('./story_music.mjs?v=contextual-states-1');
+ const {decodeKnownValueMidi}=await import('./known_value.mjs?v=information-storage-1');
+ const {decodeStoryMidi}=await import('./story_music.mjs?v=information-storage-1');
  const accepted=[];
  try{accepted.push(decodeKnownValueMidi(bytes,atoms));}catch{}
  try{accepted.push(decodeStoryMidi(bytes,atoms,adjectives));}catch{}
@@ -67,7 +67,7 @@ export async function decodeSupportedMeaningWithDrafts(bytes,atoms,records,{allo
  try{accepted.push(decodePainStimulusMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(decodePainMidi(bytes,atoms,{allowDraft:true}));}catch{}
  try{accepted.push(await decodeCuriosityMidi(bytes,atoms,records,{allowDraft:true}));}catch{}
- if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=contextual-states-1');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
+ if(allowConjunction){const {decodeCognitiveConjunctionMidi}=await import('./cognitive_conjunction_music.mjs?v=information-storage-1');try{accepted.push(await decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowDraft:true}));}catch{}}
  if(accepted.length!==1)throw new Error('No unique supported canonical or draft semantic interpretation.');
  return accepted[0];
 }

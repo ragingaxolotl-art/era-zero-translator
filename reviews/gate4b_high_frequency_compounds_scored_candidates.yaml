@@ -9080,3 +9080,179 @@ reviews:
     decision: 'rejected: semantic substitution'
   recommendation: approve explicit_closing_convention
   confidence: high
+- compound_id: CMP:505546d39d163ed4150830f3
+  display_title: completed commitment of information to retention
+  current_choice_reason: reviews/information_storage_2026_11_23.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_retention_commitment
+    direction: Reuse the retained datum, bind its commitment to the target content,
+      then add its causally productive actor without requiring a new copy or altered
+      content.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: root
+        root_id: DAT:000
+        node_id: q1
+      - kind: root
+        root_id: ORI:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: completed_commitment_of_information_to_retention
+        sound_code: 90
+        added_definition: A bounded information-retention operation completes a commitment
+          of the relevant content of one target information item to a retained record
+          in a contextual store. The record satisfies DAT:000 within that store at
+          completion. Its committed content matches the target content at the operation's
+          capture point under one fixed contextual content-equivalence criterion.
+          ORI:110 actualizes this operation's completed retention commitment, not
+          necessarily the target's or record's first existence. The record may be
+          newly established or an existing record whose commitment is refreshed, including
+          a successful unchanged-content save. No new copy, changed content, distinct
+          source and destination contexts, physical medium, power-loss guarantee,
+          indefinite retention, named version, later accessibility or truth of the
+          information is implied. The target and retained record may be the same information
+          object or distinct objects; this meaning does not decide their token identity.
+          No external actor is supplied. Ongoing aspect views the operation internally
+          without asserting a completed commitment.
+        excludes:
+        - A target merely remains stored with no completed retention operation
+        - A transient display, send, or in-memory calculation without a retained record
+          result
+        - An attempted or ongoing write reported as already committed
+        - A distinct new copy, changed content, different storage context, permanent
+          preservation, physical rescue or thrift inferred without being stated
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the retained record, target content,
+      capture point and completed commitment, or supply its cause.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Static retention, copying, transfer, data transformation or a runtime
+      ending cannot replace the selected saving operation.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_retention_commitment
+  confidence: high
+- compound_id: CMP:58cfa479709294b9809be1b7
+  display_title: caused commitment of information to retention
+  current_choice_reason: reviews/information_storage_2026_11_23.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_retention_commitment
+    direction: Reuse the retained datum, bind its commitment to the target content,
+      then add its causally productive actor without requiring a new copy or altered
+      content.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:505546d39d163ed4150830f3
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: root
+        root_id: ORI:211
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: caused_commitment_of_information_to_retention
+        sound_code: 91
+        added_definition: An actor brings about a completed commitment of one distinct
+          target information item's relevant content to a retained record in a contextual
+          store. The exact information-retention commitment dependency supplies the
+          capture point, fixed content-equivalence criterion and completed retained-record
+          result. ORI:211 grounds that commitment in the actor's causally productive
+          contribution, rather than mere observation, correlation or background presence.
+          The operation may establish a record or refresh an existing commitment,
+          including unchanged content; it does not require a distinct copy or a change
+          to the target's relevant content. The actor may be a person, program or
+          other operative source, without a claim of intention or consciousness. No
+          named store, physical medium, permanent or power-loss-safe retention, subsequent
+          access, new version, additional transfer or rescue meaning is supplied.
+          Ongoing aspect does not assert that the saving operation has completed.
+        excludes:
+        - Copying requires a distinct result; saving does not
+        - Keeping an already stored item without performing a retention commitment
+        - Sending or showing information without committing a retained record
+        - Rescuing a person or object, economizing money/time, physical warehousing,
+          or asserting permanent retention
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the retained record, target content,
+      capture point and completed commitment, or supply its cause.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: Static retention, copying, transfer, data transformation or a runtime
+      ending cannot replace the selected saving operation.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_retention_commitment
+  confidence: high
