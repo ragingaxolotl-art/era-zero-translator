@@ -1,8 +1,8 @@
-import {storyReading} from './story_readings.mjs?v=physical-placement-1';
-import {scoreStory} from './story_music.mjs?v=physical-placement-1';
+import {storyReading} from './story_readings.mjs?v=container-actions-1';
+import {scoreStory} from './story_music.mjs?v=container-actions-1';
 import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
 import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {sentenceReadiness} from './sentence_readiness.mjs?v=physical-placement-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=container-actions-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
@@ -34,7 +34,8 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
     }
     if(!plan||plan.unsupported){
       summary.textContent='This meaning has no whole-line score yet.';
-      button('Change the reading',()=>{for(const key of Object.keys(answers))delete answers[key];return render(initial);});
+      if(plan?.reason)card.append(element('p',plan.reason));
+      if(Object.keys(answers).length)button('Change the reading',()=>{for(const key of Object.keys(answers))delete answers[key];return render(initial);});
       return;
     }
     const scored=await scoreStory(plan,authority);if(!active())return;

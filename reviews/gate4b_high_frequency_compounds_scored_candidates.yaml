@@ -8725,3 +8725,193 @@ reviews:
     decision: 'rejected: semantic substitution'
   recommendation: approve explicit_placement_convention
   confidence: high
+- compound_id: CMP:8732bb43e880fb058158e27d
+  display_title: physical filling to contextual capacity
+  current_choice_reason: reviews/container_actions_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_container_change_convention
+    direction: Reuse caused content displacement, the exact container result and actualization
+      with explicit phase and participant constraints.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:82dc9c681fbaf7944cb7b85b
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: compound_ref
+        compound_id: CMP:d03beca450a29869aa6fd980
+        definition_version: 1.0.0
+        node_id: q2
+      - kind: root
+        root_id: ORI:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      - type: qualifies
+        from: q2
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_filling_to_contextual_capacity
+        sound_code: 86
+        added_definition: An actor physically adds relevant material contents to a
+          distinct container, changing it from below its fixed contextual usable-capacity
+          threshold to meeting or exceeding that same threshold. The caused-displacement
+          dependency describes the actor's movement of added contents into the container,
+          not movement of the container itself. The full-state dependency describes
+          the same container and content criterion at the result phase; ORI:110 is
+          the completed actualization of that result. These are causally linked phases
+          of one filling episode. The container's identity, positive capacity criterion
+          and relevant content kind remain fixed across the transition. The actor
+          need not move the container. No named substance, numerical amount, source,
+          exact route, seal, overflow, intention, ownership or continued fullness
+          is asserted. Adding some contents without reaching capacity does not complete
+          this meaning. Ongoing aspect views filling internally without asserting
+          a completed full result.
+        excludes:
+        - Partial addition presented as a completed filling
+        - An already full state without the required transition
+        - Changing the capacity or relevant kind to declare the container full
+        - Digital storage, completing a form, satisfying a role or emotional fulfillment
+        - A specific substance, quantity, overflow or continued result inferred without
+          being supplied
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the moved contents to the changed
+      container or identify the ordered result phase.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: A state, generic movement or runtime state cannot replace a completed
+      physical content change.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_container_change_convention
+  confidence: high
+- compound_id: CMP:f6a1885a79cc91ee94fb86aa
+  display_title: physical removal of relevant container contents
+  current_choice_reason: reviews/container_actions_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_container_change_convention
+    direction: Reuse caused content displacement, the exact container result and actualization
+      with explicit phase and participant constraints.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:82dc9c681fbaf7944cb7b85b
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: compound_ref
+        compound_id: CMP:7e3cdc51fe00e1c61e5e9f12
+        definition_version: 1.0.0
+        node_id: q2
+      - kind: root
+        root_id: ORI:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      - type: qualifies
+        from: q2
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_removal_of_relevant_container_contents
+        sound_code: 87
+        added_definition: An actor physically removes the relevant material contents
+          from a distinct container, changing it from having some such contents to
+          having none under the same fixed contextual content criterion. The caused-displacement
+          dependency describes the actor's movement of those contents out of the container,
+          not destruction or movement of the container's own body. The empty-state
+          dependency describes the same container and content criterion at the result
+          phase; ORI:110 is the completed actualization of that absence. These are
+          causally linked phases of one emptying episode. The container remains the
+          same material object, and its positive capacity and relevant content kind
+          remain fixed. Contents of irrelevant kinds, such as air in a bottle emptied
+          of water, may remain. No destination, disposal, cleaning, vacuum, named
+          substance, intention, ownership change or continued emptiness is asserted.
+          Removing only some relevant contents does not complete this meaning. Ongoing
+          aspect views emptying internally without asserting a completed empty result.
+        excludes:
+        - Partial removal presented as a completed emptying
+        - An empty state without prior relevant contents and their removal
+        - Destroying the container or annihilating contents in place
+        - A vacuum, cleaning, disposal destination or continued result inferred from
+          emptiness
+        - Deleting digital items, emotional depletion or emptying an abstraction
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the moved contents to the changed
+      container or identify the ordered result phase.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: A state, generic movement or runtime state cannot replace a completed
+      physical content change.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_container_change_convention
+  confidence: high

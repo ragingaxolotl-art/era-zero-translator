@@ -17,6 +17,7 @@ Status: **CURRENT**
 | continue | 1 | semantic_ir | — |
 | cross | 1 | semantic_ir | — |
 | dim | 1 | semantic_ir | — |
+| empty | 2 | compound | CMP:7e3cdc51fe00e1c61e5e9f12, CMP:f6a1885a79cc91ee94fb86aa |
 | exist | 2 | atom | ORI:010, ORI:110 |
 | follow | 2 | compound, semantic_ir | CMP:1a34b714578bdb300dfedbe4 |
 | food | 1 | gap | — |

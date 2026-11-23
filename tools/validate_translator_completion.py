@@ -20,6 +20,7 @@ if not args.node:
 
 commands = [['ruby', path] for path in [
     'tests/placement_dictionary_test.rb',
+    'tests/container_actions_pins_test.rb',
     'tests/contextual_width_pins_test.rb', 'tests/physical_holding_surface_pins_test.rb', 'tests/information_vocabulary_pins_test.rb', 'tests/physical_vocabulary_pins_test.rb',
     'tests/additive_vocabulary_pins_test.rb', 'tests/packet_evidence_test.rb', 'tests/min_cross_reference_migration_test.rb', 'tests/mov_process_example_migration_test.rb', 'tests/mat_capacity_example_migration_test.rb', 'tests/compound_dependencies_test.rb', 'tests/compound_expansion_test.rb', 'tests/compound_convention_test.rb',
     'tests/dictionary_musical_identity_test.rb', 'tools/audit_dictionary_musical_identity.rb', 'tools/audit_role_musical_contrasts.rb',

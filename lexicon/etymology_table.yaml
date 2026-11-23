@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 118
-  total_entries: 442
+  compound_entries: 120
+  total_entries: 444
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: 0df8270213bfde6ee1f36ca27a437a57ff7d612e3160fc2b264eb9ec7d8a14d5
+  compound_dictionary_fingerprint: f6e36ae582997d076e7bbc160a153fcf5f2e82cc331b03eebb306dd16a2b2cba
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -20977,6 +20977,94 @@ entries:
     approval_date: '2026-11-04'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:e9611bbd0ef07da79d9035f8
+  target_type: compound
+  target_id: CMP:8732bb43e880fb058158e27d
+  status: canonical
+  english_label: physical filling to contextual capacity
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:d03beca450a29869aa6fd980
+    definition_version: 1.0.0
+    node_id: q2
+  - kind: root
+    root_id: ORI:110
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  - type: qualifies
+    from: q2
+    to: h
+  semantic_derivation:
+    invariant_definition: An actor physically adds relevant material contents to a
+      distinct container, changing it from below its fixed contextual usable-capacity
+      threshold to meeting or exceeding that same threshold. The caused-displacement
+      dependency describes the actor's movement of added contents into the container,
+      not movement of the container itself. The full-state dependency describes the
+      same container and content criterion at the result phase; ORI:110 is the completed
+      actualization of that result. These are causally linked phases of one filling
+      episode. The container's identity, positive capacity criterion and relevant
+      content kind remain fixed across the transition. The actor need not move the
+      container. No named substance, numerical amount, source, exact route, seal,
+      overflow, intention, ownership or continued fullness is asserted. Adding some
+      contents without reaching capacity does not complete this meaning. Ongoing aspect
+      views filling internally without asserting a completed full result.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: physical_filling_to_contextual_capacity
+      sound_code: 86
+      added_definition: An actor physically adds relevant material contents to a distinct
+        container, changing it from below its fixed contextual usable-capacity threshold
+        to meeting or exceeding that same threshold. The caused-displacement dependency
+        describes the actor's movement of added contents into the container, not movement
+        of the container itself. The full-state dependency describes the same container
+        and content criterion at the result phase; ORI:110 is the completed actualization
+        of that result. These are causally linked phases of one filling episode. The
+        container's identity, positive capacity criterion and relevant content kind
+        remain fixed across the transition. The actor need not move the container.
+        No named substance, numerical amount, source, exact route, seal, overflow,
+        intention, ownership or continued fullness is asserted. Adding some contents
+        without reaching capacity does not complete this meaning. Ongoing aspect views
+        filling internally without asserting a completed full result.
+      excludes:
+      - Partial addition presented as a completed filling
+      - An already full state without the required transition
+      - Changing the capacity or relevant kind to declare the container full
+      - Digital storage, completing a form, satisfying a role or emotional fulfillment
+      - A specific substance, quantity, overflow or continued result inferred without
+        being supplied
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 8732bb43e880fb058158e27d65bf341864ba20af84e77771eae9bcf53ca2c245
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/container_actions_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:d1a2957b48748e4925fdaab0
   target_type: compound
   target_id: CMP:8e5ae722d9e5e31f85ac3c5b
@@ -24103,6 +24191,96 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:437ea340a563b7abd5b7f2e5
+  target_type: compound
+  target_id: CMP:f6a1885a79cc91ee94fb86aa
+  status: canonical
+  english_label: physical removal of relevant container contents
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - kind: compound_ref
+    compound_id: CMP:82dc9c681fbaf7944cb7b85b
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: compound_ref
+    compound_id: CMP:7e3cdc51fe00e1c61e5e9f12
+    definition_version: 1.0.0
+    node_id: q2
+  - kind: root
+    root_id: ORI:110
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  - type: qualifies
+    from: q2
+    to: h
+  semantic_derivation:
+    invariant_definition: An actor physically removes the relevant material contents
+      from a distinct container, changing it from having some such contents to having
+      none under the same fixed contextual content criterion. The caused-displacement
+      dependency describes the actor's movement of those contents out of the container,
+      not destruction or movement of the container's own body. The empty-state dependency
+      describes the same container and content criterion at the result phase; ORI:110
+      is the completed actualization of that absence. These are causally linked phases
+      of one emptying episode. The container remains the same material object, and
+      its positive capacity and relevant content kind remain fixed. Contents of irrelevant
+      kinds, such as air in a bottle emptied of water, may remain. No destination,
+      disposal, cleaning, vacuum, named substance, intention, ownership change or
+      continued emptiness is asserted. Removing only some relevant contents does not
+      complete this meaning. Ongoing aspect views emptying internally without asserting
+      a completed empty result.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: physical_removal_of_relevant_container_contents
+      sound_code: 87
+      added_definition: An actor physically removes the relevant material contents
+        from a distinct container, changing it from having some such contents to having
+        none under the same fixed contextual content criterion. The caused-displacement
+        dependency describes the actor's movement of those contents out of the container,
+        not destruction or movement of the container's own body. The empty-state dependency
+        describes the same container and content criterion at the result phase; ORI:110
+        is the completed actualization of that absence. These are causally linked
+        phases of one emptying episode. The container remains the same material object,
+        and its positive capacity and relevant content kind remain fixed. Contents
+        of irrelevant kinds, such as air in a bottle emptied of water, may remain.
+        No destination, disposal, cleaning, vacuum, named substance, intention, ownership
+        change or continued emptiness is asserted. Removing only some relevant contents
+        does not complete this meaning. Ongoing aspect views emptying internally without
+        asserting a completed empty result.
+      excludes:
+      - Partial removal presented as a completed emptying
+      - An empty state without prior relevant contents and their removal
+      - Destroying the container or annihilating contents in place
+      - A vacuum, cleaning, disposal destination or continued result inferred from
+        emptiness
+      - Deleting digital items, emotional depletion or emptying an abstraction
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: f6a1885a79cc91ee94fb86aa43c882c02ef8e8b469559197ca0e0c1834d165a6
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/container_actions_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:ffad55316119d437b0a21b6f

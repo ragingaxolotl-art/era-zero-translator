@@ -600,6 +600,30 @@ export const storyWords = [
       "CMP:82dc9c681fbaf7944cb7b85b",
       "MOV:110"
     ]
+  },
+  {
+    "word": "fill",
+    "code": 86,
+    "example": "Nora filled the bottle.",
+    "near": "Nora added a little water, leaving the bottle below capacity.",
+    "id": "CMP:8732bb43e880fb058158e27d",
+    "parts": [
+      "CMP:d03beca450a29869aa6fd980",
+      "CMP:82dc9c681fbaf7944cb7b85b",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "empty container",
+    "code": 87,
+    "example": "Mira emptied the box.",
+    "near": "Mira removed one item but relevant contents remained in the box.",
+    "id": "CMP:f6a1885a79cc91ee94fb86aa",
+    "parts": [
+      "CMP:82dc9c681fbaf7944cb7b85b",
+      "CMP:7e3cdc51fe00e1c61e5e9f12",
+      "ORI:110"
+    ]
   }
 ];
 export const storyDependencies = [

@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 591
+  indexed_sense_count: 595
   game_story_surface_sense_count: 48
-  total_audited_senses: 639
+  total_audited_senses: 643
   part_of_speech_counts:
     adjective: 46
     adverb: 2
@@ -15,11 +15,11 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 32
-    noun_phrase: 334
+    noun_phrase: 336
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 108
+    verb: 110
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -16179,6 +16179,33 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:866e0bc60da630204754fbcb
+  lemma: empty
+  part_of_speech: verb
+  surface_forms:
+  - empty
+  - empties
+  - emptied
+  - emptying
+  route: compound
+  target_id: CMP:f6a1885a79cc91ee94fb86aa
+  sense_key: physical_removal_of_relevant_container_contents
+  definition: An actor physically removes the relevant material contents from a distinct
+    container, changing it from having some such contents to having none under the
+    same fixed contextual content criterion. The caused-displacement dependency describes
+    the actor's movement of those contents out of the container, not destruction or
+    movement of the container's own body. The empty-state dependency describes the
+    same container and content criterion at the result phase; ORI:110 is the completed
+    actualization of that absence. These are causally linked phases of one emptying
+    episode. The container remains the same material object, and its positive capacity
+    and relevant content kind remain fixed. Contents of irrelevant kinds, such as
+    air in a bottle emptied of water, may remain. No destination, disposal, cleaning,
+    vacuum, named substance, intention, ownership change or continued emptiness is
+    asserted. Removing only some relevant contents does not complete this meaning.
+    Ongoing aspect views emptying internally without asserting a completed empty result.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:d727fc984655e0bafe2296dd
   lemma: ending of a physical holding engagement
   part_of_speech: noun_phrase
@@ -16626,6 +16653,33 @@ senses:
     plan. Figurative thirst for power or knowledge is excluded.'
   fidelity: high
   controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:dabe7ad3facfd8a051b260ec
+  lemma: fill
+  part_of_speech: verb
+  surface_forms:
+  - fill
+  - fills
+  - filled
+  - filling
+  route: compound
+  target_id: CMP:8732bb43e880fb058158e27d
+  sense_key: physical_filling_to_contextual_capacity
+  definition: An actor physically adds relevant material contents to a distinct container,
+    changing it from below its fixed contextual usable-capacity threshold to meeting
+    or exceeding that same threshold. The caused-displacement dependency describes
+    the actor's movement of added contents into the container, not movement of the
+    container itself. The full-state dependency describes the same container and content
+    criterion at the result phase; ORI:110 is the completed actualization of that
+    result. These are causally linked phases of one filling episode. The container's
+    identity, positive capacity criterion and relevant content kind remain fixed across
+    the transition. The actor need not move the container. No named substance, numerical
+    amount, source, exact route, seal, overflow, intention, ownership or continued
+    fullness is asserted. Adding some contents without reaching capacity does not
+    complete this meaning. Ongoing aspect views filling internally without asserting
+    a completed full result.
+  fidelity: high
+  controlled_input_allowed: false
   authority_layer: english_sense_index
 - sense_id: ENS:4be15dd8292bd3df4669e4e1
   lemma: find
@@ -19919,6 +19973,30 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:17317428143d025bb57b6afd
+  lemma: physical filling to contextual capacity
+  part_of_speech: noun_phrase
+  surface_forms:
+  - physical filling to contextual capacity
+  route: compound
+  target_id: CMP:8732bb43e880fb058158e27d
+  sense_key: canonical_compound_label
+  definition: An actor physically adds relevant material contents to a distinct container,
+    changing it from below its fixed contextual usable-capacity threshold to meeting
+    or exceeding that same threshold. The caused-displacement dependency describes
+    the actor's movement of added contents into the container, not movement of the
+    container itself. The full-state dependency describes the same container and content
+    criterion at the result phase; ORI:110 is the completed actualization of that
+    result. These are causally linked phases of one filling episode. The container's
+    identity, positive capacity criterion and relevant content kind remain fixed across
+    the transition. The actor need not move the container. No named substance, numerical
+    amount, source, exact route, seal, overflow, intention, ownership or continued
+    fullness is asserted. Adding some contents without reaching capacity does not
+    complete this meaning. Ongoing aspect views filling internally without asserting
+    a completed full result.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:d5a58e44ca087aff6764ad08
   lemma: physical injury
   part_of_speech: noun_phrase
@@ -20004,6 +20082,30 @@ senses:
     mover. Intention, negligence, landing, damage, a recipient and ownership transfer
     are unspecified. Release onto a support that prevents any fall, continued controlled
     lowering, a drop in price and abandoning a topic do not establish this meaning.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:ad2975f41e7f5df9449bc61c
+  lemma: physical removal of relevant container contents
+  part_of_speech: noun_phrase
+  surface_forms:
+  - physical removal of relevant container contents
+  route: compound
+  target_id: CMP:f6a1885a79cc91ee94fb86aa
+  sense_key: canonical_compound_label
+  definition: An actor physically removes the relevant material contents from a distinct
+    container, changing it from having some such contents to having none under the
+    same fixed contextual content criterion. The caused-displacement dependency describes
+    the actor's movement of those contents out of the container, not destruction or
+    movement of the container's own body. The empty-state dependency describes the
+    same container and content criterion at the result phase; ORI:110 is the completed
+    actualization of that absence. These are causally linked phases of one emptying
+    episode. The container remains the same material object, and its positive capacity
+    and relevant content kind remain fixed. Contents of irrelevant kinds, such as
+    air in a bottle emptied of water, may remain. No destination, disposal, cleaning,
+    vacuum, named substance, intention, ownership change or continued emptiness is
+    asserted. Removing only some relevant contents does not complete this meaning.
+    Ongoing aspect views emptying internally without asserting a completed empty result.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index

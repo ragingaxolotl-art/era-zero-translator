@@ -1,5 +1,5 @@
-import {clauseSyntax} from './dictionary_clauses.mjs?v=physical-placement-1';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=physical-placement-1';
+import {clauseSyntax} from './dictionary_clauses.mjs?v=container-actions-1';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=container-actions-1';
 import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
 import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';

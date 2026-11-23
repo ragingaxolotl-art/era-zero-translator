@@ -1,13 +1,14 @@
-import {validStorySlots} from './story_saved_adjectives.mjs?v=partial-word-flow-1';
+import {validStorySlots} from './story_saved_adjectives.mjs?v=container-actions-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=physical-placement-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=physical-placement-1';
+import {knownValueReading} from './known_value.mjs?v=container-actions-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=container-actions-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-placement-1';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=physical-placement-1';
-import {storyWords} from './story_words.mjs?v=physical-placement-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=container-actions-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=container-actions-1';
+import {storyWords} from './story_words.mjs?v=container-actions-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
+import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=container-actions-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -21,6 +22,8 @@ const shapes = [
   ['lower','lowers','lowered',['actor','target'],null,'lowering'],
   ['put','puts','put',['actor','target'],null,'putting'],
   ['place','places','placed',['actor','target'],'put','placing'],
+  ['fill','fills','filled',['actor','target'],null,'filling'],
+  ['empty','empties','emptied',['actor','target'],'empty container','emptying'],
   ['pull','pulls','pulled',['actor','target'],null,'pulling'],
   ['hold','holds','held',['actor','target'],'physical holding foundation','holding'],
   ['release','releases','released',['actor','target'],null,'releasing'],
@@ -556,6 +559,20 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         }
       }
       args.push(objectArg);
+    }
+    const contentChange=containerAction(reading.root);
+    if(contentChange){
+      const target=args.find(a=>a.role==='target');
+      for(const [i,option] of [target,...target.alternatives||[]].entries()){
+        if(option.properties.some(p=>containerPropertyNeedsPhase(p,adjectives)))return {unsupported:true,
+          reason:'This description needs to distinguish the container before and after its contents change. Please say when it was empty or full in a separate clause.'};
+        const entity=entities[option.entity],key='containerAction'+index+(i?'Alternative'+(i-1):'');
+        if(isPhysicalContainer(entity.head||''))continue;
+        if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” mean changing the physical contents of '+entity.label+'?',options:[
+          {value:'physical',label:contentChange==='fill'?'Fill a physical container':'Empty a physical container'},
+          {value:'other',label:'Another meaning'}]}};
+        if(answers[key]!=='physical')return null;
+      }
     }
     if(Object.hasOwn(physicalActionLabels,reading.word)){
       const affected=args.find(a=>a.role===(reading.word==='fall'?'bearer':reading.word==='displace'?'bearer':'target'));
