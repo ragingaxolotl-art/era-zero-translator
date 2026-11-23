@@ -50,6 +50,8 @@ jobs:
           ruby tests/placement_dictionary_test.rb
           node tests/container_actions_test.mjs
           ruby tests/container_actions_pins_test.rb
+          node tests/physical_closing_test.mjs
+          ruby tests/physical_closing_pins_test.rb
           node tests/contextual_width_test.mjs
           node tests/contextual_group_inverse_test.mjs
           node tests/contextual_modifiers_test.mjs

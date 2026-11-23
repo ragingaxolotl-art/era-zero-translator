@@ -1,0 +1,22 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /cause=Nora/. Input:
+
+'Meaning details\n' +
+  '\n' +
+  "Action 1 · In the past, the event or condition “Brings about the closure's change into its shut configuration” holds. cause = Nora, bearer = the wide gate (wide (physical width, relative to the local standard)). Runtime [1] · active, valid or executing."
+
+    at file:///Volumes/Cyber%20Pet%20Workspace/Codex%20Projects/DBA%20placement%202026-11-22/tools/check_physical_closing.mjs:79:54 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Meaning details\n' +
+    '\n' +
+    "Action 1 · In the past, the event or condition “Brings about the closure's change into its shut configuration” holds. cause = Nora, bearer = the wide gate (wide (physical width, relative to the local standard)). Runtime [1] · active, valid or executing.",
+  expected: /cause=Nora/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.22.3

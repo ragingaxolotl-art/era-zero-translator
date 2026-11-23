@@ -8915,3 +8915,168 @@ reviews:
     decision: 'rejected: semantic substitution'
   recommendation: approve explicit_container_change_convention
   confidence: high
+- compound_id: CMP:9a954f78879ed70ce262bdc5
+  display_title: physical transition into shut configuration
+  current_choice_reason: reviews/physical_closing_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_closing_convention
+    direction: Reuse the exact closed state, then its transition, then a causally
+      productive contribution, with explicit phase and bearer binding.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:82a697e83c845e4a7b38b53e
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: root
+        root_id: ORI:110
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: physical_transition_into_shut_configuration
+        sound_code: 88
+        added_definition: A physical closure changes from not being in its shut configuration
+          to being in that same closure's shut configuration. The exact closed-state
+          dependency applies to the same bearer at the culmination; ORI:110 actualizes
+          that result state, not the closure's existence. The closure and the criterion
+          for its shut configuration remain the same throughout the episode. No cause,
+          intention, locking, seal, security, continued closure or specific movement
+          mechanism is asserted. Merely remaining closed or moving nearer without
+          reaching the shut configuration does not complete this event. Ongoing aspect
+          views the transition internally without asserting that its closed endpoint
+          has been reached.
+        excludes:
+        - An already closed state with no transition
+        - Only partial closing presented as completed
+        - Locking, sealing, security or a persistent result inferred from closure
+        - Software closure, business cessation, finishing a deal or spatial nearness
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the same closure across phases or
+      distinguish the transition from its cause.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: A static state, generic motion or runtime ending cannot replace a closing
+      transition or its cause.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_closing_convention
+  confidence: high
+- compound_id: CMP:3019a12938289fa9f3a23237
+  display_title: caused physical transition into shut configuration
+  current_choice_reason: reviews/physical_closing_2026_11_22.md; scores are author
+    judgments, not measured accuracy or independent validation.
+  candidates:
+  - candidate_id: explicit_closing_convention
+    direction: Reuse the exact closed state, then its transition, then a causally
+      productive contribution, with explicit phase and bearer binding.
+    scores:
+      atomicity: 9
+      address_fit: 10
+      family_fit: 10
+      neighbor_separation: 9
+      cross_family_separation: 9
+      compound_usefulness: 10
+      everyday_language_coverage: 8
+      technical_coverage: 10
+    total: 75
+    decision: winner
+    graph:
+      semantic_head: h
+      nodes:
+      - kind: compound_ref
+        compound_id: CMP:9a954f78879ed70ce262bdc5
+        definition_version: 1.0.0
+        node_id: q1
+      - kind: root
+        root_id: ORI:211
+        node_id: h
+      edges:
+      - type: qualifies
+        from: q1
+        to: h
+      conventional_meaning:
+        profile: EZLEX-1
+        sense_key: caused_physical_transition_into_shut_configuration
+        sound_code: 89
+        added_definition: A cause brings about a distinct physical closure's transition
+          from not being in its shut configuration to being in it. The exact physical-closing
+          dependency supplies the same bearer's ordered transition and completed closed
+          endpoint. ORI:211 supplies the operative dependency of that transition on
+          the cause's contribution, and this convention makes the contribution causally
+          productive rather than merely correlated or necessary background. No direct
+          contact, particular force, movement path, conscious actor, intention, lock,
+          seal, security or lasting closed state is asserted. Ongoing aspect views
+          the caused closing internally without asserting that its endpoint has been
+          reached.
+        excludes:
+        - Observing a closure that closes independently
+        - Holding an already closed closure shut without a transition
+        - Being near the closure without causing its closing
+        - Software closure, locking, sealing, intention, a named mechanism or continued
+          closure inferred without being supplied
+  - candidate_id: unmarked_root_conjunction
+    direction: Root adjacency alone does not bind the same closure across phases or
+      distinguish the transition from its cause.
+    scores:
+      atomicity: 8
+      address_fit: 9
+      family_fit: 9
+      neighbor_separation: 2
+      cross_family_separation: 3
+      compound_usefulness: 4
+      everyday_language_coverage: 3
+      technical_coverage: 4
+    total: 42
+    decision: 'rejected: distinction absent'
+  - candidate_id: runtime_or_nearby_alias
+    direction: A static state, generic motion or runtime ending cannot replace a closing
+      transition or its cause.
+    scores:
+      atomicity: 2
+      address_fit: 3
+      family_fit: 3
+      neighbor_separation: 1
+      cross_family_separation: 2
+      compound_usefulness: 2
+      everyday_language_coverage: 2
+      technical_coverage: 2
+    total: 17
+    decision: 'rejected: semantic substitution'
+  recommendation: approve explicit_closing_convention
+  confidence: high

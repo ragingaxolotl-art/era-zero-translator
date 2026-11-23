@@ -4,23 +4,23 @@ metadata:
   version: 1.0.0
   status: canonical_measurement_release
   benchmark: Gate 4C exact canonical labels plus reviewed high-frequency senses
-  sense_index_fingerprint: 91e3243aa0f9b5d1e50055e91f83c23627270bbaa9cdab8114334977e60afec4
+  sense_index_fingerprint: 7b12391f5189c2437432d194a75b14e9053823b200cb13c172c74ef33145a040
   translator_started: false
 inventory:
-  total_senses: 595
-  total_lemmas: 573
+  total_senses: 599
+  total_lemmas: 576
   canonical_atom_targets: 324
-  canonical_compound_targets: 120
+  canonical_compound_targets: 122
   reviewed_high_frequency_senses: 84
 route_coverage:
   direct_atom: 358
-  direct_compound: 184
+  direct_compound: 188
   future_grammar: 8
   future_semantic_ir: 34
   unsupported_gap: 11
-  direct_lexical_percent: 91.09
-  structurally_routed_percent: 98.15
-  explicit_gap_percent: 1.85
+  direct_lexical_percent: 91.15
+  structurally_routed_percent: 98.16
+  explicit_gap_percent: 1.84
 high_frequency_benchmark:
   senses: 84
   by_route:
@@ -33,16 +33,17 @@ high_frequency_benchmark:
   eventual_structural_percent: 86.9
   gap_percent: 13.1
 ambiguity:
-  lemmas_requiring_disambiguation: 52
-  lemma_ambiguity_percent: 9.08
+  lemmas_requiring_disambiguation: 53
+  lemma_ambiguity_percent: 9.2
   lemmas_with_multiple_direct_targets:
   - change
+  - close
   - empty
   - exist
   - receive
   - send
   - share
-  multiple_direct_target_count: 6
+  multiple_direct_target_count: 7
   policy: Never choose the first candidate. Use sense ID, contextual constraints,
     or explicit clarification.
 family_exact_label_coverage:

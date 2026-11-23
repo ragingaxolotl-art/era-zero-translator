@@ -2,7 +2,7 @@
 metadata:
   title: Gate 4B dictionary conformance and routing cases
   version: 1.0.0
-  approved_entries: 120
+  approved_entries: 122
 accepted:
 - case_id: arrival_back_at_a_prior_position
   compound_id: CMP:0808e01be62b7fac873ee324
@@ -72,6 +72,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: program_definition
   compound_id: CMP:2f350e7d8e5dfba4a802d82d
+  expected: valid_approved_entry
+- case_id: caused_physical_transition_into_shut_configuration
+  compound_id: CMP:3019a12938289fa9f3a23237
   expected: valid_approved_entry
 - case_id: living_body
   compound_id: CMP:3122dedcff0f85ad293e2580
@@ -219,6 +222,9 @@ accepted:
   expected: valid_approved_entry
 - case_id: shared_message_collection
   compound_id: CMP:99a87c8869d58498f524f1cc
+  expected: valid_approved_entry
+- case_id: physical_transition_into_shut_configuration
+  compound_id: CMP:9a954f78879ed70ce262bdc5
   expected: valid_approved_entry
 - case_id: fault_that_impairs_an_intended_function
   compound_id: CMP:9afc86c0f17022e083c7a5fe

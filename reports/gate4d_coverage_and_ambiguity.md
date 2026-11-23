@@ -9,22 +9,22 @@ This report measures the approved Gate 4C index, not unrestricted English. Its b
 
 ## Coverage
 
-- Indexed senses: **595** across **573** normalized lemmas.
+- Indexed senses: **599** across **576** normalized lemmas.
 - Direct atom mappings: **358**.
-- Direct compound mappings: **184**.
+- Direct compound mappings: **188**.
 - Grammar-dependent senses: **8**.
 - Semantic-IR-dependent senses: **34**.
 - Explicit unsupported gaps: **11**.
-- Direct lexical coverage of the full index: **91.09%**.
-- Structurally routed coverage, including future grammar/IR: **98.15%**.
-- Exact controlled-label coverage: **100% of 324 atoms and 100% of 120 compounds**.
+- Direct lexical coverage of the full index: **91.15%**.
+- Structurally routed coverage, including future grammar/IR: **98.16%**.
+- Exact controlled-label coverage: **100% of 324 atoms and 100% of 122 compounds**.
 
 The reviewed high-frequency layer has **48.81%** direct lexical coverage and **86.9%** eventual coverage after the planned grammar and semantic IR exist. Its remaining **13.1%** are honest vocabulary gaps.
 
 ## Ambiguity
 
-- Lemmas requiring disambiguation or nonlexical routing: **52/573 (9.08%)**.
-- Lemmas with more than one direct canonical target: **6**.
+- Lemmas requiring disambiguation or nonlexical routing: **53/576 (9.2%)**.
+- Lemmas with more than one direct canonical target: **7**.
 - Critical polysemy includes *send*, *receive*, *share*, *change*, *exist*, and similar domain-sensitive verbs.
 
 A future translator must never select the first sense by file order. It must use a supplied controlled sense, contextual constraints, ranked candidates, or clarification. An unsupported reading must return a structured gap, not a nearby meaning.

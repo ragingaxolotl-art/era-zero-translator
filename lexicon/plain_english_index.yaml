@@ -12,8 +12,8 @@ policy:
     authorize automatic semantic resolution.
 counts:
   atoms: 324
-  compounds: 120
-  entries: 444
+  compounds: 122
+  entries: 446
 entries:
 - target_id: CMP:0808e01be62b7fac873ee324
   target_type: compound
@@ -536,6 +536,43 @@ entries:
   example_searches:
   - program
   - program definition
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:3019a12938289fa9f3a23237
+  target_type: compound
+  canonical_title: caused physical transition into shut configuration
+  plain_label: caused physical transition into shut configuration
+  plain_explanation: An everyday discovery label for the approved compound “caused
+    physical transition into shut configuration”; the compound graph controls its
+    exact meaning.
+  ordinary_terms:
+  - caused
+  - physical
+  - transition
+  - into
+  - shut
+  - configuration
+  - caused physical transition into shut configuration
+  - close
+  - closes
+  - closed
+  - closing
+  - shuts
+  - shutting
+  match_phrases:
+  - caused physical transition into shut configuration
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  example_searches:
+  - caused physical transition into shut configuration
+  - close
+  - closes
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.
@@ -1344,7 +1381,7 @@ entries:
 - target_id: CMP:82a697e83c845e4a7b38b53e
   target_type: compound
   canonical_title: shut configuration of a closure
-  plain_label: shut
+  plain_label: shut configuration of a closure
   plain_explanation: An everyday discovery label for the approved compound “shut configuration
     of a closure”; the compound graph controls its exact meaning.
   ordinary_terms:
@@ -1644,6 +1681,41 @@ entries:
   - shared message collection
   example_searches:
   - shared message collection
+  mapping_status: discovery_only_noncanonical
+  authority_note: These words help people find the compound. They do not replace or
+    broaden its canonical graph.
+- target_id: CMP:9a954f78879ed70ce262bdc5
+  target_type: compound
+  canonical_title: physical transition into shut configuration
+  plain_label: physical transition into shut configuration
+  plain_explanation: An everyday discovery label for the approved compound “physical
+    transition into shut configuration”; the compound graph controls its exact meaning.
+  ordinary_terms:
+  - physical
+  - transition
+  - into
+  - shut
+  - configuration
+  - close
+  - closes
+  - closed
+  - closing
+  - shuts
+  - shutting
+  - physical transition into shut configuration
+  match_phrases:
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  - physical transition into shut configuration
+  example_searches:
+  - close
+  - closes
+  - closed
   mapping_status: discovery_only_noncanonical
   authority_note: These words help people find the compound. They do not replace or
     broaden its canonical graph.

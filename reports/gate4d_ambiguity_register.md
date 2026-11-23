@@ -13,6 +13,7 @@ Status: **CURRENT**
 | build | 1 | semantic_ir | — |
 | cause | 1 | grammar | — |
 | change | 5 | atom, semantic_ir | DAT:101, MAT:101, MIN:101, STR:101 |
+| close | 2 | compound | CMP:3019a12938289fa9f3a23237, CMP:9a954f78879ed70ce262bdc5 |
 | cold | 1 | semantic_ir | — |
 | continue | 1 | semantic_ir | — |
 | cross | 1 | semantic_ir | — |

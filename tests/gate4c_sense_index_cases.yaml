@@ -1,8 +1,8 @@
 ---
 metadata:
   version: 1.0.0
-  sense_count: 595
-  lemma_count: 573
+  sense_count: 599
+  lemma_count: 576
 exact_atom_labels:
 - input: continuous self
   expected_route: atom
@@ -1046,6 +1046,9 @@ exact_compound_labels:
 - input: program definition
   expected_route: compound
   expected_target: CMP:2f350e7d8e5dfba4a802d82d
+- input: caused physical transition into shut configuration
+  expected_route: compound
+  expected_target: CMP:3019a12938289fa9f3a23237
 - input: living body
   expected_route: compound
   expected_target: CMP:3122dedcff0f85ad293e2580
@@ -1193,6 +1196,9 @@ exact_compound_labels:
 - input: shared message collection
   expected_route: compound
   expected_target: CMP:99a87c8869d58498f524f1cc
+- input: physical transition into shut configuration
+  expected_route: compound
+  expected_target: CMP:9a954f78879ed70ce262bdc5
 - input: fault that impairs an intended function
   expected_route: compound
   expected_target: CMP:9afc86c0f17022e083c7a5fe

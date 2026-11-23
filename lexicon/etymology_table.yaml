@@ -4,12 +4,12 @@ metadata:
   version: 1.0.0
   status: canonical_gate4e
   atom_entries: 324
-  compound_entries: 120
-  total_entries: 444
+  compound_entries: 122
+  total_entries: 446
   scope: Auditable synchronic derivation and authority provenance; no invented natural-language
     ancestry.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: f6e36ae582997d076e7bbc160a153fcf5f2e82cc331b03eebb306dd16a2b2cba
+  compound_dictionary_fingerprint: 8876d17617f72022e2394d3da084b3fcaa0d7aaac885258bcafbf5264ac3476c
 principles:
   synchronic_not_fictional: Era Zero forms are engineered encodings. The table records
     actual construction rules and approval history rather than inventing ancestors
@@ -18528,6 +18528,78 @@ entries:
     approval_date: '2026-10-09'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
+- etymology_id: ETY:2a289bfd842ba6edb53ba6df
+  target_type: compound
+  target_id: CMP:3019a12938289fa9f3a23237
+  status: canonical
+  english_label: caused physical transition into shut configuration
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:211
+  components:
+  - kind: compound_ref
+    compound_id: CMP:9a954f78879ed70ce262bdc5
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: ORI:211
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A cause brings about a distinct physical closure's transition
+      from not being in its shut configuration to being in it. The exact physical-closing
+      dependency supplies the same bearer's ordered transition and completed closed
+      endpoint. ORI:211 supplies the operative dependency of that transition on the
+      cause's contribution, and this convention makes the contribution causally productive
+      rather than merely correlated or necessary background. No direct contact, particular
+      force, movement path, conscious actor, intention, lock, seal, security or lasting
+      closed state is asserted. Ongoing aspect views the caused closing internally
+      without asserting that its endpoint has been reached.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: caused_physical_transition_into_shut_configuration
+      sound_code: 89
+      added_definition: A cause brings about a distinct physical closure's transition
+        from not being in its shut configuration to being in it. The exact physical-closing
+        dependency supplies the same bearer's ordered transition and completed closed
+        endpoint. ORI:211 supplies the operative dependency of that transition on
+        the cause's contribution, and this convention makes the contribution causally
+        productive rather than merely correlated or necessary background. No direct
+        contact, particular force, movement path, conscious actor, intention, lock,
+        seal, security or lasting closed state is asserted. Ongoing aspect views the
+        caused closing internally without asserting that its endpoint has been reached.
+      excludes:
+      - Observing a closure that closes independently
+      - Holding an already closed closure shut without a transition
+      - Being near the closure without causing its closing
+      - Software closure, locking, sealing, intention, a named mechanism or continued
+        closure inferred without being supplied
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 3019a12938289fa9f3a232378c45138d7a19b922e1b9599c0d230ddb0e6824d8
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_closing_2026_11_22.yaml
+    approval_date: '2026-11-22'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
 - etymology_id: ETY:1375f21e6d70ac651b1601cb
   target_type: compound
   target_id: CMP:3122dedcff0f85ad293e2580
@@ -21473,6 +21545,78 @@ entries:
     authority: gate4b_reviewed_compound
     record: migrations/gate4b_compound_dictionary_1.0.yaml
     approval_date: '2026-10-09'
+  historical_claim: No English calque history is asserted. The English title labels
+    the approved compositional graph.
+- etymology_id: ETY:bfa2f32af23fcbaf50a5ccc0
+  target_type: compound
+  target_id: CMP:9a954f78879ed70ce262bdc5
+  status: canonical
+  english_label: physical transition into shut configuration
+  english_label_status: indexing_gloss_not_identity
+  formation_type: explicit_conventional_graph_specialization
+  head:
+    node_id: h
+    kind: root
+    target_id: ORI:110
+  components:
+  - kind: compound_ref
+    compound_id: CMP:82a697e83c845e4a7b38b53e
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: ORI:110
+    node_id: h
+  relations:
+  - type: qualifies
+    from: q1
+    to: h
+  semantic_derivation:
+    invariant_definition: A physical closure changes from not being in its shut configuration
+      to being in that same closure's shut configuration. The exact closed-state dependency
+      applies to the same bearer at the culmination; ORI:110 actualizes that result
+      state, not the closure's existence. The closure and the criterion for its shut
+      configuration remain the same throughout the episode. No cause, intention, locking,
+      seal, security, continued closure or specific movement mechanism is asserted.
+      Merely remaining closed or moving nearer without reaching the shut configuration
+      does not complete this event. Ongoing aspect views the transition internally
+      without asserting that its closed endpoint has been reached.
+    rule: The explicit head supplies the category; qualifies edges narrow it; fills_role
+      edges bind typed participants; no component loses its canonical meaning. The
+      explicit conventional definition adds a separately identified commitment not
+      entailed by that graph.
+    conventional_meaning:
+      profile: EZLEX-1
+      sense_key: physical_transition_into_shut_configuration
+      sound_code: 88
+      added_definition: A physical closure changes from not being in its shut configuration
+        to being in that same closure's shut configuration. The exact closed-state
+        dependency applies to the same bearer at the culmination; ORI:110 actualizes
+        that result state, not the closure's existence. The closure and the criterion
+        for its shut configuration remain the same throughout the episode. No cause,
+        intention, locking, seal, security, continued closure or specific movement
+        mechanism is asserted. Merely remaining closed or moving nearer without reaching
+        the shut configuration does not complete this event. Ongoing aspect views
+        the transition internally without asserting that its closed endpoint has been
+        reached.
+      excludes:
+      - An already closed state with no transition
+      - Only partial closing presented as completed
+      - Locking, sealing, security or a persistent result inferred from closure
+      - Software closure, business cessation, finishing a deal or spatial nearness
+  identity_derivation:
+    architecture_version: '1.0'
+    canonical_format: EZC-JSON-1
+    content_digest: 9a954f78879ed70ce262bdc5e800112316f68c1737a43f861b982c7f76082f49
+    compound_id_rule: CMP plus the first 24 lowercase hexadecimal digits of the semantic-payload
+      SHA-256 digest
+  surface_derivation: Qualifiers precede their targets with no gap; typed arguments
+    use role register and short-gap binding; runtime state is occurrence metadata
+    and is not etymology. EZLEX-1 ternary frames identify the conventional meaning
+    around its exact compound scope.
+  provenance:
+    authority: gate4b_reviewed_compound
+    record: migrations/physical_closing_2026_11_22.yaml
+    approval_date: '2026-11-22'
   historical_claim: No English calque history is asserted. The English title labels
     the approved compositional graph.
 - etymology_id: ETY:52252edb01db141c28bf4d16

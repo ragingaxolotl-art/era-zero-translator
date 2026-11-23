@@ -1,6 +1,6 @@
 import {localParticipantGroups} from './local_participant_groups.mjs';
-import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs?v=container-actions-1';
-import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs?v=container-actions-1';
+import {localWordPronounPlan,resolveLocalWordPronouns} from './local_compound_pronouns.mjs?v=physical-closing-1';
+import {localAdjectivePlan,composeLocalAdjective,localVerbPlan,localVerbCandidates,composeLocalVerb} from './local_compound_english.mjs?v=physical-closing-1';
 import {expandLocalCompound} from './local_compound_expansion.mjs?v=partial-word-flow-1';
 import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
 function describeInterpretation(plan) {

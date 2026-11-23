@@ -4,9 +4,9 @@ Status: **PASS — GATE 4D COMPLETE; GATE 4E MAY BEGIN**
 
 - Checks passed: **11**
 - Checks failed: **0**
-- Measured senses: **595**
-- Measured lemmas: **573**
-- Direct lexical coverage: **91.09%**
+- Measured senses: **599**
+- Measured lemmas: **576**
+- Direct lexical coverage: **91.15%**
 - Explicit gaps: **11**
 - Translator authorized: **no**
 

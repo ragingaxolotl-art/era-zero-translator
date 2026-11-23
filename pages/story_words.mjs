@@ -624,6 +624,28 @@ export const storyWords = [
       "CMP:7e3cdc51fe00e1c61e5e9f12",
       "ORI:110"
     ]
+  },
+  {
+    "word": "close",
+    "code": 88,
+    "example": "The gate closed.",
+    "near": "The gate was already shut and stayed that way.",
+    "id": "CMP:9a954f78879ed70ce262bdc5",
+    "parts": [
+      "CMP:82a697e83c845e4a7b38b53e",
+      "ORI:110"
+    ]
+  },
+  {
+    "word": "caused closing",
+    "code": 89,
+    "example": "Nora closed the gate.",
+    "near": "Nora watched the gate close for an unrelated reason.",
+    "id": "CMP:3019a12938289fa9f3a23237",
+    "parts": [
+      "CMP:9a954f78879ed70ce262bdc5",
+      "ORI:211"
+    ]
   }
 ];
 export const storyDependencies = [

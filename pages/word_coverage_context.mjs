@@ -1,7 +1,7 @@
-import {properties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=container-actions-1';
+import {properties,isMaterialTarget,isPhysicalContainer,physicalActionLabels} from './story_qualities.mjs?v=physical-closing-1';
 // Some compounds have multiword English names. Their component words alone can
 // suggest unrelated predicates (for example "used" inside "open for use").
-import {storyWords} from './story_words.mjs?v=container-actions-1';
+import {storyWords} from './story_words.mjs?v=physical-closing-1';
 import {mentionsOpeningPassage} from './passage_nouns.mjs';
 const phraseHeads=new Map(storyWords.filter(w=>w.word.includes(' ')).map(w=>[w.id,w.word]));
 const ids=new Map(storyWords.map(w=>[w.word,w.id]));

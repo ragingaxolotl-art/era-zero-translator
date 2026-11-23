@@ -1,8 +1,8 @@
-import {storyReading} from './story_readings.mjs?v=contextual-modifiers-1';
-import {scoreStory} from './story_music.mjs?v=contextual-modifiers-1';
+import {storyReading} from './story_readings.mjs?v=physical-closing-1';
+import {scoreStory} from './story_music.mjs?v=physical-closing-1';
 import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
 import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {sentenceReadiness} from './sentence_readiness.mjs?v=contextual-modifiers-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=physical-closing-1';
 
 export async function showStoryControls(input,authority,{list,summary,current,preferences,adjectives,player,add,download,onError},initial){
   const element=(tag,text)=>{const node=document.createElement(tag);if(text)node.textContent=text;return node;};
@@ -41,7 +41,8 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
     const scored=await scoreStory(plan,authority);if(!active())return;
     const readiness=await sentenceReadiness(scored.midi,authority.atoms,{adjectives});if(!active())return;
     summary.textContent=readiness.summary;
-    card.append(element('p',scored.description));
+    const details=element('details');details.className='meaning-explanation';
+    details.append(element('summary','Meaning details'),element('p',scored.description));card.append(details);
     card.append(element('p',readiness.detail));
     button('Play whole passage',()=>player.play(scored.midi)).className='primary';
     button('Play compact chords',()=>player.play(compactChordMidi(scored.midi,authority.atoms),{chords:true}));

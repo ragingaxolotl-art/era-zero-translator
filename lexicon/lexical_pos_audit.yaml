@@ -5,9 +5,9 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 595
+  indexed_sense_count: 599
   game_story_surface_sense_count: 48
-  total_audited_senses: 643
+  total_audited_senses: 647
   part_of_speech_counts:
     adjective: 46
     adverb: 2
@@ -15,11 +15,11 @@ metadata:
     grammar: 1
     interjection: 1
     noun: 32
-    noun_phrase: 336
+    noun_phrase: 338
     number: 1
     preposition: 2
     quantifier: 1
-    verb: 110
+    verb: 112
     verb_phrase: 108
   policy: English senses carry parts of speech; Era Zero roots retain address-derived
     semantic affordances and may support more than one English syntactic realization.
@@ -14579,6 +14579,26 @@ senses:
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index
+- sense_id: ENS:1c1982794f196e236264bd7a
+  lemma: caused physical transition into shut configuration
+  part_of_speech: noun_phrase
+  surface_forms:
+  - caused physical transition into shut configuration
+  route: compound
+  target_id: CMP:3019a12938289fa9f3a23237
+  sense_key: canonical_compound_label
+  definition: A cause brings about a distinct physical closure's transition from not
+    being in its shut configuration to being in it. The exact physical-closing dependency
+    supplies the same bearer's ordered transition and completed closed endpoint. ORI:211
+    supplies the operative dependency of that transition on the cause's contribution,
+    and this convention makes the contribution causally productive rather than merely
+    correlated or necessary background. No direct contact, particular force, movement
+    path, conscious actor, intention, lock, seal, security or lasting closed state
+    is asserted. Ongoing aspect views the caused closing internally without asserting
+    that its endpoint has been reached.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
 - sense_id: ENS:028b3170d0e025b60d8a5065
   lemma: caused upward physical displacement
   part_of_speech: noun_phrase
@@ -14702,6 +14722,58 @@ senses:
   definition: An inspector deliberately evaluates information about a particular target
     for a relevant condition. The inspection itself is the reported action. Its outcome
     can be favorable, unfavorable or inconclusive.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:b81bc6449e0d4193ddccfc1f
+  lemma: close
+  part_of_speech: verb
+  surface_forms:
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  route: compound
+  target_id: CMP:3019a12938289fa9f3a23237
+  sense_key: caused_physical_transition_into_shut_configuration
+  definition: A cause brings about a distinct physical closure's transition from not
+    being in its shut configuration to being in it. The exact physical-closing dependency
+    supplies the same bearer's ordered transition and completed closed endpoint. ORI:211
+    supplies the operative dependency of that transition on the cause's contribution,
+    and this convention makes the contribution causally productive rather than merely
+    correlated or necessary background. No direct contact, particular force, movement
+    path, conscious actor, intention, lock, seal, security or lasting closed state
+    is asserted. Ongoing aspect views the caused closing internally without asserting
+    that its endpoint has been reached.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:a1249ed28ee0d0aae4eb0e30
+  lemma: close
+  part_of_speech: verb
+  surface_forms:
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  route: compound
+  target_id: CMP:9a954f78879ed70ce262bdc5
+  sense_key: physical_transition_into_shut_configuration
+  definition: A physical closure changes from not being in its shut configuration
+    to being in that same closure's shut configuration. The exact closed-state dependency
+    applies to the same bearer at the culmination; ORI:110 actualizes that result
+    state, not the closure's existence. The closure and the criterion for its shut
+    configuration remain the same throughout the episode. No cause, intention, locking,
+    seal, security, continued closure or specific movement mechanism is asserted.
+    Merely remaining closed or moving nearer without reaching the shut configuration
+    does not complete this event. Ongoing aspect views the transition internally without
+    asserting that its closed endpoint has been reached.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -20131,6 +20203,26 @@ senses:
   target_id: CMP:111b772027accab2054f0415
   sense_key: canonical_compound_label
   definition: A generated artifact with enduring physical work capacity.
+  fidelity: high
+  controlled_input_allowed: true
+  authority_layer: english_sense_index
+- sense_id: ENS:9a65b07e11f631042a056756
+  lemma: physical transition into shut configuration
+  part_of_speech: noun_phrase
+  surface_forms:
+  - physical transition into shut configuration
+  route: compound
+  target_id: CMP:9a954f78879ed70ce262bdc5
+  sense_key: canonical_compound_label
+  definition: A physical closure changes from not being in its shut configuration
+    to being in that same closure's shut configuration. The exact closed-state dependency
+    applies to the same bearer at the culmination; ORI:110 actualizes that result
+    state, not the closure's existence. The closure and the criterion for its shut
+    configuration remain the same throughout the episode. No cause, intention, locking,
+    seal, security, continued closure or specific movement mechanism is asserted.
+    Merely remaining closed or moving nearer without reaching the shut configuration
+    does not complete this event. Ongoing aspect views the transition internally without
+    asserting that its closed endpoint has been reached.
   fidelity: high
   controlled_input_allowed: true
   authority_layer: english_sense_index

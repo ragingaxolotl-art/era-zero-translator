@@ -3,15 +3,15 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 595
-  lemma_count: 573
+  sense_count: 599
+  lemma_count: 576
   canonical_atom_senses: 324
-  canonical_compound_senses: 120
+  canonical_compound_senses: 122
   reviewed_high_frequency_senses: 84
   scope: Exact canonical labels plus a reviewed high-frequency polysemy and routing
     layer; not an exhaustive English dictionary.
   atomic_lexicon_fingerprint: a6b9e2a49fe2123bc80fec8f44b7287e3e0ff79f5ef316e34dc86c1466a4eb28
-  compound_dictionary_fingerprint: f6e36ae582997d076e7bbc160a153fcf5f2e82cc331b03eebb306dd16a2b2cba
+  compound_dictionary_fingerprint: 8876d17617f72022e2394d3da084b3fcaa0d7aaac885258bcafbf5264ac3476c
   semantic_ir_started: false
   translator_started: false
 senses:
@@ -1592,6 +1592,33 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: caused physical transition into shut configuration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:3019a12938289fa9f3a23237
+  definition: A cause brings about a distinct physical closure's transition from not
+    being in its shut configuration to being in it. The exact physical-closing dependency
+    supplies the same bearer's ordered transition and completed closed endpoint. ORI:211
+    supplies the operative dependency of that transition on the cause's contribution,
+    and this convention makes the contribution causally productive rather than merely
+    correlated or necessary background. No direct contact, particular force, movement
+    path, conscious actor, intention, lock, seal, security or lasting closed state
+    is asserted. Ongoing aspect views the caused closing internally without asserting
+    that its endpoint has been reached.
+  sense_id: ENS:1c1982794f196e236264bd7a
+  display_form: caused physical transition into shut configuration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - Observing a closure that closes independently; Holding an already closed closure
+    shut without a transition; Being near the closure without causing its closing;
+    Software closure, locking, sealing, intention, a named mechanism or continued
+    closure inferred without being supplied
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - lemma: caused upward physical displacement
   part_of_speech: noun_phrase
   sense_key: canonical_compound_label
@@ -1750,6 +1777,75 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: close
+  part_of_speech: verb
+  sense_key: caused_physical_transition_into_shut_configuration
+  route: compound
+  target_id: CMP:3019a12938289fa9f3a23237
+  definition: A cause brings about a distinct physical closure's transition from not
+    being in its shut configuration to being in it. The exact physical-closing dependency
+    supplies the same bearer's ordered transition and completed closed endpoint. ORI:211
+    supplies the operative dependency of that transition on the cause's contribution,
+    and this convention makes the contribution causally productive rather than merely
+    correlated or necessary background. No direct contact, particular force, movement
+    path, conscious actor, intention, lock, seal, security or lasting closed state
+    is asserted. Ongoing aspect views the caused closing internally without asserting
+    that its endpoint has been reached.
+  sense_id: ENS:b81bc6449e0d4193ddccfc1f
+  display_form: close
+  surface_forms:
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  selection_cues:
+  - Nora closed the gate.
+  excluded_readings:
+  - Observing a closure that closes independently
+  - Holding an already closed closure shut without a transition
+  - Being near the closure without causing its closing
+  - Software closure, locking, sealing, intention, a named mechanism or continued
+    closure inferred without being supplied
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_closing_batch_2026_11_22.json
+- lemma: close
+  part_of_speech: verb
+  sense_key: physical_transition_into_shut_configuration
+  route: compound
+  target_id: CMP:9a954f78879ed70ce262bdc5
+  definition: A physical closure changes from not being in its shut configuration
+    to being in that same closure's shut configuration. The exact closed-state dependency
+    applies to the same bearer at the culmination; ORI:110 actualizes that result
+    state, not the closure's existence. The closure and the criterion for its shut
+    configuration remain the same throughout the episode. No cause, intention, locking,
+    seal, security, continued closure or specific movement mechanism is asserted.
+    Merely remaining closed or moving nearer without reaching the shut configuration
+    does not complete this event. Ongoing aspect views the transition internally without
+    asserting that its closed endpoint has been reached.
+  sense_id: ENS:a1249ed28ee0d0aae4eb0e30
+  display_form: close
+  surface_forms:
+  - close
+  - closes
+  - closed
+  - closing
+  - shut
+  - shuts
+  - shutting
+  selection_cues:
+  - The gate closed.
+  excluded_readings:
+  - An already closed state with no transition
+  - Only partial closing presented as completed
+  - Locking, sealing, security or a persistent result inferred from closure
+  - Software closure, business cessation, finishing a deal or spatial nearness
+  confidence: high
+  controlled_input_allowed: false
+  provenance: lexicon/physical_closing_batch_2026_11_22.json
 - lemma: closed
   part_of_speech: adjective
   sense_key: shut_configuration_of_a_closure
@@ -9077,6 +9173,32 @@ senses:
   confidence: high
   controlled_input_allowed: true
   provenance: lexicon/compound_dictionary.yaml
+- lemma: physical transition into shut configuration
+  part_of_speech: noun_phrase
+  sense_key: canonical_compound_label
+  route: compound
+  target_id: CMP:9a954f78879ed70ce262bdc5
+  definition: A physical closure changes from not being in its shut configuration
+    to being in that same closure's shut configuration. The exact closed-state dependency
+    applies to the same bearer at the culmination; ORI:110 actualizes that result
+    state, not the closure's existence. The closure and the criterion for its shut
+    configuration remain the same throughout the episode. No cause, intention, locking,
+    seal, security, continued closure or specific movement mechanism is asserted.
+    Merely remaining closed or moving nearer without reaching the shut configuration
+    does not complete this event. Ongoing aspect views the transition internally without
+    asserting that its closed endpoint has been reached.
+  sense_id: ENS:9a65b07e11f631042a056756
+  display_form: physical transition into shut configuration
+  selection_cues:
+  - exact approved compound label
+  - all component restrictions are intended
+  excluded_readings:
+  - An already closed state with no transition; Only partial closing presented as
+    completed; Locking, sealing, security or a persistent result inferred from closure;
+    Software closure, business cessation, finishing a deal or spatial nearness
+  confidence: high
+  controlled_input_allowed: true
+  provenance: lexicon/compound_dictionary.yaml
 - sense_id: ENS:42a927117beb8fe62bc625b5
   lemma: pleasant felt condition
   display_form: pleasant felt condition
@@ -11792,6 +11914,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  caused physical transition into shut configuration:
+    sense_ids:
+    - ENS:1c1982794f196e236264bd7a
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
   caused upward physical displacement:
     sense_ids:
     - ENS:028b3170d0e025b60d8a5065
@@ -11830,6 +11959,14 @@ lemma_index:
     - ENS:eaabf176a022c74a9217fcba
     requires_disambiguation: false
     direct_target_count: 1
+    routes:
+    - compound
+  close:
+    sense_ids:
+    - ENS:b81bc6449e0d4193ddccfc1f
+    - ENS:a1249ed28ee0d0aae4eb0e30
+    requires_disambiguation: true
+    direct_target_count: 2
     routes:
     - compound
   closed:
@@ -14491,6 +14628,13 @@ lemma_index:
   physical tool:
     sense_ids:
     - ENS:8420af877bacec19a5e0e087
+    requires_disambiguation: false
+    direct_target_count: 1
+    routes:
+    - compound
+  physical transition into shut configuration:
+    sense_ids:
+    - ENS:9a65b07e11f631042a056756
     requires_disambiguation: false
     direct_target_count: 1
     routes:

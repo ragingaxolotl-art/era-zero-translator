@@ -1,7 +1,7 @@
 // English predicates come from the installed dictionary. A frame specifies which
 // participant a predicate can take in this construction, independently of its spelling.
 import {matchingChoice} from './dictionary_word_choices.mjs';
-import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=container-actions-1';
+import {analyzeEnglish,phrasalVerbAt} from './english.mjs?v=physical-closing-1';
 import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
 import {ERASURE,isStoredInformationTarget,erasureSense} from './information_operations.mjs?v=information-operations-1';
@@ -22,7 +22,7 @@ frame('DAT:121 CON:121','source','content',{with:'recipient'});
 frame('REP:101 LIF:101 MOV:100 MOV:101','actor',null);
 frame('WRN:001 REP:001 LIF:001 LIF:002 LIF:011 LIF:012','bearer',null);
 
-const pastForms={put:'put',hold:'held',find:'found',see:'saw',make:'made',break:'broke',build:'built',send:'sent',leave:'left',go:'went',wake:'woke',sleep:'slept',know:'knew',seek:'sought',take:'took',run:'ran',come:'came',bring:'brought',heal:'healed',hurt:'hurt',do:'did'};
+const pastForms={put:'put',shut:'shut',hold:'held',find:'found',see:'saw',make:'made',break:'broke',build:'built',send:'sent',leave:'left',go:'went',wake:'woke',sleep:'slept',know:'knew',seek:'sought',take:'took',run:'ran',come:'came',bring:'brought',heal:'healed',hurt:'hurt',do:'did'};
 const phases={'REP:110':['REP:111','REP:110'],'REP:111':['REP:111','REP:110'],'WRN:111':['WRN:111','WRN:110'],'CRE:111':['CRE:111','CRE:110'],'CON:101':['CON:101','CON:100'],'CON:111':['CON:111','CON:110'],'LIF:111':['LIF:111','LIF:110']};
 const particles=new Set(['up','for','from','to','at','of','with','on','out','down','in','off']);
 const forbidden=new Set('a an the this that these those and or but not no never if unless then now today yesterday tomorrow may might will would could should must can to from of in on at with for before after by i me my we us our you your he she they them it her his who what someone nobody everyone something nothing one two three all some each please do does did is are am was were had has have need needs might maybe perhaps when how why which where must would kindly there yes no other any none'.split(' '));
@@ -36,7 +36,7 @@ function inflections(phrase) {
   if (/[^aeiou]y$/.test(verb)){third=verb.slice(0,-1)+'ies';past=verb.slice(0,-1)+'ied';}
   else {third=verb+(/(?:s|sh|ch|x|z|o)$/.test(verb)?'es':'s');past=verb+(verb.endsWith('e')?'d':'ed');}
   const stem=verb.replace(/([^e])e$/,'$1');
-  return {base:phrase,third:third+tail,past:(pastForms[verb]||past)+tail,progressive:(verb==='put'?'putting':stem+'ing')+tail};
+  return {base:phrase,third:third+tail,past:(pastForms[verb]||past)+tail,progressive:(({put:'putting',shut:'shutting'})[verb]||stem+'ing')+tail};
 }
 
 // Recognition is separate from having a composer for a particular sentence.
