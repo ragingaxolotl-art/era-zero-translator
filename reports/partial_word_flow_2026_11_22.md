@@ -18,3 +18,5 @@ Evidence and screenshots are retained in [the report directory](partial_word_flo
 The primary deployment passes the same 18 layouts, six missing-word actions and two independently decoded exports on the public site. Lore integration preserves the newer shared navigation, backups, notebook fixes and saved song arrangements. At `891b1c059aa79973858df9d26c1b9d210759fa61`, its catalog build and **246 tests** pass.
 
 Integration exposed a separate returning-browser issue: the shared navigation builder replaced the translator's newer entry-script cache tags with an older workspace tag. It now preserves explicit translator release tags, including the compound builder, while retaining the workspace's newer mobile-reader tag. A focused test checks both builds and their idempotency. These integration counts supplement the earlier 220-test snapshot; they do not retroactively describe it.
+
+Lore's public deployment also passes 18 layouts, six missing-word actions and two independently decoded supported exports, including explicit word-sketch opt-in and saved labeling after reload.
