@@ -6,7 +6,7 @@ Inventory/reference checks: **PASS**
 
 - Checks passed: **11**
 - Checks failed: **0**
-- Audited: **2026-11-22**
+- Audited: **2026-11-23**
 
 These checks compare the current inventories and recorded release metadata, verify expected source-reference fields, and check the listed authority files exist. They do not reconcile every historical source or certify the broader translator goal.
 
@@ -20,15 +20,15 @@ source corpus preserved separately with immutable source IDs
 
 ## PASS — approved compounds
 
-118 approved definitions
+120 approved definitions
 
 ## PASS — complete sense options
 
-324 atomic labels / 118 compound labels
+324 atomic labels / 120 compound labels
 
 ## PASS — complete lexical targets
 
-442 unique direct targets
+444 unique direct targets
 
 ## PASS — 11 explicit gaps
 

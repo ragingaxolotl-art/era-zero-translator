@@ -6,7 +6,7 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 639**
+- Canonical roots / indexed and profile senses: **324 / 643**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
 - Phrases with unresolved predicates/descriptors: **21**
@@ -230,7 +230,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 ## Review decisions
 
-- Preserve the 324 canonical roots and 118 approved compounds. Corpus frequency alone does not establish a meaning.
+- Preserve the 324 canonical roots and 120 approved compounds. Corpus frequency alone does not establish a meaning.
 - Keep broad and unsupported readings marked as gaps. The sentence composer covers specific felt moods, desires and drinking constructions.
 - Treat data deletion, waiting, crossing, return, and program execution as structural/IR routes until complete templates and role binding exist.
 - Treat `pick up`, `back up`, file opening/saving/copying, and other unrepresented predicates as semantic gaps, never phonemic nouns.
