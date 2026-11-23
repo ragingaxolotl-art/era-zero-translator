@@ -192,7 +192,7 @@ function destinationComplement(tokens,parseObject,parseNoun){
 function stateComplement(tokens, parseObject, propertyAt) {
   for (let i=1; i<tokens.length; i++) {
     const quality = propertyAt(tokens,i);
-    if (!quality || contextualPropertyNorm(quality.root) || i + quality.length !== tokens.length) continue;
+    if (!quality || i + quality.length !== tokens.length) continue;
     const parsed = parseObject(tokens.slice(0,i));
     const word = folded(parsed.verb).split(' ').at(-1);
     const keeps = ['keep','keeps','kept','keeping'].includes(word);
