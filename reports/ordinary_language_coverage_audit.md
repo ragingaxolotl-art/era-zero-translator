@@ -6,10 +6,10 @@ Status: **PASS**
 - Existing game/story phrases: **69**
 - Lore performance turns: **22**
 - Total audited phrases: **144**
-- Canonical roots / indexed and profile senses: **324 / 647**
+- Canonical roots / indexed and profile senses: **324 / 651**
 - Automatic single-target readings: **1** (not full sentence translations)
 - Phrases with documented gaps: **27**
-- Phrases with unresolved predicates/descriptors: **21**
+- Phrases with unresolved predicates/descriptors: **20**
 - Assertion failures: **0**
 
 ## What this audit proves
@@ -21,7 +21,7 @@ It checks conservative lexical routing and word-level classifications over three
 | Domain | Phrases | Auto single-target | With gap | With unresolved semantic word | With structural word |
 |---|---:|---:|---:|---:|---:|
 | care | 13 | 0 | 7 | 2 | 0 |
-| computer | 21 | 0 | 0 | 7 | 3 |
+| computer | 21 | 0 | 0 | 6 | 3 |
 | game_story | 69 | 1 | 15 | 3 | 5 |
 | lore | 22 | 0 | 3 | 4 | 2 |
 | motion | 7 | 0 | 1 | 2 | 3 |
@@ -37,7 +37,6 @@ These require either a defensible reviewed surface route to an existing meaning,
 | throw | 2 | verb |
 | pick | 1 | verb |
 | open | 1 | verb |
-| save | 1 | verb |
 | back | 1 | verb |
 | corrupted | 1 | verb |
 | crashed | 1 | verb |
@@ -99,7 +98,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 | curated / computer | I found the file. | MIN:110 | no | found:canonical, file:canonical | PASS |
 | curated / computer | Open the folder. | STR:020 | no | open:unresolved_semantic, folder:canonical | PASS |
 | curated / computer | Close the folder. | CMP:9a954f78879ed70ce262bdc5 | no | close:canonical, folder:canonical | PASS |
-| curated / computer | Save the file. | DAT:000 | no | save:unresolved_semantic, file:canonical | PASS |
+| curated / computer | Save the file. | CMP:58cfa479709294b9809be1b7 | no | save:canonical, file:canonical | PASS |
 | curated / computer | Delete the file. | requested_information_deletion | no | delete:structural, file:canonical | PASS |
 | curated / computer | Copy the file. | CMP:9ea919967152aa85bc1c7169 | no | copy:canonical, file:canonical | PASS |
 | curated / computer | Move the file. | MOV:121 | no | move:canonical, file:canonical | PASS |
@@ -230,7 +229,7 @@ These require either a defensible reviewed surface route to an existing meaning,
 
 ## Review decisions
 
-- Preserve the 324 canonical roots and 122 approved compounds. Corpus frequency alone does not establish a meaning.
+- Preserve the 324 canonical roots and 124 approved compounds. Corpus frequency alone does not establish a meaning.
 - Keep broad and unsupported readings marked as gaps. The sentence composer covers specific felt moods, desires and drinking constructions.
 - Treat data deletion, waiting, crossing, return, and program execution as structural/IR routes until complete templates and role binding exist.
 - Treat `pick up`, `back up`, file opening/saving/copying, and other unrepresented predicates as semantic gaps, never phonemic nouns.
