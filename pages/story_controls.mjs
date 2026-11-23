@@ -41,7 +41,8 @@ export async function showStoryControls(input,authority,{list,summary,current,pr
     const scored=await scoreStory(plan,authority);if(!active())return;
     const readiness=await sentenceReadiness(scored.midi,authority.atoms,{adjectives});if(!active())return;
     summary.textContent=readiness.summary;
-    card.append(element('p',scored.description));
+    const details=element('details');details.className='meaning-explanation';
+    details.append(element('summary','Meaning details'),element('p',scored.description));card.append(details);
     card.append(element('p',readiness.detail));
     button('Play whole passage',()=>player.play(scored.midi)).className='primary';
     button('Play compact chords',()=>player.play(compactChordMidi(scored.midi,authority.atoms),{chords:true}));

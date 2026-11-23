@@ -20,7 +20,7 @@ const cases=[
  {text:'We shut the gate.',id:cause,scopes:['time_before_speech'],tense:'A past event'},
  {text:'The gate was open before Nora closed it.',id:cause,scopes:['time_before_speech'],event:1,before:true}
 ];
-const report={site,timestamp:new Date().toISOString(),browser:'Chromium viewports; not physical iOS/Safari',layouts:[],exports:[],questions:[],unsupported:[]};
+const report={site,timestamp:new Date().toISOString(),browser:'Chromium viewports; not physical iOS/Safari',layouts:[],exports:[],questions:[],unsupported:[],details:[]};
 const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
 try{
  for(const width of [320,390,768]){
@@ -72,11 +72,19 @@ try{
    if(text==='The closed gate closed.'||text==='Nora closed the open gate.')assert.match(await page.locator('#candidateList').innerText(),/before and after/);
    report.unsupported.push({text,width});
   }
-  await translate('Nora closed the wide gate.');await choose();await page.locator('#candidateList').scrollIntoViewIfNeeded();
+  await translate('Nora closed the wide gate.');await choose();
+  const details=page.locator('#candidateList details.meaning-explanation'),toggle=details.locator('summary');
+  assert.equal(await details.evaluate(node=>node.open),false);
+  await toggle.focus();await page.keyboard.press('Enter');assert.equal(await details.evaluate(node=>node.open),true);
+  const explanation=await details.innerText();assert.match(explanation,/cause=Nora/);assert.match(explanation,/physical width/);
+  await page.keyboard.press('Space');assert.equal(await details.evaluate(node=>node.open),false);
+  assert(await add().isVisible());assert(await page.getByRole('button',{name:'Play whole passage',exact:true}).isVisible());
+  report.details.push({width,keyboardOpenClose:true,meaningRetained:true,actionsOutsideDetails:true});
+  await page.locator('#candidateList').scrollIntoViewIfNeeded();
   await page.screenshot({path:output+'/ready-'+width+'.png'});
   await page.locator('#sourceInput').fill('Nora closed only the gate.');assert.equal(await add().count(),0);
   assert.deepEqual(errors,[]);await context.close();
  }
  await fs.writeFile(output+'/results.json',JSON.stringify(report,null,2)+'\n');
- console.log(`PASS ${report.layouts.length} sentence layouts, ${report.exports.length} independently decoded exports, ${report.questions.length} rejected alternate readings, and ${report.unsupported.length} unsupported constructions.`);
+ console.log(`PASS ${report.layouts.length} sentence layouts, ${report.exports.length} independently decoded exports, ${report.questions.length} rejected alternate readings, ${report.unsupported.length} unsupported constructions, and ${report.details.length} keyboard disclosures.`);
 }finally{await browser.close();}
