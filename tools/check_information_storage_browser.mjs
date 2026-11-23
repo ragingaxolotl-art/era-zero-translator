@@ -51,7 +51,7 @@ try{
       assert.equal(recovered.events.length,item.before?2:1);
       if(item.before){assert.deepEqual(recovered.relations,[{kind:'before',events:[0,1]}]);assert.equal(recovered.events[1].predicate,'erase_stored_object');assert.equal(recovered.events[1].arguments[1].entity,0);}
       if(first)assert.deepEqual(recovered,first);else first=recovered;
-      const {notes}=notesFromMidi(bytes),ticks=Math.max(...notes.map(n=>n.end_tick));
+      const {notes}=notesFromMidi(bytes,{allowPolyphony:true}),ticks=Math.max(...notes.map(n=>n.end_tick));
       if(arrangement==='melody')melodyTicks=ticks;else {assert(ticks<melodyTicks);assert(notes.some((n,i)=>i&&n.start_tick===notes[i-1].start_tick),'Compact export must contain simultaneous notes');}
       report.downloads.push({text:item.text,arrangement,sha256:createHash('sha256').update(bytes).digest('hex'),ticks,...(arrangement==='chords'?{shorterPercent:100*(1-ticks/melodyTicks)}:{})});
      }

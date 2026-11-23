@@ -23,7 +23,7 @@ for(const [text,word] of unsupported){
   assert.equal(await scoreSongText(text,authority,load),null,text+' must not drop unsupported details');
 }
 for(const [text,word] of [['Nora zorbled the file.','zorbled'],['The lamp is glimmerwise.','glimmerwise'],
-  ['Nora copieded the file.','copieded'],['Nora recalleded Mira.','recalleded'],['Nora saves the file.','saves']]){
+  ['Nora copieded the file.','copieded'],['Nora recalleded Mira.','recalleded'],['Nora saveed the file.','saveed']]){
   assert.equal(recognizedClausePredicate(text,authority),null,text);
   const plan=dictionaryClausePlan(text,authority,{offerDefinition:true});
   assert(plan?.needsDefinition,text);assert.equal(plan.readings[0].word,word);
@@ -31,7 +31,7 @@ for(const [text,word] of [['Nora zorbled the file.','zorbled'],['The lamp is gli
 }
 for(const [text,word] of [['Nora copied the file.','copied'],['Nora remembers Mira.','remembers'],
   ['Nora is repairing the gate.','repairing'],['Mira might not delete the record.','delete'],
-  ['The box is full.','full']])assert.equal(recognizedClausePredicate(text,authority),word,text);
+  ['The box is full.','full'],['Nora saves the file.','saves'],['Nora is storing the file.','storing']])assert.equal(recognizedClausePredicate(text,authority),word,text);
 
 // An explicitly saved personal meaning remains valid when its spelling later
 // enters the public dictionary. A mismatched role or part of speech does not.
