@@ -1,0 +1,32 @@
+[
+  {
+    "test": "tests/contextual_modifiers_test.mjs",
+    "exit_code": 0,
+    "output": "PASS 102 independent contextual-modifier message pairs; ten existing norms, three roles/runtime states, identity, private homonyms, boundaries and seven malformed-score rejections.\n"
+  },
+  {
+    "test": "tests/contextual_group_inverse_test.mjs",
+    "exit_code": 0,
+    "output": "PASS 30 independently decoded groups with unchanged music, five relationships, all runtimes, scope/bearer order, compact parity, mixed physical dimensions and malformed boundaries/heads/separators.\n"
+  },
+  {
+    "test": "tests/contextual_width_test.mjs",
+    "exit_code": 0,
+    "output": "PASS 29 width meanings, Ruby/browser parity, 48 unchanged legacy sounds, ten dictionary routes and malformed/unsupported rejection. Ordered contextual-adjective groups independently decode.\n"
+  },
+  {
+    "test": "tests/state_adjective_sentences_test.mjs",
+    "exit_code": 0,
+    "output": "PASS 44 whole-sentence melody and compact-chord readings, including nested saved adjectives.\n"
+  },
+  {
+    "test": "tests/container_actions_test.mjs",
+    "exit_code": 0,
+    "output": "PASS 84 independent container-action message pairs, 12 unchanged adjective sounds, nested adjective phase boundaries, separate before-clause meaning, scope/role/runtime contrasts and malformed-score rejection.\n"
+  },
+  {
+    "test": "tools/validate_pages_release.mjs",
+    "exit_code": 0,
+    "output": "GitHub Pages audit: PASS\nChecks passed: 12938; failed: 0; canonical variants: 6225\n"
+  }
+]

@@ -87,7 +87,7 @@ check('bundle corruption rejection',rejected);
 const html=await fs.readFile(path.join(pages,'index.html'),'utf8');
 const app=await fs.readFile(path.join(pages,'app.js'),'utf8');
 const css=await fs.readFile(path.join(pages,'styles.css'),'utf8');
-check('project-relative versioned assets',html.includes('href="./styles.css?v=1.30.0"')&&html.includes('src="./app.js?v=1.30.0"')&&!html.includes('src="/app.js'));
+check('project-relative versioned assets',html.includes('href="./styles.css?v=1.31.0"')&&html.includes('src="./app.js?v=1.31.0"')&&!html.includes('src="/app.js'));
 check('all browser modules versioned together',app.includes("from'./engine.mjs?v=partial-word-flow-1'")&&app.includes("from'./english.mjs?v=container-actions-1'")&&app.includes("from'./names.mjs?v=1.15.0'")&&app.includes("from'./visemes.mjs?v=partial-word-flow-1'")&&app.includes("from'./recognition.mjs?v=1.15.0'")&&app.includes("from'./voices.mjs?v=1.15.0'")&&app.includes("from'./performance_codec.mjs?v=partial-word-flow-1'")&&app.includes("from'./performance_audio.mjs?v=partial-word-flow-1'")&&app.includes("from'./concept_intake.mjs?v=1.15.0'"));
 check('English-first interface',html.includes('Write it in normal English')&&html.includes('Any phrase may be analyzed')&&app.includes("./english.mjs?v=container-actions-1"));
 check('nonsemantic phonemic-name interface',html.includes('Give an unfamiliar object a sound ID')&&html.includes('Experimental EZNAME-0.1')&&app.includes("./names.mjs?v=1.15.0"));

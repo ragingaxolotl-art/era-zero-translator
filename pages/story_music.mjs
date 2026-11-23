@@ -13,9 +13,11 @@ import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
 import {storyWords,storyDependencies} from './story_words.mjs?v=container-actions-1';
-import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=container-actions-1';
+import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=contextual-modifiers-1';
 import {ERASURE,erasureLabel,scoreErasure,readErasure} from './information_operations.mjs?v=information-operations-1';
 import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=container-actions-1';
+import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
+import {readContextualStandard} from './contextual_standard_decoder.mjs?v=contextual-modifiers-1';
 
 const feltTargets=new Map(FELT_CONDITIONS.map(f=>[f.predicate,f]));
 const catalog = new Map([...storyWords,...storyDependencies].map(w=>[w.id,w]));
@@ -53,6 +55,9 @@ export async function scoreStory(plan,authority) {
   }
   const qualityMusic=informationMusic(authority,1);
   async function propertySound(value,bearer){
+    const norm=contextualPropertyNorm(value);
+    if(norm)return draft('story_property',wrap('contextual_'+norm,[...wrap('role_bearer',number(bearer)),...await qualityMusic.lexical('MAT:010')]));
+    if(value&&typeof value==='object'&&Object.hasOwn(value,'contextual_norm'))throw Error('A contextual property must contain exactly one supported norm.');
     const felt=feltTargets.get(value);
     if(felt){
       const slot=felt.compoundSlots.experiencer;
@@ -97,7 +102,7 @@ export async function scoreStory(plan,authority) {
 }
 
 export function describeStory(plan,authority){
-  const label=key=>typeof key==='object'?savedQualityLabel(key,plan.adjectives,i=>plan.entities[i].label):key===ERASURE?erasureLabel:everydayMeaning(authority,key) || catalog.get(key)?.word || authority.atoms.find(a=>a.canonical_id===key)?.title || key;
+  const label=key=>contextualPropertyLabel(key)||(typeof key==='object'?savedQualityLabel(key,plan.adjectives,i=>plan.entities[i].label):key===ERASURE?erasureLabel:everydayMeaning(authority,key) || catalog.get(key)?.word || authority.atoms.find(a=>a.canonical_id===key)?.title || key);
   const names=plan.events.map(e=>e.arguments.map(a=>plan.entities[a.entity].label).join(' / '));
   const lines=plan.events.map((e,i)=>{
     const name=a=>plan.entities[a.entity].label+(a.properties.length?' ('+a.properties.map(label).join(', ')+')':'');
@@ -153,6 +158,14 @@ export function decodeStoryMidi(bytes,atoms,adjectives) {
   function readProperty(node,bearer){
     if(node?.marker!=='story_property_open'||!node.children.length)invalid();
     const content=node.children,word=content.at(-1);
+    if(word.marker?.startsWith('contextual_')){
+      if(content.length!==1)invalid();
+      const value=readContextualStandard(reader,content,invalid,children=>{
+        const entity=number(children);if(entity!==bearer)invalid();return {kind:'story_entity',entity};
+      });
+      if(value.scopes.length||value.material_root!=='MAT:010'||value.runtime_state!==1)invalid();
+      return contextualProperty(value.standard.norm);
+    }
     if(!word.local_code){
       if(content.length!==1)invalid();
       if([13,15,16,17,19].includes(word.sound_code)){
