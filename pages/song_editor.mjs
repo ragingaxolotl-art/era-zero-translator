@@ -1,7 +1,7 @@
 import {compactChordPerformance} from './compact_chords.mjs?v=partial-word-flow-1';
-import {readSongLine} from './song_readback.mjs?v=physical-closing-1';
+import {readSongLine} from './song_readback.mjs?v=contextual-states-1';
 import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {songMidi} from './song_lines.mjs?v=physical-closing-1';
+import {songMidi} from './song_lines.mjs?v=contextual-states-1';
 import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
 
 import {isSongStorageKey,readSongLines,newSongLine,saveSongLine,removeSongLine} from './song_storage.mjs?v=field-repairs-1';

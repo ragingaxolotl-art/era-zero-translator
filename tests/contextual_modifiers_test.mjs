@@ -71,7 +71,11 @@ for(const text of ['Nora lifted the light board.','The wide idea fell.']){
  assert.equal(storyReading(text,authority,{answers:{[question.key]:'other'}}),null);
 }
 for(const text of ['Nora lifted the very wide board.','Nora lifted the wider board.','Nora lifted the two-metre-wide board.',
- 'The board stayed wide.','Nora kept the board wide.','The wide board was lifted.'])assert.equal(storyReading(text,authority),null,text);
+ 'The wide board was lifted.'])assert.equal(storyReading(text,authority),null,text);
+// These former boundaries now use the same physical property in the existing state slot.
+for(const text of ['The board stayed wide.','Nora kept the board wide.']){
+ const plan=interpreted(text);assert.deepEqual(plan.events[0].condition,{contextual_norm:'wide'});
+}
 
 // A private adjective with the same label still asks which definition to use.
 const registry=await addLocalCompound(emptyLocalCompounds(),{label:'wide',definition:'A material bearer is awake.',part_of_speech:'adjective',

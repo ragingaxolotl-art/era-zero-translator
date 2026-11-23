@@ -1,30 +1,31 @@
 profile: EZ-STORY-CONTEXTUAL-PROPERTY-1
-version: '1.0'
+version: '1.1'
 status: implemented extension of draft EZ-STORY-1; strict MIDI only
 meaning:
   property: One of the ten existing physical contextual norms.
-  attachment: The numbered entity in the enclosing argument, including an alternative or destination.
+  attachment: The numbered entity in the enclosing argument, including an alternative or destination; a keep/stay/remain condition binds the event's bearer.
   standard: Local contextual standard; no numeric threshold or equal standard across different occurrences.
-  scope: The property qualifies this argument occurrence inside the event's existing ordered scopes.
+  scope: The property qualifies this argument occurrence or supplies the maintained state inside the event's existing ordered scopes.
   reference: A later pronoun reuses identity without reasserting earlier qualities.
+  continuation: Existing stay/remain maintains the specified contextual quality throughout its relevant interval; keep adds the existing causal maintenance meaning. No exact measurement or interval length is inferred.
 encoding:
   outer: Existing story_property frame.
   inner: Existing contextual_<norm> frame.
-  bearer: Existing role_bearer frame containing the enclosing argument's decimal entity index.
+  bearer: Existing role_bearer frame containing the enclosing argument's decimal entity index, or the event bearer for a condition.
   head: MAT:010 in middle register, runtime 1; the event independently retains runtime 0/1/2.
   identifiers: No new root, compound, norm code, grammar marker or participant sound.
   inverse: Reuse readContextualStandard with a strictly validated numbered-bearer reader.
 checks:
   - Exactly one norm field in the normalized property; unknown and additional fields are rejected.
-  - Inner bearer must equal the enclosing argument entity and refer to an existing story entity.
+  - Inner bearer must equal the enclosing argument entity or condition's event bearer and refer to an existing story entity.
   - Exact property root, register and runtime; no internal scope or extra children.
   - Ordinary and compact-chord scores independently recover the same properties and attachments.
   - Published and private homonyms keep their explicit sense choice.
   - Earlier standalone/group contextual adjective and canonical/private adjective sounds stay unchanged.
 limits:
-  - Applies to supported story noun phrases; not a universal modifier parser for every sentence profile.
+  - Applies to supported story noun phrases and keep/stay/remain state complements; not a universal modifier parser for every sentence profile.
   - A physical-dimension interpretation remains explicit; labels do not imply figurative meaning.
   - Width is physical width, not passage clearance. Light describes mass, not illumination.
-  - No degree, numeric measurement, comparative or keep/stay contextual complement added.
+  - No degree, numeric measurement, comparison, explicit duration or multiple state complements added.
   - No original English or source meaning is supplied to the score decoder.
   - General microphone and physical-device Safari testing remain separate.
