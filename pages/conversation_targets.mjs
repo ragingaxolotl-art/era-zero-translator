@@ -1,4 +1,4 @@
-import {analyzeEnglish} from './english.mjs?v=container-actions-1';
+import {analyzeEnglish} from './english.mjs?v=physical-closing-1';
 
 // A curated performance scores only the exact line and speaker in its source.
 export function conversationTargets(english, authority, {turn, speaker} = {}) {

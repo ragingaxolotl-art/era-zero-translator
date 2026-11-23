@@ -1,15 +1,16 @@
 import {validStorySlots} from './story_saved_adjectives.mjs?v=container-actions-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=container-actions-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=container-actions-1';
+import {knownValueReading} from './known_value.mjs?v=physical-closing-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=physical-closing-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
-import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=container-actions-1';
-import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=container-actions-1';
-import {storyWords} from './story_words.mjs?v=container-actions-1';
+import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=physical-closing-1';
+import {properties,feltProperties,isMaterialTarget,isPhysicalContainer,isPhysicalPlace,physicalActionLabels} from './story_qualities.mjs?v=physical-closing-1';
+import {storyWords} from './story_words.mjs?v=physical-closing-1';
 import {ERASURE,isStoredInformationTarget} from './information_operations.mjs?v=information-operations-1';
-import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=container-actions-1';
+import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=physical-closing-1';
 import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
+import {closingAction,isPhysicalClosure,closingPropertyNeedsPhase} from './physical_closing.mjs?v=physical-closing-1';
 
 const words = new Map(storyWords.map(word => [word.word, word]));
 const id = word => words.get(word).id;
@@ -25,6 +26,10 @@ const shapes = [
   ['place','places','placed',['actor','target'],'put','placing'],
   ['fill','fills','filled',['actor','target'],null,'filling'],
   ['empty','empties','emptied',['actor','target'],'empty container','emptying'],
+  ['close','closes','closed',['bearer'],null,'closing'],
+  ['close','closes','closed',['cause','bearer'],'caused closing','closing'],
+  ['shut','shuts','shut',['bearer'],'close','shutting'],
+  ['shut','shuts','shut',['cause','bearer'],'caused closing','shutting'],
   ['pull','pulls','pulled',['actor','target'],null,'pulling'],
   ['hold','holds','held',['actor','target'],'physical holding foundation','holding'],
   ['release','releases','released',['actor','target'],null,'releasing'],
@@ -531,7 +536,7 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     }
     if(reading.tenseChoice){
       const key='tense'+index,tense=answers[key];
-      if(!['present','past'].includes(tense))return {question:{key,prompt:'Does “'+c.subject.text+' put” describe present time or a past event?',options:[
+      if(!['present','past'].includes(tense))return {question:{key,prompt:'Does “'+c.subject.text+' '+reading.word+'” describe present time or a past event?',options:[
         {value:'present',label:'Present time'},{value:'past',label:'A past event'}]}};
       if(tense==='past')reading={...reading,scopes:[...reading.scopes,'time_before_speech']};
     }
@@ -580,6 +585,19 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         if(isPhysicalContainer(entity.head||''))continue;
         if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” mean changing the physical contents of '+entity.label+'?',options:[
           {value:'physical',label:contentChange==='fill'?'Fill a physical container':'Empty a physical container'},
+          {value:'other',label:'Another meaning'}]}};
+        if(answers[key]!=='physical')return null;
+      }
+    }
+    if(closingAction(reading.root)){
+      const bearer=args.find(a=>a.role==='bearer');
+      for(const [i,option] of [bearer,...bearer.alternatives||[]].entries()){
+        if(option.properties.some(p=>closingPropertyNeedsPhase(p,adjectives)))return {unsupported:true,
+          reason:'This description needs to distinguish the closure before and after it changes. Please say when it was closed, open or blocked in a separate clause.'};
+        const entity=entities[option.entity],key='closing'+index+(i?'Alternative'+(i-1):'');
+        if(isPhysicalClosure(entity.head||''))continue;
+        if(!answers[key])return {question:{key,prompt:'Does “'+reading.word+'” mean a physical closure changing into its shut configuration?',options:[
+          {value:'physical',label:'Physical closing of '+entity.label},
           {value:'other',label:'Another meaning'}]}};
         if(answers[key]!=='physical')return null;
       }

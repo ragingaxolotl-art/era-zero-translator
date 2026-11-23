@@ -1,0 +1,22 @@
+[
+  {
+    "word": "close", "title": "physical transition into shut configuration", "code": 88,
+    "parts": ["shut configuration of a closure", "ORI:110"],
+    "definition": "A physical closure changes from not being in its shut configuration to being in that same closure's shut configuration. The exact closed-state dependency applies to the same bearer at the culmination; ORI:110 actualizes that result state, not the closure's existence. The closure and the criterion for its shut configuration remain the same throughout the episode. No cause, intention, locking, seal, security, continued closure or specific movement mechanism is asserted. Merely remaining closed or moving nearer without reaching the shut configuration does not complete this event. Ongoing aspect views the transition internally without asserting that its closed endpoint has been reached.",
+    "constraints": ["The outer bearer is the same physical closure in the exact closed-state dependency before and after the transition.", "The bearer is not in that shut configuration before the episode and reaches it at culmination. The criterion must not change to manufacture the result.", "ORI:110 actualizes the closed state; the bearer need not come into existence. Time, negation, modality, aspect and runtime scope the transition as one event.", "No cause is supplied by this intransitive event. A separately encoded cause can bring about this exact transition."],
+    "excludes": ["An already closed state with no transition", "Only partial closing presented as completed", "Locking, sealing, security or a persistent result inferred from closure", "Software closure, business cessation, finishing a deal or spatial nearness"],
+    "example": "The gate closed.", "near": "The gate was already shut and stayed that way.",
+    "reuse": "Reuse this transition when specifying a cause, a maintained closed result or a later reopening.",
+    "forms": ["close", "closes", "closed", "closing", "shut", "shuts", "shutting"], "pos": "verb", "everyday": "Changes from not shut to the physical shut configuration"
+  },
+  {
+    "word": "close", "story_word": "caused closing", "title": "caused physical transition into shut configuration", "code": 89,
+    "parts": ["physical transition into shut configuration", "ORI:211"],
+    "definition": "A cause brings about a distinct physical closure's transition from not being in its shut configuration to being in it. The exact physical-closing dependency supplies the same bearer's ordered transition and completed closed endpoint. ORI:211 supplies the operative dependency of that transition on the cause's contribution, and this convention makes the contribution causally productive rather than merely correlated or necessary background. No direct contact, particular force, movement path, conscious actor, intention, lock, seal, security or lasting closed state is asserted. Ongoing aspect views the caused closing internally without asserting that its endpoint has been reached.",
+    "constraints": ["The outer bearer is the bearer of the exact physical-closing dependency; its identity and shut-configuration criterion remain fixed.", "The outer cause is distinct from the closure and brings about this transition through an unspecified contribution. The cause need not itself move, close, touch the bearer or intend the result.", "The completed transition is causally dependent on that contribution in the ORI:211 head. Mere observation, temporal succession or a static background condition is not sufficient.", "The full causal episode, including the closed transition, stays within the event's ordered time, negation, modality, aspect and runtime scopes."],
+    "excludes": ["Observing a closure that closes independently", "Holding an already closed closure shut without a transition", "Being near the closure without causing its closing", "Software closure, locking, sealing, intention, a named mechanism or continued closure inferred without being supplied"],
+    "example": "Nora closed the gate.", "near": "Nora watched the gate close for an unrelated reason.",
+    "reuse": "Reuse caused closing before adding an explicit mechanism, a maintained result, a purpose or later reopening.",
+    "forms": ["close", "closes", "closed", "closing", "shut", "shuts", "shutting"], "pos": "verb", "everyday": "Brings about the closure's change into its shut configuration"
+  }
+]

@@ -1,0 +1,13 @@
+# Review: physical closing and caused closing
+
+This author review continues the user-directed dependency-ordered vocabulary expansion. It is not independent linguistic validation or separate user approval of each definition. The existing **closed** adjective already describes a closure's shut configuration. Reuse that exact state before defining an event, and define the event before its caused form. No atom is added.
+
+Convention 88 adds the transition from not being in that shut configuration to being in it. Its bearer is the same physical closure throughout. The actualization head applies to the closed state, not to the existence of a door or actor. Convention 89 reuses that complete transition and adds a distinct cause whose contribution brings it about. It does not require a hand, force, intention, a conscious agent or a particular mechanism. These explicit conventions supply the ordered phases and causal binding; ordinary root adjacency would not.
+
+**The gate closed** and **Nora closed the gate** therefore have distinct meanings and scores. **The gate was closed** retains the existing state reading; it does not silently become a passive event with an omitted cause. Close/closes/closed/closing and shut/shuts/shut/shutting use the same supported sentence machinery. Unmarked plural or I/we/you **shut** must ask about time, as **put** already does. Runtime 0/1/2 remains separate from tense, completion and negation; progressive aspect does not assert a reached endpoint.
+
+The closure can be unlocked, unsealed or later reopened. No locking, airtight seal, lasting result, exact route, successful security, business closure, software operation, near position or completed transaction follows. Ambiguous closure labels require the physical meaning to be chosen. Window is deliberately ambiguous between a physical closure and software.
+
+Closed, passable/open and blocked descriptions on a changing closure need an explicit before/after phase in this initial grammar. Keep those messages unresolved with specific guidance rather than choosing a phase. Other supported descriptions, including contextual width and private compounds, retain their existing meanings. Nested private words must receive the same phase check.
+
+Before release, preserve all earlier definitions and state sounds; check event/state and caused/uncaused contrasts, neutral referents, inflections, questions, commands, ordered scopes, three runtime states and independent melody/chord recovery. Reject aliased cause/bearer, missing roles, altered nested state/transition sound and omitted complements. Broader grammar, physical-device testing and general microphone recovery remain unfinished.

@@ -1,4 +1,4 @@
-import {storyWords} from './story_words.mjs?v=container-actions-1';
+import {storyWords} from './story_words.mjs?v=physical-closing-1';
 
 const id=word=>storyWords.find(entry=>entry.word===word)?.id;
 const actions=new Map([[id('fill'),'fill'],[id('empty container'),'empty']]);

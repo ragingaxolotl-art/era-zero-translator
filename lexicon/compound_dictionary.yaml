@@ -6,7 +6,7 @@ metadata:
   approval_basis: User delegated approval by requesting the next translator-readiness
     stage
   architecture: spec/compound_architecture_1.0.yaml
-  entry_count: 120
+  entry_count: 122
   scope: A deliberately bounded first release of broadly useful, high-confidence compounds;
     not an English concept index.
   atomic_meanings_changed: false
@@ -1394,6 +1394,105 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 2f350e7d8e5dfba4a802d82dc95260ddcfa10e8ca8b7e00d34593d8e087c1c9f
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:9a954f78879ed70ce262bdc5
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: ORI:211
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The outer bearer is the bearer of the exact physical-closing dependency; its identity
+    and shut-configuration criterion remain fixed.
+  - The outer cause is distinct from the closure and brings about this transition
+    through an unspecified contribution. The cause need not itself move, close, touch
+    the bearer or intend the result.
+  - The completed transition is causally dependent on that contribution in the ORI:211
+    head. Mere observation, temporal succession or a static background condition is
+    not sufficient.
+  - The full causal episode, including the closed transition, stays within the event's
+    ordered time, negation, modality, aspect and runtime scopes.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: caused_physical_transition_into_shut_configuration
+    sound_code: 89
+    added_definition: A cause brings about a distinct physical closure's transition
+      from not being in its shut configuration to being in it. The exact physical-closing
+      dependency supplies the same bearer's ordered transition and completed closed
+      endpoint. ORI:211 supplies the operative dependency of that transition on the
+      cause's contribution, and this convention makes the contribution causally productive
+      rather than merely correlated or necessary background. No direct contact, particular
+      force, movement path, conscious actor, intention, lock, seal, security or lasting
+      closed state is asserted. Ongoing aspect views the caused closing internally
+      without asserting that its endpoint has been reached.
+    excludes:
+    - Observing a closure that closes independently
+    - Holding an already closed closure shut without a transition
+    - Being near the closure without causing its closing
+    - Software closure, locking, sealing, intention, a named mechanism or continued
+      closure inferred without being supplied
+  compound_id: CMP:3019a12938289fa9f3a23237
+  content_digest: 3019a12938289fa9f3a232378c45138d7a19b922e1b9599c0d230ddb0e6824d8
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: caused physical transition into shut configuration
+  english_glosses:
+  - caused physical transition into shut configuration
+  invariant_definition: A cause brings about a distinct physical closure's transition
+    from not being in its shut configuration to being in it. The exact physical-closing
+    dependency supplies the same bearer's ordered transition and completed closed
+    endpoint. ORI:211 supplies the operative dependency of that transition on the
+    cause's contribution, and this convention makes the contribution causally productive
+    rather than merely correlated or necessary background. No direct contact, particular
+    force, movement path, conscious actor, intention, lock, seal, security or lasting
+    closed state is asserted. Ongoing aspect views the caused closing internally without
+    asserting that its endpoint has been reached.
+  boundaries:
+    includes: A cause brings about a distinct physical closure's transition from not
+      being in its shut configuration to being in it. The exact physical-closing dependency
+      supplies the same bearer's ordered transition and completed closed endpoint.
+      ORI:211 supplies the operative dependency of that transition on the cause's
+      contribution, and this convention makes the contribution causally productive
+      rather than merely correlated or necessary background. No direct contact, particular
+      force, movement path, conscious actor, intention, lock, seal, security or lasting
+      closed state is asserted. Ongoing aspect views the caused closing internally
+      without asserting that its endpoint has been reached.
+    excludes: Observing a closure that closes independently; Holding an already closed
+      closure shut without a transition; Being near the closure without causing its
+      closing; Software closure, locking, sealing, intention, a named mechanism or
+      continued closure inferred without being supplied
+  collision_audit: reviews/physical_closing_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 89 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_closing_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_closing_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: Nora closed the gate.
+    technical: The outer bearer is the bearer of the exact physical-closing dependency;
+      its identity and shut-configuration criterion remain fixed. The outer cause
+      is distinct from the closure and brings about this transition through an unspecified
+      contribution. The cause need not itself move, close, touch the bearer or intend
+      the result. The completed transition is causally dependent on that contribution
+      in the ORI:211 head. Mere observation, temporal succession or a static background
+      condition is not sufficient. The full causal episode, including the closed transition,
+      stays within the event's ordered time, negation, modality, aspect and runtime
+      scopes.
+    future_compound: Reuse caused closing before adding an explicit mechanism, a maintained
+      result, a purpose or later reopening.
+    counterexample: Nora watched the gate close for an unrelated reason.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 3019a12938289fa9f3a232378c45138d7a19b922e1b9599c0d230ddb0e6824d8
 - architecture_version: '1.0'
   compound_id: CMP:3122dedcff0f85ad293e2580
   content_digest: 3122dedcff0f85ad293e258040307a6365b55fa8c93434d3d5756100352f7c25
@@ -4665,6 +4764,99 @@ entries:
   serialization:
     canonical_format: EZC-JSON-1
     content_digest: 99a87c8869d58498f524f1cc2782321e356f26bf94b14c405077c92a58ff97a7
+- architecture_version: '1.0'
+  semantic_head: h
+  nodes:
+  - kind: compound_ref
+    compound_id: CMP:82a697e83c845e4a7b38b53e
+    definition_version: 1.0.0
+    node_id: q1
+  - kind: root
+    root_id: ORI:110
+    node_id: h
+  edges:
+  - type: qualifies
+    from: q1
+    to: h
+  lexical_constraints:
+  - The outer bearer is the same physical closure in the exact closed-state dependency
+    before and after the transition.
+  - The bearer is not in that shut configuration before the episode and reaches it
+    at culmination. The criterion must not change to manufacture the result.
+  - ORI:110 actualizes the closed state; the bearer need not come into existence.
+    Time, negation, modality, aspect and runtime scope the transition as one event.
+  - No cause is supplied by this intransitive event. A separately encoded cause can
+    bring about this exact transition.
+  conventional_meaning:
+    profile: EZLEX-1
+    sense_key: physical_transition_into_shut_configuration
+    sound_code: 88
+    added_definition: A physical closure changes from not being in its shut configuration
+      to being in that same closure's shut configuration. The exact closed-state dependency
+      applies to the same bearer at the culmination; ORI:110 actualizes that result
+      state, not the closure's existence. The closure and the criterion for its shut
+      configuration remain the same throughout the episode. No cause, intention, locking,
+      seal, security, continued closure or specific movement mechanism is asserted.
+      Merely remaining closed or moving nearer without reaching the shut configuration
+      does not complete this event. Ongoing aspect views the transition internally
+      without asserting that its closed endpoint has been reached.
+    excludes:
+    - An already closed state with no transition
+    - Only partial closing presented as completed
+    - Locking, sealing, security or a persistent result inferred from closure
+    - Software closure, business cessation, finishing a deal or spatial nearness
+  compound_id: CMP:9a954f78879ed70ce262bdc5
+  content_digest: 9a954f78879ed70ce262bdc5e800112316f68c1737a43f861b982c7f76082f49
+  definition_version: 1.0.0
+  status: approved
+  approval_date: '2026-11-22'
+  display_title: physical transition into shut configuration
+  english_glosses:
+  - physical transition into shut configuration
+  invariant_definition: A physical closure changes from not being in its shut configuration
+    to being in that same closure's shut configuration. The exact closed-state dependency
+    applies to the same bearer at the culmination; ORI:110 actualizes that result
+    state, not the closure's existence. The closure and the criterion for its shut
+    configuration remain the same throughout the episode. No cause, intention, locking,
+    seal, security, continued closure or specific movement mechanism is asserted.
+    Merely remaining closed or moving nearer without reaching the shut configuration
+    does not complete this event. Ongoing aspect views the transition internally without
+    asserting that its closed endpoint has been reached.
+  boundaries:
+    includes: A physical closure changes from not being in its shut configuration
+      to being in that same closure's shut configuration. The exact closed-state dependency
+      applies to the same bearer at the culmination; ORI:110 actualizes that result
+      state, not the closure's existence. The closure and the criterion for its shut
+      configuration remain the same throughout the episode. No cause, intention, locking,
+      seal, security, continued closure or specific movement mechanism is asserted.
+      Merely remaining closed or moving nearer without reaching the shut configuration
+      does not complete this event. Ongoing aspect views the transition internally
+      without asserting that its closed endpoint has been reached.
+    excludes: An already closed state with no transition; Only partial closing presented
+      as completed; Locking, sealing, security or a persistent result inferred from
+      closure; Software closure, business cessation, finishing a deal or spatial nearness
+  collision_audit: reviews/physical_closing_2026_11_22.md; exact dependency versions,
+    explicit phase and participant constraints, and convention 88 preserve this distinction.
+  confidence: high
+  approval_record: migrations/physical_closing_2026_11_22.yaml
+  approval_basis: Author semantic review under the user-directed translator completion
+    goal; reviews/physical_closing_2026_11_22.md. Not independent linguistic validation
+    or separate user approval of each definition.
+  examples:
+    ordinary: The gate closed.
+    technical: The outer bearer is the same physical closure in the exact closed-state
+      dependency before and after the transition. The bearer is not in that shut configuration
+      before the episode and reaches it at culmination. The criterion must not change
+      to manufacture the result. ORI:110 actualizes the closed state; the bearer need
+      not come into existence. Time, negation, modality, aspect and runtime scope
+      the transition as one event. No cause is supplied by this intransitive event.
+      A separately encoded cause can bring about this exact transition.
+    future_compound: Reuse this transition when specifying a cause, a maintained closed
+      result or a later reopening.
+    counterexample: The gate was already shut and stayed that way.
+  serialization:
+    canonical_format: EZC-JSON-1
+    content_digest: 9a954f78879ed70ce262bdc5e800112316f68c1737a43f861b982c7f76082f49
 - architecture_version: '1.0'
   semantic_head: h
   nodes:
