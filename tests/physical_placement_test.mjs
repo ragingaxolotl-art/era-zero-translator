@@ -74,7 +74,7 @@ for(const [text,key] of [['Nora put the file at the gate.','physical0'],['Nora p
 await hear('"Put" placed the box at the gate.',{scopes:['time_before_speech']});
 await hear('Nora placed the box at "At".',{scopes:['time_before_speech'],answers:{place0:'physical'}});
 for(const text of ['Nora put the box.','Nora placed the box on the table.','Nora put the box in the crate.',
- 'Nora put the box at the gate with a tool.','Nora put only the box at the gate.','Nora put the box at the gate yesterday.',
+ 'Nora put the box at the gate with a tool.','Nora put only the box at the gate.','Nora put the box at the gate yesterday morning.',
  'The box was put at the gate.','Nora has put the box at the gate.','Nora putted the box at the gate.',
  'Nora is puting the box at the gate.','Nora put the box at the box.','Nora held the box at the gate.'])
  assert.equal(storyReading(text,authority),null,text);
