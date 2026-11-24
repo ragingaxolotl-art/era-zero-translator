@@ -1,0 +1,121 @@
+{
+  "revision": "c00d2a855b039bbeb404db7d6d5f4dd8d6187034",
+  "rows": [
+    {
+      "input": "Nora must not open the hatch.",
+      "reading": null
+    },
+    {
+      "input": "Nora does not have to open the hatch.",
+      "reading": null
+    },
+    {
+      "input": "Nora has to save the file.",
+      "reading": null
+    },
+    {
+      "input": "We have to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora had to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora will have to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora will not have to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora might have to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Must Nora save the file?",
+      "reading": null
+    },
+    {
+      "input": "Does Nora have to save the file?",
+      "reading": null
+    },
+    {
+      "input": "The gate must be closed.",
+      "reading": null
+    },
+    {
+      "input": "The file must be saved by Nora.",
+      "reading": null
+    },
+    {
+      "input": "I must not open the hatch.",
+      "reading": null
+    },
+    {
+      "input": "No robot must save the file.",
+      "reading": null
+    },
+    {
+      "input": "Every program does not have to save the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora has to save the file tomorrow.",
+      "reading": null
+    },
+    {
+      "input": "Nora must have saved the file.",
+      "reading": null
+    },
+    {
+      "input": "Nora needs to save the file.",
+      "reading": {
+        "entities": [
+          {
+            "reference": "Nora",
+            "label": "Nora",
+            "plural": false,
+            "category": "person",
+            "owner": null
+          },
+          {
+            "reference": "the file",
+            "label": "the file",
+            "head": "file",
+            "plural": false,
+            "category": "thing",
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "modality_necessary"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime": 1,
+        "act": "assertion",
+        "notes": []
+      }
+    }
+  ]
+}
