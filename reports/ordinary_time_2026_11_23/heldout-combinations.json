@@ -1,0 +1,647 @@
+{
+  "status": "pass",
+  "note": "Post-implementation engineering combinations, not an independently sampled language benchmark.",
+  "results": [
+    {
+      "input": "Yesterday, the narrow robot saved the stored file. [0]",
+      "answers": {
+        "property0Subjectnarrow": "physical"
+      },
+      "status": "pass",
+      "melody_sha256": "573c6d2bc52a675c7c46b62f0ce276b32620ab394c390102fba536e2665c35e6",
+      "chord_sha256": "8afb0a90856ddb786fbf6533dc0a075398a12a0b0462c80bbf55b9034c0b5aec",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": [
+                  {
+                    "contextual_norm": "narrow"
+                  }
+                ]
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "DAT:000"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Tomorrow, will Nora keep the box cold? [2]",
+      "answers": {
+        "condition0": "physical"
+      },
+      "status": "pass",
+      "melody_sha256": "244b7519022b82ff6d41e5266f24d11def494f4a6a43b4296bacd55a4e6fdd0f",
+      "chord_sha256": "ec3bb146c3ffad63717bf8ba3252b8a6be31c92b120f835e4ee693d03bd1366a",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_next_day",
+              "time_after_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": {
+              "contextual_norm": "cold"
+            }
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "Nora does not need to copy the record tomorrow.",
+      "answers": {
+        "timeScope0": "event"
+      },
+      "status": "pass",
+      "melody_sha256": "731f54d5041ce8596c331021a7b5ac49a6bed234902cf273499fab5e32b6ddc7",
+      "chord_sha256": "31b7cc409355ba17f7511822c0478cbcceea90c7cba9bc0304e471a59fcb82fb",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "negation",
+              "modality_necessary",
+              "time_next_day"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Can the file be saved by the program today?",
+      "answers": {
+        "timeScope0": "event"
+      },
+      "status": "pass",
+      "melody_sha256": "958551bd99cc471dba2342e31d4c977169a34870772e66efc34d2bc158cd64a8",
+      "chord_sha256": "28c6fded05e851a6b937e14fba471601d3c4ed01d8cedaafb5c18a50533f87a0",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "ability",
+              "time_current_day"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "Yesterday, Nora placed the box at the cold gate.",
+      "answers": {
+        "property0Destinationcold": "physical"
+      },
+      "status": "pass",
+      "melody_sha256": "86ced3fa30759d78873c0554473606c48c0f6406a4a04a552959883d173d88e5",
+      "chord_sha256": "d90f3909e39ae3e712fa1dc929c05e1c034e08a2240d74aaa8fe2b054ea1986a",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:64574c1a25d72a89aafc46ef",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "destination",
+                "entity": 2,
+                "properties": [
+                  {
+                    "contextual_norm": "cold"
+                  }
+                ]
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Yesterday, the file was not being copied by the robot.",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "6a87026014efb2cde8f3b42bdaddfd8acfb5e1544c04819fe7a26af0e557b089",
+      "chord_sha256": "4033af72d7c4a7e0db5461748d16f627632e6305048c7ce33df53285456be646",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech",
+              "negation",
+              "aspect_ongoing"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The robot saved the record yesterday. It will copy it tomorrow.",
+      "answers": {
+        "subject1": "0"
+      },
+      "status": "pass",
+      "melody_sha256": "774e9c8762dcbab8ce8194b2f0490706fb4e3c0501e3fdb1e5af7269b7ad52d2",
+      "chord_sha256": "6700173a8e061bef94974773e171df05ddf97e15783a3115e5f8739526482b2f",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_next_day",
+              "time_after_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file yesterday. Today, the file is stored.",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "206db7f74d39aa648c025e6e9e06ea62ca9f7d96781438b43f53ad2fe34dfa6a",
+      "chord_sha256": "e0e34e7ab2216c163f68f1a9fb05a7499fbb4e46d51548b059f503b9b578d967",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    }
+  ]
+}
