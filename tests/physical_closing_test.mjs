@@ -62,7 +62,7 @@ for(const text of ['The closed gate closed.','Nora closed the open gate.','Nora 
  const plan=storyReading(text,authority);assert.equal(plan?.unsupported,true,text);assert.match(plan.reason,/before and after/);
  assert.equal(await scoreSongText(text,authority,()=>{throw Error('No unrelated interpretation');}),null);
 }
-for(const text of ['Nora closed only the gate.','Nora closed the gate with a lever.','The gate was closed by Nora.','Nora has closed the gate.','Nora shut down the gate.'])assert.equal(storyReading(text,authority),null,text);
+for(const text of ['Nora closed only the gate.','Nora closed the gate with a lever.','The gate has been closed by Nora.','Nora has closed the gate.','Nora shut down the gate.'])assert.equal(storyReading(text,authority),null,text);
 for(const text of ['Nora shuted the gate.','Nora is shuting the gate.'])assert.equal(recognizedClausePredicate(text,authority),null,text);
 for(const form of ['close','closes','closed','closing','shut','shuts','shutting'])assert(analyzeEnglish(`Nora ${form} the gate.`,authority).term_coverage.some(t=>t.term===form&&t.matches.some(m=>m.target_id===cause)),form);
 
