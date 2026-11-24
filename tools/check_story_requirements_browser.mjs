@@ -39,7 +39,7 @@ try{
   const context=await browser.newContext({viewport:{width,height:900},acceptDownloads:true}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   try{
-   await page.goto(site,{waitUntil:'networkidle',timeout:60000});
+   await page.goto(site,{waitUntil:'networkidle',timeout:60000});await page.locator('#catalogJump option').nth(50).waitFor({state:'attached'});
    for(const item of cases){
     await translate(page,item.text);
     for(const choice of item.choices){assert.equal(await add(page).count(),0);await layout(page,width);await page.getByRole('button',{name:choice,exact:true}).click();}
