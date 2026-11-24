@@ -1,10 +1,10 @@
-import {validatePainComparison} from './pain_comparison.mjs?v=partial-word-flow-1';
+import {validatePainComparison} from './pain_comparison.mjs?v=ordinary-comparatives-1';
 import {painComparisonEvent} from './pain_comparison_frames.mjs';
-import {painStimulusMusicEvents,readPainStimulusTree} from './pain_stimulus_music.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {painStimulusMusicEvents,readPainStimulusTree} from './pain_stimulus_music.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 export async function painComparisonMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainComparison(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain-comparison',name);
  let events=[painComparisonEvent(d.relation,d.runtime_state,'open',anchor),mark('role_content_open'),...await renderLexicalOccurrences({nodes:[d.context],edges:[]},authority,{anchor}),mark('role_content_close'),mark('role_target_open'),...await painStimulusMusicEvents(d.left,authority,{allowDraft:true,anchor}),mark('role_target_close'),mark('role_comparison_standard_open'),...await painStimulusMusicEvents(d.right,authority,{allowDraft:true,anchor}),mark('role_comparison_standard_close'),painComparisonEvent(d.relation,d.runtime_state,'close',anchor)];

@@ -1,8 +1,8 @@
 import {expandNegativeContractions} from './contractions.mjs';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
-import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
-import {createCustodyOpportunity} from './custody_opportunity.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference} from './contextual_content.mjs?v=ordinary-comparatives-1';
+import {createCustodyOpportunity} from './custody_opportunity.mjs?v=ordinary-comparatives-1';
 const REF='(?:I|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function availabilityPlan(input){
  if(typeof input!=='string')return null;

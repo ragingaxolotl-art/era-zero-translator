@@ -1,6 +1,6 @@
 // Draft ownership status under an explicit normative framework. Not custody.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 export const OWNERSHIP_CONTRACT=Object.freeze({
  predicate:'framework_relative_ownership',
  relation:'owner_has_ownership_status_for_object_under_framework',

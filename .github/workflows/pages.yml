@@ -36,6 +36,9 @@ jobs:
       - name: Verify full passage playback and song export
         run: |
           node tests/pages_artifact_visibility_test.mjs
+          node tests/ordinary_comparatives_test.mjs
+          node tests/ordinary_comparatives_ui_test.mjs
+          ruby tests/ordinary_comparative_pins_test.rb
           node tests/song_lines_test.mjs
           node tests/sentence_word_choices_test.mjs
           node tests/dictionary_clauses_test.mjs

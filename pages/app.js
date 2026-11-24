@@ -1,73 +1,74 @@
-import {sentenceReadiness} from './sentence_readiness.mjs?v=information-storage-1';
-import {storedStoryAdjectives} from './story_saved_adjectives.mjs?v=information-storage-1';
+import {physicalComparativeMeaning} from './physical_comparatives.mjs?v=ordinary-comparatives-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=ordinary-comparatives-1';
+import {storedStoryAdjectives} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {everydayMeaning,routeName} from './everyday.mjs?v=partial-word-flow-1';
-import {storyReading} from './story_readings.mjs?v=information-storage-1';
-import {showStoryControls} from './story_controls.mjs?v=information-storage-1';
+import {storyReading} from './story_readings.mjs?v=ordinary-comparatives-1';
+import {showStoryControls} from './story_controls.mjs?v=ordinary-comparatives-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
 import {dictionaryClausePlan,recognizedClausePredicate} from './dictionary_clauses.mjs?v=information-storage-1';
-import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=information-storage-1';
-import {compactChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {mountSongEditor} from './song_editor.mjs?v=information-storage-1';
-import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=information-storage-1';
-import {informationPassagePlan} from './information_passage.mjs?v=partial-word-flow-1';
-import {faultCorrectionPlan} from './fault_correction.mjs?v=information-storage-1';
-import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs?v=information-storage-1';
+import {mountDictionaryClause} from './dictionary_clause_controls.mjs?v=ordinary-comparatives-1';
+import {compactChordMidi} from './compact_chords.mjs?v=ordinary-comparatives-1';
+import {mountSongEditor} from './song_editor.mjs?v=ordinary-comparatives-1';
+import {needsWholeReading,scoreSongText} from './song_lines.mjs?v=ordinary-comparatives-1';
+import {informationPassagePlan} from './information_passage.mjs?v=ordinary-comparatives-1';
+import {faultCorrectionPlan} from './fault_correction.mjs?v=ordinary-comparatives-1';
+import {selectedWordMatch,wordScorePlan,scoreSelectedWords} from './word_score.mjs?v=ordinary-comparatives-1';
 import {conversationTargets} from './conversation_targets.mjs?v=information-storage-1';
 import {takeLocalExample,queueLocalExample} from './local_compound_examples.mjs';
-import {localWordPronounPlan} from './local_compound_pronouns.mjs?v=information-storage-1';
-import {loadLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
-import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs?v=information-storage-1';
-import {mountLocalEnglishControls} from './local_english_controls.mjs?v=information-storage-1';
-import {createLocalCompoundPlayer} from './local_compound_player.mjs?v=partial-word-flow-1';
-import {desiredAvailabilityPlan,desiredAvailabilityPronounPlan,composeDesiredAvailability} from './desired_availability.mjs?v=partial-word-flow-1';
-import {midiFromDesiredAvailability} from './desired_availability_music.mjs?v=partial-word-flow-1';
-import {availabilityPlan,availabilityPronounPlan,composeAvailabilitySentence} from './availability_sentences.mjs?v=partial-word-flow-1';
-import {midiFromCustodyOpportunity} from './custody_opportunity_music.mjs?v=partial-word-flow-1';
-import {composeObjectDesiredOwnership} from './object_desired_ownership.mjs?v=information-storage-1';
-import {desiredOwnershipPlan,desiredOwnershipPronounPlan,composeDesiredOwnership} from './desired_ownership.mjs?v=partial-word-flow-1';
-import {midiFromDesiredOwnership} from './desired_ownership_music.mjs?v=partial-word-flow-1';
-import {ownershipPlan,ownershipPronounPlan,composeOwnershipSentence} from './ownership_sentences.mjs?v=partial-word-flow-1';
-import {midiFromOwnership} from './ownership_music.mjs?v=partial-word-flow-1';
-import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs?v=information-storage-1';
-import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs?v=partial-word-flow-1';
-import {midiFromDesiredDrinking} from './desired_drinking_music.mjs?v=partial-word-flow-1';
-import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs?v=partial-word-flow-1';
-import {midiFromDrinking} from './drinking_music.mjs?v=partial-word-flow-1';
-import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs?v=information-storage-1';
-import {painPreferencePlan,composePainPreference} from './pain_preference.mjs?v=partial-word-flow-1';
-import {midiFromPainPreference} from './pain_preference_music.mjs?v=partial-word-flow-1';
-import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs?v=partial-word-flow-1';
-import {midiFromPainComparison} from './pain_comparison_music.mjs?v=partial-word-flow-1';
-import {painStimulusPlan,painStimulusPronounPlan,composePainStimulusSentence} from './pain_stimulus_sentences.mjs?v=partial-word-flow-1';
-import {midiFromPainStimulus} from './pain_stimulus_music.mjs?v=partial-word-flow-1';
-import {painMeaningPlan,painPronounPlan,composePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
-import {midiFromPain} from './pain_music.mjs?v=partial-word-flow-1';
-import {cognitiveConjunctionPlan,cognitiveClauseChoicePlan,composeCognitiveConjunction} from './cognitive_conjunction.mjs?v=partial-word-flow-1';
-import {midiFromCognitiveConjunction} from './cognitive_conjunction_music.mjs?v=information-storage-1';
-import {curiosityInterpretationPlan,curiosityPronounPlan,composeCuriosity} from './curiosity.mjs?v=partial-word-flow-1';
-import {midiFromCuriosity} from './curiosity_music.mjs?v=partial-word-flow-1';
-import {routeLearningInterpretationPlan,routeLearningPronounPlan,composeRouteLearning} from './route_learning.mjs?v=partial-word-flow-1';
-import {midiFromRouteLearning} from './route_learning_music.mjs?v=partial-word-flow-1';
-import {parseCameToUnderstand,composeCameToUnderstand} from './understanding_acquisition.mjs?v=partial-word-flow-1';
-import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs?v=partial-word-flow-1';
-import {understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent} from './understanding_content.mjs?v=partial-word-flow-1';
-import {midiFromUnderstanding} from './understanding_music.mjs?v=partial-word-flow-1';
+import {localWordPronounPlan} from './local_compound_pronouns.mjs?v=ordinary-comparatives-1';
+import {loadLocalCompounds} from './local_compounds.mjs?v=ordinary-comparatives-1';
+import {localAdjectivePlan,localVerbPlan,localVerbCandidates} from './local_compound_english.mjs?v=ordinary-comparatives-1';
+import {mountLocalEnglishControls} from './local_english_controls.mjs?v=ordinary-comparatives-1';
+import {createLocalCompoundPlayer} from './local_compound_player.mjs?v=ordinary-comparatives-1';
+import {desiredAvailabilityPlan,desiredAvailabilityPronounPlan,composeDesiredAvailability} from './desired_availability.mjs?v=ordinary-comparatives-1';
+import {midiFromDesiredAvailability} from './desired_availability_music.mjs?v=ordinary-comparatives-1';
+import {availabilityPlan,availabilityPronounPlan,composeAvailabilitySentence} from './availability_sentences.mjs?v=ordinary-comparatives-1';
+import {midiFromCustodyOpportunity} from './custody_opportunity_music.mjs?v=ordinary-comparatives-1';
+import {composeObjectDesiredOwnership} from './object_desired_ownership.mjs?v=ordinary-comparatives-1';
+import {desiredOwnershipPlan,desiredOwnershipPronounPlan,composeDesiredOwnership} from './desired_ownership.mjs?v=ordinary-comparatives-1';
+import {midiFromDesiredOwnership} from './desired_ownership_music.mjs?v=ordinary-comparatives-1';
+import {ownershipPlan,ownershipPronounPlan,composeOwnershipSentence} from './ownership_sentences.mjs?v=ordinary-comparatives-1';
+import {midiFromOwnership} from './ownership_music.mjs?v=ordinary-comparatives-1';
+import {composeObjectDesiredDrinking} from './object_desired_drinking.mjs?v=ordinary-comparatives-1';
+import {desiredDrinkingPlan,desiredDrinkingPronounPlan,composeDesiredDrinking} from './desired_drinking.mjs?v=ordinary-comparatives-1';
+import {midiFromDesiredDrinking} from './desired_drinking_music.mjs?v=ordinary-comparatives-1';
+import {drinkingPlan,drinkingPronounPlan,composeDrinkingSentence} from './drinking_sentences.mjs?v=ordinary-comparatives-1';
+import {midiFromDrinking} from './drinking_music.mjs?v=ordinary-comparatives-1';
+import {objectDesirePlan,composeObjectDesire} from './object_desire.mjs?v=ordinary-comparatives-1';
+import {painPreferencePlan,composePainPreference} from './pain_preference.mjs?v=ordinary-comparatives-1';
+import {midiFromPainPreference} from './pain_preference_music.mjs?v=ordinary-comparatives-1';
+import {painComparisonPlan,painComparisonPronounPlan,composePainComparisonSentence} from './pain_comparison_sentences.mjs?v=ordinary-comparatives-1';
+import {midiFromPainComparison} from './pain_comparison_music.mjs?v=ordinary-comparatives-1';
+import {painStimulusPlan,painStimulusPronounPlan,composePainStimulusSentence} from './pain_stimulus_sentences.mjs?v=ordinary-comparatives-1';
+import {midiFromPainStimulus} from './pain_stimulus_music.mjs?v=ordinary-comparatives-1';
+import {painMeaningPlan,painPronounPlan,composePainMeaning} from './pain_meaning.mjs?v=ordinary-comparatives-1';
+import {midiFromPain} from './pain_music.mjs?v=ordinary-comparatives-1';
+import {cognitiveConjunctionPlan,cognitiveClauseChoicePlan,composeCognitiveConjunction} from './cognitive_conjunction.mjs?v=ordinary-comparatives-1';
+import {midiFromCognitiveConjunction} from './cognitive_conjunction_music.mjs?v=ordinary-comparatives-1';
+import {curiosityInterpretationPlan,curiosityPronounPlan,composeCuriosity} from './curiosity.mjs?v=ordinary-comparatives-1';
+import {midiFromCuriosity} from './curiosity_music.mjs?v=ordinary-comparatives-1';
+import {routeLearningInterpretationPlan,routeLearningPronounPlan,composeRouteLearning} from './route_learning.mjs?v=ordinary-comparatives-1';
+import {midiFromRouteLearning} from './route_learning_music.mjs?v=ordinary-comparatives-1';
+import {parseCameToUnderstand,composeCameToUnderstand} from './understanding_acquisition.mjs?v=ordinary-comparatives-1';
+import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs?v=ordinary-comparatives-1';
+import {understandingInterpretationPlan,understandingPronounPlan,composeUnderstandingContent} from './understanding_content.mjs?v=ordinary-comparatives-1';
+import {midiFromUnderstanding} from './understanding_music.mjs?v=ordinary-comparatives-1';
 import {entryModalChoices} from './entry_modality.mjs';
-import {parseLearnedWhether,composeLearnedWhether,learnedWhetherPronounPlan} from './learned_whether.mjs?v=partial-word-flow-1';
-import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs?v=partial-word-flow-1';
-import {createAcquisitionBundle,verifyAcquisitionBundle} from './acquisition_bundle.mjs?v=partial-word-flow-1';
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
-import {quantifiedActivityPlan,parseQuantifiedPropertySentence,composeQuantifiedPropertySentence} from './quantified_sentences.mjs?v=partial-word-flow-1';
-import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs?v=partial-word-flow-1';
-import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs?v=partial-word-flow-1';
-import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs?v=partial-word-flow-1';
-import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=partial-word-flow-1';
+import {parseLearnedWhether,composeLearnedWhether,learnedWhetherPronounPlan} from './learned_whether.mjs?v=ordinary-comparatives-1';
+import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs?v=ordinary-comparatives-1';
+import {createAcquisitionBundle,verifyAcquisitionBundle} from './acquisition_bundle.mjs?v=ordinary-comparatives-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
+import {quantifiedActivityPlan,parseQuantifiedPropertySentence,composeQuantifiedPropertySentence} from './quantified_sentences.mjs?v=ordinary-comparatives-1';
+import {parseFoundationSentence,composeFoundationSentence,foundationPronounPlan} from './foundation_sentences.mjs?v=ordinary-comparatives-1';
+import {pronounInterpretationPlan,composePronounSentence} from './pronouns.mjs?v=ordinary-comparatives-1';
+import {helpCareReading,parseSentenceDisjunction,composeSentenceDisjunction,clauseInterpretationPlan,parseSentenceConditional,composeSentenceConditional,parseNamedSentence,composeNamedSentence,needsSentenceComposition,parseSentenceSequence,composeSentenceSequence,parseSentenceConjunction,composeSentenceConjunction} from './sentences.mjs?v=ordinary-comparatives-1';
+import{svgFromFormal,midiFromFormal,createBundle,verifyBundle,soundPlanFromFormal}from'./engine.mjs?v=ordinary-comparatives-1';
 import{analyzeEnglish}from'./english.mjs?v=information-storage-1';
 import{encodeName,estimatePhonemes,notesForName,midiFromName,PHONEMES}from'./names.mjs?v=1.15.0';
-import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=partial-word-flow-1';
+import{visemePlanFromFormal,visemeFrameAt,visemeFileFromFormal,EYE_EXPRESSIONS}from'./visemes.mjs?v=ordinary-comparatives-1';
 import{recognitionForTarget}from'./recognition.mjs?v=1.15.0';
-import{midiFromPerformance,verifyPerformanceMidi}from'./performance_codec.mjs?v=partial-word-flow-1';
-import{wavFromPerformance,verifyPerformancePcm}from'./performance_audio.mjs?v=partial-word-flow-1';
+import{midiFromPerformance,verifyPerformanceMidi}from'./performance_codec.mjs?v=ordinary-comparatives-1';
+import{wavFromPerformance,verifyPerformancePcm}from'./performance_audio.mjs?v=ordinary-comparatives-1';
 import{createProposal,emptyQueue,loadQueue,saveQueue,addProposal,reviewProposal,approvedLocalSenses,validateQueue}from'./concept_intake.mjs?v=1.15.0';
 import{VOICE_PROFILES,voiceProfile,scheduleVoiceTone}from'./voices.mjs?v=1.15.0';
 
@@ -113,7 +114,7 @@ $('analyzeButton').addEventListener('click',analyze);
 $('sourceInput').addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key==='Enter')analyze()});
 
 async function sentenceTemplate(target){return state.data.compound_plans?.[target]?.expanded.nodes.some(node=>node.kind==='slot')?{authority:state.data}:{...(await resolutionDocument(target)).variants['assertion:1'],authority:state.data}}
-async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(await showWholePassage(input))return;if(desiredDrinkingPlan(input)||desiredDrinkingPronounPlan(input)){showDrinkingPreview(input,{desired:true});return}if(desiredAvailabilityPlan(input)||desiredAvailabilityPronounPlan(input)){showAvailabilityPreview(input,{desired:true});return;}if(availabilityPlan(input)||availabilityPronounPlan(input)){showAvailabilityPreview(input);return;}if(desiredOwnershipPlan(input)||desiredOwnershipPronounPlan(input)){showOwnershipPreview(input,{desired:true});return;}if(ownershipPlan(input)||ownershipPronounPlan(input)){showOwnershipPreview(input);return;}if(drinkingPlan(input)||drinkingPronounPlan(input)){showDrinkingPreview(input);return}if(painPreferencePlan(input)){showPainPreferencePreview(input);return}if(painComparisonPlan(input)||painComparisonPronounPlan(input)){showPainComparisonPreview(input);return}if(painStimulusPlan(input)||painStimulusPronounPlan(input)){showPainStimulusPreview(input);return}if(painMeaningPlan(input)||painPronounPlan(input)){showPainPreview(input);return}if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}if(curiosityInterpretationPlan(input)||curiosityPronounPlan(input)){showCuriosityPreview(input);return}if(routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)){showRouteLearningPreview(input);return}if(parseCameToUnderstand(input)){showUnderstandingPreview(input);return}if(understandingInterpretationPlan(input)||understandingPronounPlan(input)){showUnderstandingPreview(input);return}if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}const activity=quantifiedActivityPlan(input);if(activity){showQuantifiedPreview(input,activity);return;}if(!parseNamedSentence(input)&&parseQuantifiedPropertySentence(input)){showQuantifiedPreview(input);return}if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='entry_modality'){showEntryModality(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='physical_entry'){showPhysicalEntry(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='luminance_comparison'){showBrightnessComparison(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard','width_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));if($('sourceInput').value.trim()!==input||state.mode!=='general')return;state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}if(await showSavedSentence(input))return;if($('sourceInput').value.trim()!==input||state.mode!=='general')return;const help=helpCareReading(input);if(help){showHelpReading(input,help);return;}if(await showDictionaryClause(input))return;const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)||needsWholeReading(input,result)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;if(!result.decision.reasons.includes('incomplete_sentence_construction'))result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}await showAnalysis(result);if(state.analysis!==result)return;if(result.decision.auto_resolution_allowed&&!result.term_coverage.some(item=>state.wordSelections.has(item.token_index)&&state.wordSelections.get(item.token_index)!==item.recommended_sense_id)){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){if($('sourceInput').value.trim()===input)showError(error)}finally{$('analyzeButton').disabled=false}}
+async function analyze(){const input=$('sourceInput').value.trim();if(!input)return toast('Write something in English to translate.');$('analyzeButton').disabled=true;try{if(state.mode==='controlled')await compileControlled(input);else{if(await showWholePassage(input))return;if(desiredDrinkingPlan(input)||desiredDrinkingPronounPlan(input)){showDrinkingPreview(input,{desired:true});return}if(desiredAvailabilityPlan(input)||desiredAvailabilityPronounPlan(input)){showAvailabilityPreview(input,{desired:true});return;}if(availabilityPlan(input)||availabilityPronounPlan(input)){showAvailabilityPreview(input);return;}if(desiredOwnershipPlan(input)||desiredOwnershipPronounPlan(input)){showOwnershipPreview(input,{desired:true});return;}if(ownershipPlan(input)||ownershipPronounPlan(input)){showOwnershipPreview(input);return;}if(drinkingPlan(input)||drinkingPronounPlan(input)){showDrinkingPreview(input);return}if(painPreferencePlan(input)){showPainPreferencePreview(input);return}if(painComparisonPlan(input)||painComparisonPronounPlan(input)){showPainComparisonPreview(input);return}if(painStimulusPlan(input)||painStimulusPronounPlan(input)){showPainStimulusPreview(input);return}if(painMeaningPlan(input)||painPronounPlan(input)){showPainPreview(input);return}if(cognitiveConjunctionPlan(input)){showCognitiveConjunctionPreview(input);return}if(curiosityInterpretationPlan(input)||curiosityPronounPlan(input)){showCuriosityPreview(input);return}if(routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)){showRouteLearningPreview(input);return}if(parseCameToUnderstand(input)){showUnderstandingPreview(input);return}if(understandingInterpretationPlan(input)||understandingPronounPlan(input)){showUnderstandingPreview(input);return}if(parseLearnedWhether(input)||learnedWhetherPronounPlan(input)){showAcquisitionPreview(input);return}const activity=quantifiedActivityPlan(input);if(activity){showQuantifiedPreview(input,activity);return;}if(!parseNamedSentence(input)&&parseQuantifiedPropertySentence(input)){showQuantifiedPreview(input);return}if(parseFoundationSentence(input,{allowCognitive:true})||foundationPronounPlan(input,{allowCognitive:true})){showFoundationPreview(input);return}const pronounPlan=pronounInterpretationPlan(input);if(pronounPlan){showPronounReferents(input,pronounPlan);return}const groupPlan=clauseInterpretationPlan(input);if(groupPlan&&(groupPlan.requiredDisjunction||groupPlan.clauses.some(({parsed})=>parsed.requiredViewpoint||parsed.requiredDestination||parsed.requiredInterpretation))){showClauseInterpretations(input,groupPlan);return}if(parseNamedSentence(input)?.requiredViewpoint){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredDestination){showCarryingViewpoint(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='entry_modality'){showEntryModality(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='physical_entry'){showPhysicalEntry(input);return}if(parseNamedSentence(input)?.requiredInterpretation==='luminance_comparison'){showBrightnessComparison(input);return}if(['temperature_comparison','mass_comparison'].includes(parseNamedSentence(input)?.requiredInterpretation)){showPhysicalComparison(input);return}if(['thermal_standard','mass_standard','luminance_standard','texture_standard','width_standard'].includes(parseNamedSentence(input)?.requiredInterpretation)){showAdjectiveStandard(input);return}if(parseNamedSentence(input)?.requiredInterpretation){showFutureInterpretation(input);return}if(parseSentenceConditional(input)||parseNamedSentence(input)||parseSentenceSequence(input)||parseSentenceConjunction(input)){const composed=parseSentenceConditional(input)?await composeSentenceConditional(input,sentenceTemplate):parseSentenceConjunction(input)?await composeSentenceConjunction(input,sentenceTemplate):parseSentenceSequence(input)?await composeSentenceSequence(input,sentenceTemplate):await composeNamedSentence(input,await sentenceTemplate(parseNamedSentence(input).predicate));if($('sourceInput').value.trim()!==input||state.mode!=='general')return;state.analysis=null;state.selected=null;state.phraseNames=[];state.resolution=composed;$('results').classList.add('hidden');await showResolution(composed,{definition:[composed.interpretation,composed.semantic_note].filter(Boolean).join(' ')});return}if(await showSavedSentence(input))return;if($('sourceInput').value.trim()!==input||state.mode!=='general')return;const help=helpCareReading(input);if(help){showHelpReading(input,help);return;}if(await showDictionaryClause(input))return;const result=analyzeEnglish(input,state.data);if(needsSentenceComposition(input)||needsWholeReading(input,result)){result.decision.auto_resolution_allowed=false;result.decision.requires_clarification=true;if(!result.decision.reasons.includes('incomplete_sentence_construction'))result.decision.reasons.push('incomplete_sentence_construction');result.complete_sentence_unavailable=true}await showAnalysis(result);if(state.analysis!==result)return;if(result.decision.auto_resolution_allowed&&!result.term_coverage.some(item=>state.wordSelections.has(item.token_index)&&state.wordSelections.get(item.token_index)!==item.recommended_sense_id)){const first=$('candidateList').querySelector('.candidate');selectCandidate(0,first);$('resolutionPrompt').textContent=`Automatically selected ${state.selected.sense_id}. The dictionary reading is ready below; choose another option only if you meant something else.`;await resolveSelected(true)}}}catch(error){if($('sourceInput').value.trim()===input)showError(error)}finally{$('analyzeButton').disabled=false}}
 function showPronounReferents(input,plan){
   state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
   for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
@@ -145,6 +146,7 @@ function showPronounReferents(input,plan){
   }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(card,'meaning of may',[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
   else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(card,'entry meaning',[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
   else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(card,`brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
+  else if(['temperature_comparison','mass_comparison'].includes(parsed.requiredInterpretation))interpretation=select(card,`comparison meaning`,[['','Choose a comparison meaning'],[parsed.requiredInterpretation,physicalComparativeMeaning(parsed.requiredInterpretation).label]]);
   else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(card,`future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
   const readOptions=()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}});
   const read=()=>Object.fromEntries(fields.map(([key,field,number])=>[key,number?{referent:field.value.trim(),number:number.value}:field.value.trim()]));
@@ -185,6 +187,7 @@ function showClauseInterpretations(input,plan){
     }else if(parsed.requiredInterpretation==='entry_modality')interpretation=select(section,`Clause ${index+1} meaning of may`,[['','Choose a meaning'],...entryModalChoices(parsed.entryModalNegative,parsed.key==='ongoing_physical_entry')]);
     else if(parsed.requiredInterpretation==='physical_entry')interpretation=select(section,`Clause ${index+1} entry meaning`,[['','Choose an entry meaning'],['physical_entry','Movement from outside to inside a physical region']]);
     else if(parsed.requiredInterpretation==='luminance_comparison')interpretation=select(section,`Clause ${index+1} brightness meaning`,[['','Choose a comparison meaning'],['luminance_comparison','Physical luminance; comparable viewing conditions']]);
+  else if(['temperature_comparison','mass_comparison'].includes(parsed.requiredInterpretation))interpretation=select(section,`Clause ${index+1} comparison meaning`,[['','Choose a comparison meaning'],[parsed.requiredInterpretation,physicalComparativeMeaning(parsed.requiredInterpretation).label]]);
     else if(parsed.requiredInterpretation==='future_assertion')interpretation=select(section,`Clause ${index+1} future meaning`,[['','Choose a future meaning'],['future_assertion','Future statement; no promise or intention added']]);
     if(!view&&!destination&&!property&&!interpretation){const note=document.createElement('p');note.textContent='No additional interpretation choice is needed for this clause.';section.append(note)}
     read.push(()=>({...view?{viewpoint:view.value}:{},...destination?{destination:destination.value}:{},...property?{interpretation:parsed.requiredInterpretation,standard:standardMode?.value==='contextual'?{kind:'contextual',dimension}:{dimension,threshold:threshold.value.trim(),scale:scale.value}}:interpretation?{interpretation:interpretation.value}:{}}));
@@ -321,6 +324,33 @@ function showPhysicalEntry(input){
     }catch(error){if(current())status.textContent=error.message}finally{button.disabled=false}
   });
   card.append(description,status,button);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showPhysicalComparison(input){
+  const parsed=parseNamedSentence(input),meaning=physicalComparativeMeaning(parsed?.requiredInterpretation);
+  if(!meaning)return;
+  state.analysis=null;state.selected=null;state.resolution=null;state.phraseNames=[];state.wordSelections.clear();
+  for(const id of ['output','phraseCoverage','resolutionPanel'])$(id).classList.add('hidden');
+  $('results').classList.remove('hidden');$('candidateList').innerHTML='';
+  $('decisionSummary').textContent='What does “'+parsed.adjective+'” mean here?';
+  const card=document.createElement('article'),description=document.createElement('p'),status=document.createElement('p');
+  const button=document.createElement('button'),other=document.createElement('button');
+  card.className='candidate';status.setAttribute('role','status');description.textContent=meaning.description;
+  button.textContent=meaning.label;other.textContent='Another meaning';
+  let version=0;
+  const current=generation=>card.isConnected!==false&&$('sourceInput').value.trim()===input&&state.mode!=='controlled'&&generation===version;
+  button.addEventListener('click',async()=>{
+    if(!current(version))return;const generation=++version;button.disabled=true;status.textContent='';
+    try{
+      const result=await composeNamedSentence(input,await sentenceTemplate(parsed.predicate),{interpretation:parsed.requiredInterpretation});
+      if(!current(generation))return;state.resolution=result;$('results').classList.add('hidden');await showResolution(result,{definition:result.semantic_note});
+    }catch(error){if(current(generation))status.textContent=error.message}
+    finally{if(current(generation))button.disabled=false}
+  });
+  other.addEventListener('click',()=>{
+    if(!current(version))return;version++;button.disabled=false;state.resolution=null;
+    status.textContent='That meaning needs its own definition before this sentence can be translated. You can edit the sentence or choose the physical meaning.';
+  });
+  card.append(description,status,button,other);$('candidateList').append(card);$('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showBrightnessComparison(input){
   const parsed=parseNamedSentence(input);

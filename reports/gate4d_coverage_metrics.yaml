@@ -4,11 +4,11 @@ metadata:
   version: 1.0.0
   status: canonical_measurement_release
   benchmark: Gate 4C exact canonical labels plus reviewed high-frequency senses
-  sense_index_fingerprint: 9db096aebbf854f514d15d06dea0887b744df381ca1c9324ecafb13b768c0524
+  sense_index_fingerprint: e7076f3df7af3d1d4150cc1ed574bf12440f6c76624ce0ac4ada57c10fb556da
   translator_started: false
 inventory:
-  total_senses: 603
-  total_lemmas: 580
+  total_senses: 607
+  total_lemmas: 584
   canonical_atom_targets: 324
   canonical_compound_targets: 124
   reviewed_high_frequency_senses: 84
@@ -16,11 +16,11 @@ route_coverage:
   direct_atom: 359
   direct_compound: 191
   future_grammar: 8
-  future_semantic_ir: 34
+  future_semantic_ir: 38
   unsupported_gap: 11
-  direct_lexical_percent: 91.21
-  structurally_routed_percent: 98.18
-  explicit_gap_percent: 1.82
+  direct_lexical_percent: 90.61
+  structurally_routed_percent: 98.19
+  explicit_gap_percent: 1.81
 high_frequency_benchmark:
   senses: 84
   by_route:
@@ -33,8 +33,8 @@ high_frequency_benchmark:
   eventual_structural_percent: 86.9
   gap_percent: 13.1
 ambiguity:
-  lemmas_requiring_disambiguation: 53
-  lemma_ambiguity_percent: 9.14
+  lemmas_requiring_disambiguation: 57
+  lemma_ambiguity_percent: 9.76
   lemmas_with_multiple_direct_targets:
   - change
   - close
@@ -161,6 +161,8 @@ semantic_ir_dependencies:
   - generic_state_transition
 - - cold
   - contextual_thermodynamic_temperature_cold
+- - colder
+  - physical_thermodynamic_temperature_less_than_comparative
 - - continue
   - persistence_of_occurrence
 - - cross
@@ -175,14 +177,20 @@ semantic_ir_dependencies:
   - reference_time_after_now
 - - go
   - abstract_transition
+- - heavier
+  - physical_mass_greater_than_comparative
 - - heavy
   - contextual_mass_heavy
 - - hot
   - contextual_thermodynamic_temperature_hot
+- - hotter
+  - physical_thermodynamic_temperature_greater_than_comparative
 - - if
   - conditional
 - - light
   - contextual_mass_light
+- - lighter
+  - physical_mass_less_than_comparative
 - - move
   - cause_target_displacement
 - - narrow

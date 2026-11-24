@@ -1,6 +1,6 @@
-import {savedQualityLabel} from './story_saved_adjectives.mjs?v=information-storage-1';
-import {expandChordMidi} from './compact_chords.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=information-storage-1';
+import {savedQualityLabel} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
+import {expandChordMidi} from './compact_chords.mjs?v=ordinary-comparatives-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=ordinary-comparatives-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
 import {feltProperties} from './story_qualities.mjs?v=information-storage-1';
 import {storyWords} from './story_words.mjs?v=information-storage-1';
@@ -11,6 +11,15 @@ function identity(value){
   if(value.kind==='deictic')return ({speaker:'the speaker',speaker_group:'the speaker’s group',addressee:'the listener'})[value.role]||value.role;
   if(value.kind==='domain')return ({people:'people',things:'things',contextual:'the contextual group'})[value.domain];
   return value.phonemes?.join(' ')||value.kind;
+}
+function comparisonSummary(meaning){
+ const dimension={mass:'physical mass',thermodynamic_temperature:'thermodynamic temperature',luminance:'surface luminance'}[meaning.dimension];
+ const relation={greater_than:'greater than',less_than:'less than',equal:'equal to',at_least:'at least',at_most:'at most',not_equal:'different from'}[meaning.relation];
+ const scopes=meaning.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator);
+ const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_possible','modality_necessary','modality_predicted']);
+ const claim=dimension+' '+relation+' the comparison participant’s';
+ const description=scopes.every(s=>supported.has(s))&&!meaning.scopes.some(s=>s.strength!==undefined)?describeClaim(claim,scopes,meaning.speech_act):'Scoped '+claim+'; see complete ordered scope details.';
+ return description+' Bearer = '+identity(meaning.participants.bearer)+'; comparison participant = '+identity(meaning.participants.comparison_standard)+'.';
 }
 export async function readSongLine(bytes,atoms,records,chords,adjectives){
   const melody=chords?expandChordMidi(bytes,atoms):bytes;
@@ -31,6 +40,24 @@ export async function readSongLine(bytes,atoms,records,chords,adjectives){
       const [a,b]=r.events.map(i=>i+1);
       words.push(r.kind==='before'?'Action '+a+' occurs before action '+b+'.':r.kind==='condition'?'Action '+b+' depends on action '+a+'.':'Actions '+a+' and '+b+' both apply.');
     }
+  }else if(m.profile==='EZPROPERTYCOMPARE-GROUP-1'){
+    const relation={sequence:'The relationship places the clauses in temporal order.',all_of:'The relationship joins all clause contents, without specifying temporal order.',any_of:'The relationship requires at least one clause and permits both.',exactly_one:'The relationship requires exactly one clause.',conditional:'The second clause is conditional on the first; neither is asserted independently.'}[m.operator];
+    words.push((m.speech_act==='question'?'Question about the complete relationship: ':m.speech_act==='assertion'?'Relationship: ':m.speech_act+' about the relationship: ')+relation);
+    if(m.scopes.length)words.push('The whole relationship is scoped; see the complete ordered scope details.');
+    if(m.condition_status&&m.condition_status!=='open')words.push('Condition status: '+m.condition_status+'.');
+    m.members.forEach((member,index)=>{
+      let description;
+      if(member.profile==='EZPROPERTYCOMPARE-1')description=comparisonSummary(member);
+      else {
+        const name=member.standard?member.standard.norm+' under its own contextual standard':label(member.predicate);
+        const scopes=member.scopes.map(s=>s.operator==='time'?'time_'+s.relation:s.operator==='modality'?'modality_'+s.mode:s.operator==='aspect'?'aspect_'+s.aspect:s.operator);
+        const supported=new Set(['negation','time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_possible','modality_necessary','modality_predicted','aspect_ongoing']);
+        description=(scopes.every(s=>supported.has(s))&&!member.scopes.some(s=>s.strength!==undefined)?describeClaim(name,scopes):'Scoped '+name+'; see complete scope details.')+' Bearer = '+identity(member.bearer)+'.';
+      }
+      words.push('Clause '+(index+1)+' content: '+description+' '+describeRuntime(member.runtime_state));
+    });
+  }else if(m.profile==='EZPROPERTYCOMPARE-1'){
+    words.push(comparisonSummary(m));
   }else if(m.profile==='EZCONTEXTUAL-GROUP-INVERSE-1'){
     const relation={sequence:'The relationship places the clauses in temporal order.',all_of:'The relationship includes all clauses, without specifying temporal order.',any_of:'The relationship requires at least one clause and permits both.',exactly_one:'The relationship requires exactly one clause.',conditional:'The relationship makes the second clause conditional on the first; neither is asserted independently.'}[m.operator];
     words.push((m.speech_act==='question'?'Question about the group. ':m.speech_act==='assertion'?'':m.speech_act+' over the group. ')+relation);

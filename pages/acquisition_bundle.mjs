@@ -1,7 +1,7 @@
-import {canonicalDigest,sha256} from './engine.mjs?v=partial-word-flow-1';
-import {validateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=partial-word-flow-1';
-import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs?v=partial-word-flow-1';
+import {canonicalDigest,sha256} from './engine.mjs?v=ordinary-comparatives-1';
+import {validateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=ordinary-comparatives-1';
+import {midiFromKnowledgeAcquisition} from './knowledge_acquisition_music.mjs?v=ordinary-comparatives-1';
 // Regenerate the result performance from meaning and shared authority. Bundles
 // never accept a caller-supplied event list as the authoritative performance.
 export async function renderAcquisitionResult(document,authority,{allowDraft=false}={}){

@@ -1,5 +1,5 @@
-import{visemePlanFromFormal}from'./visemes.mjs?v=partial-word-flow-1';
-import{verifyPerformanceNotes}from'./performance_codec.mjs?v=partial-word-flow-1';
+import{visemePlanFromFormal}from'./visemes.mjs?v=ordinary-comparatives-1';
+import{verifyPerformanceNotes}from'./performance_codec.mjs?v=ordinary-comparatives-1';
 
 export const AUDIO_CHECK_FORMAT='EZREC-AUDIO-1';
 export const REFERENCE_SAMPLE_RATE=22050;

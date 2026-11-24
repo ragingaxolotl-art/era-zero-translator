@@ -1,5 +1,5 @@
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
-import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference} from './contextual_content.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
 import {informationFrame} from './information_passage_frames.mjs?v=field-repairs-1';
 

@@ -1,0 +1,924 @@
+{
+  "source_revision": "813572d1e85a18ad1bfcc12ff77e8d6716f52263",
+  "scope": "Preservation baseline only; no microphone claim.",
+  "cases": [
+    {
+      "input": "The radio has more mass than the box. [0]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "f1d1166a3e1f0e3f52ac7465f5fdab78e3948590cce454853cb981c0e0039697",
+      "chords_sha256": "caad02dfe4e9edcc9e531c8ab2a4ca04c5333b63e821940a9546c71ddd0146fb"
+    },
+    {
+      "input": "The radio has less mass than the box. [0]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "b5e9b85131aeb9ed959f2d9f51673efc8ac845f824ba0c7b00384bd38b6e3b4d",
+      "chords_sha256": "be8f4b246b36bd3636457072835c2d1426556d500bcf9d15eac9e19a8807cb95"
+    },
+    {
+      "input": "The radio has the same mass as the box. [0]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "equal",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "3a07bf2e52f3e8782fbed1fd7f96291f7d0aaa9139c80c61528a9725e576b787",
+      "chords_sha256": "2ba9f1dd85ce38527a50f7abcb96d67ae77b3254636b7a8ceaa0e7f9fed8ada3"
+    },
+    {
+      "input": "I have a higher temperature than you. [0]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "deictic",
+            "role": "speaker"
+          },
+          "comparison_standard": {
+            "kind": "deictic",
+            "role": "addressee"
+          }
+        },
+        "material_root": "MAT:000",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "f0020bfec8c0acd86f950dd1cc1c0ec2b94eff47e6c32e1b363fab553a02c4d0",
+      "chords_sha256": "e1ac85bed26c3a0471d17120533afa29c134b66d7f364a9a35382d1d4d7a1f1b"
+    },
+    {
+      "input": "The radio has a lower temperature than the box. [0]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "23d32ca30f1949fdb7b32b250b6d79f755a286b0977d609929fa8415f1dccf0c",
+      "chords_sha256": "5bd71f317264c4f35da7343e6419bbbf68da2f4a3d6c3fdfbb39be042011038b"
+    },
+    {
+      "input": "This lamp is brighter than that lamp. [0]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "ad70085ec4e5d5d07ec7c82dfa381772b021754d7cbceeedacaf7b5152ecd050",
+      "chords_sha256": "a927e31f81de7faa3975f5583278237a4db5a769cbca7d1c3f470d2173f2f9e0"
+    },
+    {
+      "input": "This lamp is not brighter than that lamp. [0]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "17c9b594a3766acce9a7a3df1d4fc19a73460dd87066d8e9f2d764d4c1810eef",
+      "chords_sha256": "b1707fed28dff1f8066b59a9867371c65b39a2c14600eca168c62f332dbd3eba"
+    },
+    {
+      "input": "This lamp is dimmer than that lamp. [0]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 0,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "55caf92efebb18fc6539b37ec0a5bc9665a4b9c1b75878702dc4b55f5965ca28",
+      "chords_sha256": "2a6b741010603edf83d519153eaf3f263e17e58f77bf12b02445de08e4353445"
+    },
+    {
+      "input": "The radio has more mass than the box. [1]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "2f88afff35c39f77ca97e4c616d125f4e86c62e20c285e8e5cbc55141dac562f",
+      "chords_sha256": "18fc2ff8f7da44b09c12ccc65225037b3e71435c47c0dae0b2e5a42bb5c0ed16"
+    },
+    {
+      "input": "The radio has less mass than the box. [1]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "762b31251c648567588e144a56d6a001651625d76f5e4d9635b1d341d927c43b",
+      "chords_sha256": "b4ea9490d97b2cb2fa933565aa3789a1120e144ae0ac12cdfc5f7ec6b03e6c2c"
+    },
+    {
+      "input": "The radio has the same mass as the box. [1]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "equal",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "ecdb7d860baf343b6b02354fedf4891c2e88ecfd13b6749b0a6c39500445feb5",
+      "chords_sha256": "d7927afb7c9716eb4f5a1d50dc6f102bdc2b48c03a1aff7b59215a673d7875a5"
+    },
+    {
+      "input": "I have a higher temperature than you. [1]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "deictic",
+            "role": "speaker"
+          },
+          "comparison_standard": {
+            "kind": "deictic",
+            "role": "addressee"
+          }
+        },
+        "material_root": "MAT:000",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "4701f5516b40b09981a004c0fc4a6c293a1eb3eafef0f785945fb1fdc6d8db1d",
+      "chords_sha256": "fe0b76c7dc96a7a46f40b3fba2a94645bcb7399e320df4d6c6b9b9396b62f3a5"
+    },
+    {
+      "input": "The radio has a lower temperature than the box. [1]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "056ca661ac51c9820b971e1f5a94cc4d378ace397bcc83d25602e32bf4610ea0",
+      "chords_sha256": "0d3450f2c2f65bca4eef66f99b8143e2afc41690e4f7c0e8418be037c69cf9e4"
+    },
+    {
+      "input": "This lamp is brighter than that lamp. [1]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "dc053efdd454105d26b89c76317aa0c745bb2274932a9f200a7102fb0fdaf1c3",
+      "chords_sha256": "879fab8822f91f8aa508aedff55fb57a96e9d9f3ecb2061c80002af58767fff1"
+    },
+    {
+      "input": "This lamp is not brighter than that lamp. [1]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "65a712db396a155ac78367f7b9497fea104987e783c22e706303c1f2122a943e",
+      "chords_sha256": "6f4b4918b0c187dd650590b41b7c210e8512ae7bc11de19aaf214a586ee7cc02"
+    },
+    {
+      "input": "This lamp is dimmer than that lamp. [1]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 1,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "98204e564a49dfcd05362a7e2c57703b7451dc4b6f39f9df2477e6965cd9a831",
+      "chords_sha256": "2cbe19d791a0fd2aa0381d62fe776e31de760fb875fc28629f019834c6a255eb"
+    },
+    {
+      "input": "The radio has more mass than the box. [2]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "a11af8bab9fbb56c4e1fac3e985b45ebe9fc37264eef61003e8ac29f7ba3b7d4",
+      "chords_sha256": "89ec3fdfad8598c7a90479425a47644ed5633cafa22c4a7d925cbb007cb72a02"
+    },
+    {
+      "input": "The radio has less mass than the box. [2]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "5f0c9d3e6baf6b2dc989817f1646f41f5211d981c3daf594fe4ccdbabc2aa631",
+      "chords_sha256": "eee79ed944457161451da0184ccb99fc8aec52ecfa64e24b17db6b6987f1d4a8"
+    },
+    {
+      "input": "The radio has the same mass as the box. [2]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "mass",
+        "relation": "equal",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "78f399d2c6590548fef873534b3e0c9d9be72ead5068b6040267bcdd965c183d",
+      "chords_sha256": "5d5ad20609998457401a400e41fb69cb25455d4ebb03887280f8fbc28ee28b5b"
+    },
+    {
+      "input": "I have a higher temperature than you. [2]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "deictic",
+            "role": "speaker"
+          },
+          "comparison_standard": {
+            "kind": "deictic",
+            "role": "addressee"
+          }
+        },
+        "material_root": "MAT:000",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "634089c4a09261fb14fb8190653c8cf07fac5877299534db899ce8aef97d51b5",
+      "chords_sha256": "cebfb3bf9ee955ea311802742e8cf3753f6cfe56ef90744ce1a237767012a1d7"
+    },
+    {
+      "input": "The radio has a lower temperature than the box. [2]",
+      "options": {},
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "thermodynamic_temperature",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "R",
+              "AE",
+              "D",
+              "IH",
+              "AA"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "3b3aac15292b63bdd8e64073784ab32f65d660f170bde642ebb213d2d5d04808",
+      "chords_sha256": "c0aba592e1755cd2cdafd5a0807bf8cf74c6190a40fe9e73ca9c45612d9de35e"
+    },
+    {
+      "input": "This lamp is brighter than that lamp. [2]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "a0fbd600d4a79283a5073fbeb449e9b756b33ab2142b01395c3a5d43d85373e8",
+      "chords_sha256": "ba5ce61e8e402e9474e421fb407aabcd4a66e2c62f8cd184cd5bbb728e2d2c62"
+    },
+    {
+      "input": "This lamp is not brighter than that lamp. [2]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "greater_than",
+        "scopes": [
+          {
+            "operator": "negation"
+          }
+        ],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "30d694008fcfbbcf34acf4f353a21a661d2a7b25725be242979bce2734c143c2",
+      "chords_sha256": "db9065bfb459452ee60867d44d54efcde14adb6d7bbdf7d6bb4af02df2569997"
+    },
+    {
+      "input": "This lamp is dimmer than that lamp. [2]",
+      "options": {
+        "interpretation": "luminance_comparison"
+      },
+      "meaning": {
+        "profile": "EZPROPERTYCOMPARE-1",
+        "dimension": "luminance",
+        "relation": "less_than",
+        "scopes": [],
+        "participants": {
+          "bearer": {
+            "kind": "phonemic",
+            "reference_mode": "proximal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          },
+          "comparison_standard": {
+            "kind": "phonemic",
+            "reference_mode": "distal_nominal",
+            "phonemes": [
+              "L",
+              "AE",
+              "M",
+              "P"
+            ]
+          }
+        },
+        "material_root": "MAT:010",
+        "runtime_state": 2,
+        "speech_act": "assertion",
+        "reference_resolution": "Phonemes recover audible labels, not original spelling or external referent identity."
+      },
+      "melody_sha256": "b7caff43593f92b1449a49f823ba1d24025e8bef98eb8ea7edf50622a11388b0",
+      "chords_sha256": "97fe2b216e5567474b0c5487aa1620b647871c09fe197beaa33df36295512979"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
-import {PAIN_CONTRACT,validatePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
+import {PAIN_CONTRACT,validatePainMeaning} from './pain_meaning.mjs?v=ordinary-comparatives-1';
 import {painEvent} from './pain_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
-import {readFeltConditionTree} from './felt_decoder.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
+import {readFeltConditionTree} from './felt_decoder.mjs?v=ordinary-comparatives-1';
 export async function painMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainMeaning(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain',name);
  const experiencer={...d.experiencer,node_id:'experiencer'};

@@ -1,8 +1,8 @@
-import {midiFromFormal} from './engine.mjs?v=partial-word-flow-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=information-storage-1';
+import {midiFromFormal} from './engine.mjs?v=ordinary-comparatives-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=ordinary-comparatives-1';
 // Resolve an object-directed desire only through an explicit desired proposition.
 // Reuses the existing intensional desire grammar and all its musical conventions.
-import {parseFoundationSentence,composeFoundationSentence} from './foundation_sentences.mjs?v=partial-word-flow-1';
+import {parseFoundationSentence,composeFoundationSentence} from './foundation_sentences.mjs?v=ordinary-comparatives-1';
 import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {encodeName} from './names.mjs';
 export function objectDesirePlan(input){

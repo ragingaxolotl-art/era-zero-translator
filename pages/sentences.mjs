@@ -1,4 +1,5 @@
 import {ONGOING_ENTRY} from './ongoing_entry.mjs';
+import {parsePhysicalComparative,physicalComparativeMeaning} from './physical_comparatives.mjs?v=ordinary-comparatives-1';
 import {entryModalScopes,entryModalChoices} from './entry_modality.mjs';
 import {PHYSICAL_ENTRY} from './physical_entry.mjs';
 import {SPATIAL_RELATIONS} from './spatial_relations.mjs';
@@ -12,10 +13,10 @@ import {luminanceValue} from './luminance.mjs';
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
 import {massKilograms} from './mass.mjs';
 import {temperaturePointKelvin} from './temperature.mjs';
-import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences,lexicalGloss} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {NOMINAL_PATTERN,parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {registerFor} from './roles.mjs';
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 import {encodeName, notesForName} from './names.mjs';
 import {deicticReference,deicticEvent,nominalMarker,NOMINAL_MODES} from './references.mjs';
 
@@ -251,6 +252,10 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
     const scopes=[...(permissionEntry[3]||permissionEntry[4]?[{operator:'negation'}]:[]),{operator:'modality',mode:'permitted'},...(permissionEntry[2]?[{operator:'negation'}]:[])];
     return {...inner,speechTime:undefined,scopes,construction:'permitted_physical_entry',explicitInterpretation:String(input).trim(),semanticNote:inner.semanticNote+' The permission scopes this event type; occurrence, ability and a named permitting authority are not asserted.'};
   }
+  // Comparative clauses already carry a comparison scope. Read their tense
+  // before the older past-form shortcut, which accepts only unscoped clauses.
+  const physicalComparative=parsePhysicalComparative(input,participant,inner=>parseNamedSentence(inner,depth+1,false));
+  if(physicalComparative)return physicalComparative;
   // Calendar-day statements retain their interval; tense is not runtime state.
   const calendar=String(input).trim().match(/^(.*?) (yesterday|today|tomorrow)[.]?$/);
   if(calendar){
@@ -533,7 +538,7 @@ export function parseNamedSentence(input, depth=0, speechActs=depth===0) {
 // current complete parser decline. The legacy keyword path may still offer
 // dictionary readings, but must not present one as the complete sentence.
 export function needsSentenceComposition(input) {
-  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely)\s+)*(?:hot|cold|heavy|light|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|enter|entered|entering|enters|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
+  return (/^[Ii]f\b/.test(String(input)) || /\b(?:is|am|are|was|were)\s+(?:(?:not|very|too|quite|extremely|much)\s+)*(?:hot|cold|heavy|light|hotter|colder|heavier|lighter|bright|dim|brighter|dimmer|rough|smooth)\b/i.test(String(input)) || /\b(?:it\s+is\s+(?:not\s+)?(?:possible|necessary)\s+that|with\s+[0-9.]+%\s+confidence|enter|entered|entering|enters|inside|outside|boundary|(?:care|cares|caring)\s+for|awakening|restoring|damaging|repairing|moving|able to move|transferred|attention|revising|conscious|dormant|damaged|impaired|restored|registering|arrive|arrives|arrived|arriving|carry|carries|carried|carrying|support|supporting|custody|acquire|acquired|acquiring|deliver|delivers|delivered|delivering|run|runs|running|swim|swims|swimming|happy|sad|hungry|thirsty|tired|temperature|luminance)\b/i.test(String(input))) && !parseNamedSentence(input);
 }
 
 // A complete antecedent and a comma establish conditional scope. Without
@@ -719,9 +724,9 @@ export async function composeNamedSentence(input,template,{interpretation,standa
   if(parsed.requiredInterpretation!=='entry_modality'&&interpretation!==undefined&&interpretation!==parsed.requiredInterpretation)throw new Error('This interpretation is not available for this sentence.');
   if(parsed.requiredInterpretation&&parsed.requiredInterpretation!=='entry_modality'&&interpretation!==parsed.requiredInterpretation){
     const thermal=['thermal_standard','mass_standard','luminance_standard','texture_standard','width_standard'].includes(parsed.requiredInterpretation);
-    const comparative=parsed.requiredInterpretation==='luminance_comparison';
+    const comparative=parsed.requiredInterpretation==='luminance_comparison'||!!physicalComparativeMeaning(parsed.requiredInterpretation);
     const physicalEntry=parsed.requiredInterpretation==='physical_entry';
-    const error=new Error(physicalEntry?'Choose whether entry means moving from outside to inside a physical region. Other entry meanings need different interpretations.':comparative?'Choose the physical luminance meaning of this comparison before translating.':thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
+    const error=new Error(physicalEntry?'Choose whether entry means moving from outside to inside a physical region. Other entry meanings need different interpretations.':comparative?(parsed.requiredInterpretation==='luminance_comparison'?'Choose the physical luminance meaning of this comparison before translating.':'Choose the physical meaning of this comparison before translating.'):thermal?'Choose the property sense and its contextual threshold before translating.':'Choose whether this is a future statement. Promise, intention and willingness require different meanings.');
     error.code=(thermal||comparative||physicalEntry)?`${parsed.requiredInterpretation}_required`:'future_interpretation_required';throw error;
   }
   let selectedStandard;

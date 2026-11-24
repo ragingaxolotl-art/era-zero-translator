@@ -3,8 +3,8 @@ metadata:
   title: Era Zero Gate 4C English Concept and Sense Index
   version: 1.0.0
   status: canonical_core_release
-  sense_count: 603
-  lemma_count: 580
+  sense_count: 607
+  lemma_count: 584
   canonical_atom_senses: 324
   canonical_compound_senses: 124
   reviewed_high_frequency_senses: 84
@@ -1920,6 +1920,30 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: reviews/contextual_width_2026_11_22.md
+- lemma: colder
+  part_of_speech: adjective
+  sense_key: physical_thermodynamic_temperature_less_than_comparative
+  route: semantic_ir
+  definition: The bound bearer's thermodynamic temperature is strictly lower than
+    that of the bound comparison participant in the selected context. Both ordered
+    participants are required. No numeric measurement, difference magnitude, contextual
+    cold threshold or persistence is asserted. Negation scopes this strict comparison
+    and allows equality; it is not the opposite strict comparison. Runtime 0/1/2 remains
+    independent of comparison, time and negation.
+  sense_id: ENS:6d9fbbdbd21700e037254bfd
+  display_form: colder
+  surface_forms:
+  - colder
+  selection_cues:
+  - The cup is colder than the plate.
+  - Selected thermodynamic temperature comparison between two participants
+  excluded_readings:
+  - felt coldness, emotional distance or figurative tone
+  - Absolute state, numerical difference, degree modifier, superlative, or missing
+    comparison participant
+  confidence: high
+  controlled_input_allowed: false
+  provenance: reviews/ordinary_comparatives_2026_11_23.md
 - sense_id: ENS:a4390645ea409c7b69b818a1
   lemma: community
   display_form: community
@@ -4987,6 +5011,30 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: lexicon/story_compound_batch.json
+- lemma: heavier
+  part_of_speech: adjective
+  sense_key: physical_mass_greater_than_comparative
+  route: semantic_ir
+  definition: The bound bearer's physical mass is strictly greater than that of the
+    bound comparison participant in the selected context. Both ordered participants
+    are required. No numeric measurement, difference magnitude, contextual heavy threshold
+    or persistence is asserted. Negation scopes this strict comparison and allows
+    equality; it is not the opposite strict comparison. Runtime 0/1/2 remains independent
+    of comparison, time and negation.
+  sense_id: ENS:151f8734b07025b00726284b
+  display_form: heavier
+  surface_forms:
+  - heavier
+  selection_cues:
+  - The cup is heavier than the plate.
+  - Selected physical mass comparison between two participants
+  excluded_readings:
+  - weight force, carrying effort, density, severity or figurative importance
+  - Absolute state, numerical difference, degree modifier, superlative, or missing
+    comparison participant
+  confidence: high
+  controlled_input_allowed: false
+  provenance: reviews/ordinary_comparatives_2026_11_23.md
 - lemma: heavy
   part_of_speech: adjective
   sense_key: contextual_mass_heavy
@@ -5095,6 +5143,30 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: reviews/contextual_width_2026_11_22.md
+- lemma: hotter
+  part_of_speech: adjective
+  sense_key: physical_thermodynamic_temperature_greater_than_comparative
+  route: semantic_ir
+  definition: The bound bearer's thermodynamic temperature is strictly higher than
+    that of the bound comparison participant in the selected context. Both ordered
+    participants are required. No numeric measurement, difference magnitude, contextual
+    hot threshold or persistence is asserted. Negation scopes this strict comparison
+    and allows equality; it is not the opposite strict comparison. Runtime 0/1/2 remains
+    independent of comparison, time and negation.
+  sense_id: ENS:3d75dda4410348c7d371c5ff
+  display_form: hotter
+  surface_forms:
+  - hotter
+  selection_cues:
+  - The cup is hotter than the plate.
+  - Selected thermodynamic temperature comparison between two participants
+  excluded_readings:
+  - felt warmth, spiciness, attractiveness or figurative intensity
+  - Absolute state, numerical difference, degree modifier, superlative, or missing
+    comparison participant
+  confidence: high
+  controlled_input_allowed: false
+  provenance: reviews/ordinary_comparatives_2026_11_23.md
 - sense_id: ENS:6bfd4fc5625d520477701b35
   lemma: identified other
   display_form: identified other
@@ -5917,6 +5989,30 @@ senses:
   confidence: high
   controlled_input_allowed: false
   provenance: reviews/contextual_width_2026_11_22.md
+- lemma: lighter
+  part_of_speech: adjective
+  sense_key: physical_mass_less_than_comparative
+  route: semantic_ir
+  definition: The bound bearer's physical mass is strictly less than that of the bound
+    comparison participant in the selected context. Both ordered participants are
+    required. No numeric measurement, difference magnitude, contextual light threshold
+    or persistence is asserted. Negation scopes this strict comparison and allows
+    equality; it is not the opposite strict comparison. Runtime 0/1/2 remains independent
+    of comparison, time and negation.
+  sense_id: ENS:779b2fd91dc257b37278ac81
+  display_form: lighter
+  surface_forms:
+  - lighter
+  selection_cues:
+  - The cup is lighter than the plate.
+  - Selected physical mass comparison between two participants
+  excluded_readings:
+  - weight force, carrying effort, luminance, color, severity or figurative tone
+  - Absolute state, numerical difference, degree modifier, superlative, or missing
+    comparison participant
+  confidence: high
+  controlled_input_allowed: false
+  provenance: reviews/ordinary_comparatives_2026_11_23.md
 - sense_id: ENS:84286135902b03f0325e5fbd
   lemma: live shared-frame configuration
   display_form: live shared-frame configuration
@@ -12114,6 +12210,13 @@ lemma_index:
     direct_target_count: 0
     routes:
     - semantic_ir
+  colder:
+    sense_ids:
+    - ENS:6d9fbbdbd21700e037254bfd
+    requires_disambiguation: true
+    direct_target_count: 0
+    routes:
+    - semantic_ir
   community:
     sense_ids:
     - ENS:a4390645ea409c7b69b818a1
@@ -13209,6 +13312,13 @@ lemma_index:
     direct_target_count: 1
     routes:
     - compound
+  heavier:
+    sense_ids:
+    - ENS:151f8734b07025b00726284b
+    requires_disambiguation: true
+    direct_target_count: 0
+    routes:
+    - semantic_ir
   heavy:
     sense_ids:
     - ENS:efd773eaf9f5079ab627088e
@@ -13234,6 +13344,13 @@ lemma_index:
   hot:
     sense_ids:
     - ENS:15f5f0dd1d8d908d6fc1958c
+    requires_disambiguation: true
+    direct_target_count: 0
+    routes:
+    - semantic_ir
+  hotter:
+    sense_ids:
+    - ENS:3d75dda4410348c7d371c5ff
     requires_disambiguation: true
     direct_target_count: 0
     routes:
@@ -13544,6 +13661,13 @@ lemma_index:
   light:
     sense_ids:
     - ENS:7c880b4c936522f169290456
+    requires_disambiguation: true
+    direct_target_count: 0
+    routes:
+    - semantic_ir
+  lighter:
+    sense_ids:
+    - ENS:779b2fd91dc257b37278ac81
     requires_disambiguation: true
     direct_target_count: 0
     routes:

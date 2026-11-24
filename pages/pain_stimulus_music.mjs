@@ -1,10 +1,10 @@
-import {PAIN_RELATIONS,validatePainStimulus} from './pain_stimulus.mjs?v=partial-word-flow-1';
+import {PAIN_RELATIONS,validatePainStimulus} from './pain_stimulus.mjs?v=ordinary-comparatives-1';
 import {painStimulusEvent} from './pain_stimulus_frames.mjs';
-import {painMusicEvents,readPainTree} from './pain_music.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {painMusicEvents,readPainTree} from './pain_music.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 export async function painStimulusMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validatePainStimulus(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'pain-stimulus',name);
  // Stimulus is a scoped content reference, in middle register; it is not an experiencer.

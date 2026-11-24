@@ -1,5 +1,5 @@
 // Draft reference prerequisite for consumption. No drinking or liquid assertion.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 import {encodeName} from './names.mjs';
 import {parseNominal} from './nominals.mjs?v=partial-word-flow-1';
 import {NOMINAL_MODES} from './references.mjs';

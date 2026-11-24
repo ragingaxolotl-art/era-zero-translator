@@ -1,7 +1,7 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validateLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
-import {localAdjectivePlan,localVerbCandidates,composeLocalAdjective,composeLocalVerb} from './local_compound_english.mjs?v=information-storage-1';
+import {validateLocalCompounds} from './local_compounds.mjs?v=ordinary-comparatives-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
+import {localAdjectivePlan,localVerbCandidates,composeLocalAdjective,composeLocalVerb} from './local_compound_english.mjs?v=ordinary-comparatives-1';
 export async function localWordPronounPlan(input,registry,authority){
  let probe;
  const plan=personalPronounPlan(input,value=>{probe=value;return true;},{includeNeutral:true});if(!plan)return null;

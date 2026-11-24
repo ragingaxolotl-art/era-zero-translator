@@ -1,13 +1,13 @@
-import {validateCognitiveConjunction,validCognitiveOuterScopes} from './cognitive_conjunction.mjs?v=partial-word-flow-1';
-import {midiFromCuriosity} from './curiosity_music.mjs?v=partial-word-flow-1';
-import {midiFromUnderstanding,understandingFoundation} from './understanding_music.mjs?v=partial-word-flow-1';
-import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs?v=partial-word-flow-1';
-import {midiFromRouteLearning,routeLearningFoundations} from './route_learning_music.mjs?v=partial-word-flow-1';
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {validateCognitiveConjunction,validCognitiveOuterScopes} from './cognitive_conjunction.mjs?v=ordinary-comparatives-1';
+import {midiFromCuriosity} from './curiosity_music.mjs?v=ordinary-comparatives-1';
+import {midiFromUnderstanding,understandingFoundation} from './understanding_music.mjs?v=ordinary-comparatives-1';
+import {midiFromUnderstandingAcquisition} from './understanding_acquisition_music.mjs?v=ordinary-comparatives-1';
+import {midiFromRouteLearning,routeLearningFoundations} from './route_learning_music.mjs?v=ordinary-comparatives-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=partial-word-flow-1';
-import {foundationPath,validateFoundations} from './foundations.mjs?v=partial-word-flow-1';
+import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=ordinary-comparatives-1';
+import {foundationPath,validateFoundations} from './foundations.mjs?v=ordinary-comparatives-1';
 function eventsFromNotes(notes,division){return notes.map((n,i)=>({family_opening_absolute_midi:[],address_absolute_midi:[n.midi],note_duration_beats:(n.end_tick-n.start_tick)/division,boundary_after_beats:i+1<notes.length?(notes[i+1].start_tick-n.end_tick)/division:.5}));}
 export async function midiFromCognitiveConjunction(document,authority,records,{allowDraft=false,anchor=60}={}){
  const d=await validateCognitiveConjunction(document,{allowDraft}),formal={performance:{anchor_midi:anchor}},marker=name=>grammarMarker(formal,'conjunction',name),events=[marker('coord_all_of_open')];
@@ -31,7 +31,7 @@ export async function decodeCognitiveConjunctionMidi(bytes,atoms,records,{allowD
  const groups=[[]];
  for(const token of body.slice(1,-1)){if(token.marker==='coord_member'&&token.enclosing_scopes.length===body[0].enclosing_scopes.length)groups.push([]);else groups.at(-1).push(token);}
  if(groups.length<2||groups.length>8||groups.some(g=>!g.length))throw new Error('Invalid conjunction member count.');
- const {notes,division}=notesFromMidi(bytes),{decodeSupportedMeaningWithDrafts}=await import('./semantic_music_dispatch.mjs?v=information-storage-1'),members=[];
+ const {notes,division}=notesFromMidi(bytes),{decodeSupportedMeaningWithDrafts}=await import('./semantic_music_dispatch.mjs?v=ordinary-comparatives-1'),members=[];
  const profiles=['EZCURIOSITY-INVERSE-1','EZUNDERSTANDING-MUSIC-INVERSE-1','EZUNDERSTANDING-ACQUISITION-INVERSE-1','EZROUTE-LEARNING-INVERSE-1'];
  for(const group of groups){
   const segment=notes.filter(n=>n.start_tick>=group[0].start_tick&&n.end_tick<=group.at(-1).end_tick);

@@ -1,6 +1,6 @@
 // User definitions are separate from the approved dictionary. This module stores
 // meaning and ordered dependencies; it does not claim to compile performances.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 import {ROLE_ORDER} from './roles.mjs';
 const PROFILE='EZLOCAL-COMPOUNDS-1';
 const fail=message=>{throw new Error(`Local compound: ${message}`)};
@@ -80,7 +80,7 @@ export async function mergeLocalCompounds(existing,incoming,authority){
 }
 
 async function checkLocalConnections(registry,authority){
- const {expandLocalCompound}=await import('./local_compound_expansion.mjs?v=partial-word-flow-1');
+ const {expandLocalCompound}=await import('./local_compound_expansion.mjs?v=ordinary-comparatives-1');
  const {localParticipantGroups}=await import('./local_participant_groups.mjs');
  for(const entry of registry.entries)if(entry.definition.role_links?.length)localParticipantGroups(await expandLocalCompound(entry.compound_id,registry,authority),authority);
  return registry;

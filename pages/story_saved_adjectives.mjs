@@ -1,9 +1,9 @@
-import {validateLocalCompounds} from './local_compounds.mjs?v=partial-word-flow-1';
-import {expandLocalCompound} from './local_compound_expansion.mjs?v=partial-word-flow-1';
+import {validateLocalCompounds} from './local_compounds.mjs?v=ordinary-comparatives-1';
+import {expandLocalCompound} from './local_compound_expansion.mjs?v=ordinary-comparatives-1';
 import {localParticipantGroups} from './local_participant_groups.mjs';
-import {localCompoundMusic} from './local_compound_music.mjs?v=partial-word-flow-1';
-import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
+import {localCompoundMusic} from './local_compound_music.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference} from './contextual_content.mjs?v=ordinary-comparatives-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
 
 // The shared dictionary supplies the same pronunciation in every sentence.
 // Numerals within it name definition slots. The outer story roles bind those

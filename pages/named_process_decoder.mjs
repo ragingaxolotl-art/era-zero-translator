@@ -1,6 +1,6 @@
 // Older named sentences place the participants before the predicate. Their existing
 // role markers and registers distinguish a mover from a destination and a repairer from a target.
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 
 const rolesByRoot=new Map([
   ['REP:110',['actor','target']],['REP:111',['actor','target']],

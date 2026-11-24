@@ -1,9 +1,9 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
 // Draft interpretation/meaning contract. Its musical implementation is separate;
 // creating this document does not imply canonical vocabulary admission.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {contextualContentReference,createContextualContent,validateContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference,createContextualContent,validateContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 import {expandNegativeContractions} from './contractions.mjs';
 const REF='(?:I|[Mm]e|[Yy]ou|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export const UNDERSTANDING_READINGS=Object.freeze({

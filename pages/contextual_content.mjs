@@ -1,6 +1,6 @@
 import {validContentSelection} from './content_selection.mjs?v=partial-word-flow-1';
 // Contextual content is a reference, never proof of a cognitive predicate.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 import {encodeName} from './names.mjs';
 import {parseNominal,validNominalLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {deicticReference,NOMINAL_MODES} from './references.mjs';

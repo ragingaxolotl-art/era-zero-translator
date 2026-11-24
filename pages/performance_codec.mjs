@@ -1,5 +1,5 @@
 import {scheduledLexicalEvents} from './scheduler.mjs?v=partial-word-flow-1';
-import{visemePlanFromFormal}from'./visemes.mjs?v=partial-word-flow-1';
+import{visemePlanFromFormal}from'./visemes.mjs?v=ordinary-comparatives-1';
 
 // EZREC-PERF-1 is an optional performance channel. It never changes the formal IR.
 export const PERFORMANCE_FORMAT='EZREC-PERF-1';

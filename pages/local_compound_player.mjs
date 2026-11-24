@@ -1,4 +1,4 @@
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
 import {scheduleVoiceTone,voiceProfile} from './voices.mjs';
 
 function openAudioContext() {

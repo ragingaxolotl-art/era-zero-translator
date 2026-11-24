@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 
 // The approved three-root bond has a fixed public pronunciation. No source text,
 // expected predicate or original graph is supplied to this reader.

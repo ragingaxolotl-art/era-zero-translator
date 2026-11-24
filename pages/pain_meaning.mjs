@@ -1,8 +1,8 @@
 // Draft semantic prerequisite. No music code or canonical vocabulary admission.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
 export const PAIN_CONTRACT=Object.freeze({predicate:'felt_bodily_pain',dependency:'CMP:6c9e3042a361ccae6ecf5980',dependency_version:'1.0.0',quality:'bodily_pain_experience',injury_commitment:'not_entailed',cause_commitment:'unspecified',intensity_commitment:'unspecified',stimulus_commitment:'unspecified'});
 const REF='(?:I|you|You|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function painMeaningPlan(input){

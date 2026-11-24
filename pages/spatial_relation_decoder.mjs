@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 // Recover the selected spatial relation from MIDI, without an English input or IR.
 const meanings={convention_26_open:'interior',convention_27_open:'exterior',convention_28_open:'boundary_intersection'};
 export function readSpatialRelationTree(node,reader,{embedded=false}={}){
