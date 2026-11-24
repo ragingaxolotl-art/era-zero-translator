@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-24T00:20:04.898Z",
+  "site": "http://127.0.0.1:8782",
+  "layouts": [
+    {
+      "width": 320,
+      "text": "The cup is hotter than the plate. [0]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "Was the cup not colder than the plate? [1]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "Nora will not be heavier than Mira. [2]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "You are lighter than me. [2]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "The cup was not hotter than the plate [0] and Nora is conscious [2].",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "If the cup is heavier than the plate [1], then the plate is lighter than the cup [2].",
+      "status": "pass"
+    }
+  ],
+  "downloads": [],
+  "otherMeanings": [],
+  "unsupported": [],
+  "staleCleared": [
+    {
+      "width": 320,
+      "text": "The cup is hotter than the plate. [0]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "Was the cup not colder than the plate? [1]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "Nora will not be heavier than Mira. [2]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "You are lighter than me. [2]",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "The cup was not hotter than the plate [0] and Nora is conscious [2].",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "text": "If the cup is heavier than the plate [1], then the plate is lighter than the cup [2].",
+      "status": "pass"
+    }
+  ],
+  "status": "fail",
+  "error": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('comparison meaning', { exact: true })\u001b[22m\n\n    at /Volumes/Cyber Pet Workspace/Codex Projects/DBA contextual modifiers 2026-11-22/tools/check_ordinary_comparatives_browser.mjs:42:63"
+}

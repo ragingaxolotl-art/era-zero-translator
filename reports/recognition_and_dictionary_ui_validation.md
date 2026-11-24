@@ -4,7 +4,7 @@ Status: **PASS**
 
 - Sound modes: **strict, recognition, learning**
 - Meaning-rich root/compound options: **448**
-- Lexically audited English senses exposed: **651**
+- Lexically audited English senses exposed: **655**
 - Concept-intake probes: **6**
 - Automatic canonical additions: **0**
 - Failures: **0**
