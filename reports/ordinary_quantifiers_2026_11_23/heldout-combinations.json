@@ -1,0 +1,568 @@
+{
+  "status": "pass",
+  "note": "Post-implementation engineering combinations, not an independently sampled language benchmark.",
+  "results": [
+    {
+      "input": "Each child heard the bell.",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "ec510b579f757a89da6ffa2b59ccb4a30bf23f1e81dd939fb798b63e4d750035",
+      "chord_sha256": "5e452c4037673dc6f27371c252529ecde4f1f2b903941e0bcbff47ba879aff1c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "CH",
+                "IH",
+                "L",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "EH",
+                "L",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:6cb819bd20ef8429225daca3",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "source",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "No children found the file.",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "3d936e7348af230ee84492631b183442e99bc7175f3f59febb163358f3e426b5",
+      "chord_sha256": "5bc0996cfa4ac86fa47e936efb837fe1f6a94e9c1243c05c3c5eb0fcb2d2c48c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "CH",
+                "IH",
+                "L",
+                "D",
+                "R",
+                "EH",
+                "N"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Not every robot will put the box at the gate. [2]",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "f402bf552e29829a25f9ab72eab8b587996c0f1e6a91a7d151ad1da4d4dcb453",
+      "chord_sha256": "a718725a6a48ef7c3937b75f57a2dda2b6cb0fce4f9b5bd2f69e35de13c5dc97",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:64574c1a25d72a89aafc46ef",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "destination",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_after_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "No files are stored. [0]",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "36ac2327ca335bf3979d6e29337a4f31fa5b4846532171cdfe1fe1c32a17cbab",
+      "chord_sha256": "433654d94edcec90bc02f4c4ca8d6624868379787315434539ab5feed1374482",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Can each robot copy the record?",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "9369634dfb239533b86575da38305a46866f8cf6aedd27dea200672710880603",
+      "chord_sha256": "63ca45e215b90969a608a6d678661ac7a26a353c3be605be16a3a71f908864c5",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "ability"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "Each child lifted the heavy board. [2]",
+      "answers": {
+        "property0Objectheavy": "physical"
+      },
+      "status": "pass",
+      "melody_sha256": "a18fd7271bfcae8bb9123174ff112a6a72ab130291bfd45a60176d633b1d1a4c",
+      "chord_sha256": "1558e8a102b3ce8135414dd95b8897d5e69c23166191a223e2679e6b7995cc14",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "CH",
+                "IH",
+                "L",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "OW",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e1d0059daad4093d8a5ce05c",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  {
+                    "contextual_norm": "heavy"
+                  }
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every robot made the box.",
+      "answers": {},
+      "status": "pass",
+      "melody_sha256": "6198290754d5c8e652b5059e1b566be3cb9da39e30045956253fd3005a08f3fa",
+      "chord_sha256": "3294a08e9fa3f6b5610e3bec642b25a6e611be7115611d05366eaf5784daf654",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CRE:110",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "result",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every program does not need to store the record.",
+      "answers": {
+        "quantityScope0": "not_all"
+      },
+      "status": "pass",
+      "melody_sha256": "64016b3d2662c4a9a4abcb4379077761d0287ec44a421c0b03017607b4f4b9f8",
+      "chord_sha256": "e4ebe0b30f16b65b66104ae59b9fe38966faa7f27e8a521935cf195b53deb035",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "modality_necessary"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    }
+  ]
+}

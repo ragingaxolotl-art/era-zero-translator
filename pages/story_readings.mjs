@@ -1,5 +1,6 @@
 import {passiveClause} from './story_passives.mjs?v=explicit-agent-passives-1';
 import {storyTime,timeScopeChoice} from './story_time.mjs?v=ordinary-time-1';
+import {ordinaryQuantifiedSubject,quantifiedNegationChoice} from './story_quantifiers.mjs?v=ordinary-quantifiers-1';
 import {validStorySlots} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=ordinary-comparatives-1';
@@ -271,7 +272,7 @@ function predicate(verb, subject, object, authority, runtime, preferences,comman
     sense:r.sense, specific:false}));
 }
 
-function prepare(input, authority, preferences, adjectives, timeWords=false) {
+function prepare(input, authority, preferences, adjectives, timeWords=false, quantifierWords=false) {
   const qualityAt=(tokens,offset)=>propertyAt(tokens,offset,adjectives);
   const parseNoun=(tokens,offset,options)=>nounPhrase(tokens,offset,options,qualityAt);
   const parseObject=tokens=>splitObject(tokens,parseNoun);
@@ -296,7 +297,9 @@ function prepare(input, authority, preferences, adjectives, timeWords=false) {
       if(sentences.length!==1)return null;
       const aux=/^(do|does|did|am|are|is|was|were|might|can|will) (.+)$/i.exec(body);
       if(!aux)return null;
-      const tokens=tokensOf(aux[2]),subject=parseNoun(tokens,0,{guessName:true});
+      const tokens=tokensOf(aux[2]),quantified=quantifierWords?ordinaryQuantifiedSubject(tokens,parseNoun):null;
+      if(quantified?.unsupported)return quantified;
+      const subject=quantified?.subject||parseNoun(tokens,0,{guessName:true});
       if(!subject)return null;
       body=tokens.slice(0,subject.length).join(' ')+' '+folded(aux[1])+' '+tokens.slice(subject.length).join(' ');
       act='question';
@@ -318,9 +321,14 @@ function prepare(input, authority, preferences, adjectives, timeWords=false) {
         q=folded(count[1])==='none'?'none':'all';outsideNegation=folded(count[1])==='not all';piece=count[2];special=true;
       }
       const tokens=tokensOf(piece);
-      const counted=countedSubject(tokens,parseNoun);
+      const quantified=quantifierWords?ordinaryQuantifiedSubject(tokens,parseNoun):null;
+      if(quantified?.unsupported)return quantified;
+      if(quantified&&(parts.length!==1||sentences.length!==1))return {unsupported:true,
+        reason:'This quantified subject currently needs one clause in one message. A later action or pronoun needs its own explicit quantity and reference scope.'};
+      const counted=quantified||countedSubject(tokens,parseNoun);
       let subject=counted?.subject||parseNoun(tokens,0,{guessName:true}),consumed=subject?.length??0,inherited=false;
       if(counted){q=counted.q;special=true;}
+      if(quantified)outsideNegation=quantified.outsideNegation;
       if(time&&q)return {unsupported:true,
         reason:'Time combined with this quantity needs an explicit scope. This construction is not supported yet; its quantity and time have not been discarded.'};
       const shared=link==='and'&&subject?.guessedName?parseObject(tokens):null;
@@ -381,7 +389,7 @@ function prepare(input, authority, preferences, adjectives, timeWords=false) {
       }
       special ||= !!time || !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
-      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{}),...(time?{time}:{})});
+      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{}),...(time?{time}:{}),...(quantified?{ordinaryQuantifier:true}:{})});
     }
   }
   return special ? {runtime,act,clauses,relations} : null;
@@ -392,8 +400,10 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
   const embedded=knownValueReading(input,answers)||faultCategoryReading(input,answers);
   if(embedded)return embedded;
   // Preserve every previously accepted reading, including names such as Today
-  // and the earlier state/day scope convention. Only extend failed parses.
-  const grammar=prepare(input,authority,preferences,adjectives)||prepare(input,authority,preferences,adjectives,true);
+  // and the earlier state/day scope convention. Temporal names such as “Every
+  // saved the file yesterday” also retain priority over the new quantifiers.
+  const grammar=prepare(input,authority,preferences,adjectives)||prepare(input,authority,preferences,adjectives,true)||
+    prepare(input,authority,preferences,adjectives,true,true);
   if(!grammar)return null;
   if(grammar.unsupported)return grammar;
   const entities=[],events=[],notes=[],described=[];
@@ -569,7 +579,9 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
     }
     const timed=timeScopeChoice(c.time,reading.scopes,index,answers['timeScope'+index]);
     if(timed.question||timed.unsupported)return timed;
-    reading={...reading,scopes:timed.scopes};
+    const quantified=quantifiedNegationChoice(c,timed.scopes,index,answers['quantityScope'+index]);
+    if(quantified.question||quantified.unsupported)return quantified;
+    reading={...reading,scopes:quantified.scopes};
     if(reading.followChoice){
       const key='following'+index;
       if(!answers[key])return {question:{key,prompt:'Does “follow” mean something happened later?',options:[
@@ -712,10 +724,13 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
       args.push(arg);
     }
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;
+    if(c.ordinaryQuantifier&&entities.some((entity,i)=>i!==sub&&
+        (entity.referenceKind==='indefinite_plural'||/^an? /.test(entity.reference||''))))return {unsupported:true,
+      reason:'This quantity needs to distinguish one shared item from a separate item for each member. Per-member item bindings are not supported yet; no shared item has been silently assumed.'};
     lastSubject=sub;
-    events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:c.outsideNegation,...(condition?{condition}:{})});
+    events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:quantified.negatedQuantifier,...(condition?{condition}:{})});
     if(c.inherited)notes.push('The next action has the same subject (“'+entities[sub].label+'”).');
-    if(c.q)notes.push(c.outsideNegation?'At least one member did not perform this action. Zero performers is possible.':
+    if(c.q&&!c.ordinaryQuantifier)notes.push(quantified.negatedQuantifier?'At least one member did not perform this action. Zero performers is possible.':
       c.q==='none'?'Zero members performed this action.':c.q==='few'?'A small, unspecified number of members performed this action.':'Every member performed this action.');
     if(reading.sense?.generalization)notes.push(reading.sense.generalization);
   }

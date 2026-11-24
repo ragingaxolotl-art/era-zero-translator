@@ -1,0 +1,1982 @@
+{
+  "revision": "bf55e20a0686149b5c7e6e7cbea968d5dee893d8",
+  "cases": [
+    {
+      "input": "All the workers waited. [0]",
+      "melody_sha256": "797bbc14eeb55571c4a8d932fed38da82f6f0aaf410c1986be1b59400d680f06",
+      "chords_sha256": "a49030cdcf167836f5f4a8a6d5f1e077ba99b390ae33351c3bb1ecf1e4c3f68a",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Not all the workers waited. [0]",
+      "melody_sha256": "eb870c958a63001bef4c11411527545038f3b4ad5790dcdbd5b29f4d0abf69ee",
+      "chords_sha256": "3d01424b080bdb02d97f77049946e563205239b0c9d80e8ee4312ab296620be9",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "None of the workers waited. [0]",
+      "melody_sha256": "5ca96a7b97e644b3d0826d2708469c3e0b8ee70b01fbc7f84d702899ae78f856",
+      "chords_sha256": "0c54f9a7a76a59cb012548cefccf1983b33fbae4aa9031e328999f8fb2c81903",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "A few workers waited. [0]",
+      "melody_sha256": "880c629e3a4622fd9e7abbcb979b9da5c938721a32c9d5a45ef0123c4531cbcd",
+      "chords_sha256": "c904de6e77d91f997df6150efdb7b221afed4cc29855ec71eeda0e440b8f1b63",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "few",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nobody waited. [0]",
+      "melody_sha256": "1750875ea44eb924f4c7d983721568bf12c6042fa67fa86481a715f65c5cd8ae",
+      "chords_sha256": "2345ab209762ef66fd72484d2194fb9034e43d0d2d22f7ab4d275076c0a6e890",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "domain",
+              "domain": "people"
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the programs can save the file. [0]",
+      "melody_sha256": "ca9ab0d69df9d88312de767f7e3c1f18dc5183188111c2fbbfc5b16d26fe2da3",
+      "chords_sha256": "f768f99b0a56feabe6b00ba0ab2d00f6255e1ee22622b387cdfdccacdfd0525a",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "ability"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the files were stored yesterday. [0]",
+      "melody_sha256": "e3ceb129496fed9443f4a0112bfa9ab0d1409889217027858017174cb49738bb",
+      "chords_sha256": "facb4eb59742935ffac16a7cf620bd12a91c75533b6f64fe2f84f8cb4c272fe7",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every waited. [0]",
+      "melody_sha256": "68528786b1f0e70542cdd0247631047196a6594d733237671756dfbe2b3dc4d1",
+      "chords_sha256": "9ff059c679fad1d8cc48235dbdee8db68c44af3c75f589e84157c7e311e2da74",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the workers waited. [1]",
+      "melody_sha256": "00edeafbe62d76d8dc42d93ea32e12259369d2acb702132dd343491d42befa7c",
+      "chords_sha256": "695fbc04d8b474878b693f32240233b9f2993a777da76fc5a63eee70a043c823",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Not all the workers waited. [1]",
+      "melody_sha256": "e9267d967ca8bb3f24c1d0676977b01b198abfa76e07606e0cfbe8378b851c24",
+      "chords_sha256": "2a8e0de9ad73e050758cd0ce44864598f0b99bea7303c97cde6aac04126009cd",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "None of the workers waited. [1]",
+      "melody_sha256": "2e2063db59cb97790d6dfb0f302c98734f4de0cf4b0ad0b4f1e995ff491e0d86",
+      "chords_sha256": "e6040544d51be45fcb7775e172664cae013fcd26c2af3aef32a6adbe4abf84b7",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "A few workers waited. [1]",
+      "melody_sha256": "e7e45948e927731403fecd57523fa79802b86df2ed9969e26da00f47dc0a44a7",
+      "chords_sha256": "fed96ce5acd107bc8e3e45762b0e448f5b559e8755d5c4bf3f75da5881df1862",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "few",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nobody waited. [1]",
+      "melody_sha256": "8f8588b792828edb4695fe38d402835000d6d3f0673c7d8362f42abe26f95e6c",
+      "chords_sha256": "825f06e7c86d1885a3a9152d15b0e8ff792c1a6848a51de278b7cb81a1bc358d",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "domain",
+              "domain": "people"
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the programs can save the file. [1]",
+      "melody_sha256": "822edd16bd16be3739b4ccf951670093aaabff9f1bedf73448d335cbc42dff49",
+      "chords_sha256": "abeb71795f2e9898ac04d14a6b782f65ed0a9d885f398130d8be116aaa90533f",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "ability"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the files were stored yesterday. [1]",
+      "melody_sha256": "898298b4d62ba8cd2c59bd6c5d558598068dd686a9d41c93f8e390574f01459c",
+      "chords_sha256": "9c69d1fee46f6b14678661f9f94a38efde2ff0d120643d5e9fcbd04f10ce8bcc",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every waited. [1]",
+      "melody_sha256": "61fad4d6e4e19642c575f6f92d39e4da4b6031fa457205f32968b1c0e58dd865",
+      "chords_sha256": "03bd2310ecd431bbfb57eec81537a6a875d4703e4c699805567f229c145b2113",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the workers waited. [2]",
+      "melody_sha256": "3cfbaffc076c6d8287a0d9c0d738f3955679656b4aff315430a2dc2665a51d78",
+      "chords_sha256": "b294ea41c2f86a4000c4151a5974866c93c8db61deaa5fbe33cf9fbaacdf0606",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Not all the workers waited. [2]",
+      "melody_sha256": "7824dcb804908758a30fa044f47e4413e022397a5f8fde05d5479cf0f63d5f71",
+      "chords_sha256": "27424d4249fd7d15e4631c8f95f0c1b8873007c6b3819fb71d4b45d5dbf442d8",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "None of the workers waited. [2]",
+      "melody_sha256": "951707ae4726a5c7d08ccc9f90b21e6962a144f66fb3f815add43bbe9927f302",
+      "chords_sha256": "da22f9b65956995966322da7d9af676eb080f9ad9eff0bb48f0dd57a764f0727",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "A few workers waited. [2]",
+      "melody_sha256": "8ce3a57021316fff6048fcdc74a38aefcf11ecbe208b6f4e278e621709c5f3bb",
+      "chords_sha256": "26f4959d32583dd5339d9c42dc63c44de817904b85c30315710d594ca01ed70c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "few",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nobody waited. [2]",
+      "melody_sha256": "1bb1e360f99905de4cbc8263854efbafe7cf05ebc55d7b8bb78b95966f4a9fcb",
+      "chords_sha256": "7903965f2d054fe3210c0d837a61bb2bab4dda8cc5ef2f549b9db1de5eb00391",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "domain",
+              "domain": "people"
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the programs can save the file. [2]",
+      "melody_sha256": "242c28d58857a837686e8a92326677e61017c33afea1203d829eaa503068370a",
+      "chords_sha256": "46842548d3feb0815759f6a787a818cd6639a53a7eec5fd6cac2c0136fdb6296",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "ability"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "All the files were stored yesterday. [2]",
+      "melody_sha256": "542588f7de4a8be62e3f487a676fbc678fa93933fb5b764dd44d3240263c41e1",
+      "chords_sha256": "1847d4db2663aa12778a98f560c5ddb614b7b511a0715701c3d4029c05ca7d10",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every waited. [2]",
+      "melody_sha256": "6c7fc5df454c2bf0f099126657c6876fce3fafd02de6a44193d0d093847210e2",
+      "chords_sha256": "8a00b3c54d60629a9b4f0ea5578b885197a4f9ade061468584038cb55e6bfd9a",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every saved the file yesterday. [0]",
+      "melody_sha256": "242b54f04fb3c5048e078b39a9fb18e5462438fe97604e0bf070fee7a6aeb9ad",
+      "chords_sha256": "6e6fa383c8c1f5140c11cda3cecc53ca38ccaddf0396a8d78824ff3dc4dc2c5e",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Yesterday, Every saved the file. [0]",
+      "melody_sha256": "242b54f04fb3c5048e078b39a9fb18e5462438fe97604e0bf070fee7a6aeb9ad",
+      "chords_sha256": "6e6fa383c8c1f5140c11cda3cecc53ca38ccaddf0396a8d78824ff3dc4dc2c5e",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every copied the record today. [0]",
+      "melody_sha256": "d69c3e6479510c34bc7d79556404eaee89835c6e82ddc6db7f63b71268e3f5f5",
+      "chords_sha256": "d5b1ddb5f79573efccae606eb43d8b215ca31110a14169cb29ba49391d010855",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Today, Each saved the file. [0]",
+      "melody_sha256": "3ac1a9c8c9992b8f673b92b306a7f4af2cf7876f467aedc888d3b37fb2df9c2b",
+      "chords_sha256": "18409fdea237cfa2a7161bd99156d940ad9152d726f22c9cbb8606fb1e0b19db",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "IY",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every saved the file yesterday. [1]",
+      "melody_sha256": "94a9b9245fb147dfb4858924536019da7fb34f9a95f75f0f5e88ff3812276e04",
+      "chords_sha256": "790a3f442fb1ca7bb2178927d7bdf02265f2c6c628cfd0b77aa204ef64f60e02",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Yesterday, Every saved the file. [1]",
+      "melody_sha256": "94a9b9245fb147dfb4858924536019da7fb34f9a95f75f0f5e88ff3812276e04",
+      "chords_sha256": "790a3f442fb1ca7bb2178927d7bdf02265f2c6c628cfd0b77aa204ef64f60e02",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every copied the record today. [1]",
+      "melody_sha256": "9fe7928c6e33b8129963f1079146610cdee67c424be6938fe61c6c792d4e940f",
+      "chords_sha256": "365ef58eec1693a7d47cd03f61b5e538b6ddeb9f2fa73c4ff7834b4cc069facf",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Today, Each saved the file. [1]",
+      "melody_sha256": "32a6e9c30bfed5f3680c142d3f46c20c4f0bf3f42b97b375eeecc19043ef426f",
+      "chords_sha256": "5995f9fd238a51d7c72db874f22ec969f8aae71684e6bb4f64f8aa33bb1ecac6",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "IY",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every saved the file yesterday. [2]",
+      "melody_sha256": "cc487bbb42f42e423b50bfc462a090d3d86877566618a69143b06f110a0a8586",
+      "chords_sha256": "b0a0f9a7e13ef3c6af06cca24ea059b1dbe16be32dca3af38e83d2a31b5f6622",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Yesterday, Every saved the file. [2]",
+      "melody_sha256": "cc487bbb42f42e423b50bfc462a090d3d86877566618a69143b06f110a0a8586",
+      "chords_sha256": "b0a0f9a7e13ef3c6af06cca24ea059b1dbe16be32dca3af38e83d2a31b5f6622",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_previous_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Every copied the record today. [2]",
+      "melody_sha256": "2a2bf07e8693959f7d12b9f10c6e26e248fb4eeff64dbd023b0720a111a3c2e2",
+      "chords_sha256": "5f0e0cfaa90b9773b48e19c1fa2a8e9ab5cfaa9a75afc9402253befdd07b4e9d",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "EH",
+                "V",
+                "ER",
+                "Y"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Today, Each saved the file. [2]",
+      "melody_sha256": "75dd36baea95819bf4294ad991c1a7b3f3d098f31c1c7addd5ec58f3d65b9258",
+      "chords_sha256": "8fb817c5ce794db95a726815d598cd8ef5df24a030db58feba9e06835ce5af8f",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "IY",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_current_day",
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    }
+  ]
+}

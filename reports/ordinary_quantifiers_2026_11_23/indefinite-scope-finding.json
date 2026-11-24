@@ -1,0 +1,372 @@
+[
+  {
+    "input": "Every robot made a box.",
+    "intention": "Require explicit shared-versus-per-member indefinite item scope; do not silently choose one.",
+    "reading": {
+      "entities": [
+        {
+          "reference": "robot",
+          "referenceKind": "nominal_class",
+          "label": "Every robot",
+          "head": "robot",
+          "plural": true,
+          "category": "thing",
+          "owner": null
+        },
+        {
+          "reference": "a box",
+          "label": "a box",
+          "head": "box",
+          "plural": false,
+          "category": "thing",
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CRE:110",
+          "arguments": [
+            {
+              "role": "source",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "result",
+              "entity": 1,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "all",
+          "negated_quantifier": false
+        }
+      ],
+      "relations": [],
+      "runtime": 1,
+      "act": "assertion",
+      "notes": []
+    },
+    "meaning": {
+      "profile": "EZ-STORY-1",
+      "status": "draft",
+      "entities": [
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "nominal_class",
+            "phonemes": [
+              "R",
+              "OW",
+              "B",
+              "AA",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "plural": true,
+          "owner": null
+        },
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "indefinite_singular",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null
+          },
+          "plural": false,
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CRE:110",
+          "arguments": [
+            {
+              "role": "source",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "result",
+              "entity": 1,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "all",
+          "negated_quantifier": false
+        }
+      ],
+      "relations": [],
+      "runtime_state": 1,
+      "speech_act": "assertion"
+    }
+  },
+  {
+    "input": "No worker copied a file.",
+    "intention": "Require explicit shared-versus-per-member indefinite item scope; do not silently choose one.",
+    "reading": {
+      "entities": [
+        {
+          "reference": "worker",
+          "referenceKind": "nominal_class",
+          "label": "No worker",
+          "head": "worker",
+          "plural": true,
+          "category": "person",
+          "owner": null
+        },
+        {
+          "reference": "a file",
+          "label": "a file",
+          "head": "file",
+          "plural": false,
+          "category": "thing",
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CMP:9ea919967152aa85bc1c7169",
+          "arguments": [
+            {
+              "role": "actor",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "target",
+              "entity": 1,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "none",
+          "negated_quantifier": false
+        }
+      ],
+      "relations": [],
+      "runtime": 1,
+      "act": "assertion",
+      "notes": []
+    },
+    "meaning": {
+      "profile": "EZ-STORY-1",
+      "status": "draft",
+      "entities": [
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "nominal_class",
+            "phonemes": [
+              "W",
+              "AO",
+              "R",
+              "K",
+              "ER"
+            ],
+            "instance_code": null
+          },
+          "plural": true,
+          "owner": null
+        },
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "indefinite_singular",
+            "phonemes": [
+              "F",
+              "IH",
+              "L"
+            ],
+            "instance_code": null
+          },
+          "plural": false,
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CMP:9ea919967152aa85bc1c7169",
+          "arguments": [
+            {
+              "role": "actor",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "target",
+              "entity": 1,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "none",
+          "negated_quantifier": false
+        }
+      ],
+      "relations": [],
+      "runtime_state": 1,
+      "speech_act": "assertion"
+    }
+  },
+  {
+    "input": "Not every robot put the box at a gate.",
+    "intention": "Require explicit shared-versus-per-member indefinite item scope; do not silently choose one.",
+    "reading": {
+      "entities": [
+        {
+          "reference": "robot",
+          "referenceKind": "nominal_class",
+          "label": "Not every robot",
+          "head": "robot",
+          "plural": true,
+          "category": "thing",
+          "owner": null
+        },
+        {
+          "reference": "the box",
+          "label": "the box",
+          "head": "box",
+          "plural": false,
+          "category": "thing",
+          "owner": null
+        },
+        {
+          "reference": "a gate",
+          "label": "a gate",
+          "head": "gate",
+          "plural": false,
+          "category": "thing",
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CMP:64574c1a25d72a89aafc46ef",
+          "arguments": [
+            {
+              "role": "actor",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "target",
+              "entity": 1,
+              "properties": []
+            },
+            {
+              "role": "destination",
+              "entity": 2,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "all",
+          "negated_quantifier": true
+        }
+      ],
+      "relations": [],
+      "runtime": 1,
+      "act": "assertion",
+      "notes": []
+    },
+    "meaning": {
+      "profile": "EZ-STORY-1",
+      "status": "draft",
+      "entities": [
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "nominal_class",
+            "phonemes": [
+              "R",
+              "OW",
+              "B",
+              "AA",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "plural": true,
+          "owner": null
+        },
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "definite_nominal",
+            "phonemes": [
+              "B",
+              "AA",
+              "K",
+              "S"
+            ],
+            "instance_code": null
+          },
+          "plural": false,
+          "owner": null
+        },
+        {
+          "identity": {
+            "kind": "phonemic",
+            "reference_mode": "indefinite_singular",
+            "phonemes": [
+              "G",
+              "AE",
+              "T"
+            ],
+            "instance_code": null
+          },
+          "plural": false,
+          "owner": null
+        }
+      ],
+      "events": [
+        {
+          "predicate": "CMP:64574c1a25d72a89aafc46ef",
+          "arguments": [
+            {
+              "role": "actor",
+              "entity": 0,
+              "properties": []
+            },
+            {
+              "role": "target",
+              "entity": 1,
+              "properties": []
+            },
+            {
+              "role": "destination",
+              "entity": 2,
+              "properties": []
+            }
+          ],
+          "scopes": [
+            "time_before_speech"
+          ],
+          "quantifier": "all",
+          "negated_quantifier": true
+        }
+      ],
+      "relations": [],
+      "runtime_state": 1,
+      "speech_act": "assertion"
+    }
+  }
+]
