@@ -33,6 +33,7 @@ unless File.exist?(File.join(V::ROOT,migration_path))
     'authority'=>'Author review under the user-directed translator completion goal; not independent linguistic validation.',
     'source'=>{'path'=>path,'before_fingerprint'=>before,'preserved_ids'=>preserved},'added_senses'=>added,
     'atomic_inventory_fingerprint'=>V.fingerprint(V.load_yaml('lexicon/all_atoms.yaml').fetch('atoms')),
+    'preserved_compound_ids'=>V.load_yaml('lexicon/compound_dictionary.yaml').fetch('entries').map { |entry| entry.fetch('compound_id') },
     'compound_fingerprint'=>V.fingerprint(V.load_yaml('lexicon/compound_dictionary.yaml').fetch('entries'))}))
 end
 V.write(path,YAML.dump(index))

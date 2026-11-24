@@ -32,5 +32,5 @@ for(const mutation of [ir=>{ir.nodes.find(n=>n.operator==='comparison').dimensio
 const modal=await composeNamedSentence('It is possible that the box has more mass than the radio [2].',template);
 assert.equal(modal.semantic_ir.nodes.find(n=>n.node_id==='p').runtime_state.code,2);
 assert.equal(scheduledLexicalEvents(modal.formal)[0].marker,'modality_possible_open');
-for(const input of ['The box is heavier than the radio.','Exactly three boxes have more mass than the radio.','The box has more mass than it.'])assert.equal(parseNamedSentence(input),null,input);
+for(const input of ['The box is much heavier than the radio.','Exactly three boxes have more mass than the radio.','The box has more mass than it.'])assert.equal(parseNamedSentence(input),null,input);
 console.log('Entity mass comparison: 12 reference-renderer/MIDI cases preserve six relations and operand direction; explicit paraphrases normalize, invalid dimensions/roles fail, and modal/runtime scope remains separate.');
