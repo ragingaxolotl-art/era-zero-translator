@@ -5,7 +5,7 @@ import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mj
 import {informationMusic} from './information_music.mjs?v=ordinary-comparatives-1';
 import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
-import {describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
+import {describeRuntime} from './meaning_readback.mjs?v=ordinary-requirements-1';
 
 const nominal='(I|we|you|they|she|he|it|(?:the|this|that) [a-z]+|[A-Z][a-z]+|"[^"]+")';
 const statement=new RegExp('^(Then,? )?'+nominal+' (know|knows|knew|do not know|does not know|did not know) what (else )?'+nominal+' (want|wants|wanted)[.]?$','i');

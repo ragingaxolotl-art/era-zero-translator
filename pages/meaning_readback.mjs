@@ -4,7 +4,7 @@ const timeLabels={
   time_before_speech:'in the past',time_at_speech:'at the time of speaking',time_after_speech:'in the future',
   time_previous_day:'yesterday',time_current_day:'today',time_next_day:'tomorrow'
 };
-const modes={modality_possible:'possible',modality_necessary:'required',modality_predicted:'predicted'};
+const modes={modality_possible:'possible',modality_necessary:'required',modality_predicted:'predicted',modality_obligated:'required by a rule, duty or commitment'};
 const runtimeLabels=['inactive, ended or unavailable','active, valid or executing','dormant, pending or unresolved'];
 export const describeRuntime=state=>'Runtime ['+state+'] · '+runtimeLabels[state]+'.';
 
