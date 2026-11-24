@@ -24,7 +24,10 @@ const cases=[
 const report={timestamp:new Date().toISOString(),site,layouts:[],downloads:[],choices:[],unsupported:[],keyboard:[],staleCleared:[]};
 const browser=await chromium.launch({headless:true,...(process.env.DBA_CHROME?{executablePath:process.env.DBA_CHROME}:{})});
 const add=page=>page.getByRole('button',{name:'Add to song',exact:true}).filter({visible:true});
-const translate=async(page,text)=>{await page.locator('#sourceInput').fill(text);await page.locator('#analyzeButton').click();};
+const translate=async(page,text)=>{
+ await page.locator('#sourceInput').fill(text);await page.locator('#analyzeButton').click();
+ await page.waitForFunction(()=>document.getElementById('analyzeButton').disabled===false);
+};
 async function layout(page,width){
  const bounds=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,controls:[...document.querySelectorAll('#candidateList button,#candidateList select')].filter(e=>e.getClientRects().length).map(e=>({label:e.textContent,left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}))}));
  assert(bounds.scroll<=width+1,JSON.stringify(bounds));for(const c of bounds.controls){assert(c.left>=0&&c.right<=width+1,c.label);}

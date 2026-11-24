@@ -1,0 +1,22 @@
+deploy	Deploy	﻿2026-11-23T23:49:59.3990787Z ##[group]Run actions/deploy-pages@v4
+deploy	Deploy	2026-11-23T23:49:59.3991120Z with:
+deploy	Deploy	2026-11-23T23:49:59.3993524Z   token: ***
+deploy	Deploy	2026-11-23T23:49:59.3993738Z   timeout: 600000
+deploy	Deploy	2026-11-23T23:49:59.3994286Z   error_count: 10
+deploy	Deploy	2026-11-23T23:49:59.3994509Z   reporting_interval: 5000
+deploy	Deploy	2026-11-23T23:49:59.3994757Z   artifact_name: github-pages
+deploy	Deploy	2026-11-23T23:49:59.3995003Z   preview: false
+deploy	Deploy	2026-11-23T23:49:59.3995213Z env:
+deploy	Deploy	2026-11-23T23:49:59.3995403Z   GITHUB_PAGES: true
+deploy	Deploy	2026-11-23T23:49:59.3995615Z ##[endgroup]
+deploy	Deploy	2026-11-23T23:49:59.5925890Z (node:3080) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+deploy	Deploy	2026-11-23T23:49:59.5927811Z (Use `node --trace-deprecation ...` to show where the warning was created)
+deploy	Deploy	2026-11-23T23:49:59.8258352Z Fetching artifact metadata for "github-pages" in this workflow run
+deploy	Deploy	2026-11-23T23:50:00.0469789Z Found 0 artifact(s)
+deploy	Deploy	2026-11-23T23:50:00.0491990Z ##[error]Fetching artifact metadata failed. Is githubstatus.com reporting issues with API requests, Pages, or Actions? Please re-run the deployment at a later time.
+deploy	Deploy	2026-11-23T23:50:00.2204131Z ##[error]Error: No artifacts named "github-pages" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later.
+deploy	Deploy	    at getArtifactMetadata (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:85:1)
+deploy	Deploy	    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+deploy	Deploy	    at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/deployment.js:66:1)
+deploy	Deploy	    at main (/home/runner/work/_actions/actions/deploy-pages/v4/src/index.js:30:1)
+deploy	Deploy	2026-11-23T23:50:00.2211179Z ##[error]Error: No artifacts named "github-pages" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later.
