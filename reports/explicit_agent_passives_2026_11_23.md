@@ -46,4 +46,11 @@ The [first Lore run](explicit_agent_passives_2026_11_23/initial-lore-fixture-fai
 
 Agentless actions, perfect/get-passives, quantified passive patients, unsupported complements, inherited passive verb phrases, unreviewed verb shapes and conflicting personal-verb passive constructions remain open. Existing no-agent state readings remain valid. General calendar-adverb combinations, broader grammar and shared dialogue identity still need work. The [completion plan](../docs/full-translator-next-steps.md) remains open; this release does not close the full translator.
 
-Public deployment and browser evidence will be recorded separately after publication.
+## Public verification
+
+Translator [PR 34](https://github.com/ragingaxolotl-art/era-zero-translator/pull/34) and Lore [PR 34](https://github.com/ragingaxolotl-art/cyber-pet-lore/pull/34) are merged. The primary [deployment](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45304288224) succeeded at `74171a5282c60746c3eb1a7f1b23bfce026c95f3`; the Lore [deployment](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45304297094) succeeded at `9f78cc8163d3bc060ed78fdf9f1fb5da667da64d`. Both succeeded on their first attempts with unique Pages artifacts.
+
+The [public primary check](explicit_agent_passives_2026_11_23/public-primary.json) and [public Lore check](explicit_agent_passives_2026_11_23/public-lore.json) each pass 24 layouts, 16 independently recovered exports, six alternative-meaning checks, nine unsupported-input checks, three keyboard disclosures, 24 stale-result checks and eight song-line removals. All 16 tested public melody/chord downloads match their corresponding local hashes on both sites.
+
+The [final vendor record](explicit_agent_passives_2026_11_23/final-vendor.json) brings in documentation from source `ca141fc63e7a0cce19c1185109861124ca104cee` after the fully tested implementation. The [final build](explicit_agent_passives_2026_11_23/final-lore-build.txt) and [seven focused navigation/passive integration checks](explicit_agent_passives_2026_11_23/final-lore-integration.txt) pass. The deployment also reruns the complete Lore suite. Final documentation changes do not alter the tested semantic runtime or dictionary.
+
