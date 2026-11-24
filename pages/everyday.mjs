@@ -6,6 +6,10 @@ const routeNames = {
   label:'A name played as sounds'
 };
 const senses = {
+  physical_thermodynamic_temperature_greater_than_comparative:'One thing has a higher physical temperature than another',
+  physical_thermodynamic_temperature_less_than_comparative:'One thing has a lower physical temperature than another',
+  physical_mass_greater_than_comparative:'One thing has more physical mass than another',
+  physical_mass_less_than_comparative:'One thing has less physical mass than another',
   contextual_thermodynamic_temperature_hot:'The object’s temperature is above the local hot standard',
   contextual_thermodynamic_temperature_cold:'The object’s temperature is below the local cold standard',
   contextual_mass_heavy:'The object’s mass is above the local heavy standard',

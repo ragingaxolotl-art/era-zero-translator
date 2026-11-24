@@ -1,5 +1,5 @@
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
-import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
+import {everydayMeaning} from './everyday.mjs?v=ordinary-comparatives-1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=ordinary-comparatives-1';
 import {compactChordMidi} from './compact_chords.mjs?v=ordinary-comparatives-1';
 import {sentenceReadiness} from './sentence_readiness.mjs?v=ordinary-comparatives-1';

@@ -1,4 +1,4 @@
-import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
+import {everydayMeaning} from './everyday.mjs?v=ordinary-comparatives-1';
 import {localCompoundExamples,queueLocalExample} from './local_compound_examples.mjs';
 import {mountRoleLinkControls} from './local_role_link_controls.mjs?v=ordinary-comparatives-1';
 import {createLocalCompoundPlayer} from './local_compound_player.mjs?v=ordinary-comparatives-1';

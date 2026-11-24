@@ -1,7 +1,7 @@
 import {physicalComparativeMeaning} from './physical_comparatives.mjs?v=ordinary-comparatives-1';
 import {sentenceReadiness} from './sentence_readiness.mjs?v=ordinary-comparatives-1';
 import {storedStoryAdjectives} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
-import {everydayMeaning,routeName} from './everyday.mjs?v=partial-word-flow-1';
+import {everydayMeaning,routeName} from './everyday.mjs?v=ordinary-comparatives-1';
 import {storyReading} from './story_readings.mjs?v=ordinary-comparatives-1';
 import {showStoryControls} from './story_controls.mjs?v=ordinary-comparatives-1';
 import {readWordChoices,updateWordChoice} from './dictionary_word_choices.mjs?v=exact-word-1';
@@ -128,7 +128,7 @@ function showPronounReferents(input,plan){
     card.append(label);fields.push([o.key,field,number]);
   }
   const parsed=plan.parsed;
-  const select=(container,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);container.append(wrap);return field};
+  const select=(container,label,options)=>{const wrap=document.createElement('label');wrap.textContent=label;const field=document.createElement('select');field.setAttribute('aria-label',label);for(const [value,text] of options){const option=document.createElement('option');option.value=value;option.textContent=text;field.append(option)}field.value=options[0][0];wrap.append(field);container.append(wrap);return field};
   let view,destination,interpretation,threshold,scale,standardMode;
   if(parsed.requiredViewpoint)view=select(card,`${parsed.viewpointActivity||'carrying'} meaning`,[['','Choose a meaning'],['habitual','A recurring practice'],['ongoing','An unfolding action'],['bounded','One narrated episode']]);
   if(parsed.requiredDestination){destination=select(card,`meaning of to`,[['','Choose a destination meaning'],['spatial','Spatial destination; no receipt asserted'],['custody_delivery','Carry and transfer physical custody to the recipient']]);const note=document.createElement('p');note.textContent='Custody delivery means carrying arrival culminates in transfer from the carrier to the recipient. It does not mean ownership or willing acceptance.';card.append(note)}
