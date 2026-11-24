@@ -4,16 +4,16 @@ import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-compara
 import {deicticReference} from './references.mjs';
 import {validStorySlots,savedQualityLabel} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
-import {scoreKnownValue} from './known_value.mjs?v=ordinary-comparatives-1';
+import {scoreKnownValue} from './known_value.mjs?v=ordinary-requirements-1';
 import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=ordinary-comparatives-1';
-import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
+import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=ordinary-requirements-1';
 import {everydayMeaning} from './everyday.mjs?v=ordinary-comparatives-1';
 import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=ordinary-comparatives-1';
 import {informationMusic} from './information_music.mjs?v=ordinary-comparatives-1';
 import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {storyWords,storyDependencies} from './story_words.mjs?v=information-storage-1';
-import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=ordinary-quantifiers-1';
+import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=ordinary-requirements-1';
 import {ERASURE,erasureLabel,scoreErasure,readErasure,erasurePropertyNeedsPhase} from './information_operations.mjs?v=information-storage-1';
 import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=information-storage-1';
 import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
@@ -23,7 +23,7 @@ import {closingAction,closingPropertyNeedsPhase} from './physical_closing.mjs?v=
 const feltTargets=new Map(FELT_CONDITIONS.map(f=>[f.predicate,f]));
 const catalog = new Map([...storyWords,...storyDependencies].map(w=>[w.id,w]));
 const byCode = new Map([...catalog.values()].map(w=>[w.code,w]));
-const scopes = new Set(['time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_necessary','modality_possible','negation','aspect_ongoing']);
+const scopes = new Set(['time_before_speech','time_at_speech','time_after_speech','time_previous_day','time_current_day','time_next_day','modality_necessary','modality_possible','modality_obligated','negation','aspect_ongoing']);
 const message = (entities,events,relations,runtime_state,speech_act) => ({
   profile:'EZ-STORY-1',status:'draft',entities,events,relations,runtime_state,speech_act
 });

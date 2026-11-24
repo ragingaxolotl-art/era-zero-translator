@@ -22,7 +22,7 @@ export function timeScopeChoice(time,orderedScopes,index,answer){
   if(!['event','claim'].includes(answer))return {question:{key:'timeScope'+index,
     prompt:'What does “'+time.word+'” locate in time?',options:[
       {value:'event',label:'When the action or state happens'},
-      {value:'claim',label:'When the ability, possibility or need holds'},
+      {value:'claim',label:orderedScopes.includes('modality_obligated')?'When the obligation applies':'When the ability, possibility or need holds'},
       {value:'other',label:'Another time relationship'}]}};
   if(answer==='claim')return {scopes:orderedScopes};
   // The day was placed outside the clause. Move just that frame inside the

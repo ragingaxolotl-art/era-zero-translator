@@ -1,7 +1,7 @@
-import {resolveObjectDesireInput} from './object_desire.mjs?v=ordinary-quantifiers-1';
+import {resolveObjectDesireInput} from './object_desire.mjs?v=ordinary-requirements-1';
 import {composeDesiredOwnership} from './desired_ownership.mjs?v=ordinary-comparatives-1';
 import {midiFromDesiredOwnership} from './desired_ownership_music.mjs?v=ordinary-comparatives-1';
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=ordinary-quantifiers-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=ordinary-requirements-1';
 import {encodeName} from './names.mjs';
 // Ownership is explicitly selected, never inferred from wanting an object.
 export async function composeObjectDesiredOwnership(input,authority,{allowDraft=false,desiredProposition,framework}={}){

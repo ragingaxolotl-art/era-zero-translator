@@ -1,5 +1,5 @@
-import {storyReading} from './story_readings.mjs?v=ordinary-quantifiers-1';
-import {scoreStory} from './story_music.mjs?v=ordinary-quantifiers-1';
+import {storyReading} from './story_readings.mjs?v=ordinary-requirements-1';
+import {scoreStory} from './story_music.mjs?v=ordinary-requirements-1';
 import {dictionaryClausePlan} from './dictionary_clauses.mjs?v=information-storage-1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=ordinary-comparatives-1';
 import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';

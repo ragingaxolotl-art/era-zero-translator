@@ -1,9 +1,10 @@
 import {passiveClause} from './story_passives.mjs?v=explicit-agent-passives-1';
-import {storyTime,timeScopeChoice} from './story_time.mjs?v=ordinary-time-1';
+import {storyTime,timeScopeChoice} from './story_time.mjs?v=ordinary-requirements-1';
 import {ordinaryQuantifiedSubject,quantifiedNegationChoice} from './story_quantifiers.mjs?v=ordinary-quantifiers-1';
+import {requirementVerb,requirementMeaning} from './story_requirements.mjs?v=ordinary-requirements-1';
 import {validStorySlots} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=ordinary-comparatives-1';
+import {knownValueReading} from './known_value.mjs?v=ordinary-requirements-1';
 import {faultCategoryReading} from './fault_correction.mjs?v=ordinary-comparatives-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
@@ -226,9 +227,14 @@ function propertyAt(tokens,offset,adjectives) {
 function describeChoice(row) {
   return row.word === 'return' ? 'went back to an earlier place' : 'happened again';
 }
-function predicate(verb, subject, object, authority, runtime, preferences,command=false) {
+function predicate(verb, subject, object, authority, runtime, preferences,command=false,requirements=false) {
   const anchor = subject.pronoun ? (deictics[subject.pronoun] || (['they','them'].includes(subject.pronoun)?'we':'Ada')) :
     subject.plural&&!subject.singularAgreement?'we':'Ada';
+  if(requirements){
+    const normalized=requirementVerb(verb,anchor);
+    if(normalized)return predicate(normalized,subject,object,authority,runtime,preferences,command)
+      .filter(r=>r.scopes.includes('modality_necessary')).map(r=>({...r,requirement:true}));
+  }
   const placeholder = anchor+' '+verb+(object?' the gate':'');
   const syntax = clauseSyntax(placeholder);
   if (!syntax) return [];
@@ -272,7 +278,7 @@ function predicate(verb, subject, object, authority, runtime, preferences,comman
     sense:r.sense, specific:false}));
 }
 
-function prepare(input, authority, preferences, adjectives, timeWords=false, quantifierWords=false) {
+function prepare(input, authority, preferences, adjectives, timeWords=false, quantifierWords=false,requirementWords=false) {
   const qualityAt=(tokens,offset)=>propertyAt(tokens,offset,adjectives);
   const parseNoun=(tokens,offset,options)=>nounPhrase(tokens,offset,options,qualityAt);
   const parseObject=tokens=>splitObject(tokens,parseNoun);
@@ -295,8 +301,8 @@ function prepare(input, authority, preferences, adjectives, timeWords=false, qua
     if(time)body=time.body;
     if(sentence.endsWith('?')){
       if(sentences.length!==1)return null;
-      const aux=/^(do|does|did|am|are|is|was|were|might|can|will) (.+)$/i.exec(body);
-      if(!aux)return null;
+      const aux=/^(do|does|did|am|are|is|was|were|might|can|will|must) (.+)$/i.exec(body);
+      if(!aux||folded(aux[1])==='must'&&!requirementWords)return null;
       const tokens=tokensOf(aux[2]),quantified=quantifierWords?ordinaryQuantifiedSubject(tokens,parseNoun):null;
       if(quantified?.unsupported)return quantified;
       const subject=quantified?.subject||parseNoun(tokens,0,{guessName:true});
@@ -333,7 +339,7 @@ function prepare(input, authority, preferences, adjectives, timeWords=false, qua
         reason:'Time combined with this quantity needs an explicit scope. This construction is not supported yet; its quantity and time have not been discarded.'};
       const shared=link==='and'&&subject?.guessedName?parseObject(tokens):null;
       if(link==='and' && (!subject || subject.category==='person' && shapes.some(row=>row.slice(0,3).includes(folded(tokens[0]))) ||
-          shared&&predicate(shared.verb,clauses.at(-1).subject,shared.object,authority,runtime,preferences).length)){
+          shared&&predicate(shared.verb,clauses.at(-1).subject,shared.object,authority,runtime,preferences,false,requirementWords).length)){
         subject=clauses.at(-1).subject;consumed=0;inherited=true;special=true;
       }
       const polite=folded(tokens[0]||'')==='please'?1:0;
@@ -369,7 +375,9 @@ function prepare(input, authority, preferences, adjectives, timeWords=false, qua
         object={text:'the omitted target',pronoun:'it',prompt:'What did '+subject.text+' notice?'};
       }
       if(!verb)return null;
-      let readings=predicate(verb,passive?object:subject,passive?subject:object,authority,runtime,preferences,act==='command');
+      let readings=predicate(verb,passive?object:subject,passive?subject:object,authority,runtime,preferences,act==='command',requirementWords);
+      if(readings.some(r=>r.requirement)&&parts.length!==1)return {unsupported:true,
+        reason:'This requirement needs an explicit scope over the linked clauses. That construction is not supported yet; the relationship has not been moved outside the requirement.'};
       if(passive)readings=readings.map(reading=>({...reading,roles:[...reading.roles].reverse()}));
       if(act==='command' && folded(verb)==='find' && object && !preferences.some(p=>p.forms?.includes('find'))){
         readings=[{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[],specific:true}];
@@ -387,7 +395,7 @@ function prepare(input, authority, preferences, adjectives, timeWords=false, qua
         const kind=link==='and'?'and':['condition','provided'].includes(link)?'condition':'before';
         relations.push({kind,events:['after','provided'].includes(link)?[right,left]:[left,right]});
       }
-      special ||= !!time || !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
+      special ||= !!time || !!link || readings.some(r=>r.specific||r.requirement) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
       clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{}),...(time?{time}:{}),...(quantified?{ordinaryQuantifier:true}:{})});
     }
@@ -403,7 +411,7 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
   // and the earlier state/day scope convention. Temporal names such as “Every
   // saved the file yesterday” also retain priority over the new quantifiers.
   const grammar=prepare(input,authority,preferences,adjectives)||prepare(input,authority,preferences,adjectives,true)||
-    prepare(input,authority,preferences,adjectives,true,true);
+    prepare(input,authority,preferences,adjectives,true,true)||prepare(input,authority,preferences,adjectives,true,true,true);
   if(!grammar)return null;
   if(grammar.unsupported)return grammar;
   const entities=[],events=[],notes=[],described=[];
@@ -577,7 +585,9 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         {value:'present',label:'Present time'},{value:'past',label:'A past event'}]}};
       if(tense==='past')reading={...reading,scopes:[...reading.scopes,'time_before_speech']};
     }
-    const timed=timeScopeChoice(c.time,reading.scopes,index,answers['timeScope'+index]);
+    const required=requirementMeaning(reading,index,answers['requirement'+index]);
+    if(required.question||required.unsupported)return required;
+    const timed=timeScopeChoice(c.time,required.scopes,index,answers['timeScope'+index]);
     if(timed.question||timed.unsupported)return timed;
     const quantified=quantifiedNegationChoice(c,timed.scopes,index,answers['quantityScope'+index]);
     if(quantified.question||quantified.unsupported)return quantified;

@@ -1,8 +1,8 @@
-import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
+import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=ordinary-requirements-1';
 import {everydayMeaning} from './everyday.mjs?v=ordinary-comparatives-1';
 import {scoreDictionaryClause} from './dictionary_clause_music.mjs?v=ordinary-comparatives-1';
 import {compactChordMidi} from './compact_chords.mjs?v=ordinary-comparatives-1';
-import {sentenceReadiness} from './sentence_readiness.mjs?v=ordinary-quantifiers-1';
+import {sentenceReadiness} from './sentence_readiness.mjs?v=ordinary-requirements-1';
 
 const scopeLabels={modality_necessary:'required',modality_possible:'possible',ability:'able',negation:'negated',aspect_ongoing:'ongoing',time_before_speech:'past',time_after_speech:'future',time_current_day:'today',time_next_day:'tomorrow',time_previous_day:'yesterday'};
 
