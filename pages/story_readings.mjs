@@ -1,4 +1,5 @@
 import {passiveClause} from './story_passives.mjs?v=explicit-agent-passives-1';
+import {storyTime,timeScopeChoice} from './story_time.mjs?v=ordinary-time-1';
 import {validStorySlots} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=ordinary-comparatives-1';
@@ -270,7 +271,7 @@ function predicate(verb, subject, object, authority, runtime, preferences,comman
     sense:r.sense, specific:false}));
 }
 
-function prepare(input, authority, preferences, adjectives) {
+function prepare(input, authority, preferences, adjectives, timeWords=false) {
   const qualityAt=(tokens,offset)=>propertyAt(tokens,offset,adjectives);
   const parseNoun=(tokens,offset,options)=>nounPhrase(tokens,offset,options,qualityAt);
   const parseObject=tokens=>splitObject(tokens,parseNoun);
@@ -288,6 +289,9 @@ function prepare(input, authority, preferences, adjectives) {
   let special=false, act='assertion';
   for (const sentence of sentences) {
     let body=sentence.trim().replace(/[.!?]$/,'');
+    const time=timeWords?storyTime(body):null;
+    if(time?.unsupported)return time;
+    if(time)body=time.body;
     if(sentence.endsWith('?')){
       if(sentences.length!==1)return null;
       const aux=/^(do|does|did|am|are|is|was|were|might|can|will) (.+)$/i.exec(body);
@@ -302,6 +306,8 @@ function prepare(input, authority, preferences, adjectives) {
     if(leading)body=leading[2]+' '+(folded(leading[1])==='before'?'after':'before')+' '+leading[3];
     const condition=/^if (.+?),\s*(?:then )?(.+)$/i.exec(body),postcondition=/^(.+) if (.+)$/i.exec(body);
     const parts=condition?[condition[1],'condition',condition[2]]:postcondition?[postcondition[1],'provided',postcondition[2]]:linkedClauses(body,parseNoun);
+    if(time&&parts.length!==1)return {unsupported:true,
+      reason:'The time word could apply to more than one linked clause. Put the timed action in its own sentence so its time stays attached to the intended event.'};
     // Without punctuation or parentheses, three linked clauses have ambiguous attachment.
     if(parts.length>3)return null;
     for(let i=0;i<parts.length;i+=2){
@@ -315,6 +321,8 @@ function prepare(input, authority, preferences, adjectives) {
       const counted=countedSubject(tokens,parseNoun);
       let subject=counted?.subject||parseNoun(tokens,0,{guessName:true}),consumed=subject?.length??0,inherited=false;
       if(counted){q=counted.q;special=true;}
+      if(time&&q)return {unsupported:true,
+        reason:'Time combined with this quantity needs an explicit scope. This construction is not supported yet; its quantity and time have not been discarded.'};
       const shared=link==='and'&&subject?.guessedName?parseObject(tokens):null;
       if(link==='and' && (!subject || subject.category==='person' && shapes.some(row=>row.slice(0,3).includes(folded(tokens[0]))) ||
           shared&&predicate(shared.verb,clauses.at(-1).subject,shared.object,authority,runtime,preferences).length)){
@@ -332,7 +340,7 @@ function prepare(input, authority, preferences, adjectives) {
         subject={text:'you',pronoun:'you'};consumed=polite;act='command';
       }
       if(!subject || q&&!subject.plural)return null;
-      let tail=tokens.slice(consumed),when=null,again=false,recipient=null;
+      let tail=tokens.slice(consumed),when=time?.scope||null,again=false,recipient=null;
       if(folded(tail.at(-1)||'')==='now'){when='time_at_speech';tail=tail.slice(0,-1);}
       if(folded(tail.at(-1)||'')==='again'){again=true;tail=tail.slice(0,-1);}
       const ditransitive=tail.findIndex(t=>['make','makes','made'].includes(folded(t)));
@@ -371,9 +379,9 @@ function prepare(input, authority, preferences, adjectives) {
         const kind=link==='and'?'and':['condition','provided'].includes(link)?'condition':'before';
         relations.push({kind,events:['after','provided'].includes(link)?[right,left]:[left,right]});
       }
-      special ||= !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
+      special ||= !!time || !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
-      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{})});
+      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{}),...(time?{time}:{})});
     }
   }
   return special ? {runtime,act,clauses,relations} : null;
@@ -383,7 +391,9 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
   if(typeof input!=='string')return null;
   const embedded=knownValueReading(input,answers)||faultCategoryReading(input,answers);
   if(embedded)return embedded;
-  const grammar=prepare(input,authority,preferences,adjectives);
+  // Preserve every previously accepted reading, including names such as Today
+  // and the earlier state/day scope convention. Only extend failed parses.
+  const grammar=prepare(input,authority,preferences,adjectives)||prepare(input,authority,preferences,adjectives,true);
   if(!grammar)return null;
   if(grammar.unsupported)return grammar;
   const entities=[],events=[],notes=[],described=[];
@@ -552,11 +562,14 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
       if(!reading)return {question:{key:'word'+index,prompt:'Which meaning do you intend in this action?',options:c.readings.map(r=>({value:r.root,label:r.specific?describeChoice(r):r.sense.definition,sense:r.sense}))}};
     }
     if(reading.tenseChoice){
-      const key='tense'+index,tense=answers[key];
+      const key='tense'+index,tense=answers[key]||(c.time?.scope==='time_previous_day'?'past':undefined);
       if(!['present','past'].includes(tense))return {question:{key,prompt:'Does “'+c.subject.text+' '+reading.word+'” describe present time or a past event?',options:[
         {value:'present',label:'Present time'},{value:'past',label:'A past event'}]}};
       if(tense==='past')reading={...reading,scopes:[...reading.scopes,'time_before_speech']};
     }
+    const timed=timeScopeChoice(c.time,reading.scopes,index,answers['timeScope'+index]);
+    if(timed.question||timed.unsupported)return timed;
+    reading={...reading,scopes:timed.scopes};
     if(reading.followChoice){
       const key='following'+index;
       if(!answers[key])return {question:{key,prompt:'Does “follow” mean something happened later?',options:[
