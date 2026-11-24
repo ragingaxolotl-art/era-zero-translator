@@ -10,7 +10,7 @@ Status: **PASS**
 - Dictionary roots: **324**
 - Compounds: **124**
 - Indexed senses: **607**
-- Public document records: **975**
+- Public document records: **996**
 
 ## Phrase matrix
 
@@ -105,7 +105,7 @@ Status: **PASS**
 - **PASS** — all generated root fields available
 - **PASS** — complete compound records
 - **PASS** — complete indexed dictionary options
-- **PASS** — document manifest count is exact: 975 records
+- **PASS** — document manifest count is exact: 996 records
 - **PASS** — every document path exists
 - **PASS** — required authority documents are public
 - **PASS** — all evidence categories available

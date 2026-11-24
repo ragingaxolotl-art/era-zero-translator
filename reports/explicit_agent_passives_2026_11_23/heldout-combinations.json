@@ -1,0 +1,570 @@
+{
+  "status": "pass",
+  "revision": "00acaa737c075c632463ee7f1316b65d9320f686",
+  "cases": [
+    {
+      "input": "The heavy box was lifted by the awake robot.",
+      "answers": {
+        "property0Subjectheavy": "physical"
+      },
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e1d0059daad4093d8a5ce05c",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": [
+                  "LIF:001"
+                ]
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": [
+                  {
+                    "contextual_norm": "heavy"
+                  }
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The records were not stored by us.",
+      "answers": {},
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "deictic",
+              "role": "speaker_group"
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Was I seen by you?",
+      "answers": {},
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "deictic",
+              "role": "speaker"
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "deictic",
+              "role": "addressee"
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:b937ee54b7c000fafe11d338",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "They were copied by it.",
+      "answers": {
+        "subject0": "new:the files",
+        "object0": "new:the program"
+      },
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The files were saved by the routine before they were copied by the program.",
+      "answers": {
+        "subject1": "0"
+      },
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L",
+                "EH",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "AW",
+                "T",
+                "IH",
+                "N"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "before",
+            "events": [
+              0,
+              1
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The door was closed by the wind.",
+      "answers": {
+        "passiveBy0": "actor"
+      },
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "D",
+                "UW",
+                "R"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "IH",
+                "N",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:3019a12938289fa9f3a23237",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The file was saved by a program.",
+      "answers": {},
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "indefinite_singular",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The file was seen by me.",
+      "answers": {},
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "deictic",
+              "role": "speaker"
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:b937ee54b7c000fafe11d338",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 1,
+                "properties": []
+              },
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    }
+  ]
+}
