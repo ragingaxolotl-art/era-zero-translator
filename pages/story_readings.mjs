@@ -724,6 +724,9 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
       args.push(arg);
     }
     if(args.length===2&&args[0].entity===args[1].entity && !['MIN:011','MIN:110'].includes(reading.root))return null;
+    if(c.ordinaryQuantifier&&entities.some((entity,i)=>i!==sub&&
+        (entity.referenceKind==='indefinite_plural'||/^an? /.test(entity.reference||''))))return {unsupported:true,
+      reason:'This quantity needs to distinguish one shared item from a separate item for each member. Per-member item bindings are not supported yet; no shared item has been silently assumed.'};
     lastSubject=sub;
     events.push({predicate:reading.root,arguments:args,scopes:reading.scopes,quantifier:c.q,negated_quantifier:quantified.negatedQuantifier,...(condition?{condition}:{})});
     if(c.inherited)notes.push('The next action has the same subject (“'+entities[sub].label+'”).');

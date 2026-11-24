@@ -66,7 +66,7 @@ try{
    for(const [text,label] of [['Every program cannot save the file.','Another quantity relationship'],['Every worker pulled Mira.','Another meaning']]){
     await translate(page,text);await page.getByRole('button',{name:label,exact:true}).click();assert.equal(await add(page).count(),0);report.choices.push({width,text,status:'pass'});
    }
-   for(const text of ['Every tired worker waited.','Every worker waited and returned.','Every file was stored today.']){
+   for(const text of ['Every tired worker waited.','Every worker waited and returned.','Every file was stored today.','Every robot made a box.','No worker copied a file.']){
     await translate(page,text);assert.equal(await add(page).count(),0);report.unsupported.push({width,text,status:'pass'});
    }
    await translate(page,'Every worker did not wait.');assert.equal(await add(page).count(),0);

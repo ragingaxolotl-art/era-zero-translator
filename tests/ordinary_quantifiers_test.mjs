@@ -88,10 +88,14 @@ for(const text of [
  'No robots saves the file.','Every tired worker waited.','Not every cold gate was closed.',
  'Every worker waited and returned.','Every worker waited. They returned.',
  'No worker saved the file yesterday.','Every file was stored today.',
+ 'Every robot made a box.','No worker copied a file.','Not every robot put the box at a gate.',
+ 'Every robot copied files.','Every worker lifted the box or a crate.',
  'Nora copied every file.','Both workers waited.','Three workers waited.','Every worker glorped the file.'
 ]){
  assert(!storyReading(text,a)?.events,text);
  assert.equal(await scoreSongText(text,a,()=>{throw Error('No invented fallback');}),null,text);
 }
+assert(storyReading('Every worker noticed.',a,{answers:{object0:'new:a signal'}}).unsupported);
+assert(storyReading('Every worker noticed.',a,{answers:{object0:'new:the signal'}})?.events);
 assert((await scoreSongText('Every robot saved the file.',a,()=>{throw Error('No single-word fallback');})).midi);
 console.log(`PASS ${pairs} independent quantifier melody/chord pairs, class references, scope alternatives, empty/mixed/full truth tables, questions, agreement and runtime 0/1/2; 36 older performances preserved.`);
