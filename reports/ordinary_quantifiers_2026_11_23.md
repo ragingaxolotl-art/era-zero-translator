@@ -8,7 +8,7 @@ Every/each introduces a singular common-noun class with the existing all quantif
 
 None and not every differ: a mixed group can satisfy not every while failing none. The empty-domain cases also remain distinct under the existing classical quantifier convention. A direct negative with every/each asks whether each member satisfies the negative, or whether the positive is not true for every member. This preserves negation inside the quantified predicate or outside all, without moving a negative across a nested possibility or ability. Existing verb meanings, object descriptions, maintained-state conditions, questions, tense, modality and runtime 0/1/2 remain reusable.
 
-Both earlier parsing passes run first, including dated sentences. This preserves names such as Every in “Every saved the file yesterday.” Thirty-six frozen performances cover earlier all-the/none-of/a-few/nobody constructions, dated states, need/ability scopes and proper names. The new quantified readings rely on their full interpretation instead of appending an assertion that everyone acted to a question or negative.
+Both earlier parsing passes run first, including dated sentences. This preserves names such as Every in “Every saved the file yesterday.” Thirty-six frozen performances cover earlier all-the/none-of/a-few/nobody constructions, dated states, ability scopes and proper names. The new quantified readings rely on their full interpretation instead of appending an assertion that everyone acted to a question or negative.
 
 There are **no new roots, compounds, sense records or musical frames**: 324 roots, 124 compounds and 607 English senses remain. See the [semantic review](../reviews/ordinary_quantifiers_2026_11_23.md).
 
