@@ -1,0 +1,152 @@
+{
+  "site": "https://ragingaxolotl-art.github.io/cyber-pet-lore/translator/",
+  "timestamp": "2026-11-24T03:19:20.406Z",
+  "method": "Injected delayed, HTTP, malformed JSON and aborted data requests in Chromium.",
+  "slow": [
+    {
+      "width": 320,
+      "resource": "index",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "resource": "documents",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "resource": "index",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "resource": "documents",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "resource": "index",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "resource": "documents",
+      "status": "pass"
+    }
+  ],
+  "recovery": [
+    {
+      "width": 320,
+      "failure": "index-http",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "failure": "documents-http",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "failure": "index-json",
+      "status": "pass"
+    },
+    {
+      "width": 320,
+      "failure": "index-abort",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "failure": "index-http",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "failure": "documents-http",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "failure": "index-json",
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "failure": "index-abort",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "failure": "index-http",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "failure": "documents-http",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "failure": "index-json",
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "failure": "index-abort",
+      "status": "pass"
+    }
+  ],
+  "shared": [
+    {
+      "width": 320,
+      "status": "pass"
+    },
+    {
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "width": 768,
+      "status": "pass"
+    }
+  ],
+  "downloads": [
+    {
+      "width": 320,
+      "runtime": 0,
+      "arrangement": "melody",
+      "sha256": "14dc38068411f269f811577da2e733c7dbc800c3f0c0452d3729c95f95d522a0"
+    },
+    {
+      "width": 320,
+      "runtime": 0,
+      "arrangement": "chords",
+      "sha256": "2ab9379284c1a8f399ac7e68952c98741753832fffdd0dca4b48e112c7e9f1a8"
+    },
+    {
+      "width": 390,
+      "runtime": 1,
+      "arrangement": "melody",
+      "sha256": "ba387c5318c10dd59c6679e35acdd493a4feb50384f00b8598308c4a9b712371"
+    },
+    {
+      "width": 390,
+      "runtime": 1,
+      "arrangement": "chords",
+      "sha256": "8fab496313b63d5d81289821f01db5d3f73ed374b31835be91943a6678892a70"
+    },
+    {
+      "width": 768,
+      "runtime": 2,
+      "arrangement": "melody",
+      "sha256": "231810f008176b2d0c846e4694635eaf2eb82d3a017af286aa7af0a9489618ba"
+    },
+    {
+      "width": 768,
+      "runtime": 2,
+      "arrangement": "chords",
+      "sha256": "41135e33d7c43670468796f647973d4000087b65a1db16d7b340b2bccd6c9b70"
+    }
+  ],
+  "status": "pass"
+}

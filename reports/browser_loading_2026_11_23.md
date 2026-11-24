@@ -21,4 +21,4 @@ These are controlled fault injections in Chromium. They do not establish recover
 
 No dictionary meaning, compound, grammar frame or musical performance changed. The [58-case follow-up](goal_followup_2026_11_23.md) still leaves 27 whole meanings unsupported; clearer startup behavior does not finish the translator.
 
-Local validation is complete. Deployment and public verification will be recorded after they succeed.
+Published on both sites on November 24 (UTC): [primary deployment](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45317871505), [Lore deployment](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45318361238). Both completed successfully. The [public translator check](browser_loading_2026_11_23/public-primary.json) and [public Lore check](browser_loading_2026_11_23/public-lore.json) each pass the same six delayed-resource cases, twelve failure/retry cases, three shared links and six decoded exports. All six MIDI hashes match across both local and both public sites. This verifies this release and these cases, not general sentence coverage or recorded-audio recovery.
