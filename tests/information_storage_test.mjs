@@ -85,7 +85,7 @@ for(const text of ['Nora saved the game.','Nora stored the box.','Nora saved the
   assert.equal(await scoreSongText(text,authority,()=>{throw Error('No unrelated fallback');}),null,text);
 }
 for(const text of ['Nora saved the file to the folder.','Nora saved only the file.','Nora has saved the file.',
-  'The file was saved by Nora.','The saved file is awake.','Nora saved the file as version two.',
+  'The file has been saved by Nora.','The saved file is awake.','Nora saved the file as version two.',
   'Nora saved Nora.','Nora saved the file or Nora.','The program saves the program.']){
   assert(!storyReading(text,authority)?.events,text);
   assert.equal(await scoreSongText(text,authority,()=>{throw Error('No invented template');}),null,text);

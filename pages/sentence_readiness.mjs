@@ -1,4 +1,4 @@
-import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=ordinary-comparatives-1';
+import {decodeSupportedMeaningWithDrafts} from './semantic_music_dispatch.mjs?v=explicit-agent-passives-1';
 
 // A composed interpretation and an independently readable score are separate
 // facts. This check receives no English, expected predicate or original IR.

@@ -68,7 +68,7 @@ try{
     await translate(page,text);const choice=page.getByRole('button',{name:'Another meaning',exact:true});await choice.waitFor();await layout(page,width);
     assert.equal(await add(page).count(),0);await choice.click();assert.equal(await add(page).count(),0);report.choices.push({width,text,status:'pass'});
    }
-   for(const text of ['Nora saved the file to the folder.','The file was saved by Nora.','Nora deleted the stored file.']){
+   for(const text of ['Nora saved the file to the folder.','The file has been saved by Nora.','Nora deleted the stored file.']){
     await translate(page,text);await page.locator('#candidateList').waitFor();assert.equal(await add(page).count(),0);report.unsupported.push({width,text,status:'pass'});
    }
    await translate(page,'Nora saved the file.');await add(page).waitFor();const disclosure=page.locator('#candidateList details.meaning-explanation');

@@ -1,3 +1,4 @@
+import {passiveClause} from './story_passives.mjs?v=explicit-agent-passives-1';
 import {validStorySlots} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {isPassageHead} from './passage_nouns.mjs';
 import {knownValueReading} from './known_value.mjs?v=ordinary-comparatives-1';
@@ -341,14 +342,19 @@ function prepare(input, authority, preferences, adjectives) {
           recipient=indirect;tail=[...tail.slice(0,ditransitive+1),...tail.slice(ditransitive+1+indirect.length)];
         }
       }
-      const placement=destinationComplement(tail,parseObject,parseNoun);
-      const state=placement?null:stateComplement(tail,parseObject,qualityAt);
-      let {verb,object,alternatives=[]}=placement||state||parseObject(tail);
+      const passive=passiveClause(tail,subject,parseNoun,shapes);
+      if(passive&&(q||inherited||act==='command'||recipient||again))return null;
+      if(passive&&preferences.some(p=>p.forms?.some(form=>passive.forms.includes(folded(form)))&&(p.root||p.target)!==predicateId(passive.base,passive.target)))return {unsupported:true,
+        reason:'This passive sentence uses a personally selected verb meaning. Its passive construction is not supported yet; keep that meaning and name the actor first.'};
+      const placement=passive?null:destinationComplement(tail,parseObject,parseNoun);
+      const state=passive||placement?null:stateComplement(tail,parseObject,qualityAt);
+      let {verb,object,alternatives=[]}=passive?{verb:passive.verb,object:passive.agent}:placement||state||parseObject(tail);
       if(!object && /^notic(?:e|es|ed)$/i.test(verb)){
         object={text:'the omitted target',pronoun:'it',prompt:'What did '+subject.text+' notice?'};
       }
       if(!verb)return null;
-      let readings=predicate(verb,subject,object,authority,runtime,preferences,act==='command');
+      let readings=predicate(verb,passive?object:subject,passive?subject:object,authority,runtime,preferences,act==='command');
+      if(passive)readings=readings.map(reading=>({...reading,roles:[...reading.roles].reverse()}));
       if(act==='command' && folded(verb)==='find' && object && !preferences.some(p=>p.forms?.includes('find'))){
         readings=[{root:id('find'),word:'find',roles:['experiencer','target'],scopes:[],specific:true}];
       }
@@ -367,7 +373,7 @@ function prepare(input, authority, preferences, adjectives) {
       }
       special ||= !!link || readings.some(r=>r.specific) || !!subject.owner || !!object?.owner || !!subject.qualities?.length || !!object?.qualities?.length ||
         pronouns.has(subject.pronoun)||pronouns.has(object?.pronoun);
-      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition});
+      clauses.push({subject,object,alternatives,recipient,destination:placement?.destination,inherited,readings,q,outsideNegation,condition:state?.condition,...(passive?{passive:true}:{})});
     }
   }
   return special ? {runtime,act,clauses,relations} : null;
@@ -379,6 +385,7 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
   if(embedded)return embedded;
   const grammar=prepare(input,authority,preferences,adjectives);
   if(!grammar)return null;
+  if(grammar.unsupported)return grammar;
   const entities=[],events=[],notes=[],described=[];
   let question=null, lastSubject;
   function identify(np,key,exclude=null) {
@@ -584,6 +591,17 @@ export function storyReading(input, authority, {answers={}, preferences=[], adje
         }
       }
       args.push(objectArg);
+    }
+    if(c.passive){
+      // References follow mention order, but music uses the existing role order.
+      args.reverse();
+      const agent=entities[args[0].entity],key='passiveBy'+index;
+      if(agent.category!=='person'&&!machineActors.has(agent.head||'')){
+        if(!answers[key])return {question:{key,prompt:'Does “by '+c.object.text+'” name who or what performs this action?',options:[
+          {value:'actor',label:'The actor or cause'},
+          {value:'other',label:'A location or another meaning'}]}};
+        if(answers[key]!=='actor')return null;
+      }
     }
     const contentChange=containerAction(reading.root);
     if(contentChange){

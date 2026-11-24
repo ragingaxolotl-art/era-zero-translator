@@ -1,0 +1,13 @@
+# Explicit-agent passive sentences
+
+This is a grammar extension over 31 participles of reviewed transitive verbs. It introduces no roots, compounds, lexical meanings or musical frames. A named by-participant fills the existing actor, cause, experiencer or source role; the initial noun fills the existing affected, bearer, perceived or result role. These roles must not be exchanged simply because English mentions the affected participant first.
+
+References are introduced in surface mention order, preserving the initial participant for subsequent descriptions and pronouns. Event arguments are then rendered in the existing canonical role order. The music preserves the core proposition; English voice is not an additional root or acoustic marker. Active and passive versions can have different numbered reference declarations while recovering the same participants and roles.
+
+The supported auxiliary forms reuse existing present/past, future, uncertainty, ability, negation and ongoing-aspect scopes. Patient agreement is checked before conversion; active auxiliary agreement belongs to the by-participant. Runtime 0/1/2 remains independent. Ongoing forms require an already supported progressive predicate. Present passive actions do not become permanent result-state claims. Can retains the existing ability reading; permission and other modal senses remain separate meanings.
+
+Existing no-agent stored and closed statements retain their exact state meanings and sounds. With an explicit by-participant, stored reuses information commitment and closed reuses caused physical closing. Physical/information/cognitive sense choices, private adjective meanings and before/after phase guards still apply to the correctly bound roles. An ambiguous by-noun asks whether it identifies the participant carrying out the reading or a location/other relationship. Pronouns retain explicit, gender-neutral reference choices.
+
+This first grammar extension excludes agent omission, perfect/get-passives, quantified patients, unsupported complements, inherited passive verbs and unreviewed verb shapes. A conflicting personal verb selection is preserved and gets an unsupported-construction explanation, rather than silently changing to a public meaning. An explicit selection of the same reviewed public meaning remains usable.
+
+Validation must recover message meanings from melody and expanded chords without the source sentence, pin earlier active/state performances, distinguish state from action, preserve scope and reference order, and exercise whole-sentence controls. Publication evidence is recorded after execution. This author semantic review implements the user's existing project instruction; it does not assert a separate user review of every wording.

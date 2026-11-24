@@ -1,0 +1,1532 @@
+{
+  "revision": "c4e0b7c",
+  "cases": [
+    {
+      "input": "Nora saved the file. [0]",
+      "melody_sha256": "a60bd19ab2124a27245ab2100733a1ebffd48ec78691e8fe6d1cdec3beb86b83",
+      "chords_sha256": "2ab9379284c1a8f399ac7e68952c98741753832fffdd0dca4b48e112c7e9f1a8",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The program did not copy the record. [0]",
+      "melody_sha256": "eb565b26bdf2525d9a0e29dcfc25eba4f5529a42f05d8c67545c347e907d44c4",
+      "chords_sha256": "36bfd470f5ae32736cb2e80d357c97d935b01983c7858e1f90723d6fee7278b1",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Did Nora delete the file? [0]",
+      "melody_sha256": "7f7080fed5cb6b272b46332b31ae66697b3e6d7c56e671b8087b49f2fd244a5f",
+      "chords_sha256": "614d779edb8360cb27475a2d2634deb131f4a8128808111bc8f76278725f25ab",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "erase_stored_object",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "The robot held the box. [0]",
+      "melody_sha256": "e751be6c3136f1c71d05b337316602ac49be885c6249d15eaecccd3c8fb2e341",
+      "chords_sha256": "162b583b5321e44f814806041101f5174360c959e012c7dc18870216d0008d6c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:834a56d90e31b430990720ff",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora closed the gate. [0]",
+      "melody_sha256": "5f77eabe2a5a8be71f499b074786fde121b98b6f9c61502f0b911cd1a3a6e0de",
+      "chords_sha256": "4ed1e146627b1f9b3ed50a74fafe3270ab795cee1f7ee35dd7a07e254cfce97b",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:3019a12938289fa9f3a23237",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The file was stored. [0]",
+      "melody_sha256": "79179fb08941efdd76878bf35445164b6438edcf20e5ce3423d53dd59ca40f78",
+      "chords_sha256": "db00191944769a0391321f86cac866eb35ffd0b2752194058c7c9a80111d5ab6",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The gate was closed. [0]",
+      "melody_sha256": "3f2b5a4627d36c645c4518b236d5b7a4c0cfdb5c92f8f25a8c7bcafd3751f104",
+      "chords_sha256": "de3d3605bf9b8797adb7c3658e9a76e5e8c40ee26629a4bdb66592a47d4c1ae2",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:82a697e83c845e4a7b38b53e",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file. She copied it. [0]",
+      "melody_sha256": "a3a07d91db7023492c5950e49702ab697b6b9e4dcf1799dc91569444ec9ba108",
+      "chords_sha256": "cfaf48368c6f4c93147c7d92e3f57e11bcabe3167bc65c4f4923f7fb8183718c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 0,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file. [1]",
+      "melody_sha256": "acb366f77015abdc96436e94f1c6c814609da3bfc52788f7d33d5977b9f64a1b",
+      "chords_sha256": "8fab496313b63d5d81289821f01db5d3f73ed374b31835be91943a6678892a70",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The program did not copy the record. [1]",
+      "melody_sha256": "e880664ef3fb3285e466907d78412dee6d55c6de4ea27a86f72369c6d5b963f3",
+      "chords_sha256": "01e300d93733704d968cb6fc6cad1b0ce70d69f670f42f462056df212d1119e1",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Did Nora delete the file? [1]",
+      "melody_sha256": "f41eaa0ff43cda249360d320eeb73e6fa59b97bd73f3e9c4f187e122abba55be",
+      "chords_sha256": "3bbee447cbcafa1bae3683b72cc5f52288839e2ca50d41806edd2ccaed790d76",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "erase_stored_object",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "The robot held the box. [1]",
+      "melody_sha256": "03b198bf493106ac40d321fe5c64f5c43dcbf65bda4d674e4deb9ea51df5a2ad",
+      "chords_sha256": "4b036a76b281b00655a9bb66fd3d536a9186a25397a3b19b6f44be4128f25b15",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:834a56d90e31b430990720ff",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora closed the gate. [1]",
+      "melody_sha256": "df0ddadea0592a4326864c690274320b8c6a99672969d5c71ec01a468a6b2bea",
+      "chords_sha256": "26203be563684d8e9defc478702286e186b132a1565d3dc4585a4e9f452bca3e",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:3019a12938289fa9f3a23237",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The file was stored. [1]",
+      "melody_sha256": "5876f21715d4eaa550928b94cb743ebc91dfebf38f8a1cf1454544d0cb5fb102",
+      "chords_sha256": "29c2cefe54a5531a3bf45d813ce9c772439b2cb6b20820f691541563605aed6e",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The gate was closed. [1]",
+      "melody_sha256": "f28ea4399435cade033797d1d30e615f6ede901e919d6d0a636767dbe31d8c5f",
+      "chords_sha256": "af638b3188dc3d90d74f03b83c27e865ba2f5ad86f9cf16ad3502e7953f6d6cf",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:82a697e83c845e4a7b38b53e",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file. She copied it. [1]",
+      "melody_sha256": "f2fc268c3880dd858ba577963d1040375a7a1186b58ed39ef5b3945e858d77d5",
+      "chords_sha256": "73ba4a6c68ee3c97e75feea9074e6defad0b6810aa850eb0b10ba31e288215ac",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file. [2]",
+      "melody_sha256": "a3fa03630579e021d6e48b27c2046da9269ac24efca9ca277b40d4c243eec501",
+      "chords_sha256": "41135e33d7c43670468796f647973d4000087b65a1db16d7b340b2bccd6c9b70",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The program did not copy the record. [2]",
+      "melody_sha256": "7c1b15016a9951143fb1233a9cd9333f6b8ef818d88058c6857988e59a418b04",
+      "chords_sha256": "68eaf37d9c8226f21f44a2cf435100da3946c6ec649e46463390b8ab752b7f58",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Did Nora delete the file? [2]",
+      "melody_sha256": "d738be1609c47b00651a7582e77e848b8c9d5377910add67a6efcebe616090cc",
+      "chords_sha256": "73b3abf90ad46f00103c9ccd78a7ee4e7e7461f26d1c827677d5b0ad7a71503c",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "erase_stored_object",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "question"
+      }
+    },
+    {
+      "input": "The robot held the box. [2]",
+      "melody_sha256": "bc13d0ba7ddcf090c3a041b41417c29a3f695e8cb27572dc1b5e26aa60f5062c",
+      "chords_sha256": "a1c92d96fd3b261d40d963cecd59674a8a82d548b2cce1bb37e4aee1ef2cd4a0",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "OW",
+                "B",
+                "AA",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:834a56d90e31b430990720ff",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora closed the gate. [2]",
+      "melody_sha256": "7ed33c58f1664bdc2ad96d32d7aba084af2125524ca6487575a27157f1bdaa4e",
+      "chords_sha256": "1ab9cfc0262530bfe0fd967a0f7f1b71735237181c58eaff8ecce56e9058c74b",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:3019a12938289fa9f3a23237",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The file was stored. [2]",
+      "melody_sha256": "6575e25f6a582183a9ecdb382a81cacbe2b12327f0829550e21e2dc68cd024f0",
+      "chords_sha256": "f69c02acfe13078a92e6566c0378c7cec11d8ebbb44e0995ecfd909a59293d8d",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "DAT:000",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "The gate was closed. [2]",
+      "melody_sha256": "48986ff3ec7baab9aba2cc9418ee161bd9652ab1ac4235552790f87f160d77bc",
+      "chords_sha256": "74288245b92347097b9c1425cc7255bb82d57f0496ee686f1c50964924ce9299",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "G",
+                "AE",
+                "T"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:82a697e83c845e4a7b38b53e",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    },
+    {
+      "input": "Nora saved the file. She copied it. [2]",
+      "melody_sha256": "dfd2c74e6685eb800fcdf1a8f495696b4b3ebac34af2338bac8676a99045eacf",
+      "chords_sha256": "e228c4134873721cc35a91a2befacd24630c8fb4eb9361bee4afa301202b8605",
+      "meaning": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "F",
+                "IH",
+                "L"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:58cfa479709294b9809be1b7",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      }
+    }
+  ]
+}

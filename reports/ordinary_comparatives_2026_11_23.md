@@ -20,7 +20,7 @@ The focused suite independently recovers **204 standalone and 17 grouped message
 
 The clean [implementation regression](ordinary_comparatives_2026_11_23/implementation-regression.json) passes **285 checks** at `c4e0b7c7c85f7c62c8caf8e967d5874f2635ce03`. All [eight release gates](ordinary_comparatives_2026_11_23/release-gates.json) pass at `8d0669416f005fe8f2d2ad606129e67e0efcaf05`. The only intervening changes remove interpretation-card hover movement and refresh stylesheet/page cache expectations; semantic runtime and dictionary files are identical.
 
-The [primary browser check](ordinary_comparatives_2026_11_23/browser-primary-before-hover-fix.json) and the [Lore browser check](ordinary_comparatives_2026_11_23/browser-lore.json) each pass:
+The [primary browser check](ordinary_comparatives_2026_11_23/browser-primary.json) and the [Lore browser check](ordinary_comparatives_2026_11_23/browser-lore.json) each pass:
 
 | Check | Result on each site |
 |---|---|
@@ -30,9 +30,9 @@ The [primary browser check](ordinary_comparatives_2026_11_23/browser-primary-bef
 | Unsupported degree/difference sentences have no whole-song action | 6 passed |
 | Editing input clears the prior whole-song action | 21 passed |
 
-The primary check above precedes the final hover-only repair; Lore includes that repair. A further primary run and public deployment checks are recorded separately. Exports contain actual simultaneous chord pitches and are **8.77–20% shorter** on this corpus. This is a symbolic score measurement, not a musical-quality or microphone-recovery result. Viewport checks use Chromium, not a physical iPhone or Safari.
+Both final local browser runs include the hover stability repair. The earlier primary run before that repair is retained separately. Exports contain actual simultaneous chord pitches and are **8.77–20% shorter** on this corpus. This is a symbolic score measurement, not a musical-quality or microphone-recovery result. Viewport checks use Chromium, not a physical iPhone or Safari.
 
-Lore passes [298 integration tests](ordinary_comparatives_2026_11_23/lore-tests.txt) after its [catalog build](ordinary_comparatives_2026_11_23/lore-build.txt). The [implementation vendor record](ordinary_comparatives_2026_11_23/vendor-implementation.json) identifies the imported source. Lore navigation, preferences, arrangement persistence and backup integration are retained.
+Lore passes [298 final integration tests](ordinary_comparatives_2026_11_23/final-lore-tests.txt) after its [catalog build](ordinary_comparatives_2026_11_23/final-lore-build.txt). The [final vendor record](ordinary_comparatives_2026_11_23/final-vendor.json) identifies the imported source at `7e9bb4d27798808f05d026d03f95c9f03da0634a`. Lore navigation, preferences, arrangement persistence and backup integration are retained.
 
 ## Failures found and repaired
 
@@ -41,6 +41,12 @@ An [initial interrupted run](ordinary_comparatives_2026_11_23/initial-interrupte
 The next [complete regression](ordinary_comparatives_2026_11_23/initial-regression-obsolete-fixtures.json) had 283 passes and two obsolete fixtures: one still declared heavier unsupported, and the page validator still expected the prior cache version. The unsupported fixture now uses much heavier, which still requires unsupported degree grammar; positive heavier cases are independently covered. [Both affected checks](ordinary_comparatives_2026_11_23/comparison-fixture-followup.txt) [passed after correction](ordinary_comparatives_2026_11_23/page-fixture-followup.txt), followed by the clean 285-check run above.
 
 The [first Lore browser run](ordinary_comparatives_2026_11_23/initial-lore-browser-hover-failure.json) timed out on a moving Translate all clauses button. A focused [reproduction](ordinary_comparatives_2026_11_23/hover-reproduction.txt) tied it to the entire candidate card's one-pixel hover transform. Removing that movement while retaining border/selection feedback [made the click stable](ordinary_comparatives_2026_11_23/hover-fix-reproduction.txt). The complete Lore browser rerun passed. Failed and partial runs are retained and are not counted as successful validation.
+
+## Public verification
+
+Translator [PR 33](https://github.com/ragingaxolotl-art/era-zero-translator/pull/33) and Lore [PR 33](https://github.com/ragingaxolotl-art/cyber-pet-lore/pull/33) are merged. The primary [deployment](https://github.com/ragingaxolotl-art/era-zero-translator/actions/runs/45301130138) succeeded at `a40021c8460b9c7adae737eb8dd0452c60c57d00`; the Lore [deployment](https://github.com/ragingaxolotl-art/cyber-pet-lore/actions/runs/45301139531) succeeded at `724eb53d01006018dc05e05473bbffee430518c9`. Both used the repaired unique-artifact deployment workflow successfully on their first attempt.
+
+The [public primary](ordinary_comparatives_2026_11_23/public-primary.json) and [public Lore](ordinary_comparatives_2026_11_23/public-lore.json) checks each pass 21 layouts, 14 independently recovered exports, six alternative-meaning checks, six unsupported-input checks and 21 stale-input checks. Every tested public melody/chord download matches its corresponding final local download hash on both sites. These checks used the public dictionary and decoder without passing the original text or semantic graph to that decoder.
 
 ## Remaining boundaries
 
