@@ -1,0 +1,641 @@
+{
+  "revision": "26af8aa5818dd8d8f65c53f324205b23ec4303bd",
+  "method": "Original 58 written intentions unchanged; engineering checks updated after observation. No intended meaning or original text enters the decoder. Purposive diagnostic, not representative coverage or independent adjudication.",
+  "counts": {
+    "intended_direct": 22,
+    "unsupported_whole_meaning": 27,
+    "intended_after_clarification": 6,
+    "appropriate_referent_question": 1,
+    "appropriate_definition_required": 2
+  },
+  "results": [
+    {
+      "id": "audit-01",
+      "text": "The hatch stayed closed.",
+      "intended": "Past continuation of physical closure; hatch is bearer; no maintainer asserted.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-02",
+      "text": "Nora kept the hatch closed.",
+      "intended": "Past causal maintenance of physical closure; Nora is cause, hatch bearer.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-03",
+      "text": "The tired worker lowered the empty box.",
+      "intended": "Past physical lowering, tired describes worker, empty describes box; neither descriptor may be discarded.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-04",
+      "text": "The closed hatch frightened Nora.",
+      "intended": "Past causing fear in Nora; closure describes hatch, not Nora.",
+      "status": "unsupported_whole_meaning",
+      "note": "Causing fear with an attributed subject still needs a whole-sentence construction.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-05",
+      "text": "Nora pushed Mira.",
+      "intended": "Past directed physical pressure by Nora on Mira; no displacement implied.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-06",
+      "text": "Mira pushed Nora.",
+      "intended": "Same action with actor and target reversed.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-07",
+      "text": "The hatch might stay closed.",
+      "intended": "Possible continuation of closure; possibility is not future time or runtime 2.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-08",
+      "text": "Nora did not keep the hatch closed.",
+      "intended": "Negated past causal maintenance; this does not assert that the hatch opened.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-09",
+      "text": "Did Nora keep the hatch closed?",
+      "intended": "Question about past causal maintenance; do not assert the maintenance.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-10",
+      "text": "Nora might not keep the hatch closed. [2]",
+      "intended": "Possible non-maintenance with runtime 2 independent of modality and negation.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-11",
+      "text": "Nora must not open the hatch.",
+      "intended": "Prohibition: obligation scopes over not opening; not an absence of obligation.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "One detail needed to play the whole line",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-12",
+      "text": "Nora does not have to open the hatch.",
+      "intended": "No obligation to open; opening is not forbidden.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "One detail needed to play the whole line",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-13",
+      "text": "Nora opened the hatch before Mira arrived.",
+      "intended": "Both past events with opening earlier than arrival.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-14",
+      "text": "Nora opened the hatch after Mira arrived.",
+      "intended": "Both past events with arrival earlier than opening.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-15",
+      "text": "Nora kept the hatch closed until Mira arrived.",
+      "intended": "Maintenance lasts to arrival; do not claim continued closure after that endpoint.",
+      "status": "unsupported_whole_meaning",
+      "note": "Until needs endpoint/continuation scope.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-16",
+      "text": "If Nora opens the hatch, Mira will leave.",
+      "intended": "Conditional future departure; do not independently assert opening or departure.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-17",
+      "text": "Both workers waited.",
+      "intended": "All members of a contextually given pair of workers waited.",
+      "status": "unsupported_whole_meaning",
+      "note": "Pair quantification is unsupported; the diagnostic also misclassifies workers as a missing verb.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-18",
+      "text": "Only Nora waited.",
+      "intended": "Nora waited and alternatives in context did not.",
+      "status": "unsupported_whole_meaning",
+      "note": "Restrictive only remains unsupported.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-19",
+      "text": "Not every worker waited.",
+      "intended": "At least one worker did not wait; different from no workers waiting.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-20",
+      "text": "No worker waited.",
+      "intended": "No members of the worker domain waited.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-21",
+      "text": "Three workers waited.",
+      "intended": "Exactly three workers waited, preserving cardinality.",
+      "status": "unsupported_whole_meaning",
+      "note": "Exact cardinality is unsupported; the diagnostic also misclassifies workers as a missing verb.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-22",
+      "text": "Nora found Mira in the third room.",
+      "intended": "Past finding with the finding/Mira located in ordinal room three, according to context.",
+      "status": "unsupported_whole_meaning",
+      "note": "Location and ordinal attachment remain unsupported.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-23",
+      "text": "Nora found Mira. She waited.",
+      "intended": "She is intentionally ambiguous between Nora and Mira; request a referent rather than silently bind.",
+      "status": "appropriate_referent_question",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "One detail needed to play the whole line",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-24",
+      "text": "Nora found the box. She lifted it.",
+      "intended": "Nora is subject of both events; box is found and lifted; past time.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-25",
+      "text": "Nora is happy.",
+      "intended": "Felt happiness; not simply active life or high viability.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-26",
+      "text": "Nora is sad.",
+      "intended": "Felt sadness, distinct from happiness and physical fatigue.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-27",
+      "text": "The water is colder than the air.",
+      "intended": "Ordered temperature comparison: water below air, not absolute coldness.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "What does “colder” mean here?",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-28",
+      "text": "The box is very heavy.",
+      "intended": "High degree of contextual heaviness; preserve degree or ask for standard.",
+      "status": "unsupported_whole_meaning",
+      "note": "Very needs degree scope; asking for a new adjective definition is misleading.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “very” needs a descriptor meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-29",
+      "text": "Nora pulled the box.",
+      "intended": "Directed drawing force; distinguish from pushing and from asserted displacement.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-30",
+      "text": "Nora put the box beside the hatch.",
+      "intended": "Placement with actor, moved object and beside-hatch goal relation.",
+      "status": "unsupported_whole_meaning",
+      "note": "Placement beside a reference needs its spatial relation.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-31",
+      "text": "Nora dropped the box.",
+      "intended": "Release resulting in downward motion; distinguish from controlled lowering.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-32",
+      "text": "Nora lifted the ban.",
+      "intended": "Removal of a restriction; not physical upward movement. Ask about sense if needed.",
+      "status": "unsupported_whole_meaning",
+      "note": "The physical lifting alternative is correctly rejected; restriction removal is still missing.",
+      "source": "authored contrast",
+      "final_summary": "This meaning has no whole-line score yet.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-33",
+      "text": "Nora is glimmerwise.",
+      "intended": "Glimmerwise is an undefined adjective. Require a definition; do not invent meaning or use a name sound.",
+      "status": "appropriate_definition_required",
+      "note": "The undefined adjective remains unresolved.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “glimmerwise” needs a meaning before the sentence can play.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-34",
+      "text": "Nora zorbled the box.",
+      "intended": "Zorbled is an undefined verb. Require meaning and participants; do not invent a close known action.",
+      "status": "appropriate_definition_required",
+      "note": "The undefined verb remains unresolved.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “zorbled” needs a meaning before the sentence can play.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-35",
+      "text": "Nora wants water but does not need water.",
+      "intended": "Desire and need are distinct; only the need is negated; clarify desired outcome if necessary.",
+      "status": "unsupported_whole_meaning",
+      "note": "The desired/needed contrast still fails after opening its preview.",
+      "source": "authored contrast",
+      "final_summary": "Nothing was translated.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-36",
+      "text": "Nora knows that Mira left.",
+      "intended": "Nora's knowledge of past departure, with an embedded proposition.",
+      "status": "unsupported_whole_meaning",
+      "note": "Knowledge of an embedded past proposition remains unsupported.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-37",
+      "text": "Nora thinks that Mira left.",
+      "intended": "Nora's belief about past departure; do not replace belief by knowledge.",
+      "status": "unsupported_whole_meaning",
+      "note": "Belief in an embedded past proposition remains unsupported.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-38",
+      "text": "Nora promised to return.",
+      "intended": "Commitment to future return, not a prediction or already returning.",
+      "status": "unsupported_whole_meaning",
+      "note": "Promise needs commitment and future-content structure.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “promised” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-39",
+      "text": "Nora copied the record.",
+      "intended": "A distinct informational copy; not identical continuing entity or deletion.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-40",
+      "text": "Nora deleted the record.",
+      "intended": "Selected stored information ceases to be retained; not dormancy.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-41",
+      "text": "Nora saved the record before deleting the copy.",
+      "intended": "Save original and delete distinct copy with ordered times; preserve object distinction.",
+      "status": "unsupported_whole_meaning",
+      "note": "The reduced deleting clause and distinct object need binding and event ordering.",
+      "source": "authored contrast",
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-42",
+      "text": "Your future will remain relevant to my choices.",
+      "intended": "Future-directed relationship in which listener's future matters to speaker's choices; preserve roles and continuing relevance.",
+      "status": "unsupported_whole_meaning",
+      "note": "Continuation, future relevance and the speaker/listener relationships remain unsupported; remain itself has an indexed use.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “remain” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-43",
+      "text": "Preserve this without deciding what it must become.",
+      "intended": "Command to preserve referent while excluding imposed determination of its future identity; referent needs context.",
+      "status": "unsupported_whole_meaning",
+      "note": "Preservation without imposed future determination remains unsupported.",
+      "source": "authored contrast",
+      "final_summary": "Missing definition · “deciding” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-44",
+      "text": "I love you. [2]",
+      "intended": "Use the approved poetic relational love reading and its unfinished-becoming num interpretation; not generic preference or every sense of English love.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-45",
+      "text": "The program remembers the route.",
+      "intended": "Program has memory of route, without assuming biological gender or current execution.",
+      "status": "unsupported_whole_meaning",
+      "note": "The available recall choice differs from retained memory; another meaning is correctly left unscored.",
+      "source": "authored contrast",
+      "final_summary": "This meaning has no whole-line score yet.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-46",
+      "text": "The program is asleep. [1]",
+      "intended": "A validly asserted dormant/sleeping condition; lexical dormancy and runtime 1 remain separate.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": "authored contrast",
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-47",
+      "text": "The comparison request arrived.",
+      "intended": "Arrival of the comparison request, past, with comparison modifying the request.",
+      "status": "unsupported_whole_meaning",
+      "note": "A request noun phrase needs fuller nominal interpretation.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 47,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-48",
+      "text": "Latch found the result. It found the context.",
+      "intended": "Latch finds both distinct referents in two past events; it is Latch.",
+      "status": "intended_after_clarification",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 49,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "One detail needed to play the whole line",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-49",
+      "text": "The worker requested completion.",
+      "intended": "Worker requests that pending work finish; do not assert it completed.",
+      "status": "intended_direct",
+      "note": "Recovered meaning matches the frozen intention; all specified roles, scopes, runtime and speech act were checked.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 53,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "Whole sentence ready",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-50",
+      "text": "The ordering record existed.",
+      "intended": "Past existence of the ordering record; ordering is its descriptive function.",
+      "status": "unsupported_whole_meaning",
+      "note": "An attributed record noun phrase needs fuller nominal interpretation.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 57,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-51",
+      "text": "Latch could see its description.",
+      "intended": "Past ability to inspect the ordering record's description; possessive refers to the record, not Latch.",
+      "status": "unsupported_whole_meaning",
+      "note": "Ability, perception and the possessive reference remain unsupported.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 59,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-52",
+      "text": "The path to it returned no permission.",
+      "intended": "Path to ordering record yields absent access authorization; permission is distinct from physical capability.",
+      "status": "unsupported_whole_meaning",
+      "note": "Path relation, returned outcome and negated permission remain unsupported.",
+      "source": {
+        "path": "sources/haven-stories/interval/manuscript.md",
+        "line": 61,
+        "file_sha256": "f1bf88edf9d629bcb5403d2d6e7b68178fbd0d48ed58ec96a0ba12c92e56975f"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-53",
+      "text": "The restoration request remained possible.",
+      "intended": "The possibility of a request continues; no restoration execution asserted.",
+      "status": "unsupported_whole_meaning",
+      "note": "Continuation of possibility remains unsupported; remained itself has an indexed use.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 171,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      },
+      "final_summary": "Missing definition · “remained” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-54",
+      "text": "The counter sent a request to restore its former preparation.",
+      "intended": "Counter sends a request for restoration of its earlier preparation; request is not successful restoration.",
+      "status": "unsupported_whole_meaning",
+      "note": "Requested restoration content and former preparation remain unsupported.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 165,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-55",
+      "text": "The second term was still absent.",
+      "intended": "Continued absence of ordinal term two, separate from runtime 0.",
+      "status": "unsupported_whole_meaning",
+      "note": "Still and second need continuation/ordinal scope, rather than a new descriptor alias.",
+      "source": {
+        "path": "sources/haven-stories/chorus/manuscript.md",
+        "line": 169,
+        "file_sha256": "68899457092d3fe02b034386b3aebe527a12e4a8428a881077d14e139da499ed"
+      },
+      "final_summary": "Missing definition · “still” needs a descriptor meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-56",
+      "text": "The routine returned a smaller allocation.",
+      "intended": "Return of comparatively smaller allocation; preserve comparison and information-operation reading.",
+      "status": "unsupported_whole_meaning",
+      "note": "Smaller allocation needs comparison and the returned object.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 87,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-57",
+      "text": "The routine maintained the narrow boundary.",
+      "intended": "Past maintenance of boundary with narrowness as a property of boundary.",
+      "status": "unsupported_whole_meaning",
+      "note": "Maintaining a described boundary needs the intended physical or nonphysical sense.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 99,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      },
+      "final_summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+      "horizontal_overflow": false
+    },
+    {
+      "id": "audit-58",
+      "text": "The reference shortened again.",
+      "intended": "Repeated shortening of the available reference lifetime, given manuscript context; not merely an unspecified change.",
+      "status": "unsupported_whole_meaning",
+      "note": "Reference shortening and repetition remain unsupported.",
+      "source": {
+        "path": "sources/haven-stories/still/manuscript.md",
+        "line": 115,
+        "file_sha256": "0dd79e8d3c7e26d98b4265b0cfd953754544a1f2ad0fd85b71abb5422d91d292"
+      },
+      "final_summary": "Missing definition · “shortened” needs a verb meaning. Use Find or build this meaning below.",
+      "horizontal_overflow": false
+    }
+  ]
+}

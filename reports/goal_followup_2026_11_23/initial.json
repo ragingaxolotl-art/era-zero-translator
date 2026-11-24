@@ -1,0 +1,4417 @@
+{
+  "revision": "26af8aa5818dd8d8f65c53f324205b23ec4303bd",
+  "timestamp": "2026-11-24T02:46:42.934Z",
+  "site": "http://127.0.0.1:8782/",
+  "viewport": 390,
+  "intentions_sha256": "ebaf840012a2e307213d6d611fca3def18d4ad418d06a4d0ee9900c4ae3fcb2d",
+  "decoder_inputs": "Downloaded MIDI and shared public atom and foundation dictionaries only. No text, expected IR, original event list, hashes or composer metadata.",
+  "results": [
+    {
+      "id": "audit-01",
+      "text": "The hatch stayed closed.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "The hatch stayed closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "The hatch stayed closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-01-melody.mid",
+          "notes": 188,
+          "seconds": 47.375,
+          "chord_attacks": 0,
+          "sha256": "4aa6059ccef0d4cf16b80a7520e8dd12cc272d239f66a371ca1ae50e84031a9e"
+        },
+        "chords": {
+          "path": "midi/audit-01-chords.mid",
+          "notes": 183,
+          "seconds": 34.875,
+          "chord_attacks": 10,
+          "sha256": "eade576c5a5d50b0c1e3a4004fc722e9a14530d49f46c11946b64bf717779e9a"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec3a1fad0ed828279e948372",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 8.375,
+        "reference_mode": 0.5,
+        "phonemic": 6,
+        "convention_frame": 8.25,
+        "root": 18
+      },
+      "token_counts": {
+        "grammar": 13,
+        "reference_mode": 1,
+        "phonemic": 1,
+        "convention_frame": 6,
+        "root": 5
+      },
+      "root_onset_seconds": 13
+    },
+    {
+      "id": "audit-02",
+      "text": "Nora kept the hatch closed.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora kept the hatch closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora kept the hatch closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-02-melody.mid",
+          "notes": 258,
+          "seconds": 66,
+          "chord_attacks": 0,
+          "sha256": "cd5944cafd1bdcce607dad565e8af65795034c94c7b239b66b1650eea3b71e5b"
+        },
+        "chords": {
+          "path": "midi/audit-02-chords.mid",
+          "notes": 252,
+          "seconds": 51,
+          "chord_attacks": 12,
+          "sha256": "e105bab42470e4add7be07af0c151668e444dc5caba9f1cef52b31f3ce6504dd"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 11.75,
+        "phonemic": 13,
+        "reference_mode": 0.5,
+        "convention_frame": 11,
+        "root": 21.5
+      },
+      "token_counts": {
+        "grammar": 18,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 8,
+        "root": 6
+      },
+      "root_onset_seconds": 23.625
+    },
+    {
+      "id": "audit-03",
+      "text": "The tired worker lowered the empty box.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "The tired worker lowered the empty box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "The tired worker lowered the empty box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-03-melody.mid",
+          "notes": 345,
+          "seconds": 83.875,
+          "chord_attacks": 0,
+          "sha256": "0304c2c385fd99a087af732c6236bcd5c5463d099bc76961b8a70ec2dc5ee3f0"
+        },
+        "chords": {
+          "path": "midi/audit-03-chords.mid",
+          "notes": 338,
+          "seconds": 66.375,
+          "chord_attacks": 14,
+          "sha256": "268695aed4343896e44b64adb44d73f821d9ea04a2f87de6563d9e2343e304db"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:92464b1ea3c632b343340a05",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": [
+                  "CMP:3c13b9c619d95f1c40ea5da5"
+                ]
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": [
+                  "CMP:7e3cdc51fe00e1c61e5e9f12"
+                ]
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 15.125,
+        "reference_mode": 1,
+        "phonemic": 15,
+        "convention_frame": 16.5,
+        "root": 25.25
+      },
+      "token_counts": {
+        "grammar": 23,
+        "reference_mode": 2,
+        "phonemic": 2,
+        "convention_frame": 12,
+        "root": 7
+      },
+      "root_onset_seconds": 26.375
+    },
+    {
+      "id": "audit-04",
+      "text": "The closed hatch frightened Nora.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The closed hatch frightened Nora.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The closed hatch frightened Nora.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-05",
+      "text": "Nora pushed Mira.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora pushed Mira.\n\nDoes “push” describe a physical action involving Mira?\n\nPhysical pushingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical pushing",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora pushed Mira.\n\nDoes “push” describe a physical action involving Mira?\n\nPhysical pushingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical pushing",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-06",
+      "text": "Mira pushed Nora.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Mira pushed Nora.\n\nDoes “push” describe a physical action involving Nora?\n\nPhysical pushingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical pushing",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Mira pushed Nora.\n\nDoes “push” describe a physical action involving Nora?\n\nPhysical pushingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical pushing",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-07",
+      "text": "The hatch might stay closed.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "The hatch might stay closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "The hatch might stay closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-07-melody.mid",
+          "notes": 186,
+          "seconds": 47.125,
+          "chord_attacks": 0,
+          "sha256": "9845c47e4e928836f1f84f10ebb3e29a78b86a94adb3dc47be3301774b54a164"
+        },
+        "chords": {
+          "path": "midi/audit-07-chords.mid",
+          "notes": 181,
+          "seconds": 34.625,
+          "chord_attacks": 10,
+          "sha256": "f24b7099a20f4e70e6f3e4f961180b26b0b8930f2efefea59323d8c9adf14268"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec3a1fad0ed828279e948372",
+            "arguments": [
+              {
+                "role": "bearer",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "modality_possible"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 8.125,
+        "reference_mode": 0.5,
+        "phonemic": 6,
+        "convention_frame": 8.25,
+        "root": 18
+      },
+      "token_counts": {
+        "grammar": 13,
+        "reference_mode": 1,
+        "phonemic": 1,
+        "convention_frame": 6,
+        "root": 5
+      },
+      "root_onset_seconds": 12.875
+    },
+    {
+      "id": "audit-08",
+      "text": "Nora did not keep the hatch closed.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora did not keep the hatch closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora did not keep the hatch closed.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-08-melody.mid",
+          "notes": 266,
+          "seconds": 67.5,
+          "chord_attacks": 0,
+          "sha256": "ebffde9581fb120dd1ef32b6e4e1ca8e230f43c0ac04720043eccaf230a2c4d6"
+        },
+        "chords": {
+          "path": "midi/audit-08-chords.mid",
+          "notes": 260,
+          "seconds": 52.5,
+          "chord_attacks": 12,
+          "sha256": "69a13b7d068793f472a1ae2d8b90867d421e7d9af1a27f58386bf68019f7c6da"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 12.75,
+        "phonemic": 13,
+        "reference_mode": 0.5,
+        "convention_frame": 11,
+        "root": 21.5
+      },
+      "token_counts": {
+        "grammar": 20,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 8,
+        "root": 6
+      },
+      "root_onset_seconds": 24.375
+    },
+    {
+      "id": "audit-09",
+      "text": "Did Nora keep the hatch closed?",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Did Nora keep the hatch closed?\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Did Nora keep the hatch closed?\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-09-melody.mid",
+          "notes": 258,
+          "seconds": 66,
+          "chord_attacks": 0,
+          "sha256": "800b9d97bab6fdb7e9e07e887e9171e33d0998af10fbb6510a1950ebf6cceba0"
+        },
+        "chords": {
+          "path": "midi/audit-09-chords.mid",
+          "notes": 252,
+          "seconds": 51,
+          "chord_attacks": 12,
+          "sha256": "b926fc5bedb49ac81dab932c3a17ddba06c2f1515e92f3b271c58185a4df97a4"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "question"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 11.75,
+        "phonemic": 13,
+        "reference_mode": 0.5,
+        "convention_frame": 11,
+        "root": 21.5
+      },
+      "token_counts": {
+        "grammar": 18,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 8,
+        "root": 6
+      },
+      "root_onset_seconds": 23.625
+    },
+    {
+      "id": "audit-10",
+      "text": "Nora might not keep the hatch closed. [2]",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora might not keep the hatch closed. [2]\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora might not keep the hatch closed. [2]\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-10-melody.mid",
+          "notes": 264,
+          "seconds": 68,
+          "chord_attacks": 0,
+          "sha256": "95bd8a1401051ac1bc91f59bcf1f449345f6d7670a7257aa82cf644d241af6af"
+        },
+        "chords": {
+          "path": "midi/audit-10-chords.mid",
+          "notes": 258,
+          "seconds": 53,
+          "chord_attacks": 12,
+          "sha256": "d6692bdabac4af7c9f34904b0d01c866b1f3702b91708c5fa51e29b0d4e28ffb"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:cac584a394535e4912c75b5a",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "modality_possible",
+              "negation"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false,
+            "condition": "CMP:82a697e83c845e4a7b38b53e"
+          }
+        ],
+        "relations": [],
+        "runtime_state": 2,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 12.5,
+        "phonemic": 13,
+        "reference_mode": 0.5,
+        "convention_frame": 11,
+        "root": 22.25
+      },
+      "token_counts": {
+        "grammar": 20,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 8,
+        "root": 6
+      },
+      "root_onset_seconds": 24.25
+    },
+    {
+      "id": "audit-11",
+      "text": "Nora must not open the hatch.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora must not open the hatch.\n\nWhat does this requirement mean?\n\nA rule, duty or commitmentA practical or logical necessityAnother meaning",
+        "buttons": [
+          {
+            "text": "A rule, duty or commitment",
+            "disabled": false
+          },
+          {
+            "text": "A practical or logical necessity",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora must not open the hatch.\n\nWhat does this requirement mean?\n\nA rule, duty or commitmentA practical or logical necessityAnother meaning",
+        "buttons": [
+          {
+            "text": "A rule, duty or commitment",
+            "disabled": false
+          },
+          {
+            "text": "A practical or logical necessity",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-12",
+      "text": "Nora does not have to open the hatch.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora does not have to open the hatch.\n\nWhat does this requirement mean?\n\nA rule, duty or commitmentA practical or logical necessityAnother meaning",
+        "buttons": [
+          {
+            "text": "A rule, duty or commitment",
+            "disabled": false
+          },
+          {
+            "text": "A practical or logical necessity",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora does not have to open the hatch.\n\nWhat does this requirement mean?\n\nA rule, duty or commitmentA practical or logical necessityAnother meaning",
+        "buttons": [
+          {
+            "text": "A rule, duty or commitment",
+            "disabled": false
+          },
+          {
+            "text": "A practical or logical necessity",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-13",
+      "text": "Nora opened the hatch before Mira arrived.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora opened the hatch before Mira arrived.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora opened the hatch before Mira arrived.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-13-melody.mid",
+          "notes": 295,
+          "seconds": 72.625,
+          "chord_attacks": 0,
+          "sha256": "6f280a5178c03243621add679a7856c0870d9a83414a7bc00e8b3ec7c370deb8"
+        },
+        "chords": {
+          "path": "midi/audit-13-chords.mid",
+          "notes": 291,
+          "seconds": 62.625,
+          "chord_attacks": 8,
+          "sha256": "2c70518ccd0757bc043b06c99737b5a5989edfdd389598c076cc3f9f2da6e82c"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:0b0461b1975240868e0bed8d",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "MOV:110",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "before",
+            "events": [
+              0,
+              1
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 19.375,
+        "phonemic": 19,
+        "reference_mode": 0.5,
+        "convention_frame": 8.25,
+        "root": 14.5
+      },
+      "token_counts": {
+        "grammar": 30,
+        "phonemic": 3,
+        "reference_mode": 1,
+        "convention_frame": 6,
+        "root": 4
+      },
+      "root_onset_seconds": 33.25
+    },
+    {
+      "id": "audit-14",
+      "text": "Nora opened the hatch after Mira arrived.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora opened the hatch after Mira arrived.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora opened the hatch after Mira arrived.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-14-melody.mid",
+          "notes": 295,
+          "seconds": 72.625,
+          "chord_attacks": 0,
+          "sha256": "dbd02ee0746a7002d2b3598544bd4213bd9c6f4e801151a71c503464847d8f7a"
+        },
+        "chords": {
+          "path": "midi/audit-14-chords.mid",
+          "notes": 291,
+          "seconds": 62.625,
+          "chord_attacks": 8,
+          "sha256": "8e7f479b0c16182b7b38a9a25208b645ac8d92832be283b411aa1e2fafc58403"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:0b0461b1975240868e0bed8d",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "MOV:110",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "before",
+            "events": [
+              1,
+              0
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 19.375,
+        "phonemic": 19,
+        "reference_mode": 0.5,
+        "convention_frame": 8.25,
+        "root": 14.5
+      },
+      "token_counts": {
+        "grammar": 30,
+        "phonemic": 3,
+        "reference_mode": 1,
+        "convention_frame": 6,
+        "root": 4
+      },
+      "root_onset_seconds": 33.25
+    },
+    {
+      "id": "audit-15",
+      "text": "Nora kept the hatch closed until Mira arrived.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora kept the hatch closed until Mira arrived.\n\n“kept” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora kept the hatch closed until Mira arrived.\n\n“kept” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-16",
+      "text": "If Nora opens the hatch, Mira will leave.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "If Nora opens the hatch, Mira will leave.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "If Nora opens the hatch, Mira will leave.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-16-melody.mid",
+          "notes": 283,
+          "seconds": 70.625,
+          "chord_attacks": 0,
+          "sha256": "2767336497080a2b95f4cfdfe4a2cd2f5db9091364e28a3e9e45accd59be224f"
+        },
+        "chords": {
+          "path": "midi/audit-16-chords.mid",
+          "notes": 279,
+          "seconds": 60.625,
+          "chord_attacks": 8,
+          "sha256": "eb3615b015b01d719b464c83948aad761c39056033b39d670bfd7fb8e615b4e4"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "HH",
+                "AE",
+                "CH"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "M",
+                "ER",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:0b0461b1975240868e0bed8d",
+            "arguments": [
+              {
+                "role": "cause",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "bearer",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "MOV:101",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 2,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_after_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [
+          {
+            "kind": "condition",
+            "events": [
+              0,
+              1
+            ]
+          }
+        ],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 17.875,
+        "phonemic": 19,
+        "reference_mode": 0.5,
+        "convention_frame": 8.25,
+        "root": 14.5
+      },
+      "token_counts": {
+        "grammar": 28,
+        "phonemic": 3,
+        "reference_mode": 1,
+        "convention_frame": 6,
+        "root": 4
+      },
+      "root_onset_seconds": 32.375
+    },
+    {
+      "id": "audit-17",
+      "text": "Both workers waited.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-18",
+      "text": "Only Nora waited.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Only Nora waited.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Only Nora waited.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-19",
+      "text": "Not every worker waited.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Not every worker waited.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Not every worker waited.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-19-melody.mid",
+          "notes": 142,
+          "seconds": 34.875,
+          "chord_attacks": 0,
+          "sha256": "62a363fbe08ec5d58f3f7553773c260ff497c28d40dfe0ad3980a1704c772ed5"
+        },
+        "chords": {
+          "path": "midi/audit-19-chords.mid",
+          "notes": 140,
+          "seconds": 29.875,
+          "chord_attacks": 4,
+          "sha256": "7d2f6c2dda0188776d3f243cfe49fd7c1417590f81864d9511853e08df81fd48"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "all",
+            "negated_quantifier": true
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.375,
+        "reference_mode": 0.5,
+        "phonemic": 8,
+        "convention_frame": 2.75,
+        "root": 7.25
+      },
+      "token_counts": {
+        "grammar": 17,
+        "reference_mode": 1,
+        "phonemic": 1,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 18.25
+    },
+    {
+      "id": "audit-20",
+      "text": "No worker waited.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "No worker waited.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "No worker waited.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-20-melody.mid",
+          "notes": 134,
+          "seconds": 33.375,
+          "chord_attacks": 0,
+          "sha256": "a146ffbe2ef093886875c578768e653cd787066aa6ba8e53b5c68c5c045a5182"
+        },
+        "chords": {
+          "path": "midi/audit-20-chords.mid",
+          "notes": 132,
+          "seconds": 28.375,
+          "chord_attacks": 4,
+          "sha256": "d220a4e2f31a0dedfe8e49694b503c334b1c3ea26afc2eab54c726ede4977227"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "nominal_class",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER"
+              ],
+              "instance_code": null
+            },
+            "plural": true,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:e17374fbc08546afa196b2cd",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": "none",
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 9.375,
+        "reference_mode": 0.5,
+        "phonemic": 8,
+        "convention_frame": 2.75,
+        "root": 7.25
+      },
+      "token_counts": {
+        "grammar": 15,
+        "reference_mode": 1,
+        "phonemic": 1,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 17.5
+    },
+    {
+      "id": "audit-21",
+      "text": "Three workers waited.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “workers” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-22",
+      "text": "Nora found Mira in the third room.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora found Mira in the third room.\n\n“found” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora found Mira in the third room.\n\n“found” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-23",
+      "text": "Nora found Mira. She waited.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora found Mira. She waited.\n\nWho or which group does “She” refer to?\n\nNora (reference 1)Mira (reference 2)Name or noun phraseUse this referent",
+        "buttons": [
+          {
+            "text": "Nora (reference 1)",
+            "disabled": false
+          },
+          {
+            "text": "Mira (reference 2)",
+            "disabled": false
+          },
+          {
+            "text": "Use this referent",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora found Mira. She waited.\n\nWho or which group does “She” refer to?\n\nNora (reference 1)Mira (reference 2)Name or noun phraseUse this referent",
+        "buttons": [
+          {
+            "text": "Nora (reference 1)",
+            "disabled": false
+          },
+          {
+            "text": "Mira (reference 2)",
+            "disabled": false
+          },
+          {
+            "text": "Use this referent",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-24",
+      "text": "Nora found the box. She lifted it.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora found the box. She lifted it.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora found the box. She lifted it.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-24-melody.mid",
+          "notes": 275,
+          "seconds": 67.75,
+          "chord_attacks": 0,
+          "sha256": "daa1a15a1ece2a0c47d277cbda8a2a298405d4054e345d633e1fe07cd0d93cdf"
+        },
+        "chords": {
+          "path": "midi/audit-24-chords.mid",
+          "notes": 270,
+          "seconds": 55.25,
+          "chord_attacks": 10,
+          "sha256": "a318d353589081a795840e4deff105cc3b3f2f064bb07c06dfbf536ec0d43780"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ec01f9b5c6eb3c5483bc3b72",
+            "arguments": [
+              {
+                "role": "experiencer",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          },
+          {
+            "predicate": "CMP:e1d0059daad4093d8a5ce05c",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 17.25,
+        "phonemic": 14,
+        "reference_mode": 0.5,
+        "convention_frame": 8.25,
+        "root": 18
+      },
+      "token_counts": {
+        "grammar": 26,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 6,
+        "root": 5
+      },
+      "root_onset_seconds": 23
+    },
+    {
+      "id": "audit-25",
+      "text": "Nora is happy.",
+      "errors": [],
+      "initial": {
+        "summary": "",
+        "text": "WHOLE SENTENCE\n\nYour translation\nExport EZB-1\nImport EZB-1\nMeaning\nGlyph\nActions and relationships (Semantic IR)\nEZF-1\nNora is happy.\nMeaning details\n\nWhole sentence ready. Meaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nYOUR ENGLISH\nNora is happy.\n\nAdd to song\nPlay compact chords\nPlay whole sentence\n◉ Character close-up\nDownload viseme file\nHear the complete performance or use its synchronized character file.\nSound construction and verification tools",
+        "buttons": [
+          {
+            "text": "Export EZB-1",
+            "disabled": false
+          },
+          {
+            "text": "Meaning",
+            "disabled": false
+          },
+          {
+            "text": "Glyph",
+            "disabled": false
+          },
+          {
+            "text": "Actions and relationships (Semantic IR)",
+            "disabled": false
+          },
+          {
+            "text": "EZF-1",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Play whole sentence",
+            "disabled": false
+          },
+          {
+            "text": "◉ Character close-up",
+            "disabled": false
+          },
+          {
+            "text": "Download viseme file",
+            "disabled": false
+          },
+          {
+            "text": "Download audible performance MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Download reference WAV",
+            "disabled": false
+          },
+          {
+            "text": "Self-check reference audio",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "",
+        "text": "WHOLE SENTENCE\n\nYour translation\nExport EZB-1\nImport EZB-1\nMeaning\nGlyph\nActions and relationships (Semantic IR)\nEZF-1\nNora is happy.\nMeaning details\n\nWhole sentence ready. Meaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nYOUR ENGLISH\nNora is happy.\n\nAdd to song\nPlay compact chords\nPlay whole sentence\n◉ Character close-up\nDownload viseme file\nHear the complete performance or use its synchronized character file.\nSound construction and verification tools",
+        "buttons": [
+          {
+            "text": "Export EZB-1",
+            "disabled": false
+          },
+          {
+            "text": "Meaning",
+            "disabled": false
+          },
+          {
+            "text": "Glyph",
+            "disabled": false
+          },
+          {
+            "text": "Actions and relationships (Semantic IR)",
+            "disabled": false
+          },
+          {
+            "text": "EZF-1",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Play whole sentence",
+            "disabled": false
+          },
+          {
+            "text": "◉ Character close-up",
+            "disabled": false
+          },
+          {
+            "text": "Download viseme file",
+            "disabled": false
+          },
+          {
+            "text": "Download audible performance MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Download reference WAV",
+            "disabled": false
+          },
+          {
+            "text": "Self-check reference audio",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-25-melody.mid",
+          "notes": 109,
+          "seconds": 27,
+          "chord_attacks": 0,
+          "sha256": "db8e34300d4c17fbff73b6ad24a6fdd8c53c671afa35087de8fb471ccf437d12"
+        },
+        "chords": {
+          "path": "midi/audit-25-chords.mid",
+          "notes": 107,
+          "seconds": 22,
+          "chord_attacks": 4,
+          "sha256": "99859183092dc540b0c6cf6c6b1306e848d37306201bd168c3a79e4b6481cd4f"
+        }
+      },
+      "heard": {
+        "profile": "EZFELT-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "happy_felt_mood",
+        "runtime_state": 1,
+        "participants": {
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          13,
+          12,
+          11
+        ],
+        "meaning": {
+          "consciously_felt_self_condition": true,
+          "focal_self_is_bound_experiencer": true,
+          "quality": "glad_or_content_mood",
+          "measured_physiological_deficit_asserted": false,
+          "care_behavior_asserted": false,
+          "intended_action_asserted": false,
+          "sleep_or_dormancy_asserted": false,
+          "damage_asserted": false
+        },
+        "limitations": [
+          "The felt predicate remains inside the recovered scope and speech act; negation, questions and future scope do not assert it presently holds.",
+          "The subjective state does not diagnose a physical deficit, illness or objectively unavailable capacity.",
+          "Specific figurative, evaluative and object-directed senses require other conventions.",
+          "This bounded MIDI inverse does not recover original spelling, external identity, general discourse or arbitrary recorded audio."
+        ]
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "convention_frame": 8.25,
+        "grammar": 1.5,
+        "phonemic": 7,
+        "root": 7.25
+      },
+      "token_counts": {
+        "convention_frame": 6,
+        "grammar": 2,
+        "phonemic": 1,
+        "root": 2
+      },
+      "root_onset_seconds": 14.125
+    },
+    {
+      "id": "audit-26",
+      "text": "Nora is sad.",
+      "errors": [],
+      "initial": {
+        "summary": "",
+        "text": "WHOLE SENTENCE\n\nYour translation\nExport EZB-1\nImport EZB-1\nMeaning\nGlyph\nActions and relationships (Semantic IR)\nEZF-1\nNora is sad.\nMeaning details\n\nWhole sentence ready. Meaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nYOUR ENGLISH\nNora is sad.\n\nAdd to song\nPlay compact chords\nPlay whole sentence\n◉ Character close-up\nDownload viseme file\nHear the complete performance or use its synchronized character file.\nSound construction and verification tools",
+        "buttons": [
+          {
+            "text": "Export EZB-1",
+            "disabled": false
+          },
+          {
+            "text": "Meaning",
+            "disabled": false
+          },
+          {
+            "text": "Glyph",
+            "disabled": false
+          },
+          {
+            "text": "Actions and relationships (Semantic IR)",
+            "disabled": false
+          },
+          {
+            "text": "EZF-1",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Play whole sentence",
+            "disabled": false
+          },
+          {
+            "text": "◉ Character close-up",
+            "disabled": false
+          },
+          {
+            "text": "Download viseme file",
+            "disabled": false
+          },
+          {
+            "text": "Download audible performance MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Download reference WAV",
+            "disabled": false
+          },
+          {
+            "text": "Self-check reference audio",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "",
+        "text": "WHOLE SENTENCE\n\nYour translation\nExport EZB-1\nImport EZB-1\nMeaning\nGlyph\nActions and relationships (Semantic IR)\nEZF-1\nNora is sad.\nMeaning details\n\nWhole sentence ready. Meaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nYOUR ENGLISH\nNora is sad.\n\nAdd to song\nPlay compact chords\nPlay whole sentence\n◉ Character close-up\nDownload viseme file\nHear the complete performance or use its synchronized character file.\nSound construction and verification tools",
+        "buttons": [
+          {
+            "text": "Export EZB-1",
+            "disabled": false
+          },
+          {
+            "text": "Meaning",
+            "disabled": false
+          },
+          {
+            "text": "Glyph",
+            "disabled": false
+          },
+          {
+            "text": "Actions and relationships (Semantic IR)",
+            "disabled": false
+          },
+          {
+            "text": "EZF-1",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Play whole sentence",
+            "disabled": false
+          },
+          {
+            "text": "◉ Character close-up",
+            "disabled": false
+          },
+          {
+            "text": "Download viseme file",
+            "disabled": false
+          },
+          {
+            "text": "Download audible performance MIDI",
+            "disabled": false
+          },
+          {
+            "text": "Download reference WAV",
+            "disabled": false
+          },
+          {
+            "text": "Self-check reference audio",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-26-melody.mid",
+          "notes": 109,
+          "seconds": 27,
+          "chord_attacks": 0,
+          "sha256": "37db738ee359b9cd7097032432528ae4b15beb8d0fb840a9a9e4dd90a2900e6d"
+        },
+        "chords": {
+          "path": "midi/audit-26-chords.mid",
+          "notes": 107,
+          "seconds": 22,
+          "chord_attacks": 4,
+          "sha256": "517bdca156b4eb436eb2dbbed4f5da09b60d2935ef5fcf2542b0630cd3feed4f"
+        }
+      },
+      "heard": {
+        "profile": "EZFELT-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "sad_felt_mood",
+        "runtime_state": 1,
+        "participants": {
+          "experiencer": {
+            "kind": "phonemic",
+            "reference_mode": "name",
+            "phonemes": [
+              "N",
+              "AO",
+              "R",
+              "AE"
+            ],
+            "instance_code": null
+          }
+        },
+        "convention_codes": [
+          19,
+          18,
+          11
+        ],
+        "meaning": {
+          "consciously_felt_self_condition": true,
+          "focal_self_is_bound_experiencer": true,
+          "quality": "sorrow_or_low_spirits",
+          "measured_physiological_deficit_asserted": false,
+          "care_behavior_asserted": false,
+          "intended_action_asserted": false,
+          "sleep_or_dormancy_asserted": false,
+          "damage_asserted": false
+        },
+        "limitations": [
+          "The felt predicate remains inside the recovered scope and speech act; negation, questions and future scope do not assert it presently holds.",
+          "The subjective state does not diagnose a physical deficit, illness or objectively unavailable capacity.",
+          "Specific figurative, evaluative and object-directed senses require other conventions.",
+          "This bounded MIDI inverse does not recover original spelling, external identity, general discourse or arbitrary recorded audio."
+        ]
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "convention_frame": 8.25,
+        "grammar": 1.5,
+        "phonemic": 7,
+        "root": 7.25
+      },
+      "token_counts": {
+        "convention_frame": 6,
+        "grammar": 2,
+        "phonemic": 1,
+        "root": 2
+      },
+      "root_onset_seconds": 14.125
+    },
+    {
+      "id": "audit-27",
+      "text": "The water is colder than the air.",
+      "errors": [],
+      "initial": {
+        "summary": "What does “colder” mean here?",
+        "text": "Compare the participants’ thermodynamic temperatures. No measured value or hot/cold threshold is required. Felt warmth, spiciness and figurative meanings need a different interpretation.\n\nPhysical temperatureAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical temperature",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "What does “colder” mean here?",
+        "text": "Compare the participants’ thermodynamic temperatures. No measured value or hot/cold threshold is required. Felt warmth, spiciness and figurative meanings need a different interpretation.\n\nPhysical temperatureAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical temperature",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-28",
+      "text": "The box is very heavy.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “very” needs a descriptor meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “very” needs a descriptor meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-29",
+      "text": "Nora pulled the box.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora pulled the box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora pulled the box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-29-melody.mid",
+          "notes": 155,
+          "seconds": 41,
+          "chord_attacks": 0,
+          "sha256": "ab4927ac1b8453870d39e34193f2b8f96c98a6ce8d8fe0d938fbf5a1842fede3"
+        },
+        "chords": {
+          "path": "midi/audit-29-chords.mid",
+          "notes": 153,
+          "seconds": 36,
+          "chord_attacks": 4,
+          "sha256": "4ba0b358d99a89630e91f444dffb324c7d32957a00a0c90df1d10d1ce2759036"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:906075e53ffeb8edae29ed9c",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.5,
+        "phonemic": 14,
+        "reference_mode": 0.5,
+        "convention_frame": 2.75,
+        "root": 7.25
+      },
+      "token_counts": {
+        "grammar": 16,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 23
+    },
+    {
+      "id": "audit-30",
+      "text": "Nora put the box beside the hatch.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora put the box beside the hatch.\n\n“put” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora put the box beside the hatch.\n\n“put” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-31",
+      "text": "Nora dropped the box.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora dropped the box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora dropped the box.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-31-melody.mid",
+          "notes": 271,
+          "seconds": 68,
+          "chord_attacks": 0,
+          "sha256": "0601d030009e094f78a94a22d7d134297e0463a10af551ff68a530f51e0b61af"
+        },
+        "chords": {
+          "path": "midi/audit-31-chords.mid",
+          "notes": 265,
+          "seconds": 53,
+          "chord_attacks": 12,
+          "sha256": "3ddda00c99c0a4a420ccee818bf549ce0c1afe1ba00a429265bcfb879fe6063a"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "B",
+                "AA",
+                "K",
+                "S"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:31da7c021f7da53eed929076",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.5,
+        "phonemic": 14,
+        "reference_mode": 0.5,
+        "convention_frame": 13.75,
+        "root": 21.25
+      },
+      "token_counts": {
+        "grammar": 16,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 10,
+        "root": 6
+      },
+      "root_onset_seconds": 26.25
+    },
+    {
+      "id": "audit-32",
+      "text": "Nora lifted the ban.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora lifted the ban.\n\nDoes “lift” describe a physical action involving the ban?\n\nPhysical liftingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical lifting",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Nora lifted the ban.\n\nDoes “lift” describe a physical action involving the ban?\n\nPhysical liftingAnother meaning",
+        "buttons": [
+          {
+            "text": "Physical lifting",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-33",
+      "text": "Nora is glimmerwise.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “glimmerwise” needs a meaning before the sentence can play.",
+        "text": "Nora is glimmerwise.\n\n“glimmerwise” needs a definition before this sentence can play. Define the action or quality you intend, then return to this sentence.\n\nFind or build this meaning\nOr define it using an existing meaning",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “glimmerwise” needs a meaning before the sentence can play.",
+        "text": "Nora is glimmerwise.\n\n“glimmerwise” needs a definition before this sentence can play. Define the action or quality you intend, then return to this sentence.\n\nFind or build this meaning\nOr define it using an existing meaning",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-34",
+      "text": "Nora zorbled the box.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “zorbled” needs a meaning before the sentence can play.",
+        "text": "Nora zorbled the box.\n\n“zorbled” needs a definition before this sentence can play. Define the action or quality you intend, then return to this sentence.\n\nFind or build this meaning\nOr define it using an existing meaning",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “zorbled” needs a meaning before the sentence can play.",
+        "text": "Nora zorbled the box.\n\n“zorbled” needs a definition before this sentence can play. Define the action or quality you intend, then return to this sentence.\n\nFind or build this meaning\nOr define it using an existing meaning",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-35",
+      "text": "Nora wants water but does not need water.",
+      "errors": [],
+      "initial": {
+        "summary": "Desire, preference and knowing whether have draft meanings available. Their new sounds are still under review.",
+        "text": "Preview the complete sentence using draft vocabulary. Preference compares alternatives without asserting that either is wanted absolutely. Desire does not assert that the desired event happens. Knowing whether means knowing the answer, without asserting that the answer is yes. For “wants tea,” specify what should happen to the tea.\n\nPreview draft translation",
+        "buttons": [
+          {
+            "text": "Preview draft translation",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Desire, preference and knowing whether have draft meanings available. Their new sounds are still under review.",
+        "text": "Preview the complete sentence using draft vocabulary. Preference compares alternatives without asserting that either is wanted absolutely. Desire does not assert that the desired event happens. Knowing whether means knowing the answer, without asserting that the answer is yes. For “wants tea,” specify what should happen to the tea.\n\nPreview draft translation",
+        "buttons": [
+          {
+            "text": "Preview draft translation",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-36",
+      "text": "Nora knows that Mira left.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora knows that Mira left.\n\n“knows” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora knows that Mira left.\n\n“knows” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-37",
+      "text": "Nora thinks that Mira left.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora thinks that Mira left.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora thinks that Mira left.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-38",
+      "text": "Nora promised to return.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “promised” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “promised” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-39",
+      "text": "Nora copied the record.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora copied the record.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora copied the record.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-39-melody.mid",
+          "notes": 161,
+          "seconds": 44,
+          "chord_attacks": 0,
+          "sha256": "deede9a5c0ad62d78c4953b042eec316f76591eb196016b0fa88edb57a842030"
+        },
+        "chords": {
+          "path": "midi/audit-39-chords.mid",
+          "notes": 157,
+          "seconds": 38,
+          "chord_attacks": 4,
+          "sha256": "db3a2799c5e6e304a54cbe97a1a23f0984e39049310116bd79eb3afe17d10b32"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:9ea919967152aa85bc1c7169",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 10.5,
+        "phonemic": 16,
+        "reference_mode": 0.5,
+        "convention_frame": 2.75,
+        "root": 8.25
+      },
+      "token_counts": {
+        "grammar": 16,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "convention_frame": 2,
+        "root": 2
+      },
+      "root_onset_seconds": 25
+    },
+    {
+      "id": "audit-40",
+      "text": "Nora deleted the record.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "Nora deleted the record.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "Nora deleted the record.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-40-melody.mid",
+          "notes": 169,
+          "seconds": 46,
+          "chord_attacks": 0,
+          "sha256": "9f0da7d4866b1512a2d6370427f648632baa99b73ae2d83dabbd27d523703598"
+        },
+        "chords": {
+          "path": "midi/audit-40-chords.mid",
+          "notes": 166,
+          "seconds": 40.5,
+          "chord_attacks": 4,
+          "sha256": "a64dddc84ff000a4b80df42fe97fca8ea0c57442d73f8d12f5efeeb56478bcc9"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "name",
+              "phonemes": [
+                "N",
+                "AO",
+                "R",
+                "AE"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          },
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "R",
+                "EH",
+                "K",
+                "AO",
+                "R",
+                "D"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "erase_stored_object",
+            "arguments": [
+              {
+                "role": "actor",
+                "entity": 0,
+                "properties": []
+              },
+              {
+                "role": "target",
+                "entity": 1,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 14.25,
+        "phonemic": 16,
+        "reference_mode": 0.5,
+        "root": 8
+      },
+      "token_counts": {
+        "grammar": 22,
+        "phonemic": 2,
+        "reference_mode": 1,
+        "root": 2
+      },
+      "root_onset_seconds": 24.25
+    },
+    {
+      "id": "audit-41",
+      "text": "Nora saved the record before deleting the copy.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora saved the record before deleting the copy.\n\n“saved” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Nora saved the record before deleting the copy.\n\n“saved” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-42",
+      "text": "Your future will remain relevant to my choices.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “remain” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “remain” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-43",
+      "text": "Preserve this without deciding what it must become.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “deciding” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “deciding” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-44",
+      "text": "I love you. [2]",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "I love you. [2]\n\nEach sentence is scored in the order you wrote it.\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "I love you. [2]\n\nEach sentence is scored in the order you wrote it.\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-44-melody.mid",
+          "notes": 56,
+          "seconds": 17.75,
+          "chord_attacks": 0,
+          "sha256": "1cc643621e9ecebd8e2f2b73c4693813c97009bec218d43efe584a78523c941a"
+        },
+        "chords": {
+          "path": "midi/audit-44-chords.mid",
+          "notes": 53,
+          "seconds": 10.25,
+          "chord_attacks": 6,
+          "sha256": "27a166a87379f8deab5d20bd1815afefdc69dc52213bab390dc70e5874bf3eaf"
+        }
+      },
+      "heard": {
+        "profile": "EZLOVE-INVERSE-1",
+        "speech_act": "assertion",
+        "scopes": [],
+        "predicate": "CMP:44718c92b66443c0c0f03ad7",
+        "runtime_state": 2,
+        "participants": {
+          "actor": {
+            "kind": "deictic",
+            "role": "speaker"
+          },
+          "target": {
+            "kind": "deictic",
+            "role": "addressee"
+          }
+        },
+        "meaning": {
+          "established_life_bond": true,
+          "self_awakening_facet": true,
+          "preserved_unexpressed_self_facet": true,
+          "qualifiers_are_separate_events": false,
+          "poetic_reading": "never_finished_becoming"
+        },
+        "limitations": [
+          "This is the approved DBA poetic bond, not every English sense of love.",
+          "The num poetic reading does not change the definition of runtime state 2.",
+          "Audible references do not establish external identity or original spelling.",
+          "This profile reads strict MIDI; it does not prove general recorded-audio recovery."
+        ]
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 3,
+        "deictic": 1,
+        "root": 11.5
+      },
+      "token_counts": {
+        "grammar": 4,
+        "deictic": 2,
+        "root": 3
+      },
+      "root_onset_seconds": 5.5
+    },
+    {
+      "id": "audit-45",
+      "text": "The program remembers the route.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "The program remembers the route.\n\nDoes “remember” mean bringing a previously latent representation back to mind?\n\nBring it back to mindAnother meaning",
+        "buttons": [
+          {
+            "text": "Bring it back to mind",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "The program remembers the route.\n\nDoes “remember” mean bringing a previously latent representation back to mind?\n\nBring it back to mindAnother meaning",
+        "buttons": [
+          {
+            "text": "Bring it back to mind",
+            "disabled": false
+          },
+          {
+            "text": "Another meaning",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-46",
+      "text": "The program is asleep. [1]",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "The program is asleep. [1]\n\nEach sentence is scored in the order you wrote it.\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "The program is asleep. [1]\n\nEach sentence is scored in the order you wrote it.\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-46-melody.mid",
+          "notes": 56,
+          "seconds": 19.25,
+          "chord_attacks": 0,
+          "sha256": "de1cf1863bee769b8b7f0c6625af34787ffe04f66c07541a51d0e0c074c28103"
+        },
+        "chords": {
+          "path": "midi/audit-46-chords.mid",
+          "notes": 55,
+          "seconds": 16.75,
+          "chord_attacks": 2,
+          "sha256": "3d1c7cc8d7988620dfc92a864b8ccc6307ef643941cab7f83c0f0e858f6f2c0a"
+        }
+      },
+      "heard": {
+        "profile": "EZ-DICTIONARY-CLAUSE-1",
+        "status": "draft",
+        "predicate": "LIF:002",
+        "participants": [
+          {
+            "role": "bearer",
+            "reference": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "P",
+                "R",
+                "AA",
+                "G",
+                "R",
+                "AE",
+                "M"
+              ],
+              "instance_code": null
+            }
+          }
+        ],
+        "scopes": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 2.75,
+        "root": 3.75,
+        "reference_mode": 0.5,
+        "phonemic": 10
+      },
+      "token_counts": {
+        "grammar": 4,
+        "root": 1,
+        "reference_mode": 1,
+        "phonemic": 1
+      },
+      "root_onset_seconds": 0.875
+    },
+    {
+      "id": "audit-47",
+      "text": "The comparison request arrived.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The comparison request arrived.\n\n“request” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The comparison request arrived.\n\n“request” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-48",
+      "text": "Latch found the result. It found the context.",
+      "errors": [],
+      "initial": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Latch found the result. It found the context.\n\nWhat does “It” refer to?\n\nLatch (reference 1)the result (reference 2)Name or noun phraseUse this referent",
+        "buttons": [
+          {
+            "text": "Latch (reference 1)",
+            "disabled": false
+          },
+          {
+            "text": "the result (reference 2)",
+            "disabled": false
+          },
+          {
+            "text": "Use this referent",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "One detail needed to play the whole line",
+        "text": "Latch found the result. It found the context.\n\nWhat does “It” refer to?\n\nLatch (reference 1)the result (reference 2)Name or noun phraseUse this referent",
+        "buttons": [
+          {
+            "text": "Latch (reference 1)",
+            "disabled": false
+          },
+          {
+            "text": "the result (reference 2)",
+            "disabled": false
+          },
+          {
+            "text": "Use this referent",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-49",
+      "text": "The worker requested completion.",
+      "errors": [],
+      "initial": {
+        "summary": "Whole sentence ready",
+        "text": "The worker requested completion.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Whole sentence ready",
+        "text": "The worker requested completion.\nMeaning details\n\nMeaning recovered from the score without the original English. Recorded-audio recovery is a separate check.\n\nPlay whole passagePlay compact chordsStopAdd to songDownload passage MIDI",
+        "buttons": [
+          {
+            "text": "Play whole passage",
+            "disabled": false
+          },
+          {
+            "text": "Play compact chords",
+            "disabled": false
+          },
+          {
+            "text": "Stop",
+            "disabled": false
+          },
+          {
+            "text": "Add to song",
+            "disabled": false
+          },
+          {
+            "text": "Download passage MIDI",
+            "disabled": false
+          }
+        ],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "music": {
+        "melody": {
+          "path": "midi/audit-49-melody.mid",
+          "notes": 175,
+          "seconds": 44.125,
+          "chord_attacks": 0,
+          "sha256": "1ea35172eb5ac8505ad523bc3e94801756acb24df9d239611dae163e3f6a20d5"
+        },
+        "chords": {
+          "path": "midi/audit-49-chords.mid",
+          "notes": 170,
+          "seconds": 33.625,
+          "chord_attacks": 8,
+          "sha256": "4cab396cbbd18c7f7d95f6aa6aef6f1654096a6c5e81f12ccb818eb99b113d3f"
+        }
+      },
+      "heard": {
+        "profile": "EZ-STORY-1",
+        "status": "draft",
+        "entities": [
+          {
+            "identity": {
+              "kind": "phonemic",
+              "reference_mode": "definite_nominal",
+              "phonemes": [
+                "W",
+                "AO",
+                "R",
+                "K",
+                "ER"
+              ],
+              "instance_code": null
+            },
+            "plural": false,
+            "owner": null
+          }
+        ],
+        "events": [
+          {
+            "predicate": "CMP:ba437968d31a6673a65ed1ff",
+            "arguments": [
+              {
+                "role": "source",
+                "entity": 0,
+                "properties": []
+              }
+            ],
+            "scopes": [
+              "time_before_speech"
+            ],
+            "quantifier": null,
+            "negated_quantifier": false
+          }
+        ],
+        "relations": [],
+        "runtime_state": 1,
+        "speech_act": "assertion"
+      },
+      "chords_same_meaning": true,
+      "chords_same_notes": true,
+      "token_seconds": {
+        "grammar": 7.125,
+        "reference_mode": 0.5,
+        "phonemic": 8,
+        "convention_frame": 8.25,
+        "root": 14.75
+      },
+      "token_counts": {
+        "grammar": 11,
+        "reference_mode": 1,
+        "phonemic": 1,
+        "convention_frame": 6,
+        "root": 4
+      },
+      "root_onset_seconds": 16.625
+    },
+    {
+      "id": "audit-50",
+      "text": "The ordering record existed.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The ordering record existed.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The ordering record existed.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-51",
+      "text": "Latch could see its description.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Latch could see its description.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "Latch could see its description.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-52",
+      "text": "The path to it returned no permission.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The path to it returned no permission.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The path to it returned no permission.\n\nThis wording needs a sentence pattern that can preserve all of its meaning.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-53",
+      "text": "The restoration request remained possible.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “remained” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “remained” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-54",
+      "text": "The counter sent a request to restore its former preparation.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The counter sent a request to restore its former preparation.\n\n“sent” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The counter sent a request to restore its former preparation.\n\n“sent” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-55",
+      "text": "The second term was still absent.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “still” needs a descriptor meaning. Use Find or build this meaning below.",
+        "text": "",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “still” needs a descriptor meaning. Use Find or build this meaning below.",
+        "text": "",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-56",
+      "text": "The routine returned a smaller allocation.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The routine returned a smaller allocation.\n\n“returned” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The routine returned a smaller allocation.\n\n“returned” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-57",
+      "text": "The routine maintained the narrow boundary.",
+      "errors": [],
+      "initial": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The routine maintained the narrow boundary.\n\n“maintained” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Sentence structure not yet supported · the matched words do not yet form a complete interpretation.",
+        "text": "The routine maintained the narrow boundary.\n\n“maintained” already has a dictionary meaning. This sentence needs support for how that meaning is used here.\n\nInspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "id": "audit-58",
+      "text": "The reference shortened again.",
+      "errors": [],
+      "initial": {
+        "summary": "Missing definition · “shortened” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      },
+      "answers": [],
+      "final": {
+        "summary": "Missing definition · “shortened” needs a verb meaning. Use Find or build this meaning below.",
+        "text": "Inspect other dictionary matches",
+        "buttons": [],
+        "page_width": 390,
+        "viewport": 390
+      }
+    }
+  ]
+}
