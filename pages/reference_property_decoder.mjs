@@ -1,4 +1,4 @@
-import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=partial-word-flow-1';
+import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=ordinary-comparatives-1';
 // Recover only the complete EZREFPROPERTY-1 segments from performed MIDI.
 // No source IR, English text or encoder event metadata is supplied.
 export function decodeNominalMassRestrictions(bytes,atoms){

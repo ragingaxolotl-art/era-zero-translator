@@ -1,8 +1,8 @@
 import {speakerGroupReference} from './references.mjs?v=clauses-1';
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 import {localParticipantGroups} from './local_participant_groups.mjs';
-import {expandLocalCompound} from './local_compound_expansion.mjs?v=partial-word-flow-1';
-import {createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {expandLocalCompound} from './local_compound_expansion.mjs?v=ordinary-comparatives-1';
+import {createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 const key=r=>JSON.stringify([r.path,r.slot_path??null,r.role]);
 // Bind occurrences, not role names globally. Definitions remain immutable.
 export async function bindLocalCompound(id,registry,authority,bindings){

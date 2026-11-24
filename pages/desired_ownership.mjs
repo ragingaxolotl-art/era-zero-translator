@@ -1,10 +1,10 @@
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
-import {parseFoundationSentence} from './foundation_sentences.mjs?v=partial-word-flow-1';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
-import {composeOwnershipSentence,ownershipPlan} from './ownership_sentences.mjs?v=partial-word-flow-1';
-import {validateOwnershipMeaning} from './ownership_meaning.mjs?v=partial-word-flow-1';
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
+import {parseFoundationSentence} from './foundation_sentences.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
+import {composeOwnershipSentence,ownershipPlan} from './ownership_sentences.mjs?v=ordinary-comparatives-1';
+import {validateOwnershipMeaning} from './ownership_meaning.mjs?v=ordinary-comparatives-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
 const FOUNDATION='FND:f66b7a3877f4b0140a0b7023';
 export function desiredOwnershipPlan(input){
  const p=parseFoundationSentence(input);if(p?.type!=='desire'||p.calendarDay!==undefined)return null;

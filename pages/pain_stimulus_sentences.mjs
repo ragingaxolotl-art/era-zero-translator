@@ -1,8 +1,8 @@
-import {composePainMeaning} from './pain_meaning.mjs?v=partial-word-flow-1';
-import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
-import {createPainStimulus} from './pain_stimulus.mjs?v=partial-word-flow-1';
+import {composePainMeaning} from './pain_meaning.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference} from './contextual_content.mjs?v=ordinary-comparatives-1';
+import {createPainStimulus} from './pain_stimulus.mjs?v=ordinary-comparatives-1';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
 const REF='(?:I|me|you|You|[A-Z][a-z]+|"[^"\\n]+"|(?:[Tt]he|[Tt]his|[Tt]hat) [a-z]+)';
 export function painStimulusPlan(input){
  if(typeof input!=='string')return null;

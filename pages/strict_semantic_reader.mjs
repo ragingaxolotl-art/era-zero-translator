@@ -1,4 +1,4 @@
-import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=partial-word-flow-1';
+import {decodeStrictMusicMidi} from './strict_music_decoder.mjs?v=ordinary-comparatives-1';
 
 // Shared strict grammar reader. Each semantic profile must validate the entire
 // remaining tree, including exact lexical conventions, roles and head roots.

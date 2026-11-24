@@ -1,4 +1,4 @@
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 import {CONTEXTUAL_NORMS} from './contextual_standards.mjs?v=partial-word-flow-1';
 export function decodeContextualStandardMidi(bytes,atoms){
  const message='Unsupported or malformed contextual-standard music.',fail=()=>{throw new Error(message);};

@@ -3,7 +3,7 @@
 - Result: **PASS**
 - Canonical atoms unchanged: **324**
 - Approved compounds unchanged: **124**
-- Existing indexed senses unchanged: **603**
+- Existing indexed senses unchanged: **607**
 - Noncanonical plain-English mappings: **448**
 - Plain labels ranking their intended target first: **448/448**
 - Bare ambiguous “send” auto-resolved: **no**

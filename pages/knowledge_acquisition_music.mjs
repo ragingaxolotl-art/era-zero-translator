@@ -1,8 +1,8 @@
-import {validateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=partial-word-flow-1';
-import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {validateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=ordinary-comparatives-1';
+import {canonicalDigest,midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {acquisitionScopeMarker} from './acquisition_scopes.mjs';
 import {scheduledLexicalEvents,grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
 export async function knowledgeAcquisitionEvents(input,formal,authority,{allowDraft=false}={}){
  formal=structuredClone(formal);const document=await validateKnowledgeAcquisition(input,{allowDraft});

@@ -1,10 +1,10 @@
-import {validateContextualInquiry} from './contextual_inquiry.mjs?v=partial-word-flow-1';
+import {validateContextualInquiry} from './contextual_inquiry.mjs?v=ordinary-comparatives-1';
 import {contextualInquiryEvent} from './contextual_inquiry_frames.mjs';
 import {contextualContentMusicEvent} from './contextual_content_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 import {readSelectedContent} from './content_selection.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 export function decodeContextualInquiryMidi(bytes,atoms,{allowDraft=false}={}){
  if(!allowDraft)throw new Error('Contextual inquiry requires draft opt-in.');
  const reader=strictSemanticReader(bytes,atoms,'Malformed contextual inquiry.',{allowDraftContextualContent:true,allowDraftContextualInquiry:true}),tree=reader.readTree();

@@ -1,9 +1,9 @@
-import {validateDrinkingMeaning,DRINKING_CONTRACT,DRINKING_VIEWPOINTS} from './drinking_meaning.mjs?v=partial-word-flow-1';
+import {validateDrinkingMeaning,DRINKING_CONTRACT,DRINKING_VIEWPOINTS} from './drinking_meaning.mjs?v=ordinary-comparatives-1';
 import {drinkingEvent} from './drinking_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 export async function drinkingMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateDrinkingMeaning(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'drinking',name);
  let events=[drinkingEvent(d.viewpoint,d.runtime_state,'open',anchor)];

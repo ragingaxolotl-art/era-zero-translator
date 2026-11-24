@@ -16,7 +16,7 @@ import {contextualContentMusicFrames} from './contextual_content_frames.mjs';
 import {acquisitionMusicFrames} from './acquisition_music_frames.mjs';
 import {questionContentMusicFrames} from './question_music_frames.mjs';
 import {quantifiedMusicFrames} from './quantified_music.mjs';
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
 import {PHONEMES} from './names.mjs';
 import {ROLE_ORDER} from './roles.mjs';
 // This inverse receives MIDI and a shared atom dictionary, never source IR,

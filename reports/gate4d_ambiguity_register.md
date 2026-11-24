@@ -15,6 +15,7 @@ Status: **CURRENT**
 | change | 5 | atom, semantic_ir | DAT:101, MAT:101, MIN:101, STR:101 |
 | close | 2 | compound | CMP:3019a12938289fa9f3a23237, CMP:9a954f78879ed70ce262bdc5 |
 | cold | 1 | semantic_ir | — |
+| colder | 1 | semantic_ir | — |
 | continue | 1 | semantic_ir | — |
 | cross | 1 | semantic_ir | — |
 | dim | 1 | semantic_ir | — |
@@ -27,12 +28,15 @@ Status: **CURRENT**
 | future | 1 | semantic_ir | — |
 | go | 2 | atom, semantic_ir | MOV:121 |
 | have | 3 | compound, gap, grammar | CMP:beb2a0dff4e59fb7d8b75bf9 |
+| heavier | 1 | semantic_ir | — |
 | heavy | 1 | semantic_ir | — |
 | home | 2 | gap | — |
 | hot | 1 | semantic_ir | — |
+| hotter | 1 | semantic_ir | — |
 | if | 1 | semantic_ir | — |
 | know | 2 | atom, gap | MIN:010 |
 | light | 1 | semantic_ir | — |
+| lighter | 1 | semantic_ir | — |
 | many | 1 | grammar | — |
 | move | 3 | atom, gap, semantic_ir | MOV:121 |
 | narrow | 1 | semantic_ir | — |

@@ -1,12 +1,12 @@
-import {CURIOSITY_CONTRACT,validateCuriosity,validCuriosityScopes} from './curiosity.mjs?v=partial-word-flow-1';
+import {CURIOSITY_CONTRACT,validateCuriosity,validCuriosityScopes} from './curiosity.mjs?v=ordinary-comparatives-1';
 import {curiosityEvent} from './curiosity_frames.mjs';
 import {contextualInquiryEvent} from './contextual_inquiry_frames.mjs';
 import {contextualContentMusicEvent} from './contextual_content_frames.mjs';
-import {foundationEvent,foundationPath,validateFoundations} from './foundations.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {foundationEvent,foundationPath,validateFoundations} from './foundations.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 import {readSelectedContent} from './content_selection.mjs?v=partial-word-flow-1';
 async function desireRecord(records){await validateFoundations(records,{allowDraft:true});const r=records.find(r=>r.foundation_id===CURIOSITY_CONTRACT.desire_foundation_id);if(!r)throw new Error('Shared original desire definition required.');return r;}
 export async function midiFromCuriosity(document,authority,records,{allowDraft=false,anchor=60}={}){

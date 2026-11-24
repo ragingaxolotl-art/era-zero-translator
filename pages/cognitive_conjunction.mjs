@@ -1,8 +1,8 @@
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {composeCuriosity,validateCuriosity,curiosityInterpretationPlan,curiosityPronounPlan} from './curiosity.mjs?v=partial-word-flow-1';
-import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs?v=partial-word-flow-1';
-import {composeRouteLearning,validateRouteLearning,routeLearningInterpretationPlan,routeLearningPronounPlan} from './route_learning.mjs?v=partial-word-flow-1';
-import {composeCameToUnderstand,validateUnderstandingAcquisition,parseCameToUnderstand} from './understanding_acquisition.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {composeCuriosity,validateCuriosity,curiosityInterpretationPlan,curiosityPronounPlan} from './curiosity.mjs?v=ordinary-comparatives-1';
+import {composeUnderstandingContent,validateUnderstandingContent,understandingInterpretationPlan,understandingPronounPlan} from './understanding_content.mjs?v=ordinary-comparatives-1';
+import {composeRouteLearning,validateRouteLearning,routeLearningInterpretationPlan,routeLearningPronounPlan} from './route_learning.mjs?v=ordinary-comparatives-1';
+import {composeCameToUnderstand,validateUnderstandingAcquisition,parseCameToUnderstand} from './understanding_acquisition.mjs?v=ordinary-comparatives-1';
 const VALIDATORS={'EZCURIOSITY-1':validateCuriosity,'EZUNDERSTANDING-CONTENT-1':validateUnderstandingContent,'EZROUTE-LEARNING-1':validateRouteLearning,'EZUNDERSTANDING-ACQUISITION-1':validateUnderstandingAcquisition};
 const composer=input=>curiosityInterpretationPlan(input)||curiosityPronounPlan(input)?composeCuriosity:parseCameToUnderstand(input)?composeCameToUnderstand:routeLearningInterpretationPlan(input)||routeLearningPronounPlan(input)?composeRouteLearning:understandingInterpretationPlan(input)||understandingPronounPlan(input)?composeUnderstandingContent:null;
 export function cognitiveClauseChoicePlan(input){

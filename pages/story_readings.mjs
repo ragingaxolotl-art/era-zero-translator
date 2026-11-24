@@ -1,7 +1,7 @@
-import {validStorySlots} from './story_saved_adjectives.mjs?v=information-storage-1';
+import {validStorySlots} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
 import {isPassageHead} from './passage_nouns.mjs';
-import {knownValueReading} from './known_value.mjs?v=information-storage-1';
-import {faultCategoryReading} from './fault_correction.mjs?v=information-storage-1';
+import {knownValueReading} from './known_value.mjs?v=ordinary-comparatives-1';
+import {faultCategoryReading} from './fault_correction.mjs?v=ordinary-comparatives-1';
 import {routeNounLabel} from './nominals.mjs?v=partial-word-flow-1';
 import {expandNegativeContractions} from './contractions.mjs';
 import {clauseSyntax, dictionaryClausePlan, dictionaryRoles} from './dictionary_clauses.mjs?v=information-storage-1';

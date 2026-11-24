@@ -1,12 +1,12 @@
-import {validateUnderstandingAcquisition} from './understanding_acquisition.mjs?v=partial-word-flow-1';
-import {understandingMusicEvents,understandingFoundation,readUnderstandingTree} from './understanding_music.mjs?v=partial-word-flow-1';
-import {foundationPath} from './foundations.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {validateUnderstandingAcquisition} from './understanding_acquisition.mjs?v=ordinary-comparatives-1';
+import {understandingMusicEvents,understandingFoundation,readUnderstandingTree} from './understanding_music.mjs?v=ordinary-comparatives-1';
+import {foundationPath} from './foundations.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {acquisitionMusicEvent} from './acquisition_music_frames.mjs';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {validAcquisitionScopes,acquisitionScopeMarker} from './acquisition_scopes.mjs';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 export async function midiFromUnderstandingAcquisition(input,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateUnderstandingAcquisition(input,{allowDraft}),formal={performance:{anchor_midi:anchor}};
  const [head]=await renderLexicalOccurrences({nodes:[{node_id:'acquisition',kind:'lexical_occurrence',target_type:'atom',target_id:'ORI:110',runtime_state:d.transition_runtime}],edges:[]},authority,{anchor});

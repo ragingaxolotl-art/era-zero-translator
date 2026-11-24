@@ -5,11 +5,11 @@ metadata:
   status: noncanonical_metadata_complete
   canonical_semantic_changes: 0
   root_count: 324
-  indexed_sense_count: 603
+  indexed_sense_count: 607
   game_story_surface_sense_count: 48
-  total_audited_senses: 651
+  total_audited_senses: 655
   part_of_speech_counts:
-    adjective: 47
+    adjective: 51
     adverb: 2
     conjunction: 3
     grammar: 1
@@ -14833,6 +14833,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:6d9fbbdbd21700e037254bfd
+  lemma: colder
+  part_of_speech: adjective
+  surface_forms:
+  - colder
+  route: semantic_ir
+  target_id:
+  sense_key: physical_thermodynamic_temperature_less_than_comparative
+  definition: The bound bearer's thermodynamic temperature is strictly lower than
+    that of the bound comparison participant in the selected context. Both ordered
+    participants are required. No numeric measurement, difference magnitude, contextual
+    cold threshold or persistence is asserted. Negation scopes this strict comparison
+    and allows equality; it is not the opposite strict comparison. Runtime 0/1/2 remains
+    independent of comparison, time and negation.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:a4390645ea409c7b69b818a1
   lemma: community
   part_of_speech: noun
@@ -17117,6 +17134,23 @@ senses:
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
+- sense_id: ENS:151f8734b07025b00726284b
+  lemma: heavier
+  part_of_speech: adjective
+  surface_forms:
+  - heavier
+  route: semantic_ir
+  target_id:
+  sense_key: physical_mass_greater_than_comparative
+  definition: The bound bearer's physical mass is strictly greater than that of the
+    bound comparison participant in the selected context. Both ordered participants
+    are required. No numeric measurement, difference magnitude, contextual heavy threshold
+    or persistence is asserted. Negation scopes this strict comparison and allows
+    equality; it is not the opposite strict comparison. Runtime 0/1/2 remains independent
+    of comparison, time and negation.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
 - sense_id: ENS:efd773eaf9f5079ab627088e
   lemma: heavy
   part_of_speech: adjective
@@ -17191,6 +17225,23 @@ senses:
     comparison interpretation. No numerical cutoff, measured value, universal threshold
     or equality with another occurrence's standard is asserted. The opposite adjective
     may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:3d75dda4410348c7d371c5ff
+  lemma: hotter
+  part_of_speech: adjective
+  surface_forms:
+  - hotter
+  route: semantic_ir
+  target_id:
+  sense_key: physical_thermodynamic_temperature_greater_than_comparative
+  definition: The bound bearer's thermodynamic temperature is strictly higher than
+    that of the bound comparison participant in the selected context. Both ordered
+    participants are required. No numeric measurement, difference magnitude, contextual
+    hot threshold or persistence is asserted. Negation scopes this strict comparison
+    and allows equality; it is not the opposite strict comparison. Runtime 0/1/2 remains
+    independent of comparison, time and negation.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index
@@ -17799,6 +17850,23 @@ senses:
     comparison interpretation. No numerical cutoff, measured value, universal threshold
     or equality with another occurrence's standard is asserted. The opposite adjective
     may use a different standard; grammatical negation and runtime 0/1/2 remain separate.
+  fidelity: high
+  controlled_input_allowed: false
+  authority_layer: english_sense_index
+- sense_id: ENS:779b2fd91dc257b37278ac81
+  lemma: lighter
+  part_of_speech: adjective
+  surface_forms:
+  - lighter
+  route: semantic_ir
+  target_id:
+  sense_key: physical_mass_less_than_comparative
+  definition: The bound bearer's physical mass is strictly less than that of the bound
+    comparison participant in the selected context. Both ordered participants are
+    required. No numeric measurement, difference magnitude, contextual light threshold
+    or persistence is asserted. Negation scopes this strict comparison and allows
+    equality; it is not the opposite strict comparison. Runtime 0/1/2 remains independent
+    of comparison, time and negation.
   fidelity: high
   controlled_input_allowed: false
   authority_layer: english_sense_index

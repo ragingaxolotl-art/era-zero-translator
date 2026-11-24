@@ -1,7 +1,7 @@
-import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
-import {contextualContentReference} from './contextual_content.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {informationMusic} from './information_music.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference} from './contextual_content.mjs?v=ordinary-comparatives-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 
 const programClass = 'CMP:2f350e7d8e5dfba4a802d82d';
 const actor = '(I|[Ww]e|[Yy]ou|[A-Z][a-z]+)';

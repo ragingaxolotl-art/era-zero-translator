@@ -1,9 +1,9 @@
-import {validateCustodyOpportunity,CUSTODY_OPPORTUNITY_CONTRACT} from './custody_opportunity.mjs?v=partial-word-flow-1';
+import {validateCustodyOpportunity,CUSTODY_OPPORTUNITY_CONTRACT} from './custody_opportunity.mjs?v=ordinary-comparatives-1';
 import {custodyOpportunityEvent} from './custody_opportunity_frames.mjs';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {grammarMarker} from './scheduler.mjs?v=partial-word-flow-1';
-import {midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
+import {midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
 export async function custodyOpportunityMusicEvents(document,authority,{allowDraft=false,anchor=60}={}){
  const d=await validateCustodyOpportunity(document,{allowDraft}),mark=name=>grammarMarker({performance:{anchor_midi:anchor}},'custody_opportunity',name);
  let events=[custodyOpportunityEvent(d.runtime_state,'open',anchor)];

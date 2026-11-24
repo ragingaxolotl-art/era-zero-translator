@@ -1,10 +1,10 @@
 // Draft route-learning meanings; result contracts precede musical admission.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {contextualContentReference,createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 import {validAcquisitionScopes} from './acquisition_scopes.mjs';
-import {evaluateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=partial-word-flow-1';
+import {evaluateKnowledgeAcquisition} from './knowledge_acquisition.mjs?v=ordinary-comparatives-1';
 import {personalPronounPlan,resolvePersonalPronouns} from './personal_pronoun_plan.mjs';
-import {validReferent} from './pronouns.mjs?v=partial-word-flow-1';
+import {validReferent} from './pronouns.mjs?v=ordinary-comparatives-1';
 export const ROUTE_LEARNING_READINGS=Object.freeze({
  memorization:Object.freeze({predicate:'route_information_recall',definition:'The experiencer retains contextually selected information representing the route and can recall that information to the contextual memory criterion. Recall need not be occurring now. The represented information need not be true or sufficient for navigation.',excludes:Object.freeze(['Truth of the memorized information','Practical navigation knowledge','Current attention or recall','Actual route traversal or permanent retention'])}),
  navigation:Object.freeze({predicate:'practical_route_knowledge',definition:'The experiencer knows how to follow the contextually identified route to the contextual practical-navigation criterion. This is usable procedural knowledge, not merely reciting route information. It does not assert present physical ability, actual traversal, complete mastery of every circumstance or permanent retention.',excludes:Object.freeze(['Physical mobility or actual travel','Verbatim recall of route instructions','Success under every circumstance','Permanent retention'])}),

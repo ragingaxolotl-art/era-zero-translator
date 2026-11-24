@@ -1,6 +1,6 @@
 // Draft practical opportunity, building on the existing custody-acquisition event.
-import {canonicalDigest} from './engine.mjs?v=partial-word-flow-1';
-import {createContextualContent} from './contextual_content.mjs?v=partial-word-flow-1';
+import {canonicalDigest} from './engine.mjs?v=ordinary-comparatives-1';
+import {createContextualContent} from './contextual_content.mjs?v=ordinary-comparatives-1';
 export const CUSTODY_OPPORTUNITY_CONTRACT=Object.freeze({
  predicate:'contextual_practical_custody_opportunity',
  activity_compound:'CMP:c332d2e89b9f6177486fc93b',

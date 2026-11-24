@@ -1,6 +1,6 @@
-import {midiFromFormal} from './engine.mjs?v=partial-word-flow-1';
+import {midiFromFormal} from './engine.mjs?v=ordinary-comparatives-1';
 import {encodeName,midiFromName} from './names.mjs';
-import {songMidi} from './song_lines.mjs?v=information-storage-1';
+import {songMidi} from './song_lines.mjs?v=ordinary-comparatives-1';
 
 export function selectedWordMatch(item,selections) {
   const id = selections.get(item.token_index) ?? item.recommended_sense_id;

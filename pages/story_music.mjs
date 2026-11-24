@@ -1,23 +1,23 @@
 import {FELT_CONDITIONS} from './felt_conditions.mjs';
-import {readFeltConditionTree} from './felt_decoder.mjs?v=partial-word-flow-1';
-import {renderLexicalOccurrences} from './bound_compounds.mjs?v=partial-word-flow-1';
+import {readFeltConditionTree} from './felt_decoder.mjs?v=ordinary-comparatives-1';
+import {renderLexicalOccurrences} from './bound_compounds.mjs?v=ordinary-comparatives-1';
 import {deicticReference} from './references.mjs';
-import {validStorySlots,savedQualityLabel} from './story_saved_adjectives.mjs?v=information-storage-1';
-import {notesFromMidi} from './performance_codec.mjs?v=partial-word-flow-1';
-import {scoreKnownValue} from './known_value.mjs?v=information-storage-1';
-import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=information-storage-1';
+import {validStorySlots,savedQualityLabel} from './story_saved_adjectives.mjs?v=ordinary-comparatives-1';
+import {notesFromMidi} from './performance_codec.mjs?v=ordinary-comparatives-1';
+import {scoreKnownValue} from './known_value.mjs?v=ordinary-comparatives-1';
+import {composeFaultCorrection,describeFaultCorrection} from './fault_correction.mjs?v=ordinary-comparatives-1';
 import {describeClaim,describeRuntime} from './meaning_readback.mjs?v=field-repairs-1';
-import {everydayMeaning} from './everyday.mjs?v=partial-word-flow-1';
-import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=information-storage-1';
-import {informationMusic} from './information_music.mjs?v=partial-word-flow-1';
-import {strictSemanticReader} from './strict_semantic_reader.mjs?v=partial-word-flow-1';
-import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=partial-word-flow-1';
+import {everydayMeaning} from './everyday.mjs?v=ordinary-comparatives-1';
+import {scoreRoleReference,readRoleReference} from './dictionary_clause_music.mjs?v=ordinary-comparatives-1';
+import {informationMusic} from './information_music.mjs?v=ordinary-comparatives-1';
+import {strictSemanticReader} from './strict_semantic_reader.mjs?v=ordinary-comparatives-1';
+import {midiFromFormal,midiFromScheduledEvents} from './engine.mjs?v=ordinary-comparatives-1';
 import {storyWords,storyDependencies} from './story_words.mjs?v=information-storage-1';
-import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=information-storage-1';
+import {storyRoles,storyPropertyIds,needsState} from './story_readings.mjs?v=ordinary-comparatives-1';
 import {ERASURE,erasureLabel,scoreErasure,readErasure,erasurePropertyNeedsPhase} from './information_operations.mjs?v=information-storage-1';
 import {containerAction,containerPropertyNeedsPhase} from './container_actions.mjs?v=information-storage-1';
 import {contextualProperty,contextualPropertyNorm,contextualPropertyLabel} from './story_contextual_properties.mjs?v=contextual-modifiers-1';
-import {readContextualStandard} from './contextual_standard_decoder.mjs?v=contextual-modifiers-1';
+import {readContextualStandard} from './contextual_standard_decoder.mjs?v=ordinary-comparatives-1';
 import {closingAction,closingPropertyNeedsPhase} from './physical_closing.mjs?v=information-storage-1';
 
 const feltTargets=new Map(FELT_CONDITIONS.map(f=>[f.predicate,f]));
@@ -32,8 +32,8 @@ export async function scoreStory(plan,authority) {
   if(plan.valueKnowledge)return scoreKnownValue(plan,authority);
   if(plan.faultPlan)return {...await composeFaultCorrection(plan.faultPlan,authority),label:'Fault correction',description:describeFaultCorrection(plan.faultPlan)};
   if(plan.physicalInput){
-    const {composeNamedSentence,parseNamedSentence}=await import('./sentences.mjs?v=partial-word-flow-1');
-    const {decodePhysicalCarryingMidi}=await import('./carrying_decoder.mjs?v=partial-word-flow-1');
+    const {composeNamedSentence,parseNamedSentence}=await import('./sentences.mjs?v=ordinary-comparatives-1');
+    const {decodePhysicalCarryingMidi}=await import('./carrying_decoder.mjs?v=ordinary-comparatives-1');
     const parsed=parseNamedSentence(plan.physicalInput);
     if(!parsed||parsed.key!=='ongoing_physical_carrying')throw Error('This physical carrying construction needs a complete carrier and load.');
     const scored=await composeNamedSentence(plan.physicalInput,{authority});

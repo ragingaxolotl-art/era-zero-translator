@@ -1,0 +1,22 @@
+validate-and-deploy	Deploy	﻿2026-11-23T23:50:10.0440659Z ##[group]Run actions/deploy-pages@v4
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0440878Z with:
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0442758Z   token: ***
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0442959Z   timeout: 600000
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0443166Z   error_count: 10
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0443379Z   reporting_interval: 5000
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0443632Z   artifact_name: github-pages
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0443858Z   preview: false
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0444103Z env:
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0444306Z   GITHUB_PAGES: true
+validate-and-deploy	Deploy	2026-11-23T23:50:10.0444541Z ##[endgroup]
+validate-and-deploy	Deploy	2026-11-23T23:50:10.1752958Z (node:3358) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-and-deploy	Deploy	2026-11-23T23:50:10.1753499Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-and-deploy	Deploy	2026-11-23T23:50:10.3561317Z Fetching artifact metadata for "github-pages" in this workflow run
+validate-and-deploy	Deploy	2026-11-23T23:50:10.5132714Z Found 0 artifact(s)
+validate-and-deploy	Deploy	2026-11-23T23:50:10.5145688Z ##[error]Fetching artifact metadata failed. Is githubstatus.com reporting issues with API requests, Pages, or Actions? Please re-run the deployment at a later time.
+validate-and-deploy	Deploy	2026-11-23T23:50:10.6329696Z ##[error]Error: No artifacts named "github-pages" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later.
+validate-and-deploy	Deploy	    at getArtifactMetadata (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:85:1)
+validate-and-deploy	Deploy	    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+validate-and-deploy	Deploy	    at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/deployment.js:66:1)
+validate-and-deploy	Deploy	    at main (/home/runner/work/_actions/actions/deploy-pages/v4/src/index.js:30:1)
+validate-and-deploy	Deploy	2026-11-23T23:50:10.6332594Z ##[error]Error: No artifacts named "github-pages" were found for this workflow run. Ensure artifacts are uploaded with actions/upload-artifact@v4 or later.
